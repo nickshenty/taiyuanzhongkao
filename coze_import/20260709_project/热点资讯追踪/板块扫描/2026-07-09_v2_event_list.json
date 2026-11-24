@@ -1,0 +1,50 @@
+[
+  {
+    "events": [
+      {
+        "event": "布伦特原油7月9日盘中涨破79美元/桶（+1.4%），两日累计涨幅超6%；霍尔木兹海峡油轮通行持续停滞，通源石油、ST洲际、潜能恒信等A股油气股集体大涨",
+        "event_time": "2026-07-09 06:25",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "金转油能源板块核心价格信号，布伦特突破79美元为近两日新高位；A股油气个股盘中大涨直接验证能源板块资金持续流入",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://www.ndtvprofit.com/markets/oil-prices-on-july-9-brent-crude-nears-80-as-us-strikes-iran-again-hormuz-risks-return-11746669",
+      "https://m.yicai.com/brief/103266844.html",
+      "https://finance.eastmoney.com/a/202607093799327427.html"
+    ]
+  },
+  {
+    "events": [
+      {
+        "event": "半导体板块7月9日开盘强势反弹：科创综指涨1.44%，HBM涨2.9%、存储器板块涨3.51%；中微公司、北方华创、中科飞测等龙头集体走强，HBM/存储成领涨主线",
+        "event_time": "2026-07-09 09:35",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "半导体板块开盘行情异动，HBM/存储方向受AI算力需求带动强势反弹，符合追踪定义中'半导体ETF资金流向、产业链新闻'方向",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://finance.ifeng.com/c/8uc8Th2ZBMB",
+      "https://finance.eastmoney.com/a/202607093799413297.html",
+      "https://www.yicai.com/news/103266754.html"
+    ]
+  },
+  {
+    "events": [
+      {
+        "event": "SK海力士美股IPO获超七倍超额认购、募资约245亿美元，今日完成定价，明日登陆纳斯达克；吸引全球多头基金、主权财富基金等参与，为外国公司赴美上市史上第二大交易",
+        "event_time": "2026-07-09 08:06",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "SK海力士是全球HBM市占第一（56%）的AI存储龙头，赴美上市事件直接映射A股存储/HBM板块资金情绪，是半导体设备材料ETF和A股存储龙头的联动催化剂",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://finance.sina.com.cn/jjxw/2026-07-09/doc-inihefvc1502278.shtml",
+      "https://news.ifeng.com/c/8uc0or3u7iP",
+      "http://news.10jqka.com.cn/deep-topic/topic/dt_01KX28693QQR6DWCVA4P644NHT"
+    ]
+  }
+]

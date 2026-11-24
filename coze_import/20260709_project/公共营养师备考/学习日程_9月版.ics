@@ -1,0 +1,65 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Claw Agent//Study Schedule v2//CN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Asia/Shanghai
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0800
+TZOFFSETTO:+0800
+END:STANDARD
+END:VTIMEZONE
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Shanghai:20260527T084000
+DTEND;TZID=Asia/Shanghai:20260527T091000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;UNTIL=20260918T091000
+SUMMARY:早间ICAP听课（25min纯P输入）
+DESCRIPTION:【早间听课工单·9月版】\n目标：纯听课输入(P)，不安排C和I。\n当前进度：模块六 人群营养\n\n1. 打开小鹅通听课25分钟\n2. 专注理解，不记笔记\n3. 听完回复"打卡"确认\n\n⚠️ 早间必须打卡确认\n考试日期：2026年9月19日\n知识库参考：./公共营养师备考/知识库_三级教材.md
+UID:study-morning-v2-20260527@claw-agent
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Shanghai:20260527T124000
+DTEND;TZID=Asia/Shanghai:20260527T131000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;UNTIL=20260918T131000
+SUMMARY:午间ICAP听课（灵活，有空就学）
+DESCRIPTION:【午间听课工单·9月版】\n目标：继续听完早间没听完的半节课。\n当前进度：模块六 人群营养\n\n1. 继续早间暂停的课程\n2. 听完回复"打卡"确认\n\n⚠️ 灵活机制：被工作占用不算未完成\n考试日期：2026年9月19日
+UID:study-noon-v2-20260527@claw-agent
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Shanghai:20260527T200000
+DTEND;TZID=Asia/Shanghai:20260527T210000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;UNTIL=20260918T210000
+SUMMARY:晚间ICAP精简学习（1小时C+I）
+DESCRIPTION:【晚间ICAP集中学习工单·9月版】\n时间分配：P 25min → C 15min(合上书复述) → I 20min(跟Agent对练)\n\n1. 先听课25分钟\n2. 合上书复述15分钟\n3. 跟Agent对练20分钟\n4. 听完回复"打卡"确认\n\n⚠️ 晚间喝酒/接待无法学习不算未完成\n考试日期：2026年9月19日\n学习顺序：模块六→七→八→九→综合复习
+UID:study-evening-v2-20260527@claw-agent
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Shanghai:20260530T100000
+DTEND;TZID=Asia/Shanghai:20260530T110000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20260918T110000
+SUMMARY:周六复习+做题（1小时）
+DESCRIPTION:【周六学习工单·9月版】\n1. 回顾本周听课内容，梳理知识框架\n2. 在小鹅通APP做专项练习题\n3. 整理知识速记卡\n4. 完成后回复"打卡"确认\n\n⚠️ 周末时间灵活\n考试日期：2026年9月19日
+UID:study-saturday-v2-20260530@claw-agent
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Shanghai:20260531T080000
+DTEND;TZID=Asia/Shanghai:20260531T093000
+RRULE:FREQ=WEEKLY;BYDAY=SU;UNTIL=20260918T093000
+SUMMARY:周日复习+做题（1.5小时）
+DESCRIPTION:【周日学习工单·9月版】\n1. 系统回顾本周知识核心要点\n2. 在小鹅通APP做练习题\n3. 整理复习资料和速记卡\n4. 完成后回复"打卡"确认\n\n⚠️ 周末时间灵活\n考试日期：2026年9月19日
+UID:study-sunday-v2-20260531@claw-agent
+STATUS:CONFIRMED
+END:VEVENT
+
+END:VCALENDAR

@@ -1,0 +1,120 @@
+[
+  {
+    "name": "financial_news_scanner.py",
+    "path": "./codeact/scripts/financial_news_scanner.py",
+    "description": "工作日每小时财经快讯监控扫描脚本。从华尔街见闻、东方财富7x24、新浪财经7x24、财联社搜索四个信息源并发抓取最新快讯，用关键词匹配筛选与用户关注标的（半导体设备ETF/中远海能/航天动力/九安医疗/永鼎股份/海思科/机器人ETF）及行业方向（油运/VLCC、半导体设备、商业航天、医疗器械、光通信/超导、创新药、人形机器人）和宏观财经事件（美联储/央行/降息加息/地缘冲突等）相关的信息。SQLite状态库去重（表 seen_news，去重口径=SHA1(标题+内容前100字)），冷启动基线首次运行不推送明细，后续只推送增量。result_mode=auto：有新内容→display_only(@主人)，无新内容→no_reply。",
+    "params": {
+      "result_mode": "auto",
+      "lookback_minutes": "120",
+      "workday_only": "1"
+    },
+    "status": "active"
+  },
+  {
+    "name": "marathon_events_search.py",
+    "path": "./codeact/scripts/marathon_events_search.py",
+    "description": "山西及周边省份（陕西、河南、河北、内蒙古）2026年马拉松赛事搜索与增量推送脚本。从已知赛事日历页面（搜狐马拉松日历、网易赛事日历）+ codeact_search_web 搜索（8-15个关键词组合）并发抓取赛事信息，LLM结构化抽取赛事名称/日期/地点/项目/类别/报名状态/官网链接。SQLite状态库去重（表 events，去重口径=归一化赛事名称+省份，去除年份/省份前缀/标点后模糊匹配），冷启动基线首次运行建库并输出初始化摘要+完整报告文件，后续运行UPSERT更新已有赛事字段并只推送新发现赛事。result_mode=auto：有新赛事→display_only(@主人)，无新赛事→no_reply。",
+    "params": {
+      "result_mode": "auto",
+      "search_depth": "quick"
+    },
+    "status": "active"
+  },
+  {
+    "name": "daily_study_push.py",
+    "path": "./codeact/scripts/daily_study_push.py",
+    "description": "申奇峰暑假学习计划每日任务推送脚本（含PDF发送）。从 study_data.json 读取57天每日学习内容（英语/语文/主科/理科/阅读/测试/研学游标记），根据当天日期计算暑假第几天（Day 1=7/6~Day 57=8/31）。先发送简短文本消息（早安标题+各科目概要一行+测试提醒+鼓励语+PDF提示）到飞书chat，再查找 孔子学习辅助/*周PDF/Day{N}_学习内容.pdf 文件并发送；PDF不存在时仅发文本不报错。lark-cli通过subprocess调用，cwd设为基础工作目录，--file使用相对路径。result_mode=notify：发送成功不回传主agent；计划范围外静默跳过；发送失败→notify。执行完成后通知主agent同步推送结果给主人。",
+    "params": {
+      "result_mode": "notify",
+      "dry_run": "0"
+    },
+    "status": "active"
+  },
+  {
+    "name": "merge_poetry_data.py",
+    "path": "./codeact/scripts/merge_poetry_data.py",
+    "description": "高考必背古诗文数据文件生成器。合并4个数据分片（poetry_part1~4.py）生成 poetry_data.json，包含32篇高考必背古诗文的原文全文、白话翻译、重点字词注释（407条）和背诵要点提示。涵盖诗经、楚辞、汉乐府、唐诗、宋词及经典文言文（劝学/师说/六国论/赤壁赋/项脊轩志/过秦论/陈情表/离骚等）。result_mode=display_only。",
+    "params": {
+      "result_mode": "display_only"
+    },
+    "status": "active"
+  },
+  {
+    "name": "gen_chem_bio_data.py",
+    "path": "./codeact/scripts/gen_chem_bio_data.py",
+    "description": "化学+生物知识点详细数据文件生成器。为申奇峰暑假学习计划生成57天每日化学和生物的详细知识点内容（化学33个+生物24个），包含概念定义、重要方程式/反应式、关键要点(3-5条)、易错点提醒(2-3条)。覆盖高一化学全部内容（离子反应、氧化还原、元素化合物、物质结构、周期律、反应速率与平衡、电化学、有机化学等）和高一生物全部内容（细胞、代谢、遗传、变异等）。输出到./codeact/output/chem_bio_data.json。result_mode=display_only。",
+    "params": {
+      "result_mode": "display_only"
+    },
+    "status": "active"
+  },
+  {
+    "name": "generate_vocab_data.py",
+    "path": "./codeact/scripts/generate_vocab_data.py",
+    "description": "高考英语词汇数据文件生成器（提高难度版）。从 ECDICT 开源词典数据库（skywind3000/ECDICT, MIT License）下载 CSV，筛选 tag=gk 的高考词汇（3677个）和 tag=cet4 的四级词汇（3849个）。按 collins CEFR 级别分组并过滤异常基础词（frq阈值），分配到 Day2-Day57 共56天×50词=2800词：B1快速过(Day2-4, 150词, collins=4较难)、B2主力(Day5-26, 1100词, collins=3全部+collins=4较易)、C1进阶(Day27-41, 750词, collins=1全部+empty全部+collins=2较易)、四级高频(Day42-57, 800词, cet4词汇排除已选按频率优先)。从 translation 字段提取词性和中文释义，LLM补充缺失词性。输出到 ./codeact/scripts/vocab_data.json。result_mode=display_only。",
+    "params": {
+      "result_mode": "display_only"
+    },
+    "status": "active"
+  },
+  {
+    "name": "generate_week1_pdfs.py",
+    "path": "./codeact/scripts/generate_week1_pdfs.py",
+    "description": "申奇峰暑假学习计划任意Day范围每日学习内容PDF生成脚本。支持--start/--end参数指定Day范围(默认Day1-7)。读取study_data.json(57天daily_learning/school_hw/study_tour标记)、poetry_data.json(32篇古诗文)、vocab_data.json(56天词汇)三个JSON数据源，为每天拼接Markdown内容(页面标题+学校作业表格+今日学习内容含数学/物理/化学/生物/语文/英语各科概念复习/公式/方程式/关键要点/易错提醒+英语词汇表格+语文古诗文原文译文注释背诵要点+每日鼓励语)，调用md_to_pdf.py(reportlab+WQY中文字体)转为PDF。日期和星期从study_data.json的date/weekday字段动态提取，不再硬编码。Day33-38研学外出日在标题中标注（研学外出日）。鼓励语7条循环。输出目录按周自动切换：Day1-7→第一周PDF/，Day8-14→第二周PDF/，以此类推(week=(start-1)//7+1)。注意：md_to_pdf.py不支持####四级标题(会导致无限循环)，脚本用**粗体**替代。result_mode=display_only。",
+    "params": {
+      "result_mode": "display_only",
+      "start": "1",
+      "end": "7"
+    },
+    "status": "active"
+  },
+  {
+    "name": "generate_week1_tests.py",
+    "path": "./codeact/scripts/generate_week1_tests.py",
+    "description": "申奇峰暑假学习计划任意Day范围每日测试卷PDF生成脚本。支持--start/--end参数指定Day范围(默认Day1-7)。读取study_data.json/poetry_data.json/vocab_data.json三个JSON数据源，为每天生成测试卷Markdown并转PDF。日期/星期从study_data.json动态提取；主科(数学/物理)和理科(化学/生物)科目类型从study_data.json的main_subject.name/science_subject.name字段动态判断，不再硬编码Day集合。Day1英语为词汇摸底测试(20题选择题,A2/B1/B2/C1各5题)；Day2+英语为当天词汇测试(10英译汉+10汉译英+5选词填空+5形近词辨析)。古诗文按当天poetry_data出题(5原文填空+3字词解释+2理解性默写)，Day33+无古诗诗文时跳过。数学/物理/化学/生物根据daily_learning出题(概念填空/公式默写/方程式默写/简答/计算题/判断对错)。答案单独起页。Day33-38研学外出日在标题中标注。输出目录按周自动切换(week=(start-1)//7+1)。result_mode=display_only。",
+    "params": {
+      "result_mode": "display_only",
+      "start": "1",
+      "end": "7"
+    },
+    "status": "active"
+  },
+  {
+    "name": "update_physics_content.py",
+    "path": "./codeact/scripts/update_physics_content.py",
+    "description": "申奇峰暑假学习计划物理内容更新脚本。将10份物理暑假作业（抛体运动、圆周运动、天体运动、机械能守恒、动量守恒5大板块）分配到Day3-Day57共55天的每日学习计划中。每份作业5天（概念+选择题/多选题+实验题/计算题/综合练习/检测复习），Day53-57为综合复习。更新daily_learning.physics（topic/content 200-400字/key_points 3-5条/common_mistakes 2-3条/practice_guide）、新增school_hw.physics、更新main_subject中物理日topic。Day1-2保持不变。result_mode=display_only。",
+    "params": {
+      "result_mode": "display_only"
+    },
+    "status": "active"
+  },
+  {
+    "name": "update_study_plan_study_tour.py",
+    "path": "./codeact/scripts/update_study_plan_study_tour.py",
+    "description": "申奇峰暑假学习计划研学调整脚本。将study_data.json中Day33-38（研学外出日）的理科内容暂停（daily_learning的math/chemistry/biology/physics改为研学暂停占位、school_hw理科改为\"研学期间暂停\"、main_subject改为研学外出、science_subject改为研学暂停、tests清空），英语和语文保持不变。Day39-57的理科内容整体后移6天：将原Day33-51的理科字段（daily_learning理科+school_hw理科+main_subject+science_subject+tests）按Day+6映射写入新位置（Day39←原33...Day57←原51），原Day53-57的综合复习内容被覆盖丢弃。Day1-32完全不动。修改前自动备份到study_data.json.bak。result_mode=display_only。",
+    "params": {
+      "result_mode": "display_only"
+    },
+    "status": "active"
+  },
+  {
+    "name": "realloc_science_study_plan.py",
+    "path": "./codeact/scripts/realloc_science_study_plan.py",
+    "description": "申奇峰暑假学习计划理科重分配脚本。从study_data.json.bak恢复原始57天完整计划，重新分配理科(数学/物理/化学/生物)以适应研学期间(Day33-38,8/7-8/12)理科暂停。Day1-2完全不动；Day33-38理科改为研学暂停占位(英语语文不变)；通过压缩复习/练习天数把部分原Day33-38内容拉到研学前。物理：压缩4份作业(5天→4天)合并计算题+综合练习，研学前30天+研学后19天=49天。数学：合并立体几何/统计概率专题复习、五专题综合训练、综合模拟训练、暑假总结(55→49天)。化学：合并6处复习日(55→49天)。生物：合并6处复习日(55→49天)。main_subject/science_subject按新内容+原孔子知识点更新，tests跟随内容移动。执行前自动备份当前状态到.bak2。result_mode=notify。",
+    "params": {
+      "result_mode": "notify"
+    },
+    "status": "active"
+  },
+  {
+    "name": "lu_qiyuan_weibo_tracker.py",
+    "path": "./codeact/scripts/lu_qiyuan_weibo_tracker.py",
+    "description": "卢麒元新浪微博追踪脚本。通过 codeact_search_web 搜索"卢麒元 微博"、"卢麒元 m.weibo.cn"、"卢麒元 新浪微博"三个关键词并发搜索，用 publish_time 参数过滤最近 N 小时，只保留 URL 中包含 m.weibo.cn/detail/ 或 m.weibo.cn/status/ 的搜索结果。对每条微博尝试通过微博移动端 API (m.weibo.cn/statuses/show) 获取完整正文和精确发布时间，API 失败时回退到搜索摘要。SQLite 状态库去重（表 seen_posts，去重口径=微博详情页 URL 中的 post_id 数字部分），冷启动首次运行建库并输出找到的最近内容作为基线（扩大回看窗口至 72 小时），后续运行只展示新增内容（默认回看 12 小时）。输出 Markdown 文件（卢麒元微博_YYYY-MM-DD_HHMM.md）到追踪目录 /app/data/所有对话/主对话/热点资讯追踪/卢麒元微博追踪/，每条微博含发布时间/正文/原文链接，按时间倒序排列，末尾附来源链接列表。result_mode=auto：有新内容→notify(@主人)，无新内容→no_reply。",
+    "params": {
+      "result_mode": "auto",
+      "lookback_hours": "12",
+      "baseline_lookback_hours": "72"
+    },
+    "status": "active"
+  }
+]

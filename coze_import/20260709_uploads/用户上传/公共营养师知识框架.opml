@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>公共营养师知识框架</title>
+  </head>
+  <body>
+    <outline text="公共营养师知识框架">
+      <!-- 职业道德（新增） -->
+      <outline text="模块一：职业道德（⭐考试重点）">
+        <outline text="职业道德概述">
+          <outline text="定义：从事一定职业的人们在职业活动中所应遵循的职业行为规范的总和"/>
+          <outline text="特征：职业性、普遍性、多样性、继承性、约束性（自律性+他律性）、实践性"/>
+        </outline>
+        <outline text="社会主义职业道德基本行为规范">
+          <outline text="爱岗敬业、诚实守信"/>
+          <outline text="办事公道、服务群众"/>
+          <outline text="奉献社会"/>
+        </outline>
+        <outline text="职业道德核心">
+          <outline text="为人民服务（社会主义道德集中体现）"/>
+          <outline text="原则：集体主义"/>
+        </outline>
+        <outline text="职业道德要素">
+          <outline text="职业理想、职业权力、职业义务（利他性、无偿性）"/>
+          <outline text="职业责任（差异性、独立性、强制性）"/>
+          <outline text="职业良心（时代性、内隐性、自育性）"/>
+          <outline text="职业纪律（强制性、一致性、特殊性）"/>
+          <outline text="职业荣誉（阶级性、激励性、多样性）"/>
+          <outline text="职业幸福（阶级性、层次性、广泛性）"/>
+        </outline>
+        <outline text="公共营养师职业守则">
+          <outline text="遵纪守法，诚实守信，团结协作"/>
+          <outline text="忠于职守，爱岗敬业，钻研业务"/>
+          <outline text="认真负责，服务于民，平等待人"/>
+          <outline text="科学求实，精益求精，开拓创新"/>
+        </outline>
+      </outline>
+      <!-- 医学基础（新增） -->
+      <outline text="模块二：医学基础（⭐新增内容）">
+        <outline text="人体解剖生理基础">
+          <outline text="人体结构">
+            <outline text="细胞：基本结构和功能单位"/>
+            <outline text="细胞膜：液态脂质双分子层"/>
+            <outline text="细胞器：线粒体（动力工厂）、核糖体（蛋白质合成）、内质网、高尔基复合体、溶酶体"/>
+          </outline>
+          <outline text="四大基本组织">
+            <outline text="上皮组织：保护、分泌、吸收、排泄"/>
+            <outline text="结缔组织"/>
+            <outline text="肌组织：骨骼肌（随意肌）、心肌（不随意肌）、平滑肌"/>
+            <outline text="神经组织"/>
+          </outline>
+          <outline text="九大系统">
+            <outline text="运动、消化、呼吸、循环"/>
+            <outline text="免疫、泌尿、生殖"/>
+            <outline text="神经、内分泌"/>
+          </outline>
+        </outline>
+        <outline text="运动系统">
+          <outline text="组成：骨、骨连接、骨骼肌"/>
+          <outline text="骨：骨质（有机质1/3、无机质2/3）、骨膜、骨髓"/>
+          <outline text="关节：关节面、关节囊、关节腔"/>
+        </outline>
+        <outline text="呼吸系统">
+          <outline text="组成：呼吸道（上下呼吸道）、肺"/>
+          <outline text="上呼吸道：鼻、咽、喉"/>
+          <outline text="下呼吸道：气管、支气管"/>
+        </outline>
+        <outline text="循环系统">
+          <outline text="心血管系统">
+            <outline text="血液组成：血浆（55%）+血细胞（45%）"/>
+            <outline text="血浆蛋白：白蛋白、球蛋白（抗体）、纤维蛋白原"/>
+            <outline text="血细胞：红细胞（运输氧）、白细胞、血小板（凝血）"/>
+            <outline text="血型：ABO血型系统、Rh血型系统"/>
+          </outline>
+          <outline text="血液循环">
+            <outline text="体循环：左心室→主动脉→组织→右心房（供氧）"/>
+            <outline text="肺循环：右心室→肺动脉→肺泡→左心房（换气）"/>
+          </outline>
+          <outline text="淋巴系统"/>
+        </outline>
+        <outline text="免疫系统">
+          <outline text="组成：免疫器官、免疫细胞、免疫分子"/>
+          <outline text="中枢免疫器官：胸腺（T细胞）、骨髓（B细胞）"/>
+          <outline text="外周免疫器官：脾脏、淋巴结"/>
+          <outline text="免疫球蛋白：IgM、G、A、D、E"/>
+        </outline>
+        <outline text="内分泌系统（⭐重要）">
+          <outline text="垂体">
+            <outline text="腺垂体：生长激素、催乳素、促甲状腺素、促肾上腺皮质激素、促性腺激素"/>
+            <outline text="神经垂体：催产素、加压素"/>
+          </outline>
+          <outline text="甲状腺：分泌T3、T4"/>
+          <outline text="胰岛：A细胞（胰高血糖素）、B细胞（胰岛素）"/>
+          <outline text="肾上腺皮质：球状带（醛固酮）、束状带（皮质醇）、网状带（性激素）"/>
+          <outline text="甲状旁腺：甲状旁腺素（升血钙）、降钙素（降血钙）"/>
+        </outline>
+        <outline text="消化系统">
+          <outline text="组成：消化管+消化腺"/>
+          <outline text="消化管：口腔→咽→食管→胃→小肠→大肠"/>
+          <outline text="上消化道：口腔→十二指肠"/>
+          <outline text="消化腺：唾液腺、胃腺、胰腺、肝脏、肠腺"/>
+        </outline>
+        <outline text="食物的消化和吸收">
+          <outline text="口腔">
+            <outline text="牙齿：乳牙（20颗）、恒牙（28-32颗）"/>
+            <outline text="唾液作用：湿润、清洁、淀粉酶分解"/>
+          </outline>
+          <outline text="胃">
+            <outline text="胃液：盐酸+胃蛋白酶原+黏液+内因子"/>
+            <outline text="内因子与维生素B12吸收有关"/>
+            <outline text="吸收：仅吸收少量水分和酒精"/>
+          </outline>
+          <outline text="小肠（最重要的消化吸收场所）">
+            <outline text="胰液：胰淀粉酶、胰脂肪酶、胰蛋白酶原、糜蛋白酶原"/>
+            <outline text="胆汁：乳化脂肪、促进脂溶性维生素吸收"/>
+            <outline text="小肠液：含肠激酶"/>
+            <outline text="吸收面积扩大：环行皱褶+绒毛+微绒毛"/>
+          </outline>
+          <outline text="吸收方式">
+            <outline text="被动转运：扩散、易化扩散、滤过、渗透"/>
+            <outline text="主动转运"/>
+            <outline text="胞吞"/>
+          </outline>
+        </outline>
+      </outline>
+      <!-- 原模块二改为消化吸收 -->
+      <outline text="模块三：消化系统与食物吸收（整合）">
+        <outline text="消化吸收能力">
+          <outline text="牙齿咀嚼"/>
+          <outline text="口腔唾液淀粉酶"/>
+          <outline text="胃蛋白酶"/>
+          <outline text="胰淀粉酶"/>
+          <outline text="胆汁"/>
+          <outline text="胰蛋白酶、糜蛋白酶"/>
+          <outline text="胰脂肪酶"/>
+          <outline text="小肠吸收"/>
+        </outline>
+      </outline>
+      <!-- 原模块三改为营养素 -->
+      <outline text="模块四：营养素">
+        <outline text="能量">
+          <outline text="能量单位换算：1kcal=4.184kJ"/>
+          <outline text="能量来源：碳水50-65%、脂肪20-30%、蛋白10-20%"/>
+          <outline text="能量消耗：基础代谢45-70%、体力活动25-50%、食物热效应"/>
+          <outline text="食物热效应：碳水5-10%、脂肪0-5%、蛋白质20-30%、混合膳食10%"/>
+        </outline>
+        <outline text="宏量营养素">
+          <outline text="蛋白质">
+            <outline text="必需氨基酸9种：蛋氨酸、色氨酸、赖氨酸、缬氨酸、异亮氨酸、亮氨酸、苯丙氨酸、苏氨酸、组氨酸"/>
+            <outline text="条件必需氨基酸：半胱氨酸、酪氨酸"/>
+            <outline text="蛋白质消化率公式"/>
+            <outline text="优质蛋白：蛋、奶、肉、鱼、豆"/>
+            <outline text="RNI：男65g/d、女55g/d"/>
+            <outline text="氮平衡：零氮平衡、正氮平衡、负氮平衡"/>
+          </outline>
+          <outline text="脂类">
+            <outline text="必需脂肪酸：亚油酸（n-6）、α-亚麻酸（n-3）"/>
+            <outline text="磷脂：构成细胞膜"/>
+            <outline text="胆固醇：所有体细胞构成成分"/>
+            <outline text="反式脂肪酸：升高LDL-C，降低HDL-C"/>
+          </outline>
+          <outline text="碳水化合物">
+            <outline text="分类：单糖、双糖、寡糖、多糖"/>
+            <outline text="血糖生成指数（GI）：低GI&lt;55、中GI55-70、高GI&gt;70"/>
+            <outline text="AMDR：50-65%E"/>
+          </outline>
+        </outline>
+        <outline text="矿物质">
+          <outline text="常量元素">
+            <outline text="钙Ca">
+              <outline text="生理功能：骨骼构成、神经肌肉、凝血"/>
+              <outline text="缺乏：佝偻病、骨质疏松、手足抽搐症"/>
+              <outline text="RNI：成人800mg/d"/>
+              <outline text="食物来源：奶制品（最佳）、豆类、虾皮"/>
+              <outline text="有利吸收：维生素D、乳糖"/>
+              <outline text="不利吸收：草酸、植酸、膳食纤维"/>
+            </outline>
+            <outline text="磷P">
+              <outline text="构成骨骼牙齿"/>
+              <outline text="RNI：720mg/d"/>
+              <outline text="食物来源：广泛（肉类、蛋、鱼、干酪、肝脏）"/>
+            </outline>
+            <outline text="镁Mg">
+              <outline text="激活多种酶"/>
+              <outline text="RNI：330mg/d"/>
+              <outline text="食物来源：绿叶蔬菜、糙粮、坚果"/>
+            </outline>
+          </outline>
+          <outline text="微量元素">
+            <outline text="铁Fe">
+              <outline text="生理功能：血红蛋白、氧运输"/>
+              <outline text="缺乏：缺铁性贫血"/>
+              <outline text="分类：血红素铁（动物，吸收率高）、非血红素铁（植物）"/>
+              <outline text="RNI：男12mg/d、女18mg/d"/>
+              <outline text="促进吸收：维生素C、肉类"/>
+              <outline text="抑制吸收：草酸、植酸、茶多酚"/>
+              <outline text="铁缺乏分期：IDS→IDE→IDA"/>
+            </outline>
+            <outline text="锌Zn">
+              <outline text="生理功能：酶组成、生长发育、免疫"/>
+              <outline text="缺乏：发育迟缓、味觉障碍、异食癖"/>
+              <outline text="RNI：男12mg/d、女8.5mg/d"/>
+              <outline text="食物来源：贝壳类、红肉、内脏"/>
+            </outline>
+            <outline text="碘I">
+              <outline text="生理功能：甲状腺激素"/>
+              <outline text="缺乏：地方性甲状腺肿、克汀病"/>
+              <outline text="RNI：120μg/d"/>
+              <outline text="食物来源：海产品、加碘盐"/>
+            </outline>
+            <outline text="硒Se">
+              <outline text="生理功能：抗氧化（谷胱甘肽过氧化物酶）"/>
+              <outline text="缺乏：克山病、大骨节病"/>
+              <outline text="RNI：60μg/d"/>
+              <outline text="食物来源：海产品、动物内脏"/>
+            </outline>
+            <outline text="铬Cr">
+              <outline text="加强胰岛素作用"/>
+              <outline text="AI：男35μg/d、女30μg/d"/>
+            </outline>
+            <outline text="氟F">
+              <outline text="骨骼牙齿健康"/>
+              <outline text="缺乏：龋齿、骨质疏松"/>
+              <outline text="过量：氟斑牙、氟骨症"/>
+              <outline text="AI：1.5mg/d"/>
+            </outline>
+          </outline>
+        </outline>
+        <outline text="维生素">
+          <outline text="脂溶性维生素">
+            <outline text="维生素A">
+              <outline text="理化性质：脂溶性、对光敏感"/>
+              <outline text="生理功能：视觉、上皮细胞、生长发育"/>
+              <outline text="缺乏：夜盲症、干眼病、皮肤干燥"/>
+              <outline text="RNI：男770μgRAE/d、女660μgRAE/d"/>
+              <outline text="食物来源：动物肝脏、鱼肝油、深色蔬菜"/>
+            </outline>
+            <outline text="维生素D">
+              <outline text="来源：D2（植物）、D3（皮肤合成）"/>
+              <outline text="活性形式：1,25-(OH)2-D3"/>
+              <outline text="生理功能：促进钙吸收"/>
+              <outline text="缺乏：佝偻病、骨质软化"/>
+              <outline text="RNI：10μg/d"/>
+              <outline text="食物来源：海鱼、动物肝脏、蛋黄"/>
+            </outline>
+            <outline text="维生素E">
+              <outline text="理化性质：脂溶性、抗氧化"/>
+              <outline text="生理功能：保护细胞膜"/>
+              <outline text="AI：14mgα-TE/d"/>
+              <outline text="食物来源：植物油、麦胚、坚果"/>
+            </outline>
+            <outline text="维生素K">
+              <outline text="来源：K1（绿色蔬菜）、K2（肠道合成）"/>
+              <outline text="生理功能：凝血、骨代谢"/>
+              <outline text="缺乏：新生儿出血症"/>
+              <outline text="AI：80μg/d"/>
+              <outline text="食物来源：绿色蔬菜、肝脏"/>
+            </outline>
+          </outline>
+          <outline text="水溶性维生素">
+            <outline text="维生素B1">
+              <outline text="别名：抗脚气病因子"/>
+              <outline text="生理功能：辅酶、维持神经系统"/>
+              <outline text="缺乏：脚气病（神经型、心血管型）"/>
+              <outline text="RNI：男1.4mg/d、女1.2mg/d"/>
+              <outline text="食物来源：葵花籽、花生、大豆、瘦肉"/>
+            </outline>
+            <outline text="维生素B2">
+              <outline text="理化性质：对热稳定、对光敏感"/>
+              <outline text="生理功能：黄酶辅酶"/>
+              <outline text="缺乏：口角炎、唇炎、舌炎"/>
+              <outline text="RNI：男1.4mg/d、女1.2mg/d"/>
+              <outline text="食物来源：肝肾、蛋奶类、绿叶蔬菜"/>
+            </outline>
+            <outline text="维生素B6">
+              <outline text="生理功能：氨基酸代谢"/>
+              <outline text="RNI：1.4-1.6mg/d"/>
+              <outline text="食物来源：豆类、畜肉、肝脏"/>
+            </outline>
+            <outline text="烟酸（维生素PP）">
+              <outline text="生理功能：辅酶I"/>
+              <outline text="缺乏：癞皮病（皮炎、腹泻、痴呆）"/>
+              <outline text="RNI：男15mgNE/d、女12mgNE/d"/>
+              <outline text="食物来源：肝肾、瘦肉、鱼"/>
+            </outline>
+            <outline text="叶酸">
+              <outline text="理化性质：怕热、光、酸"/>
+              <outline text="生理功能：嘌呤合成、血红蛋白"/>
+              <outline text="缺乏：巨幼红细胞贫血、神经管畸形"/>
+              <outline text="RNI：400μgDFE/d"/>
+              <outline text="食物来源：肝、肾、蛋、豆类、绿叶菜"/>
+            </outline>
+            <outline text="维生素B12">
+              <outline text="唯一含金属元素的维生素"/>
+              <outline text="生理功能：同型半胱氨酸甲基化"/>
+              <outline text="缺乏：巨幼红细胞性贫血"/>
+              <outline text="RNI：2.4μg/d"/>
+              <outline text="食物来源：动物内脏、鱼"/>
+            </outline>
+            <outline text="维生素C">
+              <outline text="理化性质：溶于水、易被热光碱破坏"/>
+              <outline text="生理功能：羟化反应、抗氧化、解毒"/>
+              <outline text="缺乏：坏血病"/>
+              <outline text="RNI：100mg/d"/>
+              <outline text="食物来源：新鲜蔬菜水果（鲜枣300-600mg/100g）"/>
+            </outline>
+          </outline>
+        </outline>
+        <outline text="膳食纤维">
+          <outline text="分类：可溶性（果胶）、不可溶性（纤维素）"/>
+          <outline text="生理功能：肠道功能、血糖血脂、饱腹感"/>
+          <outline text="AI：25-30g/d"/>
+          <outline text="食物来源：全谷物、蔬菜、水果、豆类"/>
+        </outline>
+      </outline>
+      <!-- 原模块四改为食物营养 -->
+      <outline text="模块五：食物营养">
+        <outline text="植物性食物">
+          <outline text="谷类">
+            <outline text="谷粒结构">
+              <outline text="谷皮（6%）：纤维素、半纤维素、矿物质"/>
+              <outline text="糊粉层（7%）：蛋白质、脂肪、维生素B、矿物质"/>
+              <outline text="胚乳（83%）：蛋白质、淀粉"/>
+              <outline text="胚芽（3%）：脂肪、蛋白质、维生素B、E"/>
+            </outline>
+            <outline text="全谷物">
+              <outline text="定义：胚乳、胚芽、麸皮比例与天然谷粒相同"/>
+              <outline text="种类：大麦、小麦、荞麦、藜麦、燕麦、糙米、玉米、小米、高粱米"/>
+              <outline text="全谷物食品：全谷物重量≥51%"/>
+            </outline>
+            <outline text="营养价值">
+              <outline text="蛋白质：7-12%，非优质蛋白（AAS约40），赖氨酸为限制氨基酸"/>
+              <outline text="碳水化合物：70-80%，以淀粉为主"/>
+              <outline text="维生素：B族为主，几乎不含维生素A、D、C"/>
+            </outline>
+            <outline text="合理利用">
+              <outline text="避免过度淘洗、搓洗、浸泡"/>
+              <outline text="推荐：每天全谷物50-150g"/>
+            </outline>
+          </outline>
+          <outline text="蔬菜">
+            <outline text="分类：根菜类、茎菜类、叶菜类、花菜类、果菜类、菌藻类"/>
+            <outline text="营养价值">
+              <outline text="维生素：β-胡萝卜素（深绿黄）、维生素C、叶酸、维生素K"/>
+              <outline text="矿物质：钙、铁、钾"/>
+            </outline>
+          </outline>
+          <outline text="豆类及其制品">
+            <outline text="大豆">
+              <outline text="种类：黄豆、黑豆、青豆"/>
+              <outline text="蛋白质：35-40%，优质蛋白"/>
+              <outline text="脂类：15-20%，不饱和脂肪酸"/>
+            </outline>
+            <outline text="大豆制品">
+              <outline text="蛋白质含量：黄豆35%、豆腐8.1%、豆浆1.8%、腐竹44.6%"/>
+              <outline text="凝固剂：石膏（硫酸钙）、卤水"/>
+            </outline>
+            <outline text="杂豆">
+              <outline text="种类：绿豆、红豆、芸豆"/>
+              <outline text="以淀粉为主，更接近粮食"/>
+            </outline>
+            <outline text="摄入建议：每天25克或相当的豆制品"/>
+          </outline>
+          <outline text="水果">
+            <outline text="营养价值">
+              <outline text="水分：70-90%"/>
+              <outline text="维生素C：鲜枣300-600mg/100g"/>
+              <outline text="矿物质：钾丰富"/>
+            </outline>
+            <outline text="储存与加工">
+              <outline text="后熟作用"/>
+              <outline text="果汁危害：不推荐"/>
+            </outline>
+          </outline>
+          <outline text="坚果">
+            <outline text="分类：油籽类（脂肪40%+）、淀粉类（碳水70%左右）"/>
+            <outline text="营养价值">
+              <outline text="脂肪40%左右，不饱和脂肪酸"/>
+              <outline text="维生素E丰富"/>
+            </outline>
+            <outline text="推荐摄入量：每天10g"/>
+          </outline>
+        </outline>
+        <outline text="动物性食物">
+          <outline text="水产品">
+            <outline text="蛋白质：15-22%"/>
+            <outline text="脂类：不饱和脂肪酸为主，含DHA+EPA"/>
+            <outline text="矿物质：钙和碘的良好来源"/>
+            <outline text="注意：组胺中毒（青皮红肉鱼）"/>
+          </outline>
+          <outline text="乳类">
+            <outline text="营养特点：优质蛋白、钙丰富"/>
+            <outline text="饮奶建议：每天300-500g"/>
+            <outline text="乳糖不耐受：喝酸奶、少量多次"/>
+          </outline>
+          <outline text="禽畜肉蛋类">
+            <outline text="畜肉类">
+              <outline text="蛋白质：10-20%，优质蛋白"/>
+              <outline text="矿物质：铁丰富（5mg/100g，血红素铁）"/>
+              <outline text="胆固醇：猪脑2571mg/100g"/>
+            </outline>
+            <outline text="禽肉类">
+              <outline text="蛋白质：20%左右"/>
+              <outline text="不饱和程度高，易消化"/>
+            </outline>
+            <outline text="蛋类">
+              <outline text="蛋白质：12%，最优质蛋白质"/>
+              <outline text="胆固醇：鸡蛋585mg/100g"/>
+              <outline text="磷脂：30-33%，卵磷脂为主"/>
+              <outline text="每天一枚整鸡蛋"/>
+            </outline>
+          </outline>
+        </outline>
+        <outline text="油脂与调味品">
+          <outline text="食用油脂">
+            <outline text="分类：植物油、动物油"/>
+            <outline text="脂肪酸：饱和脂肪酸、单不饱和脂肪酸、多不饱和脂肪酸"/>
+            <outline text="常见油脂">
+              <outline text="棕榈油49%饱和、椰子油82%饱和"/>
+              <outline text="橄榄油：油酸＞70%"/>
+              <outline text="亚麻籽油：亚麻酸比例最高"/>
+            </outline>
+            <outline text="食用原则：少吃油、吃好油"/>
+          </outline>
+          <outline text="调味品">
+            <outline text="食盐：每天＜5克，钠含量40%"/>
+            <outline text="酱油：氨基酸态氮≥0.4g/100ml"/>
+            <outline text="味精：最佳呈味浓度0.1%-0.5%"/>
+          </outline>
+        </outline>
+        <outline text="饮料与营养强化食品">
+          <outline text="软饮料">
+            <outline text="营养价值很低，含糖量高"/>
+          </outline>
+          <outline text="酒精饮料">
+            <outline text="每1g酒精产生7kcal能量"/>
+            <outline text="代谢：乙醇→乙醛→乙酸"/>
+          </outline>
+          <outline text="营养强化食品">
+            <outline text="向食物添加营养素"/>
+            <outline text="标准：GB 14880-2012"/>
+          </outline>
+          <outline text="保健食品">
+            <outline text="定义：适宜特定人群，调节机体功能，不以治疗疾病为目的"/>
+            <outline text="27种功能范围"/>
+          </outline>
+        </outline>
+        <outline text="食品保存加工技术">
+          <outline text="保藏技术">
+            <outline text="干藏：自然干燥、人工干燥"/>
+            <outline text="冷冻保藏：冷藏4-8℃、冷冻-18℃"/>
+            <outline text="罐藏、辐射保藏"/>
+            <outline text="腌渍保藏、糖渍"/>
+            <outline text="烟熏保藏（含苯并芘）"/>
+          </outline>
+          <outline text="加工技术">
+            <outline text="干燥技术：热风干燥、冷冻干燥、喷雾干燥"/>
+            <outline text="膨化技术"/>
+            <outline text="生物加工：发酵"/>
+          </outline>
+        </outline>
+      </outline>
+      <!-- 膳食营养指导（新增） -->
+      <outline text="模块六：膳食营养指导（⭐新增重点）">
+        <outline text="膳食营养素参考摄入量">
+          <outline text="EAR（平均需要量）"/>
+          <outline text="RNI（推荐摄入量）"/>
+          <outline text="AI（适宜摄入量）"/>
+          <outline text="UL（可耐受最高摄入量）"/>
+          <outline text="PI（建议摄入量）"/>
+          <outline text="AMDR（宏量营养素可接受范围）"/>
+        </outline>
+        <outline text="膳食指南">
+          <outline text="中国居民膳食指南（2022）">
+            <outline text="食物多样，合理搭配"/>
+            <outline text="吃动平衡，健康体重"/>
+            <outline text="多吃蔬果、奶类、全谷、大豆"/>
+            <outline text="适量吃鱼、禽、蛋、瘦肉"/>
+            <outline text="少盐少油，控糖限酒"/>
+            <outline text="规律进餐，足量饮水"/>
+            <outline text="会烹会选，会看标签"/>
+            <outline text="公筷分餐，杜绝浪费"/>
+          </outline>
+          <outline text="中国居民平衡膳食宝塔">
+            <outline text="第一层：谷薯类200-300g（全谷物50-150g）"/>
+            <outline text="第二层：蔬菜300-500g、水果200-350g"/>
+            <outline text="第三层：动物性食物120-200g"/>
+            <outline text="第四层：奶及奶制品300-500g"/>
+            <outline text="第五层：烹调油25-30g、盐＜5g"/>
+          </outline>
+        </outline>
+        <outline text="膳食调查">
+          <outline text="方法">
+            <outline text="称重法：最准确"/>
+            <outline text="记账法：适用于食堂"/>
+            <outline text="24小时回顾法"/>
+            <outline text="食物频率问卷法"/>
+          </outline>
+          <outline text="膳食评价">
+            <outline text="计算营养素摄入量"/>
+            <outline text="与DRIs比较"/>
+            <outline text="评价膳食结构"/>
+          </outline>
+        </outline>
+        <outline text="体格测量与评价">
+          <outline text="体重">
+            <outline text="标准体重=身高(cm)-105"/>
+            <outline text="肥胖度=[(实测-标准)/标准]×100%"/>
+          </outline>
+          <outline text="BMI=体重(kg)/身高²(m²)">
+            <outline text="中国标准：18.5-23.9正常、≥24超重、≥28肥胖"/>
+          </outline>
+          <outline text="腰围">
+            <outline text="腹型肥胖：男性≥90cm、女性≥85cm"/>
+          </outline>
+          <outline text="皮褶厚度、上臂围、小腿围"/>
+        </outline>
+        <outline text="实验室检查">
+          <outline text="血红蛋白：贫血筛查"/>
+          <outline text="血清白蛋白、前白蛋白"/>
+          <outline text="血脂、血糖"/>
+          <outline text="尿负荷试验"/>
+        </outline>
+      </outline>
+      <!-- 原模块六改为人群营养 -->
+      <outline text="模块七：人群营养（已覆盖，重点复习）">
+        <outline text="孕妇生理与孕期营养">
+          <outline text="孕期内分泌改变">
+            <outline text="HCG：第9周达高峰"/>
+            <outline text="甲状腺素T3、T4升高：基础代谢率升高15-20%"/>
+            <outline text="胰岛素分泌增加"/>
+          </outline>
+          <outline text="孕期血液改变">
+            <outline text="血容量增加35%-40%"/>
+            <outline text="血红蛋白浓度下降：孕早期/末期Hb≤110g/L"/>
+          </outline>
+          <outline text="孕期体重增加（⭐高频考点）">
+            <outline text="BMI&lt;18.5：增重11.0-16.0kg"/>
+            <outline text="BMI18.5-23.9：增重8.0-14.0kg"/>
+            <outline text="BMI24-27.9：增重7.0-11.0kg"/>
+            <outline text="BMI≥28：增重5.0-9.0kg"/>
+          </outline>
+          <outline text="能量需要">
+            <outline text="孕早期：与非孕相同"/>
+            <outline text="孕中期：+250kcal/d"/>
+            <outline text="孕晚期：+400kcal/d"/>
+          </outline>
+          <outline text="营养素需要">
+            <outline text="铁：孕中期+7mg/d、孕晚期+11mg/d"/>
+            <outline text="叶酸：600μgDFE/d"/>
+            <outline text="钙：800mg/d"/>
+          </outline>
+        </outline>
+        <outline text="备孕/孕期膳食指南">
+          <outline text="调整孕前体重至18.5-23.9"/>
+          <outline text="常吃含铁食物，选用碘盐，补充叶酸"/>
+          <outline text="孕吐严重者少量多餐"/>
+          <outline text="孕中晚期适量增加摄入"/>
+          <outline text="经常户外运动，每天30分钟"/>
+        </outline>
+        <outline text="乳母营养">
+          <outline text="能量：EER+500kcal/d"/>
+          <outline text="蛋白质：RNI+25g/d"/>
+          <outline text="铁：RNI 24mg/d（铁不能通过乳腺进入乳汁）"/>
+          <outline text="维生素A：RNI 1260μgRAE/d"/>
+          <outline text="乳汁分类：初乳→过渡乳→成熟乳"/>
+        </outline>
+        <outline text="产褥期膳食指南">
+          <outline text="定义：从胎儿胎盘娩出到各器官恢复，约6-8周"/>
+          <outline text="食物多样不过量"/>
+          <outline text="增加优质蛋白质及维生素A"/>
+          <outline text="产褥期每日推荐">
+            <outline text="谷类300-400g、蔬菜400-500g"/>
+            <outline text="鱼禽蛋肉220g、牛奶300-500ml"/>
+          </outline>
+        </outline>
+        <outline text="婴儿生理及营养素摄入量">
+          <outline text="定义：出生到满1周岁前"/>
+          <outline text="体格发育（⭐重点）">
+            <outline text="体重：前6个月+0.6kg/月，1岁为出生3倍"/>
+            <outline text="身长：1岁75cm（1.5倍）"/>
+            <outline text="头围：出生34cm"/>
+          </outline>
+          <outline text="消化系统">
+            <outline text="胃容量：新生儿25ml，1岁300-500ml"/>
+            <outline text="淀粉酶、脂肪酶活力差"/>
+          </outline>
+          <outline text="营养素参考摄入量">
+            <outline text="能量：0-6月90kcal/(kg·d)，7-12月75kcal/(kg·d)"/>
+            <outline text="蛋白质：0-6月AI 9g/d，7-12月AI 17g/d"/>
+            <outline text="铁：0-6月AI 0.3mg/d，7-12月AI 10mg/d"/>
+          </outline>
+        </outline>
+        <outline text="婴儿喂养指南（0-6月龄）">
+          <outline text="核心推荐">
+            <outline text="母乳是婴儿最理想的食物，坚持6月龄内纯母乳喂养"/>
+            <outline text="生后1小时内开奶"/>
+            <outline text="适当补充维生素D，无需补钙"/>
+          </outline>
+          <outline text="判断母乳是否充足">
+            <outline text="每天8-12次较为满足"/>
+            <outline text="有节律吸吮，可听见吞咽声"/>
+            <outline text="每天排尿6-8次"/>
+          </outline>
+          <outline text="吸出母乳保存（⭐考试重点）">
+            <outline text="室温（20-25℃）：4小时"/>
+            <outline text="冷藏（4℃）：48小时"/>
+            <outline text="冷冻（-15~-5℃）：3-6个月"/>
+            <outline text="低温冷冻（&lt;-20℃）：6-12个月"/>
+          </outline>
+        </outline>
+        <outline text="幼儿营养（1-3岁）">
+          <outline text="体格发育">
+            <outline text="2岁时体重约12kg（出生4倍）"/>
+            <outline text="乳牙20颗，2.5岁前出齐"/>
+          </outline>
+          <outline text="营养素参考摄入量">
+            <outline text="能量：1岁男900kcal/d、女800kcal/d"/>
+            <outline text="蛋白质：25-30g/d，一半优质蛋白"/>
+            <outline text="钙：RNI 500mg/d"/>
+          </outline>
+        </outline>
+        <outline text="7-24月龄婴幼儿喂养指南">
+          <outline text="继续母乳喂养，满6月龄起必须添加辅食"/>
+          <outline text="从富含铁的泥糊状食物开始"/>
+          <outline text="及时引入多样化食物"/>
+          <outline text="少加糖盐，保持食物原味"/>
+          <outline text="回应式喂养"/>
+        </outline>
+        <outline text="学龄前儿童（3-6岁）">
+          <outline text="体格发育">
+            <outline text="体重年增长约2kg，身高年增长约5cm"/>
+            <outline text="6岁时第一颗恒牙萌出"/>
+          </outline>
+          <outline text="营养素参考摄入量">
+            <outline text="能量：1250-1800kcal/d"/>
+            <outline text="蛋白质：30-35g/d"/>
+            <outline text="钙：RNI 600mg/d"/>
+          </outline>
+        </outline>
+        <outline text="儿童青少年（6-18岁）">
+          <outline text="青春期进入第二个生长发育高峰"/>
+          <outline text="能量需求">
+            <outline text="7-12岁男1600-2300kcal/d"/>
+            <outline text="15-17岁男2600-3300kcal/d"/>
+          </outline>
+          <outline text="钙：7-8岁800mg/d，9-17岁1000mg/d"/>
+        </outline>
+        <outline text="老年人营养">
+          <outline text="生理特点">
+            <outline text="代谢功能降低"/>
+            <outline text="消化系统功能减退"/>
+            <outline text="免疫功能降低"/>
+          </outline>
+          <outline text="营养素参考摄入量">
+            <outline text="能量：50-65岁男轻体力1950kcal/d"/>
+            <outline text="蛋白质：65g/d，优质蛋白占50%"/>
+            <outline text="钙：RNI 800mg/d"/>
+          </outline>
+          <outline text="BMI保持在20-26.9更为适宜"/>
+          <outline text="MNA-SF微型营养评估"/>
+        </outline>
+      </outline>
+      <!-- 原模块七改为公共营养基础 -->
+      <outline text="模块八：公共营养基础">
+        <outline text="营养教育">
+          <outline text="目的：提高营养知识，改善营养状况"/>
+          <outline text="特点：途径多、成本低、覆盖面广"/>
+          <outline text="主要对象：个体、群体、社区"/>
+          <outline text="实施步骤：制定计划→确定途径→准备资料→实施→评价"/>
+        </outline>
+        <outline text="相关理论（⭐考试重点）">
+          <outline text="知信行理论模式（KAP）">
+            <outline text="接受知识→确立信念→改变行动"/>
+          </outline>
+          <outline text="健康信念模式（HBM）"/>
+          <outline text="计划行为理论（TPB）"/>
+        </outline>
+        <outline text="社区营养管理">
+          <outline text="基本程序5步：现状调查→确定目标→制定计划→执行→评价效果"/>
+          <outline text="社区动员：专业人员+人群+领导+非政府组织"/>
+          <outline text="资料收集：人口、膳食、健康、经济、文化等"/>
+        </outline>
+        <outline text="营养改善项目">
+          <outline text="分析营养问题"/>
+          <outline text="确定项目目标"/>
+          <outline text="制订计划"/>
+          <outline text="执行与评价"/>
+        </outline>
+      </outline>
+      <!-- 食品安全（新增） -->
+      <outline text="模块九：食品安全基础（⭐新增重点）">
+        <outline text="食品污染">
+          <outline text="生物性污染">
+            <outline text="细菌：沙门氏菌、大肠杆菌"/>
+            <outline text="霉菌：黄曲霉毒素（强致癌）"/>
+            <outline text="寄生虫：蛔虫、绦虫"/>
+            <outline text="昆虫：苍蝇、蟑螂"/>
+          </outline>
+          <outline text="化学性污染">
+            <outline text="农药残留"/>
+            <outline text="重金属：铅、汞、砷"/>
+            <outline text="食品添加剂滥用"/>
+            <outline text="N-亚硝基化合物"/>
+          </outline>
+          <outline text="物理性污染">
+            <outline text="杂物"/>
+            <outline text="放射线污染"/>
+          </outline>
+        </outline>
+        <outline text="食源性疾病">
+          <outline text="定义：由摄食进入人体的各种致病因子引起的、通常具有感染或中毒性质的一类疾病"/>
+          <outline text="分类">
+            <outline text="细菌性食物中毒"/>
+            <outline text="真菌及其毒素食物中毒"/>
+            <outline text="动物性食物中毒"/>
+            <outline text="植物性食物中毒"/>
+            <outline text="化学性食物中毒"/>
+          </outline>
+          <outline text="预防原则">
+            <outline text="防止食品污染"/>
+            <outline text="控制细菌繁殖"/>
+            <outline text="杀灭病原菌"/>
+          </outline>
+        </outline>
+        <outline text="食品卫生管理">
+          <outline text="食品良好生产规范（GMP）"/>
+          <outline text="危害分析关键控制点（HACCP）"/>
+          <outline text="食品标签管理">
+            <outline text="必须标注：品名、配料、净含量、生产日期、保质期"/>
+            <outline text="营养标签：能量、蛋白质、脂肪、碳水化合物、钠"/>
+          </outline>
+        </outline>
+        <outline text="常见食品卫生问题">
+          <outline text="粮食：霉菌、农药"/>
+          <outline text="蔬菜水果：农药残留"/>
+          <outline text="肉类：抗生素、激素"/>
+          <outline text="水产品：组胺、重金属"/>
+        </outline>
+      </outline>
+      <!-- 相关法律法规（新增） -->
+      <outline text="模块十：相关法律法规（⭐新增）">
+        <outline text="主要法律法规">
+          <outline text="《中华人民共和国食品安全法》"/>
+          <outline text="《中华人民共和国基本医疗卫生与健康促进法》"/>
+          <outline text="《中华人民共和国消费者权益保护法》"/>
+        </outline>
+        <outline text="营养师执业规范">
+          <outline text="遵守职业道德"/>
+          <outline text="保护客户隐私"/>
+          <outline text="不夸大宣传"/>
+          <outline text="持续学习"/>
+        </outline>
+      </outline>
+      <!-- 慢病管理 -->
+      <outline text="模块十一：慢病营养管理">
+        <outline text="肥胖">
+          <outline text="BMI判断标准">
+            <outline text="中国：≥24超重、≥28肥胖"/>
+            <outline text="腰围：男性≥90cm、女性≥85cm"/>
+          </outline>
+          <outline text="饮食管理">
+            <outline text="总能量=理想体重×(20-25)kcal/kg"/>
+            <outline text="蛋白质10-15%、脂肪20-30%、碳水50-65%"/>
+            <outline text="烹调油≤25g"/>
+          </outline>
+        </outline>
+        <outline text="高血压（2024标准⭐）">
+          <outline text="诊室血压：≥140/90mmHg"/>
+          <outline text="家庭血压：≥135/85mmHg"/>
+          <outline text="饮食原则">
+            <outline text="限制钠盐：&lt;5g/d"/>
+            <outline text="增加钾摄入"/>
+            <outline text="限制饮酒"/>
+          </outline>
+        </outline>
+        <outline text="糖尿病">
+          <outline text="诊断标准：空腹血糖≥7.0mmol/L"/>
+          <outline text="饮食原则">
+            <outline text="选择低GI食物"/>
+            <outline text="定时定量"/>
+            <outline text="控制总能量"/>
+          </outline>
+        </outline>
+        <outline text="血脂异常">
+          <outline text="高TC血症、高TG血症"/>
+          <outline text="LDL（坏胆固醇）、HDL（好胆固醇）"/>
+          <outline text="饮食原则：限制饱和脂肪、反式脂肪"/>
+        </outline>
+        <outline text="痛风">
+          <outline text="限制高嘌呤食物"/>
+          <outline text="戒酒"/>
+          <outline text="多饮水"/>
+        </outline>
+      </outline>
+      <!-- 高频考点速记 -->
+      <outline text="⭐高频考点速记">
+        <outline text="关键数字汇总">
+          <outline text="BMI正常：18.5-23.9（中国标准）"/>
+          <outline text="血压正常：&lt;120/80mmHg"/>
+          <outline text="血红蛋白：男≥120g/L、女≥110g/L"/>
+          <outline text="血糖空腹正常：&lt;6.1mmol/L"/>
+          <outline text="每天盐：&lt;5g"/>
+          <outline text="每天油：25-30g"/>
+          <outline text="每天奶：300-500g"/>
+          <outline text="每周运动：≥150分钟"/>
+        </outline>
+        <outline text="易混淆点">
+          <outline text="佝偻病：维生素D缺乏"/>
+          <outline text="骨软化症：成人维生素D缺乏"/>
+          <outline text="骨质疏松：钙缺乏/雌激素减少"/>
+          <outline text="脚气病：维生素B1缺乏"/>
+          <outline text="癞皮病：烟酸缺乏"/>
+          <outline text="坏血病：维生素C缺乏"/>
+          <outline text="夜盲症：维生素A缺乏"/>
+        </outline>
+        <outline text="必需营养素">
+          <outline text="必需氨基酸：9种"/>
+          <outline text="必需脂肪酸：亚油酸、α-亚麻酸"/>
+          <outline text="必需维生素：维生素D（皮肤合成）"/>
+        </outline>
+      </outline>
+    </outline>
+  </body>
+</opml>

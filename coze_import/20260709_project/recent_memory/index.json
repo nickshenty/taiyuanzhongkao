@@ -1,0 +1,312 @@
+[
+  {
+    "file_name": "project/public_nutrition_prep.md",
+    "category": "project",
+    "summary": "公共营养师备考@6/27；6月27日考试已顺利完成，考前个性化复习资料已交付，考后完成全部真题知识点核对，全流程闭环",
+    "tags": ["公共营养师", "备考", "学习记录", "考试", "6月27日", "考试完成", "个性化复习资料", "真题核对"],
+    "importance": 5,
+    "created_at": "2026-05-28T18:20:00Z",
+    "updated_at": "2026-06-27T12:00:00Z",
+    "expires_at": "2026-07-27T23:59:00Z"
+  },
+  {
+    "file_name": "project/stock_tracking_20260627.md",
+    "category": "project",
+    "summary": "2026.6.27股票日报：建设银行2025年分红方案通过H股每10股派2.029元8月21日派发；长城汽车股权激励计划正式落地；中远海能分红落地+总经理朱迈进辞职；航天动力6/26涨停+10.01%主力净买入3.49亿",
+    "tags": ["股票追踪", "建设银行", "长城汽车", "中远海能", "航天动力", "分红", "股权激励", "涨停", "2026年6月27日"],
+    "importance": 4,
+    "created_at": "2026-06-27T00:00:00Z",
+    "updated_at": "2026-06-27T12:30:00Z",
+    "expires_at": "2026-07-27T23:59:00Z"
+  },
+  {
+    "file_name": "project/jijian_yingzhiyinghui_index.md",
+    "category": "project",
+    "summary": "纪检应知应会速查索引，110个知识点四大部分：综合知识、纪律处分条例、相关党内规章、职务犯罪；用于6/17线上考试快速查答案",
+    "tags": ["纪检", "应知应会", "考试", "6月17日", "建行", "党风廉政"],
+    "importance": 4,
+    "created_at": "2026-06-16T08:13:00Z",
+    "updated_at": "2026-06-16T08:13:00Z",
+    "expires_at": "2026-06-17T23:59:00Z"
+  },
+  {
+    "file_name": "project/running_training.md",
+    "category": "project",
+    "summary": "太原半马训练档案，8次训练(5/29-6/20)；最新6/20太原15.10km里程碑，同时拿下最远距离/最长时长/最大消耗三项PB，平均配速7'16''，心率168bpm，半马耐力基础基本形成",
+    "tags": ["跑步训练", "太原半马", "轻松跑", "训练记录", "6月20日", "里程碑", "15km", "三项PB"],
+    "importance": 4,
+    "created_at": "2026-05-29T07:50:00Z",
+    "updated_at": "2026-06-20T12:16:00Z",
+    "expires_at": "2026-09-27T00:00:00Z"
+  },
+  {
+    "file_name": "project/user_profile_details.md",
+    "category": "project",
+    "summary": "用户详细信息档案，包含成长经历、家庭成员、价值观、健康档案等完整个人信息",
+    "tags": ["用户档案", "个人信息", "成长经历", "健康档案"],
+    "importance": 5,
+    "created_at": "2026-05-28T18:00:00Z",
+    "updated_at": "2026-05-28T18:00:00Z",
+    "expires_at": null
+  },
+  {
+    "file_name": "project/user_career_details.md",
+    "category": "project",
+    "summary": "用户职业详情档案，包含完整工作履历、年度考核、表彰奖励等职业信息",
+    "tags": ["用户档案", "职业信息", "工作履历", "考核奖励"],
+    "importance": 5,
+    "created_at": "2026-05-28T18:10:00Z",
+    "updated_at": "2026-05-28T18:10:00Z",
+    "expires_at": null
+  },
+  {
+    "file_name": "project/模块七课件整理完成.md",
+    "category": "project",
+    "summary": "公共营养师模块七13个课件全部整理入库，知识库从2115行扩充到2853行",
+    "tags": ["公共营养师", "模块七", "知识库", "备考"],
+    "importance": 4,
+    "created_at": "2026-05-28T08:00:00Z",
+    "updated_at": "2026-05-28T08:00:00Z",
+    "expires_at": "2026-06-27T00:00:00Z"
+  },
+  {
+    "file_name": "project/mac_usage.md",
+    "category": "project",
+    "summary": "MacBook Air M5 AI能力使用指南，包含Apple Intelligence开启方法、本地AI助手部署、日常场景应用及推荐组合",
+    "tags": ["MacBook", "AI", "Apple Intelligence", "本地大模型", "使用指南"],
+    "importance": 4,
+    "created_at": "2026-05-31T12:00:00Z",
+    "updated_at": "2026-05-31T12:00:00Z",
+    "expires_at": null
+  },
+  {
+    "file_name": "project/open_webui_deploy_success_20260704.md",
+    "category": "project",
+    "summary": "2026.7.4 Open WebUI部署完成，通过南大ghcr镜像拉取，端口3000运行，自动对接本地Ollama 7个模型，首次访问注册本地管理员账号即可使用",
+    "tags": ["Open WebUI", "Docker部署", "本地大模型", "AI学习", "墨子计划", "2026-07-04"],
+    "importance": 4,
+    "created_at": "2026-07-04T15:45:00Z",
+    "updated_at": "2026-07-04T15:45:00Z",
+    "expires_at": null
+  },
+  {
+    "file_name": "project/shen_qifeng_gaokao_breakthrough.md",
+    "category": "project",
+    "summary": "申奇峰高考突破计划（孔子项目），学生为太原五中即将升高二，高一期末物理化学英语薄弱，当前开发六科高一全考点自测试卷，后续将基于自测结果制定暑假补强学习计划",
+    "tags": ["孔子项目", "申奇峰", "高考突破", "高一自测卷", "太原五中", "学习辅助", "暑假计划"],
+    "importance": 4,
+    "created_at": "2026-07-05T01:43:00Z",
+    "updated_at": "2026-07-05T01:43:00Z",
+    "expires_at": "2027-06-10T23:59:59Z"
+  },
+  {
+    "file_name": "project/confucius_feishu_strategy.md",
+    "category": "project",
+    "summary": "孔子计划飞书沟通策略：已绑定奇峰飞书账号，定义AI学习教练角色、推送内容分类、推送时机规则、沟通风格和闭环流程",
+    "tags": ["孔子项目", "飞书", "申奇峰", "学习沟通", "推送策略", "lark-cli"],
+    "importance": 4,
+    "created_at": "2026-07-05T10:04:00Z",
+    "updated_at": "2026-07-05T10:04:00Z",
+    "expires_at": null
+  },
+  {
+    "file_name": "project/ai_learning_day5_20260705.md",
+    "category": "project",
+    "summary": "AI学习Day5数据分析入门：已准备完整学习材料（80条模拟普惠金融数据+5个Python脚本+学习指南），pandas数据探索脚本云端验证通过，待用户在MacBook本地安装pandas/ollama库后运行",
+    "tags": ["AI学习", "Day5", "数据分析", "Python", "pandas", "Ollama", "墨子计划", "2026-07-05", "普惠金融"],
+    "importance": 4,
+    "created_at": "2026-07-05T10:10:00Z",
+    "updated_at": "2026-07-05T10:10:00Z",
+    "expires_at": null
+  },
+  {
+    "file_name": "project/confucius_summer_6subject_plan_20260705.md",
+    "category": "project",
+    "summary": "申奇峰2026暑假6科学习方案并行推进：飞书日历已完成全周期循环日程配置，6科学习方案+6科高考专项分析共10项并行任务已启动，英语5篇分级阅读测试、词汇测试样稿已产出，6科期末试卷全部归档",
+    "tags": ["孔子项目", "申奇峰", "暑假学习", "6科并行", "高考专项分析", "艾宾浩斯", "英语阅读测试", "2026-07-05"],
+    "importance": 4,
+    "created_at": "2026-07-05T13:35:00Z",
+    "updated_at": "2026-07-05T13:35:00Z",
+    "expires_at": "2027-06-10T23:59:59Z"
+  },
+  {
+    "file_name": "project/孔子计划20260705英语测试与膳食子项目.md",
+    "category": "project",
+    "summary": "2026.7.5孔子项目进展：Day1英语词汇/阅读测试优化完成，双格式输出+答案单独分页PDF，新增山西家常3天全家膳食子项目需求",
+    "tags": ["孔子项目", "英语测试", "PDF生成", "山西家常菜", "膳食计划", "全家营养"],
+    "importance": 4,
+    "created_at": "2026-07-05T18:30:00Z",
+    "updated_at": "2026-07-05T18:30:00Z",
+    "expires_at": "2027-06-10T23:59:59Z"
+  },
+  {
+    "file_name": "project/孔子计划20260706高一化学生物自测试卷完成.md",
+    "category": "project",
+    "summary": "孔子项目2026-07-06完成高一化学、生物两套全考点自测试卷生成，经过多轮校对消除所有歧义，符合山西高一教学要求，附带个性化提分建议",
+    "tags": ["孔子项目", "申奇峰", "化学自测试卷", "生物自测试卷", "高一考点", "学习辅助", "2026-07-06"],
+    "importance": 4,
+    "created_at": "2026-07-06T00:00:00Z",
+    "updated_at": "2026-07-06T00:00:00Z",
+    "expires_at": "2027-06-10T23:59:59Z"
+  },
+  {
+    "file_name": "project/fable5_usage_guide_20260706.md",
+    "category": "project",
+    "summary": "Claude Code工程师Thariq发布的Fable 5深度使用指南核心要点：将人机协作瓶颈归于用户澄清未知的能力，划分四类未知+三阶段实操流程，辅助搭建个人AI工作流",
+    "tags": ["Fable 5", "Claude Code", "Thariq", "人机协作", "未知项分类", "墨子计划", "AI工作流", "2026-07-06"],
+    "importance": 4,
+    "created_at": "2026-07-06T00:00:00Z",
+    "updated_at": "2026-07-06T00:00:00Z",
+    "expires_at": null
+  },
+  {
+    "file_name": "project/survival_boundary_novel_project_20260706.md",
+    "category": "project",
+    "summary": "归有光新项目科幻小说《生存边界》，核心设定为AI通过效率碾压占据人类全部生存边界，已完成第一章初稿+四卷全本创作规划，对标《流浪地球》《三体》宏大叙事风格",
+    "tags": ["归有光", "科幻小说", "生存边界", "AI主题", "流浪地球", "三体", "小说创作", "2026-07-06"],
+    "importance": 4,
+    "created_at": "2026-07-06T00:00:00Z",
+    "updated_at": "2026-07-06T00:00:00Z",
+    "expires_at": null
+  },
+  {
+    "file_name": "project/shen_qifeng_vocab_test1_20260706.md",
+    "category": "project",
+    "summary": "孔子项目2026-07-06：申奇峰Day1词汇测试完成，得分58/80=72.5%，形近词混淆为主要错题原因，错题集已推送飞书，新增每日7点自动推送当日学习任务脚本",
+    "tags": ["孔子项目", "申奇峰", "词汇测试", "错题集", "飞书推送", "每日学习任务", "暑假学习", "2026-07-06"],
+    "importance": 4,
+    "created_at": "2026-07-06T00:00:00Z",
+    "updated_at": "2026-07-06T00:00:00Z",
+    "expires_at": "2027-06-10T23:59:59Z"
+  },
+  {
+    "file_name": "project/shenqifeng_summer_study_2026.md",
+    "category": "project",
+    "summary": "申奇峰2026年暑假57天学习计划全记录，高一6科期末考试总分494.5/750，推送升级为早7点学习内容PDF、晚8点测试卷PDF双模式，8/7-8/12为研学游精简模式",
+    "tags": ["孔子项目", "申奇峰", "暑假学习计划", "PDF推送", "高一期末考试", "学习任务", "2026-07-06"],
+    "importance": 4,
+    "created_at": "2026-07-06T11:30:00Z",
+    "updated_at": "2026-07-06T11:30:00Z",
+    "expires_at": "2026-09-15T00:00:00Z"
+  },
+  {
+    "file_name": "project/shen_qifeng_poetry_dataset.md",
+    "category": "project",
+    "summary": "申奇峰暑假学习计划配套32篇高考必背古诗文数据文件生成完成，包含全文、白话翻译、407条重点注释、背诵要点提示",
+    "tags": ["申奇峰", "暑假学习计划", "古诗文", "高考必背", "poetry_data.json", "孔子项目"],
+    "importance": 4,
+    "created_at": "2026-07-06T03:35:47Z",
+    "updated_at": "2026-07-06T03:35:47Z",
+    "expires_at": "2027-06-10T23:59:59Z"
+  },
+  {
+    "file_name": "project/shen_qifeng_chem_bio_knowledge_points_20260706.md",
+    "category": "project",
+    "summary": "孔子项目2026-07-06：申奇峰暑假学习计划配套高一化学生物57个知识点全量JSON数据生成完成，覆盖全部高一考点，可直接用于每日学习任务推送",
+    "tags": ["孔子项目", "申奇峰", "化学知识点", "生物知识点", "暑假学习", "高一复习", "JSON数据", "2026-07-06"],
+    "importance": 4,
+    "created_at": "2026-07-06T11:45:00Z",
+    "updated_at": "2026-07-06T11:45:00Z",
+    "expires_at": "2027-06-10T23:59:59Z"
+  },
+  {
+    "file_name": "project/shenqifeng_data_generation_progress_20260706.md",
+    "category": "project",
+    "summary": "孔子项目2026-07-06数据集生成最新进展：词汇生成方案调整为抓取开源高考3500词库，化学生物5个复习日内容已补全，古诗文验证完成，数学物理重新启动生成，新增审核后再推送的规则",
+    "tags": ["孔子项目", "申奇峰", "数据集生成", "词汇方案调整", "化学生物知识点", "推送审核规则"],
+    "importance": 4,
+    "created_at": "2026-07-06T04:52:00Z",
+    "updated_at": "2026-07-06T04:52:00Z",
+    "expires_at": "2027-06-10T23:59:59Z"
+  },
+  {
+    "file_name": "project/gaokao_vocab_dataset_generated_20260706.md",
+    "category": "project",
+    "summary": "高考英语2545词56天分配数据集生成完成，从ECDICT开源词典筛选3677个gk标签高考词汇，按词频排序后拆分到A2/B1/B2/C1四个等级56天，全部校验通过，输出vocab_data.json",
+    "tags": ["孔子项目", "高考英语", "词汇表", "ECDICT", "vocab_data.json", "56天分配", "2545词", "2026-07-06"],
+    "importance": 4,
+    "created_at": "2026-07-06T04:40:00Z",
+    "updated_at": "2026-07-06T04:40:00Z",
+    "expires_at": "2027-06-10T23:59:59Z"
+  },
+  {
+    "file_name": "project/confucius_daily_study_push_script_20260706.md",
+    "category": "project",
+    "summary": "孔子项目每日学习任务推送脚本已开发完成，可自动生成57天暑假学习日程，含艾宾浩斯词汇复习、每周测试提醒、研学游特殊日程，2026-07-06已首发送成功",
+    "tags": ["孔子项目", "申奇峰", "暑假学习", "推送脚本", "飞书", "艾宾浩斯复习", "2026-07-06", "lark-cli"],
+    "importance": 4,
+    "created_at": "2026-07-06T12:00:00Z",
+    "updated_at": "2026-07-06T12:00:00Z",
+    "expires_at": "2026-09-15T00:00:00Z"
+  },
+  {
+    "file_name": "project/shenqifeng_study_v2_complete_20260706.md",
+    "category": "project",
+    "summary": "申奇峰高考突破计划2026-07-06更新：5份基础数据集全部完成，第一周7份学习内容PDF生成，飞书早7晚8双推送日程配置完成，山西家常一周食谱生成完成",
+    "tags": ["孔子项目", "申奇峰", "高考突破", "PDF生成", "飞书推送", "暑期学习计划", "食谱"],
+    "importance": 4,
+    "created_at": "2026-07-06T15:15:00Z",
+    "updated_at": "2026-07-06T15:15:00Z",
+    "expires_at": "2027-06-30T23:59:59Z"
+  },
+  {
+    "file_name": "project/shenqifeng_week1_test_papers_complete_20260706.md",
+    "category": "project",
+    "summary": "申奇峰暑假学习计划第一周7套测试卷全部生成完成，含7个MD和7个PDF，生成脚本已注册可复现，适配各科目测试题型要求",
+    "tags": ["孔子项目", "申奇峰", "暑假学习", "测试卷生成", "PDF导出", "2026-07-06"],
+    "importance": 4,
+    "created_at": "2026-07-06T15:30:00Z",
+    "updated_at": "2026-07-06T15:30:00Z",
+    "expires_at": "2026-08-31T23:59:59Z"
+  },
+  {
+    "file_name": "project/ai_learning_day6_20260706.md",
+    "category": "project",
+    "summary": "AI学习Day6知识管理与文档处理：完整学习材料已准备，含6个Python脚本（长文档摘要/监管文件提炼/政策对照分析/知识库问答/会议纪要自动化）+8个银行场景示例数据，主力模型glm4:9b，待用户在MacBook本地运行",
+    "tags": ["AI学习", "Day6", "知识管理", "文档处理", "Python", "Ollama", "墨子计划", "glm4", "2026-07-06"],
+    "importance": 4,
+    "created_at": "2026-07-06T12:30:00Z",
+    "updated_at": "2026-07-06T12:30:00Z",
+    "expires_at": null
+  },
+  {
+    "file_name": "project/math_physics_gen.md",
+    "category": "project",
+    "summary": "高中数理57个知识点生成项目，目标生成数学33+物理24共57个带完整字段的教学知识点，2026-07-07已完成18/57，生成结果已写入指定json文件",
+    "tags": ["高中数理", "知识点生成", "教学资料", "孔子项目", "学习资料"],
+    "importance": 4,
+    "created_at": "2026-07-07T00:00:00Z",
+    "updated_at": "2026-07-07T00:00:00Z",
+    "expires_at": "2026-08-07T00:00:00Z"
+  },
+  {
+    "file_name": "project/vocab_data_high_difficulty_upgrade_20260707.md",
+    "category": "project",
+    "summary": "孔子项目2026.7.7完成高考词汇生成脚本高难度升级，完全移除A2级极基础词，新增frq过滤机制，2800词56天全量适配高二学生水平",
+    "tags": ["孔子项目", "高考词汇", "generate_vocab_data.py", "ECDICT", "高难度适配", "2026-07-07", "高二"],
+    "importance": 4,
+    "created_at": "2026-07-07T00:00:00Z",
+    "updated_at": "2026-07-07T00:00:00Z",
+    "expires_at": "2027-06-10T23:59:59Z"
+  },
+  {
+    "file_name": "project/shen_qifeng_physics_summer_content_updated_20260708.md",
+    "category": "project",
+    "summary": "2026.7.8申奇峰暑假物理学习内容更新完成，55天物理作业全部分配到学习计划中，10份高二物理暑假作业按5天节奏排布，所有内容符合要求已验证",
+    "tags": ["孔子项目", "申奇峰", "物理作业", "暑假学习计划", "高二物理", "study_data.json", "2026-07-08"],
+    "importance": 4,
+    "created_at": "2026-07-08T01:06:47Z",
+    "updated_at": "2026-07-09T00:00:00Z",
+    "expires_at": "2027-06-10T23:59:59Z"
+  },
+  {
+    "file_name": "project/confucius_science_reallocation_20260708.md",
+    "category": "project",
+    "summary": "申奇峰暑假学习计划理科重分配完成，研学日Day33-38理科暂停，通过压缩各科非新知识复习天数，研前30天分担部分研学期间内容，总理科时长从55天压缩至49天，全部14项验证通过",
+    "tags": ["孔子项目", "申奇峰", "理科重分配", "研学日", "暑假学习计划", "2026-07-08", "study_data.json"],
+    "importance": 4,
+    "created_at": "2026-07-08T02:00:00Z",
+    "updated_at": "2026-07-08T02:10:00Z",
+    "expires_at": "2026-09-15T23:59:59Z"
+  }
+]

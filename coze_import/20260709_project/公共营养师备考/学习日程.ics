@@ -1,0 +1,65 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Claw Agent//Study Schedule//CN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:Asia/Shanghai
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0800
+TZOFFSETTO:+0800
+END:STANDARD
+END:VTIMEZONE
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Shanghai:20260527T080000
+DTEND;TZID=Asia/Shanghai:20260527T083000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;UNTIL=20260626T083000
+SUMMARY:早间ICAP听课（25min纯听课）
+DESCRIPTION:【早间听课工单】\n目标：纯听课输入(P)，不安排C和I。\n当前进度：模块六 人群营养\n\n执行步骤：\n1. 打开小鹅通听课25分钟\n2. 专注理解，不记笔记\n3. 听完回复"打卡"确认\n\n⚠️ 早间必须打卡确认\n考试倒计时：2026年6月27日\n知识库参考：./公共营养师备考/知识库_三级教材.md
+UID:study-morning-20260527@claw-agent
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Shanghai:20260527T123000
+DTEND;TZID=Asia/Shanghai:20260527T130000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;UNTIL=20260626T130000
+SUMMARY:午间ICAP听课（灵活，有空就学）
+DESCRIPTION:【午间听课工单】\n目标：纯听课输入，继续听完早间没听完的半节课。\n当前进度：模块六 人群营养\n\n执行步骤：\n1. 继续早间暂停的课程，专注理解，不记笔记\n2. 听完一整节后如果还有时间，开始下一节\n3. 听完回复"打卡"确认\n\n⚠️ 灵活机制：午间被工作占用不算未完成\n考试倒计时：2026年6月27日
+UID:study-noon-20260527@claw-agent
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Shanghai:20260527T200000
+DTEND;TZID=Asia/Shanghai:20260527T210000
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR;UNTIL=20260626T210000
+SUMMARY:晚间ICAP精简学习（1小时C+I）
+DESCRIPTION:【晚间ICAP集中学习工单】\n目标：先听课输入，再集中做建构(C)和互动(I)加深记忆。\n时间分配：P 25min → C 15min(合上书复述) → I 20min(跟Agent对练)\n\n执行步骤：\n1. 先听课25分钟\n2. 合上书复述15分钟：用自己的话说今天学的内容\n3. 跟Agent对练20分钟：辩论式复习\n4. 听完回复"打卡"确认\n\n⚠️ 晚间喝酒/接待无法学习不算未完成\n考试倒计时：2026年6月27日\n学习顺序：模块六→模块七→模块八→模块九
+UID:study-evening-20260527@claw-agent
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Shanghai:20260530T100000
+DTEND;TZID=Asia/Shanghai:20260530T110000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20260627T110000
+SUMMARY:周六复习+练习+知识整理
+DESCRIPTION:【周六学习工单】\n目标：复习本周所学+做题练习+整理知识\n\n执行步骤：\n1. 回顾本周听课内容，梳理知识框架\n2. 做练习题，标记错题和薄弱点\n3. 整理知识笔记\n4. 完成后回复"打卡"确认\n\n考试倒计时：2026年6月27日
+UID:study-saturday-20260530@claw-agent
+STATUS:CONFIRMED
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Shanghai:20260531T080000
+DTEND;TZID=Asia/Shanghai:20260531T093000
+RRULE:FREQ=WEEKLY;BYDAY=SU;UNTIL=20260628T093000
+SUMMARY:周日复习+练习+知识整理
+DESCRIPTION:【周日学习工单】\n目标：复习本周所学+做题练习+整理知识\n\n执行步骤：\n1. 回顾本周听课内容，梳理知识框架\n2. 做练习题，标记错题和薄弱点\n3. 整理知识笔记\n4. 完成后回复"打卡"确认\n\n考试倒计时：2026年6月27日
+UID:study-sunday-20260531@claw-agent
+STATUS:CONFIRMED
+END:VEVENT
+
+END:VCALENDAR

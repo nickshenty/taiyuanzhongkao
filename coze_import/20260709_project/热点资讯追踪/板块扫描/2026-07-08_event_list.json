@@ -1,0 +1,68 @@
+[
+  {
+    "events": [
+      {
+        "event": "工信部定调人形机器人2026年产量破10万台，较2025年约1.8万台暴涨近7倍，正式迈入规模化量产元年",
+        "event_time": "2026-07-07 17:05",
+        "relevance_level": "强相关"
+      },
+      {
+        "event": "特斯拉官宣Optimus将于2026年底启动规模化量产，远期年产能目标100万台，2027年才对外商用发售",
+        "event_time": "2026-07-06 09:04",
+        "relevance_level": "强相关"
+      },
+      {
+        "event": "宇树科技科创板IPO注册生效，拟募资42亿元，从受理到注册仅用104天创科创板最快纪录，将成人形机器人第一股",
+        "event_time": "2026-07-06 18:30",
+        "relevance_level": "强相关"
+      },
+      {
+        "event": "至简动力首款全场景机器人i7 Pro完成首批百台交付，落成全球首条CNC智能化具身机器人产线，距公司成立不足一年",
+        "event_time": "2026-07-06 23:02",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "人形机器人产业链重大产业化进展，均为强相关事件，涵盖政策定调、龙头IPO、特斯拉量产计划及初创公司百台交付，覆盖机器人板块核心催化",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "http://www.xinhuanet.com/20260707/a2287f0e6d424640b126479e06b697da/c.html",
+      "https://cbgc.scol.com.cn/news/7739147",
+      "https://cj.sina.cn/articles/view/7879848900/1d5acf3c4068034nuq",
+      "https://caifuhao.eastmoney.com/news/20260707061119190030800",
+      "https://m.weibo.cn/detail/5318085739020791",
+      "https://news.ifeng.com/c/8uXm4I0aEEF",
+      "https://36kr.com/p/3885408590098697",
+      "https://36kr.com/p/3884901538131975"
+    ]
+  },
+  {
+    "events": [
+      {
+        "event": "美军对伊朗发动系列强力打击+撤销伊朗石油销售豁免，油价应声大涨：WTI收涨2.76%至70.44美元/桶，布伦特涨3.01%至74.16美元/桶",
+        "event_time": "2026-07-07 22:00",
+        "relevance_level": "强相关"
+      },
+      {
+        "event": "EIA大幅下调今明两年油价预期：布伦特2026年从95降至82美元/桶，2027年从79降至65美元/桶",
+        "event_time": "2026-07-07 20:00",
+        "relevance_level": "强相关"
+      },
+      {
+        "event": "卢麒元微博：2026年7月是建立国储委最后机遇期，美国正每日千万桶油补库，机构大规模囤积有色金属",
+        "event_time": "2026-07-07 10:07",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "中东地缘风险骤升推升油价反弹，与金转油能源板块直接相关；EIA大幅下调油价预期强化中期供给过剩逻辑；卢麒元宏观判断提供金转油理论最新视角",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://m.jiemian.com/article/14715208_sina.html",
+      "https://finance.sina.com.cn/wm/2026-07-08/doc-inifzwqh8221344.shtml",
+      "https://m.nbd.com.cn/articles/2026-07-08/4459985.html",
+      "https://www.eia.gov/pressroom/releases/press590.php",
+      "https://www.morningstar.com/news/dow-jones/202607075911/eia-cuts-oil-price-estimates-as-middle-east-supply-returns",
+      "https://m.weibo.cn/detail/5317985775650759",
+      "https://caifuhao.eastmoney.com/news/20260706232958003402420"
+    ]
+  }
+]
