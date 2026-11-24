@@ -1,0 +1,45 @@
+<view class="page" wx:if="{{school}}">
+  <view class="header">
+    <view class="name">{{school.name}}</view>
+    <view class="meta">{{school.type}} · {{school.district}}</view>
+    <view class="tags">
+      <block wx:for="{{school.tags}}" wx:key="*this">
+        <text class="tag">{{item}}</text>
+      </block>
+    </view>
+  </view>
+
+  <view class="panel">
+    <view class="row">
+      <text class="label">学校代码</text>
+      <text class="value">{{school.code}}</text>
+    </view>
+    <view class="row">
+      <text class="label">参考分数线</text>
+      <text class="value">{{school.lastLineDisplay}} 分</text>
+    </view>
+    <view class="row">
+      <text class="label">招生计划</text>
+      <text class="value">{{school.planDisplay}}</text>
+    </view>
+    <view class="row">
+      <text class="label">当前分差</text>
+      <text class="value">{{school.gapDisplay}} 分</text>
+    </view>
+    <view class="row">
+      <text class="label">推荐层级</text>
+      <text class="value">{{school.riskLabel}}</text>
+    </view>
+  </view>
+
+  <view class="panel">
+    <view class="section-title">报考提示</view>
+    <view class="body">{{school.note}}</view>
+    <view class="body muted">{{school.advice}}</view>
+  </view>
+
+  <view class="panel">
+    <view class="section-title">正式上线前需要核对</view>
+    <view class="body">当年学校代码、招生计划、住宿条件、收费标准、是否跨区招生、定向名额、特长或特色项目条件。</view>
+  </view>
+</view>

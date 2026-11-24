@@ -1,0 +1,103 @@
+[
+  {
+    "events": [
+      {
+        "event": "半导体设备ETF持续吸金，上周国泰半导体设备ETF净流入71.24亿元，连续5日净流入超70亿元",
+        "event_time": "2026-07-06 18:43",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "直接符合「板块扫描」半导体ETF资金流向追踪方向，反映市场对半导体设备板块的配置热情",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://stcn.com/article/detail/4000685.html",
+      "http://paper.cnstock.com/html/2026-07/06/content_2239885.htm",
+      "https://caifuhao.eastmoney.com/news/20260706134811248115180"
+    ]
+  },
+  {
+    "events": [
+      {
+        "event": "2026世界机器人大会8月19日至23日在北京亦庄举办，主题“人机共生，产需共融”，人形机器人扎堆亮相",
+        "event_time": "2026-07-06 21:00",
+        "relevance_level": "强相关"
+      },
+      {
+        "event": "人形机器人概念板块7月7日早盘异动拉升，巨轮智能一度涨停",
+        "event_time": "2026-07-07 09:33",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "直接符合「板块扫描」机器人板块产业化落地追踪方向，官方大会定档催化概念股异动",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://www.beijing.gov.cn/fuwu/lqfw/gggs/202607/t20260707_4749953.html",
+      "http://www.stdaily.com/web/gdxw/2026-07/06/content_543015.html",
+      "http://tech.gmw.cn/2026-07/07/content_38871612.htm"
+    ]
+  },
+  {
+    "events": [
+      {
+        "event": "人形机器人进入工厂量产阶段，智元机器人第15000台具身智能机器人下线并交付龙旗科技工厂",
+        "event_time": "2026-07-07 10:13",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "直接符合「板块扫描」机器人板块产业化落地追踪方向，标志性量产事件",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "http://www.xinhuanet.com/info/20260707/9ea3d7042dac4aea9a6c626a05ff931b/c.html",
+      "https://hao.yiche.com/wenzhang/111270061/",
+      "https://finance.sina.com.cn/jjxw/2026-07-07/doc-inifxtrc8282333.shtml"
+    ]
+  },
+  {
+    "events": [
+      {
+        "event": "机器人ETF华夏(562500)连续4日资金净流入，合计吸金14.30亿元，居可比基金第一",
+        "event_time": "2026-07-06 15:00",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "直接符合「板块扫描」机器人ETF资金流向追踪方向",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://finance.sina.com.cn/jjxw/2026-07-07/doc-inifxtrh8389693.shtml",
+      "https://emdatah5.eastmoney.com/dc/zjlx/stock?fc=1.562500",
+      "https://news.ifeng.com/c/8uYpqgZCO7k"
+    ]
+  },
+  {
+    "events": [
+      {
+        "event": "国际油价7月6日微跌，WTI收于68.55美元/桶，布伦特收于71.99美元/桶，降至五个月低点",
+        "event_time": "2026-07-06 23:59",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "直接符合「板块扫描」金转油能源板块原油价格追踪方向",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://news.cctv.com/2026/07/07/ARTIfNSgZ4lLMfBf14Pl2TvK260707.shtml",
+      "https://www.sci99.com/news/54977714.html",
+      "https://finance.sina.cn/futuremarket/nyshzx/2026-07-06/detail-inifvqsa1970982.d.html"
+    ]
+  },
+  {
+    "events": [
+      {
+        "event": "沙特阿美将8月销往亚洲的阿拉伯轻质原油官价大幅下调11美元/桶，降幅创至少26年来最大",
+        "event_time": "2026-07-06 21:31",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "直接符合「板块扫描」金转油能源板块油气政策与价格追踪方向",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://finance.sina.com.cn/stock/hkstock/ggscyd/2026-07-07/doc-inifxpif8306645.shtml",
+      "https://m.thepaper.cn/newsDetail_forward_33527756",
+      "https://www.163.com/dy/article_cambrian/L16EMAI10514R9P4.html"
+    ]
+  }
+]

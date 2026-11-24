@@ -1,0 +1,18 @@
+[
+  {
+    "events": [
+      {
+        "event": "油气板块午间及午后继续维持强势，石油天然气指数涨幅居前，新潮能源、泰山石油、蓝焰控股、中国石油等9只个股午盘仍集体上涨",
+        "event_time": "2026-07-08 13:29",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "符合金转油能源板块追踪方向，盘中油气板块逆市走强，直接受益于美伊冲突升级催化的油价上涨",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://finance.sina.com.cn/wm/2026-07-08/doc-inihapmx1414838.shtml",
+      "https://m.21jingji.com/article/20260708/herald/c8537cc4915f8f83da6c6e8a980d31ad_zaker.html",
+      "https://finance.eastmoney.com/a/202607083798158542.html"
+    ]
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "schema": "topic_tracking.run_status.v1",
+  "status": "DONE",
+  "result": "briefing",
+  "legal_for_delivery": true,
+  "topic": "板块扫描",
+  "run_label": "2026-07-08_v5",
+  "brief_token": "brief_53dab1a8",
+  "setup_token": "setup_61fb4c6d",
+  "current_step": "DONE",
+  "completed_steps": [
+    "B1",
+    "B2",
+    "B3",
+    "B4"
+  ],
+  "skipped_steps": [],
+  "empty_result": false,
+  "empty_silent": true,
+  "event_count": 1,
+  "artifacts": {
+    "event_list": "/app/data/所有对话/主对话/热点资讯追踪/板块扫描/2026-07-08_v5_event_list.json",
+    "empty_confirmation": "/app/data/所有对话/主对话/热点资讯追踪/板块扫描/2026-07-08_v5_empty_result_confirmation.json",
+    "briefing_md": "/app/data/所有对话/主对话/热点资讯追踪/板块扫描/板块扫描_2026-07-08_v5.md",
+    "summary": "/app/data/所有对话/主对话/热点资讯追踪/板块扫描/2026-07-08_v5_summary.json"
+  },
+  "artifact_exists": {
+    "event_list": true,
+    "empty_confirmation": false,
+    "briefing_md": true,
+    "summary": true
+  },
+  "tracking_dir": "/app/data/所有对话/主对话/热点资讯追踪/板块扫描",
+  "session_dir": "/app/data/所有对话/主对话/.skills/skill_topic_tracking/sessions_v2/setup_61fb4c6d/brief_53dab1a8",
+  "message": "verify-run 校验通过。",
+  "errors": [],
+  "error_codes": [],
+  "created_at": "2026-07-08T14:03:41.595835",
+  "updated_at": "2026-07-08T14:08:41.190726"
+}

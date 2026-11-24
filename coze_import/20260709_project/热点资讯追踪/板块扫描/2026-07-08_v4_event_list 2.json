@@ -1,0 +1,50 @@
+[
+  {
+    "events": [
+      {
+        "event": "伊朗石油出口核心枢纽哈尔克岛传出爆炸声，该岛承担伊朗90%原油出口量，霍尔木兹海峡局势再度升级",
+        "event_time": "2026-07-08 08:44",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "金转油能源板块核心事件：伊朗最重要原油出口枢纽遭袭，90%原油出口受影响，直接驱动当日国际油价和A股油气板块大涨，对能源ETF和卢麒元金油比理论判断有直接验证价值",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "http://www.xinhuanet.com/20260708/dbb1a31302144344b764d7e5234ef11e/c.html",
+      "https://m.sohu.com/a/1047303865_162522/",
+      "https://content-static.cctvnews.cctv.com/snow-book/index.html?item_id=4253225158376690515"
+    ]
+  },
+  {
+    "events": [
+      {
+        "event": "A股油气板块早盘大幅走强：通源石油涨超12%领涨，山东墨龙涨停，中海油服涨超4%，中曼石油、海油发展、新潮能源等跟涨，板块内个股全线飘红",
+        "event_time": "2026-07-08 09:44",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "金转油能源板块直接映射：A股油气个股受国际油价大涨联动走强，是v1版本OFAC撤销授权+哈尔克岛爆炸事件的A股市场直接反映，关联中国海油/中远海能/中海油服等核心标的",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://finance.eastmoney.com/a/202607083797715085.html",
+      "https://finance.ifeng.com/c/8uaXPd6uqvI",
+      "http://m.21jingji.com/article/20260708/herald/c8537cc4915f8f83da6c6e8a980d31ad_zaker.html"
+    ]
+  },
+  {
+    "events": [
+      {
+        "event": "神工股份（688233）公告拟投资约11.3亿元建设三大半导体硅材料项目：硅零部件新品研发及扩产（5.86亿元/5年）、集成电路制造关键材料（3.26亿元/3年）、封装及微纳光电用硅材料（2.18亿元/2年）",
+        "event_time": "2026-07-07 22:26",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "半导体设备材料板块重要事件：神工作为半导体硅材料细分龙头，砸重金布局三大硅材料赛道，延伸半导体设备/材料/封测全产业链布局，属于半导体板块有实质意义的资本开支动态",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://www.coze.cn/share-article/201783426810378080",
+      "http://www.cnstock.com/commonDetail/740173",
+      "https://finance.eastmoney.com/a/202607073796935211.html"
+    ]
+  }
+]

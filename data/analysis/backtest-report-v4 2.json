@@ -1,0 +1,360 @@
+{
+  "algorithm": "Multi-Reference Point Mapping",
+  "version": "4.0",
+  "innovations": [
+    "线性回归趋势预测（近3年）",
+    "趋势-平均混合（70%-30%）",
+    "R²自适应加权",
+    "稳定性因子优化"
+  ],
+  "backtestDate": "2026-11-23T08:56:41.380Z",
+  "trainingYears": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "targetYear": 2024,
+  "anchorSchools": [
+    {
+      "code": "65028",
+      "name": "山西大学附属中学校",
+      "weight": 1
+    },
+    {
+      "code": "65010",
+      "name": "山西省实验中学（晋阳街校区）",
+      "weight": 0.95
+    },
+    {
+      "code": "65001",
+      "name": "太原市外国语学校（漪汾校区）",
+      "weight": 0.9
+    },
+    {
+      "code": "65003",
+      "name": "太原市成成中学校（迎泽校区）",
+      "weight": 0.85
+    },
+    {
+      "code": "65005",
+      "name": "太原市第五中学校（青年路校区）",
+      "weight": 0.8
+    }
+  ],
+  "results": [
+    {
+      "schoolCode": "65028",
+      "schoolName": "山西大学附属中学校",
+      "targetYear": 2024,
+      "predictedScore": null,
+      "trendPrediction": null,
+      "avgPrediction": null,
+      "actualScore": 685,
+      "error": null,
+      "confidence": "low",
+      "anchorCount": 5,
+      "avgR2": null,
+      "avgStability": 4.8,
+      "predictions": [
+        {
+          "anchorName": "山西大学附属中学校",
+          "anchorScore": 685,
+          "trendDiff": 0,
+          "avgDiff": 0,
+          "trendPredicted": 685,
+          "avgPredicted": 685,
+          "trendR2": null,
+          "weight": null,
+          "stability": "high"
+        },
+        {
+          "anchorName": "太原市外国语学校（漪汾校区）",
+          "anchorScore": 631,
+          "trendDiff": -3.3,
+          "avgDiff": 24.4,
+          "trendPredicted": 628,
+          "avgPredicted": 655,
+          "trendR2": 0.78,
+          "weight": 0.91,
+          "stability": "high"
+        },
+        {
+          "anchorName": "太原市成成中学校（迎泽校区）",
+          "anchorScore": 636,
+          "trendDiff": 30.3,
+          "avgDiff": 37.1,
+          "trendPredicted": 666,
+          "avgPredicted": 673,
+          "trendR2": 0.22,
+          "weight": 0.33,
+          "stability": "high"
+        },
+        {
+          "anchorName": "太原市第五中学校（青年路校区）",
+          "anchorScore": 675,
+          "trendDiff": 2.7,
+          "avgDiff": 10.4,
+          "trendPredicted": 678,
+          "avgPredicted": 685,
+          "trendR2": 0.55,
+          "weight": 0.57,
+          "stability": "high"
+        }
+      ]
+    },
+    {
+      "schoolCode": "65005",
+      "schoolName": "太原市第五中学校（青年路校区）",
+      "targetYear": 2024,
+      "predictedScore": null,
+      "trendPrediction": null,
+      "avgPrediction": null,
+      "actualScore": 675,
+      "error": null,
+      "confidence": "low",
+      "anchorCount": 5,
+      "avgR2": null,
+      "avgStability": 5.1,
+      "predictions": [
+        {
+          "anchorName": "山西大学附属中学校",
+          "anchorScore": 685,
+          "trendDiff": -2.7,
+          "avgDiff": -10.4,
+          "trendPredicted": 682,
+          "avgPredicted": 675,
+          "trendR2": 0.55,
+          "weight": 0.71,
+          "stability": "high"
+        },
+        {
+          "anchorName": "太原市外国语学校（漪汾校区）",
+          "anchorScore": 631,
+          "trendDiff": -6,
+          "avgDiff": 14,
+          "trendPredicted": 625,
+          "avgPredicted": 645,
+          "trendR2": 0.85,
+          "weight": 1,
+          "stability": "high"
+        },
+        {
+          "anchorName": "太原市成成中学校（迎泽校区）",
+          "anchorScore": 636,
+          "trendDiff": 27.7,
+          "avgDiff": 26.7,
+          "trendPredicted": 664,
+          "avgPredicted": 663,
+          "trendR2": 0,
+          "weight": 0.33,
+          "stability": "high"
+        },
+        {
+          "anchorName": "太原市第五中学校（青年路校区）",
+          "anchorScore": 675,
+          "trendDiff": 0,
+          "avgDiff": 0,
+          "trendPredicted": 675,
+          "avgPredicted": 675,
+          "trendR2": null,
+          "weight": null,
+          "stability": "high"
+        }
+      ]
+    },
+    {
+      "schoolCode": "66005",
+      "schoolName": "太原市第五中学校（龙城校区）",
+      "targetYear": 2024,
+      "predictedScore": 650,
+      "trendPrediction": 647,
+      "avgPrediction": 659,
+      "actualScore": 672,
+      "error": null,
+      "confidence": "low",
+      "anchorCount": 5,
+      "avgR2": 0.32,
+      "avgStability": 7.3,
+      "predictions": [
+        {
+          "anchorName": "山西大学附属中学校",
+          "anchorScore": 685,
+          "trendDiff": -16.7,
+          "avgDiff": -14,
+          "trendPredicted": 668,
+          "avgPredicted": 671,
+          "trendR2": 0,
+          "weight": 0.39,
+          "stability": "high"
+        },
+        {
+          "anchorName": "太原市外国语学校（漪汾校区）",
+          "anchorScore": 631,
+          "trendDiff": -20,
+          "avgDiff": 10.4,
+          "trendPredicted": 611,
+          "avgPredicted": 641,
+          "trendR2": 0.51,
+          "weight": 0.45,
+          "stability": "medium"
+        },
+        {
+          "anchorName": "太原市成成中学校（迎泽校区）",
+          "anchorScore": 636,
+          "trendDiff": 13.7,
+          "avgDiff": 23.1,
+          "trendPredicted": 650,
+          "avgPredicted": 659,
+          "trendR2": 0.92,
+          "weight": 1.02,
+          "stability": "high"
+        },
+        {
+          "anchorName": "太原市第五中学校（青年路校区）",
+          "anchorScore": 675,
+          "trendDiff": -14,
+          "avgDiff": -3.6,
+          "trendPredicted": 661,
+          "avgPredicted": 671,
+          "trendR2": 0.12,
+          "weight": 0.31,
+          "stability": "high"
+        }
+      ]
+    },
+    {
+      "schoolCode": "65001",
+      "schoolName": "太原市外国语学校（漪汾校区）",
+      "targetYear": 2024,
+      "predictedScore": null,
+      "trendPrediction": null,
+      "avgPrediction": null,
+      "actualScore": 631,
+      "error": null,
+      "confidence": "low",
+      "anchorCount": 5,
+      "avgR2": null,
+      "avgStability": 6.5,
+      "predictions": [
+        {
+          "anchorName": "山西大学附属中学校",
+          "anchorScore": 685,
+          "trendDiff": 3.3,
+          "avgDiff": -24.4,
+          "trendPredicted": 688,
+          "avgPredicted": 661,
+          "trendR2": 0.78,
+          "weight": 1.01,
+          "stability": "high"
+        },
+        {
+          "anchorName": "太原市外国语学校（漪汾校区）",
+          "anchorScore": 631,
+          "trendDiff": 0,
+          "avgDiff": 0,
+          "trendPredicted": 631,
+          "avgPredicted": 631,
+          "trendR2": null,
+          "weight": null,
+          "stability": "high"
+        },
+        {
+          "anchorName": "太原市成成中学校（迎泽校区）",
+          "anchorScore": 636,
+          "trendDiff": 33.7,
+          "avgDiff": 12.7,
+          "trendPredicted": 670,
+          "avgPredicted": 649,
+          "trendR2": 0.31,
+          "weight": 0.34,
+          "stability": "high"
+        },
+        {
+          "anchorName": "太原市第五中学校（青年路校区）",
+          "anchorScore": 675,
+          "trendDiff": 6,
+          "avgDiff": -14,
+          "trendPredicted": 681,
+          "avgPredicted": 661,
+          "trendR2": 0.85,
+          "weight": 0.89,
+          "stability": "high"
+        }
+      ]
+    },
+    {
+      "schoolCode": "65003",
+      "schoolName": "太原市成成中学校（迎泽校区）",
+      "targetYear": 2024,
+      "predictedScore": null,
+      "trendPrediction": null,
+      "avgPrediction": null,
+      "actualScore": 636,
+      "error": null,
+      "confidence": "low",
+      "anchorCount": 5,
+      "avgR2": null,
+      "avgStability": 5.9,
+      "predictions": [
+        {
+          "anchorName": "山西大学附属中学校",
+          "anchorScore": 685,
+          "trendDiff": -30.3,
+          "avgDiff": -37.1,
+          "trendPredicted": 655,
+          "avgPredicted": 648,
+          "trendR2": 0.22,
+          "weight": 0.39,
+          "stability": "high"
+        },
+        {
+          "anchorName": "太原市外国语学校（漪汾校区）",
+          "anchorScore": 631,
+          "trendDiff": -33.7,
+          "avgDiff": -12.7,
+          "trendPredicted": 597,
+          "avgPredicted": 618,
+          "trendR2": 0.31,
+          "weight": 0.36,
+          "stability": "high"
+        },
+        {
+          "anchorName": "太原市成成中学校（迎泽校区）",
+          "anchorScore": 636,
+          "trendDiff": 0,
+          "avgDiff": 0,
+          "trendPredicted": 636,
+          "avgPredicted": 636,
+          "trendR2": null,
+          "weight": null,
+          "stability": "high"
+        },
+        {
+          "anchorName": "太原市第五中学校（青年路校区）",
+          "anchorScore": 675,
+          "trendDiff": -27.7,
+          "avgDiff": -26.7,
+          "trendPredicted": 647,
+          "avgPredicted": 648,
+          "trendR2": 0,
+          "weight": 0.31,
+          "stability": "high"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "mae": null,
+    "within3Count": 0,
+    "within3Rate": "0.0%",
+    "within5Count": 0,
+    "within5Rate": "0.0%",
+    "within10Count": 0,
+    "within10Rate": "0.0%",
+    "targetAchieved": false
+  }
+}

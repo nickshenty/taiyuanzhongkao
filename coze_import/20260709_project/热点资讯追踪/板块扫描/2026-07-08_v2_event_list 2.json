@@ -1,0 +1,36 @@
+[
+  {
+    "events": [
+      {
+        "event": "伊朗过去24小时在霍尔木兹海峡袭击三艘商船（卡塔尔LNG运输船+沙特油轮+第三艘油轮），船只被迫改道，油价暴涨约5%：WTI涨至72美元，布伦特涨至75美元上方",
+        "event_time": "2026-07-08 04:10",
+        "relevance_level": "强相关",
+        "time_duplicate_confirmed": true,
+        "time_duplicate_note": "与2026-07-07 20:00的EIA油价下调事件时间重合，但属完全不同事件：EIA是下调油价预期的机构预测，本事件是伊朗实际军事袭击霍尔木兹商船并导致油价暴涨5%的真实市场事件，属全新事实进展。"
+      }
+    ],
+    "relevance_with_topic": "霍尔木兹海峡是全球最重要的石油运输通道，伊朗袭击商船直接冲击原油供应安全，油价暴涨约5%，直接影响金转油能源板块中的油气方向（中远海能/中国海油等），属板块直接相关事件。",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://money.cfi.cn/p20260708000041.html",
+      "http://www.xinhuanet.com/milpro/20260708/9ca81e8c70444af9900d27cc4b4b3e4d/c.html",
+      "https://news.ifeng.com/c/8uaQX6nMzc5"
+    ]
+  },
+  {
+    "events": [
+      {
+        "event": "人形机器人概念板块7月8日盘中大幅震荡调整：埃斯顿跌停（成交额8.70亿），丰光精密跌超12%，绿的谐波跌近15%，巨轮智能、拓普集团、奥比中光等跌幅居前",
+        "event_time": "2026-07-08 09:38",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "人形机器人板块盘中出现明显个股和板块级别调整，埃斯顿（机器人龙头）、丰光精密、绿的谐波（核心零部件减速器）、巨轮智能等多只概念股大跌，属机器人板块短期资金面异动，与前期板块连续上涨形成对比，值得关注板块内部分化与后续走向。",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://finance.eastmoney.com/a/202607083797785176.html",
+      "https://finance.sina.com.cn/stock/aiassist/ydfx/2026-07-08/doc-inihaawe8205384.shtml",
+      "https://www.cls.cn/detail/2419937"
+    ]
+  }
+]

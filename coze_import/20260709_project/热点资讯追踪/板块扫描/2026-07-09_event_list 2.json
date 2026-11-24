@@ -1,0 +1,34 @@
+[
+  {
+    "events": [
+      {
+        "event": "美军对伊朗发动新一轮打击（连续第二天），伊朗阿巴斯港、恰巴哈尔港、布什尔等地传出爆炸，霍尔木兹海峡油轮通行已\"基本停止\"",
+        "event_time": "2026-07-09 02:00",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "直接影响油气板块走势，霍尔木兹海峡通行停滞将进一步推高原油溢价，与金转油能源板块直接相关",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://news.cctv.com/2026/07/09/ARTIIXeu5EacuBmrDzoQVtSk260709.shtml",
+      "https://cbgc.scol.com.cn/news/7742398",
+      "http://news.china.com.cn/2026-07/09/content_118590036.shtml"
+    ]
+  },
+  {
+    "events": [
+      {
+        "event": "国际油价7月8日大幅上涨：WTI收于73.52美元/桶（+4.37%），布伦特收于78.02美元/桶（+5.2%），盘后交易布伦特进一步涨至79.39美元",
+        "event_time": "2026-07-08 22:00",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "布伦特突破78美元/桶收盘，霍尔木兹海峡通行受阻叠加供应担忧，油气板块直接受益",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "http://www.xinhuanet.com/20260709/26d5403dc4ad4883a67cb35ca09259d6/c.html",
+      "https://finance.eastmoney.com/a/202607083798620881.html",
+      "https://www.morningstar.com/news/marketwatch/20260708442/oil-prices-extend-gains-after-hours-as-us-forces-conduct-additional-strikes-on-iran"
+    ]
+  }
+]

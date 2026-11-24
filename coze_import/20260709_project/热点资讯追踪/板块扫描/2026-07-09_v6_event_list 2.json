@@ -1,0 +1,18 @@
+[
+  {
+    "events": [
+      {
+        "event": "伊朗陆军扩大打击范围，宣布袭击科威特美军\"爱国者\"防空系统、卡塔尔卫星通信预警设施及巴林美军燃料库，以军另一军种行动落地\"扩大回击\"警告",
+        "event_time": "2026-07-09 14:20",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "伊朗扩大回击范围并打击关键军事设施，直接影响霍尔木兹海峡局势走向和全球油价，是金转油能源板块的核心驱动因素",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://news.cctv.com/2026/07/09/ARTIOqfDIjCD9nr5mBpdt5F0260709.shtml",
+      "https://news.ifeng.com/c/8ucSBzHlOnp",
+      "https://m.gelonghui.com/live/2544324"
+    ]
+  }
+]

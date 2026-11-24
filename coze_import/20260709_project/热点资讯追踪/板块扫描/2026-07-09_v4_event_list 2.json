@@ -1,0 +1,34 @@
+[
+  {
+    "events": [
+      {
+        "event": "伊朗革命卫队海空联合发动导弹和无人机反击，袭击科威特（阿里夫坚/阿里·萨利姆空军基地）和巴林（朱费尔/谢赫伊萨空军基地）两处美军基地，宣布摧毁85处美军目标",
+        "event_time": "2026-07-09 10:45",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "美伊军事冲突重大升级——伊朗首次以海空协同方式反击美军中东基地，直接影响霍尔木兹海峡安全，对A股油气板块形成持续催化，直接符合金转油能源板块追踪定义",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "http://www.xinhuanet.com/20260709/dd27f4eeeb95437bb22877fe188abe51/c.html",
+      "https://content-static.cctvnews.cctv.com/snow-book/index.html?item_id=15692714243346272658",
+      "https://news.ifeng.com/c/8ucF3Fw2Bfj"
+    ]
+  },
+  {
+    "events": [
+      {
+        "event": "A股油气板块午后再次大幅拉升：山东墨龙走出2连板触及涨停，通源石油触及20cm涨停，新锦动力、中曼石油、长江能科等跟涨；此前布伦特原油盘中已突破$80/桶",
+        "event_time": "2026-07-09 11:10",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "A股油气板块盘中再度强势，直接验证伊朗冲突升级对金转油能源板块的催化效果，个股异动符合板块追踪定义",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "https://finance.eastmoney.com/a/202607093799742354.html",
+      "https://cj.sina.cn/article/norm_detail?froms=ttmp&url=https%3A%2F%2Ffinance.sina.com.cn%2Fjjxw%2F2026-07-09%2Fdoc-inihench4562534.shtml",
+      "https://www.mrjjxw.com/articles/2026-07-09/4463274.html"
+    ]
+  }
+]

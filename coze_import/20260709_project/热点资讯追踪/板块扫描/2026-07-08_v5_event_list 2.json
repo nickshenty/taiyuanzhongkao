@@ -1,0 +1,18 @@
+[
+  {
+    "events": [
+      {
+        "event": "伊朗革命卫队宣布对美反击：摧毁中东85处美军设施，击落一架MQ-9\"死神\"无人机",
+        "event_time": "2026-07-08 08:00",
+        "relevance_level": "强相关"
+      }
+    ],
+    "relevance_with_topic": "伊朗革命卫队反击美军是霍尔木兹局势的最新升级，直接影响中东原油供应预期和全球油价，A股油气板块已作出反应，属于金转油能源板块的核心追踪事件",
+    "source_type": "cross_valid",
+    "support_urls": [
+      "http://www.xinhuanet.com/20260708/08b06d3245d04ad29b40f54cec9bbb6b/c.html",
+      "https://content-static.cctvnews.cctv.com/snow-book/index.html?channelId=1215&item_id=539193723588422970&toc_style_id=feeds_default",
+      "https://www.chosun.com/english/world-en/2026/07/08/ZKIDRBYZYZGFXFQSA6TRCWED7I/"
+    ]
+  }
+]
