@@ -27,7 +27,7 @@
 ### 1.1 OCR 表交叉校验（2026-11-25 补录）
 
 用户用图像识别将 2026 年官方分数线表转为 CSV（`data/sources/2026-录取分数线.csv`，99 行）。
-本仓库已将其解析为 `data/years/2026-ocr.json` 并做了逐项校验：
+本仓库通过 `scripts/parse-score-csv.js` 将其解析为 `data/years/2026-ocr.json` 并做了逐项校验：
 
 | 校验项 | 结果 |
 |--------|------|
@@ -199,6 +199,39 @@ rescore(relPosPred, 新控制线, 新总分)   // 见 backend/src/algorithms/pre
 
 ---
 
+### 5.1 数据修复记录
+
+导入 2026 CSV 过程中发现并修复了两处数据质量问题：
+
+1. **2025 年 3 所学校缺少有效代码**（阳曲一中、娄烦中学、古交一中原始数据为 `"待核对"`），
+   会污染 `schools` 表并使 2025 覆盖率少算 3 所。已按 2026 年正式代码补正
+   （65042 / 65041 / 65039），导入器也加了「代码必须为 5 位数字」的防御校验。
+2. **跨年份代码变更**（娄烦 2024=68001 → 2026=65041、阳曲 2024=67001 → 2026=65042）
+   导致同一所学校在库中出现两条记录。已通过迁移 004 增加 `schools.is_current`，
+   列表接口默认只返回当前在用代码，历史代码用 `?includeLegacy=true` 查看。
+
+### 5.2 2025 年数据接入（待办）
+
+2025 年官方表同样只有图片。OCR 完成后按以下步骤接入，无需改代码：
+
+```bash
+# 1) 放好 CSV（列名与 2026 版一致：学校代码/招生学校/第X志愿-总分/特色办学实验班-总分）
+cp ~/Desktop/2025.csv data/sources/2025-录取分数线.csv
+
+# 2) 解析（年份框架内置 850/615，可显式覆盖）
+node scripts/parse-score-csv.js --year=2025
+
+# 3) 重建历史 → 重新预测 → 重新导入
+node scripts/build-history-2027.js
+node scripts/generate-predictions-2027.js
+cd backend && npm run seed
+```
+
+> 2025 年数据补齐后，12 个 `low` 置信度单元中大部分可升级，
+> 且动量改为"2026+2025"双锚点，预计 MAE 进一步下降。
+
+---
+
 ## 六、复现与部署
 
 ```bash
@@ -236,6 +269,7 @@ cd backend && npm test && npm run test:smoke
 
 ## 七、相关文件
 
+- OCR 解析：[parse-score-csv.js](scripts/parse-score-csv.js)
 - 历史补全：[build-history-2027.js](scripts/build-history-2027.js) → [history-full.json](data/history-full.json)
 - 预测生成：[generate-predictions-2027.js](scripts/generate-predictions-2027.js) → [predictions2027.json](data/predictions2027.json)
 - 算法实现：[predictionAlgorithmV1.5.js](backend/src/algorithms/predictionAlgorithmV1.5.js)

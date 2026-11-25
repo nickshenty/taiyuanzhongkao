@@ -1,12 +1,12 @@
 /**
- * 解析 2026 年录取分数线 OCR 表（data/sources/2026-录取分数线.csv）
+ * 解析录取分数线 OCR 表（官方公布表图片 → CSV）
  *
- * 来源：太原市教育局公布表（图片）经 OCR 识别为 CSV
- * 校验：与原 data/years/2026.js 的 98 条逐项比对，分数 0 差异；
- *       本表额外提供 75028 山西大学附属中学晋中学校（仅第二志愿起可填）
- *       以及第一~第五志愿的完整分档线。
+ * 来源：太原市教育局公布表经 OCR 识别为 CSV
+ * 对 2026 年的校验：与原 data/years/2026.js 的 98 条逐项比对，分数 0 差异；
+ *   本表额外提供 75028 山西大学附属中学晋中学校（仅第二志愿起可填）
+ *   以及第一~第五志愿的完整分档线。
  *
- * 输出：data/years/2026-ocr.json
+ * 输出：data/years/{year}-ocr.json
  *   { year, totalScore, controlLine, source, schools: [
  *       { code, name, lastLine, lineChoice, choiceLines:{first..fifth},
  *         specialLine, quotaLine, quotaLineYear }
@@ -15,18 +15,32 @@
  * lastLine 语义 = 该校统招录取线（优先第一志愿；若仅后续志愿有值则取该值，
  *                 并用 lineChoice 标注来源，避免误读）。
  *
- * 用法：node scripts/parse-2026-csv.js
+ * 用法：
+ *   node scripts/parse-score-csv.js                     # 默认 2026
+ *   node scripts/parse-score-csv.js --year=2025
+ *   node scripts/parse-score-csv.js --year=2025 --input=/path/to/2025.csv
+ *   node scripts/parse-score-csv.js --year=2025 --total=850 --control=615
  */
 
 const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const CSV = path.join(ROOT, 'data', 'sources', '2026-录取分数线.csv');
-const OUT = path.join(ROOT, 'data', 'years', '2026-ocr.json');
-const YEAR_JS = path.join(ROOT, 'data', 'years', '2026.js');
 
-const YEAR = 2026;
+function argOf(name, def) {
+  const hit = process.argv.find(a => a.startsWith(`--${name}=`));
+  return hit ? hit.slice(name.length + 3) : def;
+}
+
+const YEAR = Number(argOf('year', 2026));
+if (!Number.isFinite(YEAR) || YEAR < 2000 || YEAR > 2100) {
+  throw new Error(`无效的 --year=${argOf('year')}`);
+}
+
+const DEFAULT_CSV = path.join(ROOT, 'data', 'sources', `${YEAR}-录取分数线.csv`);
+const CSV = argOf('input', DEFAULT_CSV);
+const OUT = path.join(ROOT, 'data', 'years', `${YEAR}-ocr.json`);
+const YEAR_JS = path.join(ROOT, 'data', 'years', `${YEAR}.js`);
 
 // ==================== CSV 解析（支持引号与逗号转义） ====================
 
@@ -102,7 +116,13 @@ function main() {
 
   // 定向线来自 2026.js（OCR 表不含定向线）
   let quotaByCode = new Map();
-  let frame = { totalScore: 839, controlLine: 603 };
+  // 默认框架按年份内置，可用 --total / --control 覆盖
+  const knownFrames = { 2025: { totalScore: 850, controlLine: 615 }, 2026: { totalScore: 839, controlLine: 603 } };
+  let frame = knownFrames[YEAR] ?? { totalScore: null, controlLine: null };
+  const argTotal = Number(argOf('total', NaN));
+  const argControl = Number(argOf('control', NaN));
+  if (Number.isFinite(argTotal)) frame.totalScore = argTotal;
+  if (Number.isFinite(argControl)) frame.controlLine = argControl;
   if (fs.existsSync(YEAR_JS)) {
     const d = require(YEAR_JS); // eslint-disable-line
     frame = { totalScore: d.totalScore, controlLine: d.minControlLine };
@@ -210,7 +230,7 @@ function main() {
     year: YEAR,
     totalScore: frame.totalScore,
     controlLine: frame.controlLine,
-    source: 'data/sources/2026-录取分数线.csv（教育局公布表 OCR）',
+    source: `${path.relative(ROOT, CSV)}（教育局公布表 OCR）`,
     generatedAt: new Date().toISOString(),
     counts: {
       total: schools.length,
@@ -236,13 +256,13 @@ function main() {
 
   if (crossCheck) {
     console.log(
-      `\n与 2026.js 交叉校验：比对 ${crossCheck.compared} 条，一致 ${crossCheck.identical} 条，不一致 ${crossCheck.mismatch.length} 条`
+      `\n与 ${YEAR}.js 交叉校验：比对 ${crossCheck.compared} 条，一致 ${crossCheck.identical} 条，不一致 ${crossCheck.mismatch.length} 条`
     );
     crossCheck.mismatch.slice(0, 10).forEach(m =>
       console.log(`  ⚠️ ${m.code} ${m.name ?? ''}: CSV=${m.ocr} vs 2026.js=${m.old}`)
     );
     if (crossCheck.onlyInCsv.length) console.log(`  仅 CSV 有：${crossCheck.onlyInCsv.join(', ')}`);
-    if (crossCheck.onlyInOld.length) console.log(`  仅 2026.js 有：${crossCheck.onlyInOld.join(', ')}`);
+    if (crossCheck.onlyInOld.length) console.log(`  仅 ${YEAR}.js 有：${crossCheck.onlyInOld.join(', ')}`);
   }
 
   if (warnings.length) {

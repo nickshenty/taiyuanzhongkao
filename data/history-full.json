@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T07:12:25.872Z",
+  "generatedAt": "2026-11-25T07:14:08.185Z",
   "scope": {
     "totalEntries": 99,
     "specialEntries": 9,
@@ -107,8 +107,8 @@
     },
     "2025": {
       "total": 99,
-      "exact": 49,
-      "name": 6,
+      "exact": 52,
+      "name": 3,
       "parent": 0,
       "missing": 44
     },
@@ -5203,7 +5203,7 @@
       "special": false,
       "year": 2025,
       "score": 650,
-      "source": "name",
+      "source": "exact",
       "matchedName": "古交市第一中学校"
     },
     {
@@ -5403,7 +5403,7 @@
       "special": false,
       "year": 2025,
       "score": 675.1,
-      "source": "name",
+      "source": "exact",
       "matchedName": "娄烦县娄烦中学"
     },
     {
@@ -5503,7 +5503,7 @@
       "special": false,
       "year": 2025,
       "score": 699.5,
-      "source": "name",
+      "source": "exact",
       "matchedName": "阳曲县第一中学校"
     },
     {

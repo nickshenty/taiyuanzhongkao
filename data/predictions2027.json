@@ -1,7 +1,7 @@
 {
   "targetYear": 2027,
   "algorithm": "v1.5-generalized",
-  "generatedAt": "2026-11-25T07:12:28.545Z",
+  "generatedAt": "2026-11-25T07:14:08.218Z",
   "parameters": {
     "momentumWeight": 0.5,
     "momentumCap": 0.05

@@ -3,7 +3,7 @@
   "totalScore": 839,
   "controlLine": 603,
   "source": "data/sources/2026-录取分数线.csv（教育局公布表 OCR）",
-  "generatedAt": "2026-11-25T07:12:07.489Z",
+  "generatedAt": "2026-11-25T07:13:29.693Z",
   "counts": {
     "total": 99,
     "withFirstChoice": 94,

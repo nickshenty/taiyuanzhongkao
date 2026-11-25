@@ -197,8 +197,14 @@ async function main() {
 
   // ---- 2. schools（合并所有年份，补全 type/district）----
   const schoolMap = new Map();
+  const invalidCodes = [];
   for (const d of loaded) {
     for (const s of d.schools) {
+      // 学校代码必须是 5 位数字；历史数据曾出现 "待核对" 之类占位值
+      if (!/^\d{5}$/.test(String(s.code))) {
+        invalidCodes.push({ year: d.year, code: s.code, name: s.name });
+        continue;
+      }
       const prev = schoolMap.get(s.code) || {};
       schoolMap.set(s.code, {
         code: s.code,
@@ -208,6 +214,14 @@ async function main() {
       });
     }
   }
+  if (invalidCodes.length) {
+    console.warn(`⚠️  跳过 ${invalidCodes.length} 条非法学校代码记录：`);
+    for (const b of invalidCodes.slice(0, 10)) {
+      console.warn(`   ${b.year} ${JSON.stringify(b.code)} ${b.name}`);
+    }
+    console.warn('   请在数据源中修正为正式学校代码后重新导入。');
+  }
+
   for (const s of schoolMap.values()) {
     await pool.execute(
       `INSERT INTO schools (code, name, type, district)
@@ -219,12 +233,27 @@ async function main() {
       [s.code, s.name, s.type, s.district]
     );
   }
-  console.log(`✅ schools：${schoolMap.size} 条`);
+  // 重算 is_current：以本次导入的最新年份有录取数据的学校为准
+  const maxYear = Math.max(...loaded.map(d => d.year));
+  await pool.execute('UPDATE schools SET is_current = 0');
+  await pool.execute(
+    `UPDATE schools s
+     SET s.is_current = 1
+     WHERE EXISTS (
+       SELECT 1 FROM (
+         SELECT DISTINCT school_code FROM admission_lines WHERE year = ?
+       ) t WHERE t.school_code = s.code
+     )`,
+    [maxYear]
+  );
+  const [[curRow]] = await pool.query('SELECT COUNT(*) AS n FROM schools WHERE is_current = 1');
+  console.log(`✅ schools：${schoolMap.size} 条（当前在用 ${curRow.n} 条，基准年 ${maxYear}）`);
 
   // ---- 3. admission_lines ----
   let lineCount = 0;
   for (const d of loaded) {
     for (const s of d.schools) {
+      if (!/^\d{5}$/.test(String(s.code))) continue; // 已在 schools 阶段报告
       if (s.lastLine == null && s.quotaLine == null) continue;
       await pool.execute(
         `INSERT INTO admission_lines

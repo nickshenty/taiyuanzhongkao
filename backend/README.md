@@ -46,13 +46,17 @@ docker exec -i tyzk-mysql mysql -uroot -ptyzk123456 taiyuan_zhongkao \
   < database/migrations/001_create_tables.sql
 docker exec -i tyzk-mysql mysql -uroot -ptyzk123456 taiyuan_zhongkao \
   < database/migrations/002_fix_prediction_strategy_enum.sql
+docker exec -i tyzk-mysql mysql -uroot -ptyzk123456 taiyuan_zhongkao \
+  < database/migrations/003_add_choice_lines.sql
+docker exec -i tyzk-mysql mysql -uroot -ptyzk123456 taiyuan_zhongkao \
+  < database/migrations/004_add_school_is_current.sql
 ```
 
 ### 5. 生成预测并导入数据
 
 ```bash
 # 在仓库根目录：解析OCR表 → 补全历史 → 生成 2027 预测
-node scripts/parse-2026-csv.js
+node scripts/parse-score-csv.js
 node scripts/build-history-2027.js
 node scripts/generate-predictions-2027.js
 
@@ -172,7 +176,7 @@ backend/
 │   ├── routes/                   # 路由定义
 │   └── config/database.js        # 连接池
 ├── database/
-│   ├── migrations/               # 001 建表 / 002 修正枚举 / 003 分志愿线
+│   ├── migrations/               # 001 建表 / 002 修正枚举 / 003 分志愿线 / 004 当前在用
 │   └── seeds/import_all.js       # 统一数据导入
 ├── tests/                        # 单元测试
 ├── smoke-test.mjs                # 路由冒烟测试（自适应有无数据库）
@@ -198,7 +202,7 @@ npm run test:smoke  # 路由与接口冒烟（自动探测数据库）
 | 表 | 说明 |
 |----|------|
 | `years` | 年份总分/控制线（含 2027 预测框架行）|
-| `schools` | 学校基础信息（校区级代码）|
+| `schools` | 学校基础信息（校区级代码）；`is_current` 标记当前在用代码 |
 | `admission_lines` | 历年录取线（统招线、定向线、分志愿线 `choice_lines`、特色班线）|
 | `predictions` | 预测结果（含策略、置信度）|
 | `junior_schools` | 初中学校 |
@@ -209,6 +213,10 @@ npm run test:smoke  # 路由与接口冒烟（自动探测数据库）
 > 以容纳 `relative-position-momentum` 等实际取值（见迁移 002）。
 > `admission_lines` 通过迁移 003 新增 `choice_lines`(JSON) / `special_line` / `line_choice`，
 > 用于保存第一~第五志愿的分档录取线与特色班线。
+>
+> 部分学校跨年份更换招生代码（如娄烦县娄烦中学 2024=68001 → 2026=65041），
+> 迁移 004 增加 `schools.is_current` 标记。学校列表类接口默认只返回当前在用代码，
+> 需要查看历史代码时传 `?includeLegacy=true`。
 
 ---
 

@@ -16,9 +16,12 @@ function safeJson(v) {
 async function getSchools(req, res) {
   try {
     const { name, type, district, page = 1, limit = 20 } = req.query;
+    // 默认只列当前在用招生代码，避免跨年代码变更导致的重复条目
+    const includeLegacy = req.query.includeLegacy === 'true';
 
-    let sql = 'SELECT code, name, type, district FROM schools WHERE 1=1';
+    let sql = 'SELECT code, name, type, district, is_current as isCurrent FROM schools WHERE 1=1';
     const params = [];
+    if (!includeLegacy) sql += ' AND is_current = 1';
 
     // 按名称搜索
     if (name) {
@@ -41,9 +44,13 @@ async function getSchools(req, res) {
     sql += ' ORDER BY code';
 
     // 获取总数
-    const countResult = await query(`SELECT COUNT(*) as total FROM schools WHERE 1=1 ${
-      name ? 'AND name LIKE ?' : ''
-    } ${type ? 'AND type = ?' : ''} ${district ? 'AND district = ?' : ''}`, params);
+    const countSql =
+      'SELECT COUNT(*) as total FROM schools WHERE 1=1' +
+      (includeLegacy ? '' : ' AND is_current = 1') +
+      (name ? ' AND name LIKE ?' : '') +
+      (type ? ' AND type = ?' : '') +
+      (district ? ' AND district = ?' : '');
+    const countResult = await query(countSql, params);
     const total = countResult[0].total;
 
     // 分页（LIMIT/OFFSET 使用已校验整数直拼，避免 mysql2 预处理限制）
@@ -186,7 +193,11 @@ async function getSchoolHistory(req, res) {
  */
 async function getAllSchools(req, res) {
   try {
-    const sql = 'SELECT code, name, district FROM schools ORDER BY code';
+    const includeLegacy = req.query.includeLegacy === 'true';
+    const sql =
+      'SELECT code, name, district FROM schools' +
+      (includeLegacy ? '' : ' WHERE is_current = 1') +
+      ' ORDER BY code';
     const schools = await query(sql, []);
 
     // 按区县分组
@@ -219,7 +230,8 @@ async function getAllSchools(req, res) {
  */
 async function getSchoolTypes(req, res) {
   try {
-    const sql = 'SELECT DISTINCT type FROM schools WHERE type IS NOT NULL ORDER BY type';
+    const sql =
+      'SELECT DISTINCT type FROM schools WHERE type IS NOT NULL AND is_current = 1 ORDER BY type';
     const types = await query(sql, []);
 
     res.json({
@@ -240,7 +252,8 @@ async function getSchoolTypes(req, res) {
  */
 async function getDistricts(req, res) {
   try {
-    const sql = 'SELECT DISTINCT district FROM schools WHERE district IS NOT NULL ORDER BY district';
+    const sql =
+      'SELECT DISTINCT district FROM schools WHERE district IS NOT NULL AND is_current = 1 ORDER BY district';
     const districts = await query(sql, []);
 
     res.json({

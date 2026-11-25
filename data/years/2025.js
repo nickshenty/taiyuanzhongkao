@@ -1281,7 +1281,7 @@ const admissionData = {
     },
     {
       id: "no_code_yangqu_1",
-      code: "待核对",
+      code: "65042",
       name: "阳曲县第一中学校",
       type: "公办",
       district: "阳曲县",
@@ -1345,7 +1345,7 @@ const admissionData = {
     },
     {
       id: "no_code_loufan",
-      code: "待核对",
+      code: "65041",
       name: "娄烦县娄烦中学",
       type: "公办",
       district: "娄烦县",
@@ -1379,7 +1379,7 @@ const admissionData = {
     },
     {
       id: "no_code_gujiao_1",
-      code: "待核对",
+      code: "65039",
       name: "古交市第一中学校",
       type: "公办",
       district: "古交市",
