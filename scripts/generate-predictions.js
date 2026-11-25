@@ -74,10 +74,14 @@ async function main() {
     throw new Error(`非法的目标年 ${TARGET_YEAR}（必须大于基准年 ${LATEST_YEAR}）`);
   }
 
-  // 回测年份：取基准年及之前共 3 个有数据的年份
-  const BACKTEST_YEARS = availableYears
-    .filter(y => y <= LATEST_YEAR)
-    .slice(-3);
+  // 回测年份：默认覆盖全部可用年份（便于逐检验证算法稳定性）
+  // 可用 --backtest-years=3 只看最近 3 年
+  const btArg = argOf('backtest-years', 'all');
+  let BACKTEST_YEARS = availableYears.filter(y => y <= LATEST_YEAR);
+  if (btArg !== 'all') {
+    const k = Number(btArg);
+    if (Number.isFinite(k) && k > 0) BACKTEST_YEARS = BACKTEST_YEARS.slice(-k);
+  }
 
   const OUT = path.join(DATA_DIR, `predictions-${TARGET_YEAR}.json`);
   const OUT_LATEST = path.join(DATA_DIR, 'predictions-latest.json');
