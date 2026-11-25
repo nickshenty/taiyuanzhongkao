@@ -129,7 +129,7 @@ async function getPredictionStats(req, res) {
  */
 async function generatePredictionsController(req, res) {
   try {
-    const { year, referenceYear } = req.body;
+    const { year, dryRun } = req.body;
 
     if (!year) {
       return res.status(400).json({
@@ -138,7 +138,15 @@ async function generatePredictionsController(req, res) {
       });
     }
 
-    const result = await generatePredictions(year, referenceYear || 2023);
+    const targetYear = parseInt(year, 10);
+    if (!Number.isFinite(targetYear) || targetYear < 2020 || targetYear > 2100) {
+      return res.status(400).json({
+        success: false,
+        error: 'year 必须是合理年份（2020-2100）'
+      });
+    }
+
+    const result = await generatePredictions(targetYear, { dryRun: dryRun === true });
 
     if (!result.success) {
       return res.status(500).json(result);

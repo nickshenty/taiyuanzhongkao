@@ -1,9 +1,4 @@
-import {
-  predictSchoolScore,
-  predictYear,
-  getHighConfidenceSchools,
-  calculateStatistics
-} from '../algorithms/predictionAlgorithmV1.5.js';
+import { predictYear } from '../algorithms/predictionAlgorithmV1.5.js';
 import { query } from '../config/database.js';
 
 /**
@@ -37,8 +32,8 @@ async function loadYearSchools(year) {
     const schools = await query(sql, [year]);
     return schools;
   } catch (error) {
-    console.error(`Error loading schools for year ${year}:`, error);
-    return [];
+    console.error(`Error loading schools for year ${year}:`, error.message);
+    throw error;
   }
 }
 
@@ -57,8 +52,8 @@ async function loadYearMetadata(year) {
       totalScore: results[0].totalScore
     };
   } catch (error) {
-    console.error(`Error loading metadata for year ${year}:`, error);
-    return null;
+    console.error(`Error loading metadata for year ${year}:`, error.message);
+    throw error;
   }
 }
 
@@ -95,68 +90,120 @@ async function buildYearMetadata(years) {
 // ==================== 预测生成函数 ====================
 
 /**
- * 为指定年份生成预测
+ * 为指定年份生成预测并写入 predictions 表
+ *
+ * 模型：相对位置动量（见 algorithms/predictionAlgorithmV1.5.js）
+ * 需最近3年数据：target-1（必需）、target-2、target-3（可选，用于动量）
+ *
+ * 目标年框架（总分/控制线）：
+ *   - 若 years 表已有目标年记录，直接使用（官方公布后重算即为此路径）
+ *   - 否则沿用最近年框架，并在返回值中标注 assumedFrame=true
+ *
+ * @param {number} targetYear 目标年
+ * @param {object} options
+ * @param {boolean} options.dryRun 只算不写库
  */
-async function generatePredictions(targetYear, referenceYear = 2023) {
+async function generatePredictions(targetYear, options = {}) {
+  const { dryRun = false } = options;
+
   try {
-    console.log(`\n📊 开始为${targetYear}年生成预测...`);
+    console.log(`\n📊 开始为 ${targetYear} 年生成预测...`);
 
-    // 加载历史数据（需要2021、2023年数据用于异常学校预测）
-    const historicalData = await buildHistoricalData([2021, 2023]);
-    const yearMetadata = await buildYearMetadata([2021, 2023, targetYear]);
+    const years = [targetYear - 1, targetYear - 2, targetYear - 3];
+    const yearData = {};
 
-    if (!yearMetadata[targetYear]) {
-      throw new Error(`${targetYear}年元数据不存在`);
+    // 载入各年框架 + 学校分数线
+    for (const y of years) {
+      const meta = await loadYearMetadata(y);
+      if (!meta) {
+        if (y === targetYear - 1) throw new Error(`缺少 ${y} 年基础数据，无法预测`);
+        continue;
+      }
+      const schools = await loadYearSchools(y);
+      yearData[y] = {
+        controlLine: meta.controlLine,
+        totalScore: meta.totalScore,
+        schools: schools
+          .filter(s => s.lastLine != null)
+          .map(s => ({ code: s.code, name: s.name, lastLine: Number(s.lastLine) }))
+      };
     }
 
-    // 获取所有学校
-    const allSchools = await query('SELECT code, name FROM schools ORDER BY code');
+    // 目标年框架
+    const targetMeta = await loadYearMetadata(targetYear);
+    const latest = yearData[targetYear - 1];
+    const frameTarget = targetMeta
+      ? { controlLine: targetMeta.controlLine, totalScore: targetMeta.totalScore }
+      : { controlLine: latest.controlLine, totalScore: latest.totalScore };
+    const assumedFrame = !targetMeta;
 
-    // 执行预测
-    const predictions = predictYear(targetYear, historicalData, yearMetadata, allSchools);
+    if (assumedFrame) {
+      console.log(
+        `⚠️  ${targetYear} 年总分/控制线未公布，沿用 ${targetYear - 1} 年框架（${frameTarget.controlLine}/${frameTarget.totalScore}）`
+      );
+    }
 
-    console.log(`✅ 生成了${predictions.length}条预测`);
+    // 名单取最近年（校区级口径最完整）
+    const roster = latest.schools.map(s => ({ code: s.code, name: s.name }));
 
-    // 保存到数据库
+    const predictions = predictYear({
+      targetYear,
+      frameTarget,
+      years: yearData,
+      roster
+    });
+
+    console.log(`✅ 生成 ${predictions.length} 条预测`);
+
+    if (dryRun) {
+      return {
+        success: true,
+        year: targetYear,
+        count: predictions.length,
+        assumedFrame,
+        frame: frameTarget,
+        dryRun: true,
+        preview: predictions.slice(0, 10)
+      };
+    }
+
+    // 写库
     let savedCount = 0;
     for (const pred of predictions) {
-      const sql = `
-        INSERT INTO predictions 
-        (year, school_code, predicted_score, strategy, confidence, algorithm_version)
-        VALUES (?, ?, ?, ?, ?, ?)
-        ON DUPLICATE KEY UPDATE
-        predicted_score = VALUES(predicted_score),
-        strategy = VALUES(strategy),
-        confidence = VALUES(confidence),
-        updated_at = CURRENT_TIMESTAMP
-      `;
-
-      await query(sql, [
-        targetYear,
-        pred.schoolCode,
-        pred.predicted,
-        pred.strategy,
-        pred.confidence,
-        'v1.5'
-      ]);
-
+      await query(
+        `INSERT INTO predictions
+           (year, school_code, predicted_score, strategy, confidence, algorithm_version)
+         VALUES (?, ?, ?, ?, ?, ?)
+         ON DUPLICATE KEY UPDATE
+           predicted_score   = VALUES(predicted_score),
+           strategy          = VALUES(strategy),
+           confidence        = VALUES(confidence),
+           algorithm_version = VALUES(algorithm_version)`,
+        [
+          targetYear,
+          pred.schoolCode,
+          pred.predicted,
+          pred.strategy,
+          pred.confidence,
+          'v1.5-generalized'
+        ]
+      );
       savedCount++;
     }
 
-    console.log(`✅ 已保存${savedCount}条预测到数据库`);
+    console.log(`✅ 已写入 ${savedCount} 条预测`);
 
     return {
       success: true,
       year: targetYear,
       count: predictions.length,
-      savedCount
+      savedCount,
+      assumedFrame,
+      frame: frameTarget
     };
   } catch (error) {
-    console.error('预测生成失败:', error);
-    return {
-      success: false,
-      error: error.message
-    };
+    console.error('预测生成失败:', error.message);
+    return { success: false, error: error.message };
   }
 }
 
@@ -186,8 +233,8 @@ async function getPredictions(year) {
     const results = await query(sql, [year]);
     return results;
   } catch (error) {
-    console.error(`Error fetching predictions for year ${year}:`, error);
-    return [];
+    console.error(`Error fetching predictions for year ${year}:`, error.message);
+    throw error;
   }
 }
 
@@ -216,8 +263,8 @@ async function getHighConfidencePredictions(year) {
     const results = await query(sql, [year]);
     return results;
   } catch (error) {
-    console.error(`Error fetching high confidence predictions:`, error);
-    return [];
+    console.error(`Error fetching high confidence predictions:`, error.message);
+    throw error;
   }
 }
 
@@ -248,8 +295,8 @@ async function getSchoolPrediction(schoolCode, year) {
     const results = await query(sql, [schoolCode, year]);
     return results[0] || null;
   } catch (error) {
-    console.error(`Error fetching prediction for school ${schoolCode}:`, error);
-    return null;
+    console.error(`Error fetching prediction for school ${schoolCode}:`, error.message);
+    throw error;
   }
 }
 
@@ -293,8 +340,8 @@ async function getPredictionStatistics(year) {
       within3Percent: parseFloat(((stats.within3 / stats.validComparisons) * 100).toFixed(1))
     };
   } catch (error) {
-    console.error('Error calculating statistics:', error);
-    return null;
+    console.error('Error calculating statistics:', error.message);
+    throw error;
   }
 }
 

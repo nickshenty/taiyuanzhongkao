@@ -14,18 +14,29 @@ v1.5算法是基于异常检测和相对位置保持的分数线预测算法，�
 
 ---
 
-## 🎯 异常学校列表
+## 🎯 关于"异常学校列表"（已弃用）
 
-共识别6所异常学校：
+原始 v1.5 写死了 6 所"异常校"（2023→2024 变化≥30 分）并对其使用绝对分数趋势外推。
 
-| 代码 | 学校名称 | 变化 |
-|------|---------|------|
-| 55079 | 太原市清徐中学校 | +60分 |
-| 66002 | 清徐县徐沟中学校 | +59分 |
-| 55077 | 太原市杏岭实验学校 | +45分 |
-| 55074 | 太原市外国语凤凰双语中学校 | +36分 |
-| 55075 | 太原市同心外国语中学校 | +30分 |
-| 55071 | 太原市成才中学校 | +30分 |
+**该方法在 2027 年预测场景下失效**：2024→2025 中考总分由 730 提升至 850，
+几乎所有学校绝对分都跳涨≥30分，判定被考试框架变化污染（49 所样本中 18 所误判）。
+该分支回测 **MAE 达 68.5 分**。
+
+因此后端实现已改为**相对位置动量模型**：
+
+```
+relPos(Y)   = (score(Y) - controlLine(Y)) / (totalScore(Y) - controlLine(Y))
+d           = clamp((relPos_最新 - relPos_前二) / 2, -0.10, +0.10)
+relPos_pred = relPos_最新 + 0.5 × d
+score_pred  = controlLine_目标 + relPos_pred × (totalScore_目标 - controlLine_目标)
+```
+
+关于"异常校"概念：现降级为 `volatile` **提示标记**（|ΔrelPos|≥0.15），仅用于前端提示，
+不再改写预测数值。
+
+**2026 年回测：MAE 11.29 分，≤3分 30.6%，≤5分 42.9%，≤10分 81.6%。**
+
+完整数据审计与算法选型证据：[docs/PREDICTION_2027.md](../../docs/PREDICTION_2027.md)
 
 ---
 
@@ -60,10 +71,13 @@ POST /api/predictions/generate
 Content-Type: application/json
 
 {
-  "year": 2025,
-  "referenceYear": 2023
+  "year": 2027,
+  "dryRun": false
 }
 ```
+
+> `dryRun: true` 只计算并预览前 10 条，不写库。
+> 若目标年总分/控制线未在 `years` 表登记，将沿用最近年框架并在响应中标记 `assumedFrame: true`。
 
 **响应：**
 ```json
@@ -302,10 +316,14 @@ getPredictionStatistics(year)
 | updated_at | TIMESTAMP | 更新时间 |
 
 **strategy 值：**
-- `anomaly-trend`: 异常学校趋势外推法
-- `anomaly-holdover`: 异常学校直接保留法
-- `normal-relative-position`: 正常学校相对位置法
-- `failed`: 预测失败
+- `relative-position-momentum`: 相对位置动量法（当前主用）
+- `hold-relative`: 无历史锚点，保持最近年相对位置
+- `hold-absolute`: 缺年份框架，保持最近年绝对分数
+- 历史值 `anomaly-trend` / `anomaly-holdover` / `normal-relative-position` 仅存于旧数据
+
+> 数据库 `predictions.strategy` 原为 `ENUM('normal','anomaly')`，与算法实际取值不匹配，
+> 已通过迁移 [002_fix_prediction_strategy_enum.sql](../database/migrations/002_fix_prediction_strategy_enum.sql)
+> 改为 `VARCHAR(32)`。
 
 **confidence 值：**
 - `high`: 高置信度（异常学校趋势预测）
@@ -412,4 +430,4 @@ node database/seeds/import_data.js
 
 ---
 
-更新时间：2024-11-25
+更新时间：2026-11-25

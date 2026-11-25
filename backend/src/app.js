@@ -3,6 +3,10 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import predictionRoutes from './routes/predictionRoutes.js';
+import schoolRoutes from './routes/schoolRoutes.js';
+import juniorSchoolRoutes from './routes/juniorSchoolRoutes.js';
+import yearRoutes from './routes/yearRoutes.js';
+import recommendationRoutes from './routes/recommendationRoutes.js';
 
 // 加载环境变量
 dotenv.config();
@@ -52,6 +56,18 @@ app.get('/api', (req, res) => {
 // 预测相关路由
 app.use('/api/predictions', predictionRoutes);
 
+// 学校相关路由
+app.use('/api/schools', schoolRoutes);
+
+// 初中学校相关路由
+app.use('/api/junior-schools', juniorSchoolRoutes);
+
+// 年份相关路由
+app.use('/api/years', yearRoutes);
+
+// 志愿推荐相关路由
+app.use('/api/recommendations', recommendationRoutes);
+
 // 算法信息路由（备用入口）
 app.get('/api/algorithm/info', (req, res) => {
   res.json({
@@ -89,7 +105,5 @@ app.use((err, req, res, next) => {
     ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
   });
 });
-
-export default app;
 
 export default app;
