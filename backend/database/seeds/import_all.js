@@ -96,7 +96,8 @@ function loadOcr(year) {
       district: null,
       choiceLines: s.choiceLines ?? null,
       specialLine: s.specialLine ?? null,
-      lineChoice: s.lineChoice ?? null
+      lineChoice: s.lineChoice ?? null,
+      quotaCode: null
     })),
     juniorSchools: [],
     quotaAllocations: {}
@@ -124,6 +125,8 @@ function loadYear(year) {
         if (m) {
           school.type = school.type ?? m.type;
           school.district = school.district ?? m.district;
+          // 定向名额使用的是"定向代码"(如659xx)，必须保留才能正确映射
+          school.quotaCode = school.quotaCode ?? m.quotaCode ?? null;
         }
       }
     }

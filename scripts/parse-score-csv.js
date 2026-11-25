@@ -259,7 +259,7 @@ function main() {
       `\n与 ${YEAR}.js 交叉校验：比对 ${crossCheck.compared} 条，一致 ${crossCheck.identical} 条，不一致 ${crossCheck.mismatch.length} 条`
     );
     crossCheck.mismatch.slice(0, 10).forEach(m =>
-      console.log(`  ⚠️ ${m.code} ${m.name ?? ''}: CSV=${m.ocr} vs 2026.js=${m.old}`)
+      console.log(`  ⚠️ ${m.code} ${m.name ?? ''}: CSV=${m.ocr} vs ${YEAR}.js=${m.old}`)
     );
     if (crossCheck.onlyInCsv.length) console.log(`  仅 CSV 有：${crossCheck.onlyInCsv.join(', ')}`);
     if (crossCheck.onlyInOld.length) console.log(`  仅 ${YEAR}.js 有：${crossCheck.onlyInOld.join(', ')}`);

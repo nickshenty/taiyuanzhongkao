@@ -1,7 +1,7 @@
 {
   "targetYear": 2027,
   "algorithm": "v1.5-generalized",
-  "generatedAt": "2026-11-25T07:14:08.218Z",
+  "generatedAt": "2026-11-25T07:21:59.789Z",
   "parameters": {
     "momentumWeight": 0.5,
     "momentumCap": 0.05
@@ -104,12 +104,12 @@
     },
     "2026": {
       "targetYear": 2026,
-      "sampleSize": 87,
-      "mae": 20.97,
-      "rmse": 36.63,
-      "within3Percent": 25.3,
-      "within5Percent": 39.1,
-      "within10Percent": 58.6,
+      "sampleSize": 98,
+      "mae": 11.74,
+      "rmse": 24.25,
+      "within3Percent": 33.7,
+      "within5Percent": 50,
+      "within10Percent": 72.4,
       "frameChange": "850/615 -> 839/603",
       "worst": [
         {
@@ -119,38 +119,38 @@
           "error": -147
         },
         {
-          "name": "太原市第五职业中学校（太原市第十三中学校）",
-          "predicted": 755,
-          "actual": 609.1,
-          "error": -145.89999999999998
-        },
-        {
-          "name": "太原市第五十六中学校",
-          "predicted": 603,
-          "actual": 694.1,
-          "error": 91.10000000000002
-        },
-        {
-          "name": "太原市成才中学校",
-          "predicted": 658,
-          "actual": 749.1,
-          "error": 91.10000000000002
-        },
-        {
           "name": "太原维刚实验学校",
           "predicted": 684,
           "actual": 603,
           "error": -81
+        },
+        {
+          "name": "太原市泰华高级中学校",
+          "predicted": 714,
+          "actual": 634,
+          "error": -80
+        },
+        {
+          "name": "山西英才学校",
+          "predicted": 603,
+          "actual": 674.1,
+          "error": 71.10000000000002
+        },
+        {
+          "name": "太原市成才中学校",
+          "predicted": 679,
+          "actual": 749.1,
+          "error": 70.10000000000002
         }
       ]
     }
   },
   "statistics": {
     "total": 99,
-    "high": 77,
-    "medium": 10,
-    "low": 12,
-    "volatile": 10,
+    "high": 90,
+    "medium": 8,
+    "low": 1,
+    "volatile": 8,
     "min": 603,
     "max": 803
   },
@@ -243,10 +243,10 @@
       "score2026": 788.5,
       "anchorYears": [
         2026,
-        2019
+        2025
       ],
-      "predicted2027": 789,
-      "relPosPred": 0.7902,
+      "predicted2027": 790,
+      "relPosPred": 0.7937,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -284,6 +284,22 @@
       "volatile": false
     },
     {
+      "code": "65312",
+      "name": "太原市第十二中学校（旱西关校区）人工智能实验班",
+      "parent": "太原市第十二中学校人工智能实验班",
+      "special": true,
+      "score2026": 780,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 783,
+      "relPosPred": 0.7609,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
       "code": "66010",
       "name": "山西省实验中学（解放路校区）",
       "parent": "山西省实验中学",
@@ -295,22 +311,6 @@
       ],
       "predicted2027": 782,
       "relPosPred": 0.7587,
-      "confidence": "high",
-      "strategy": "relative-position-momentum",
-      "volatile": false
-    },
-    {
-      "code": "65312",
-      "name": "太原市第十二中学校（旱西关校区）人工智能实验班",
-      "parent": "太原市第十二中学校人工智能实验班",
-      "special": true,
-      "score2026": 780,
-      "anchorYears": [
-        2026,
-        2019
-      ],
-      "predicted2027": 781,
-      "relPosPred": 0.754,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -348,6 +348,22 @@
       "volatile": false
     },
     {
+      "code": "66318",
+      "name": "太原市第十八中学校（晋源校区）外语实验班",
+      "parent": "太原市第十八中学校外语实验班",
+      "special": true,
+      "score2026": 774,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 777,
+      "relPosPred": 0.736,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
       "code": "65044",
       "name": "清徐县徐沟中学校",
       "parent": "清徐县徐沟中学校",
@@ -359,22 +375,6 @@
       ],
       "predicted2027": 776,
       "relPosPred": 0.7334,
-      "confidence": "high",
-      "strategy": "relative-position-momentum",
-      "volatile": false
-    },
-    {
-      "code": "66318",
-      "name": "太原市第十八中学校（晋源校区）外语实验班",
-      "parent": "太原市第十八中学校外语实验班",
-      "special": true,
-      "score2026": 774,
-      "anchorYears": [
-        2026,
-        2019
-      ],
-      "predicted2027": 775,
-      "relPosPred": 0.7286,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -579,7 +579,7 @@
       "score2026": 749.1,
       "anchorYears": [
         2026,
-        2024
+        2025
       ],
       "predicted2027": 755,
       "relPosPred": 0.6441,
@@ -652,22 +652,6 @@
       "volatile": false
     },
     {
-      "code": "65306",
-      "name": "太原市进山中学校（航天实验班）",
-      "parent": "太原市进山中学校",
-      "special": true,
-      "score2026": 742,
-      "anchorYears": [
-        2026,
-        2025
-      ],
-      "predicted2027": 747,
-      "relPosPred": 0.6085,
-      "confidence": "high",
-      "strategy": "relative-position-momentum",
-      "volatile": false
-    },
-    {
       "code": "65086",
       "name": "太原市金河中学校",
       "parent": "太原市金河中学校",
@@ -679,6 +663,22 @@
       ],
       "predicted2027": 747,
       "relPosPred": 0.6117,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65306",
+      "name": "太原市进山中学校（航天实验班）",
+      "parent": "太原市进山中学校",
+      "special": true,
+      "score2026": 742,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 744,
+      "relPosPred": 0.5979,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -738,12 +738,13 @@
       "special": false,
       "score2026": 737.5,
       "anchorYears": [
-        2026
+        2026,
+        2025
       ],
-      "predicted2027": 738,
-      "relPosPred": 0.5699,
-      "confidence": "low",
-      "strategy": "hold-relative",
+      "predicted2027": 739,
+      "relPosPred": 0.5757,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
       "volatile": false
     },
     {
@@ -779,6 +780,22 @@
       "volatile": false
     },
     {
+      "code": "65077",
+      "name": "太原市梗阳中学校",
+      "parent": "太原市梗阳中学校",
+      "special": false,
+      "score2026": 729.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 734,
+      "relPosPred": 0.5561,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
       "code": "65006",
       "name": "太原市进山中学校",
       "parent": "太原市进山中学校",
@@ -808,21 +825,6 @@
       "relPosPred": 0.5401,
       "confidence": "high",
       "strategy": "relative-position-momentum",
-      "volatile": false
-    },
-    {
-      "code": "65077",
-      "name": "太原市梗阳中学校",
-      "parent": "太原市梗阳中学校",
-      "special": false,
-      "score2026": 729.1,
-      "anchorYears": [
-        2026
-      ],
-      "predicted2027": 729,
-      "relPosPred": 0.5343,
-      "confidence": "low",
-      "strategy": "hold-relative",
       "volatile": false
     },
     {
@@ -913,10 +915,10 @@
       "score2026": 714.1,
       "anchorYears": [
         2026,
-        2019
+        2025
       ],
-      "predicted2027": 716,
-      "relPosPred": 0.4778,
+      "predicted2027": 717,
+      "relPosPred": 0.482,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -945,10 +947,10 @@
       "score2026": 709.1,
       "anchorYears": [
         2026,
-        2024
+        2025
       ],
-      "predicted2027": 707,
-      "relPosPred": 0.4406,
+      "predicted2027": 714,
+      "relPosPred": 0.4694,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -961,10 +963,10 @@
       "score2026": 704.1,
       "anchorYears": [
         2026,
-        2019
+        2025
       ],
-      "predicted2027": 706,
-      "relPosPred": 0.4346,
+      "predicted2027": 708,
+      "relPosPred": 0.445,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -977,10 +979,10 @@
       "score2026": 699.1,
       "anchorYears": [
         2026,
-        2024
+        2025
       ],
-      "predicted2027": 703,
-      "relPosPred": 0.4231,
+      "predicted2027": 702,
+      "relPosPred": 0.4185,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1009,29 +1011,13 @@
       "score2026": 694.1,
       "anchorYears": [
         2026,
-        2024
+        2025
       ],
       "predicted2027": 700,
       "relPosPred": 0.411,
       "confidence": "medium",
       "strategy": "relative-position-momentum",
       "volatile": true
-    },
-    {
-      "code": "65055",
-      "name": "太原市第五十五中学校",
-      "parent": "太原市第五十五中学校",
-      "special": false,
-      "score2026": 689.1,
-      "anchorYears": [
-        2026,
-        2024
-      ],
-      "predicted2027": 695,
-      "relPosPred": 0.3898,
-      "confidence": "high",
-      "strategy": "relative-position-momentum",
-      "volatile": false
     },
     {
       "code": "65041",
@@ -1045,6 +1031,38 @@
       ],
       "predicted2027": 693,
       "relPosPred": 0.3831,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65030",
+      "name": "太原市第三十中学校",
+      "parent": "太原市第三十中学校",
+      "special": false,
+      "score2026": 685,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 688,
+      "relPosPred": 0.3597,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65055",
+      "name": "太原市第五十五中学校",
+      "parent": "太原市第五十五中学校",
+      "special": false,
+      "score2026": 689.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 688,
+      "relPosPred": 0.3602,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1066,6 +1084,38 @@
       "volatile": false
     },
     {
+      "code": "65024",
+      "name": "太原市第二十四中学校",
+      "parent": "太原市第二十四中学校",
+      "special": false,
+      "score2026": 679.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 681,
+      "relPosPred": 0.3285,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65093",
+      "name": "太原市恒中学校",
+      "parent": "太原市恒中学校",
+      "special": false,
+      "score2026": 678,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 681,
+      "relPosPred": 0.3292,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
       "code": "65020",
       "name": "太原市第二十中学校",
       "parent": "太原市第二十中学校",
@@ -1077,22 +1127,6 @@
       ],
       "predicted2027": 680,
       "relPosPred": 0.3263,
-      "confidence": "high",
-      "strategy": "relative-position-momentum",
-      "volatile": false
-    },
-    {
-      "code": "65024",
-      "name": "太原市第二十四中学校",
-      "parent": "太原市第二十四中学校",
-      "special": false,
-      "score2026": 679.1,
-      "anchorYears": [
-        2026,
-        2019
-      ],
-      "predicted2027": 680,
-      "relPosPred": 0.3283,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1114,37 +1148,6 @@
       "volatile": true
     },
     {
-      "code": "65030",
-      "name": "太原市第三十中学校",
-      "parent": "太原市第三十中学校",
-      "special": false,
-      "score2026": 685,
-      "anchorYears": [
-        2026,
-        2024
-      ],
-      "predicted2027": 679,
-      "relPosPred": 0.3225,
-      "confidence": "medium",
-      "strategy": "relative-position-momentum",
-      "volatile": true
-    },
-    {
-      "code": "65093",
-      "name": "太原市恒中学校",
-      "parent": "太原市恒中学校",
-      "special": false,
-      "score2026": 678,
-      "anchorYears": [
-        2026
-      ],
-      "predicted2027": 678,
-      "relPosPred": 0.3178,
-      "confidence": "low",
-      "strategy": "hold-relative",
-      "volatile": false
-    },
-    {
       "code": "65097",
       "name": "太原新力惠中学校",
       "parent": "太原新力惠中学校",
@@ -1152,10 +1155,10 @@
       "score2026": 676,
       "anchorYears": [
         2026,
-        2024
+        2025
       ],
-      "predicted2027": 678,
-      "relPosPred": 0.316,
+      "predicted2027": 680,
+      "relPosPred": 0.3281,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1184,26 +1187,10 @@
       "score2026": 664.1,
       "anchorYears": [
         2026,
-        2024
+        2025
       ],
       "predicted2027": 668,
-      "relPosPred": 0.2774,
-      "confidence": "high",
-      "strategy": "relative-position-momentum",
-      "volatile": false
-    },
-    {
-      "code": "65061",
-      "name": "太原市第六十一中学校",
-      "parent": "太原市第六十一中学校",
-      "special": false,
-      "score2026": 659.1,
-      "anchorYears": [
-        2026,
-        2024
-      ],
-      "predicted2027": 665,
-      "relPosPred": 0.2627,
+      "relPosPred": 0.2756,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1225,22 +1212,6 @@
       "volatile": false
     },
     {
-      "code": "65063",
-      "name": "太原市第六十三中学校",
-      "parent": "太原市第六十三中学校",
-      "special": false,
-      "score2026": 659,
-      "anchorYears": [
-        2026,
-        2024
-      ],
-      "predicted2027": 663,
-      "relPosPred": 0.2531,
-      "confidence": "high",
-      "strategy": "relative-position-momentum",
-      "volatile": false
-    },
-    {
       "code": "65033",
       "name": "太原市综合高级中学校",
       "parent": "太原市综合高级中学校",
@@ -1248,10 +1219,42 @@
       "score2026": 659.1,
       "anchorYears": [
         2026,
-        2019
+        2025
       ],
-      "predicted2027": 661,
-      "relPosPred": 0.2462,
+      "predicted2027": 663,
+      "relPosPred": 0.2545,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65061",
+      "name": "太原市第六十一中学校",
+      "parent": "太原市第六十一中学校",
+      "special": false,
+      "score2026": 659.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 662,
+      "relPosPred": 0.2487,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65063",
+      "name": "太原市第六十三中学校",
+      "parent": "太原市第六十三中学校",
+      "special": false,
+      "score2026": 659,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 662,
+      "relPosPred": 0.2486,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1264,10 +1267,10 @@
       "score2026": 654.1,
       "anchorYears": [
         2026,
-        2019
+        2025
       ],
-      "predicted2027": 656,
-      "relPosPred": 0.2255,
+      "predicted2027": 654,
+      "relPosPred": 0.2174,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1279,12 +1282,13 @@
       "special": false,
       "score2026": 650.5,
       "anchorYears": [
-        2026
+        2026,
+        2025
       ],
-      "predicted2027": 651,
-      "relPosPred": 0.2013,
-      "confidence": "low",
-      "strategy": "hold-relative",
+      "predicted2027": 654,
+      "relPosPred": 0.2142,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
       "volatile": false
     },
     {
@@ -1294,12 +1298,13 @@
       "special": false,
       "score2026": 649.1,
       "anchorYears": [
-        2026
+        2026,
+        2025
       ],
-      "predicted2027": 649,
-      "relPosPred": 0.1953,
-      "confidence": "low",
-      "strategy": "hold-relative",
+      "predicted2027": 650,
+      "relPosPred": 0.1974,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
       "volatile": false
     },
     {
@@ -1310,26 +1315,10 @@
       "score2026": 644.1,
       "anchorYears": [
         2026,
-        2024
+        2025
       ],
-      "predicted2027": 647,
-      "relPosPred": 0.1881,
-      "confidence": "high",
-      "strategy": "relative-position-momentum",
-      "volatile": false
-    },
-    {
-      "code": "65011",
-      "name": "太原市第十一中学校",
-      "parent": "太原市第十一中学校",
-      "special": false,
-      "score2026": 639.1,
-      "anchorYears": [
-        2026,
-        2024
-      ],
-      "predicted2027": 644,
-      "relPosPred": 0.1721,
+      "predicted2027": 648,
+      "relPosPred": 0.1927,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1342,26 +1331,26 @@
       "score2026": 639.1,
       "anchorYears": [
         2026,
-        2024
+        2025
       ],
-      "predicted2027": 641,
-      "relPosPred": 0.1612,
+      "predicted2027": 642,
+      "relPosPred": 0.1645,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
     },
     {
-      "code": "65064",
-      "name": "太原市第六十四中学校",
-      "parent": "太原市第六十四中学校",
+      "code": "65011",
+      "name": "太原市第十一中学校",
+      "parent": "太原市第十一中学校",
       "special": false,
       "score2026": 639.1,
       "anchorYears": [
         2026,
-        2024
+        2025
       ],
       "predicted2027": 641,
-      "relPosPred": 0.1612,
+      "relPosPred": 0.1592,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1374,10 +1363,26 @@
       "score2026": 634.1,
       "anchorYears": [
         2026,
-        2019
+        2025
       ],
-      "predicted2027": 634,
-      "relPosPred": 0.1302,
+      "predicted2027": 639,
+      "relPosPred": 0.153,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65064",
+      "name": "太原市第六十四中学校",
+      "parent": "太原市第六十四中学校",
+      "special": false,
+      "score2026": 639.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 639,
+      "relPosPred": 0.1539,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1390,10 +1395,10 @@
       "score2026": 629.1,
       "anchorYears": [
         2026,
-        2024
+        2025
       ],
       "predicted2027": 631,
-      "relPosPred": 0.1166,
+      "relPosPred": 0.1169,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1406,10 +1411,10 @@
       "score2026": 629.1,
       "anchorYears": [
         2026,
-        2024
+        2025
       ],
-      "predicted2027": 629,
-      "relPosPred": 0.1105,
+      "predicted2027": 628,
+      "relPosPred": 0.1062,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1437,12 +1442,13 @@
       "special": false,
       "score2026": 624.1,
       "anchorYears": [
-        2026
+        2026,
+        2025
       ],
-      "predicted2027": 624,
-      "relPosPred": 0.0894,
-      "confidence": "low",
-      "strategy": "hold-relative",
+      "predicted2027": 627,
+      "relPosPred": 0.101,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
       "volatile": false
     },
     {
@@ -1453,10 +1459,10 @@
       "score2026": 624.1,
       "anchorYears": [
         2026,
-        2024
+        2025
       ],
-      "predicted2027": 623,
-      "relPosPred": 0.0867,
+      "predicted2027": 624,
+      "relPosPred": 0.0904,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1485,10 +1491,10 @@
       "score2026": 619.1,
       "anchorYears": [
         2026,
-        2024
+        2025
       ],
-      "predicted2027": 619,
-      "relPosPred": 0.0659,
+      "predicted2027": 621,
+      "relPosPred": 0.0745,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1510,21 +1516,6 @@
       "volatile": true
     },
     {
-      "code": "65035",
-      "name": "太原外语科技实验中学校",
-      "parent": "太原外语科技实验中学校",
-      "special": false,
-      "score2026": 609.1,
-      "anchorYears": [
-        2026
-      ],
-      "predicted2027": 609,
-      "relPosPred": 0.0258,
-      "confidence": "low",
-      "strategy": "hold-relative",
-      "volatile": false
-    },
-    {
       "code": "88033",
       "name": "太原市综合高级中学校（综合高中试点班）",
       "parent": "太原市综合高级中学校",
@@ -1532,26 +1523,42 @@
       "score2026": 609.1,
       "anchorYears": [
         2026,
-        2019
+        2025
       ],
-      "predicted2027": 609,
-      "relPosPred": 0.0268,
+      "predicted2027": 611,
+      "relPosPred": 0.0322,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
     },
     {
-      "code": "65067",
-      "name": "太原市第六十七中学校",
-      "parent": "太原市第六十七中学校",
+      "code": "65013",
+      "name": "太原市第五职业中学校（太原市第十三中学校）",
+      "parent": "太原市第五职业中学校",
       "special": false,
-      "score2026": 604.1,
+      "score2026": 609.1,
       "anchorYears": [
         2026,
-        2024
+        2025
       ],
-      "predicted2027": 604,
-      "relPosPred": 0.0052,
+      "predicted2027": 609,
+      "relPosPred": 0.0269,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65035",
+      "name": "太原外语科技实验中学校",
+      "parent": "太原外语科技实验中学校",
+      "special": false,
+      "score2026": 609.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 608,
+      "relPosPred": 0.0222,
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
@@ -1571,22 +1578,6 @@
       "confidence": "high",
       "strategy": "relative-position-momentum",
       "volatile": false
-    },
-    {
-      "code": "65013",
-      "name": "太原市第五职业中学校（太原市第十三中学校）",
-      "parent": "太原市第五职业中学校",
-      "special": false,
-      "score2026": 609.1,
-      "anchorYears": [
-        2026,
-        2024
-      ],
-      "predicted2027": 603,
-      "relPosPred": 0.0008,
-      "confidence": "medium",
-      "strategy": "relative-position-momentum",
-      "volatile": true
     },
     {
       "code": "65015",
@@ -1621,6 +1612,22 @@
       "volatile": false
     },
     {
+      "code": "65067",
+      "name": "太原市第六十七中学校",
+      "parent": "太原市第六十七中学校",
+      "special": false,
+      "score2026": 604.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 603,
+      "relPosPred": 0.0004,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
       "code": "65083",
       "name": "太原大成学校",
       "parent": "太原大成学校",
@@ -1642,12 +1649,13 @@
       "special": false,
       "score2026": 603,
       "anchorYears": [
-        2026
+        2026,
+        2025
       ],
       "predicted2027": 603,
       "relPosPred": 0,
-      "confidence": "low",
-      "strategy": "hold-relative",
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
       "volatile": false
     },
     {
@@ -1673,12 +1681,13 @@
       "special": false,
       "score2026": 603,
       "anchorYears": [
-        2026
+        2026,
+        2025
       ],
       "predicted2027": 603,
       "relPosPred": 0,
-      "confidence": "low",
-      "strategy": "hold-relative",
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
       "volatile": false
     },
     {
@@ -1688,12 +1697,13 @@
       "special": true,
       "score2026": 603,
       "anchorYears": [
-        2026
+        2026,
+        2025
       ],
       "predicted2027": 603,
       "relPosPred": 0,
-      "confidence": "low",
-      "strategy": "hold-relative",
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
       "volatile": false
     },
     {
@@ -1704,7 +1714,7 @@
       "score2026": 603,
       "anchorYears": [
         2026,
-        2017
+        2025
       ],
       "predicted2027": 603,
       "relPosPred": 0,
@@ -1719,12 +1729,13 @@
       "special": true,
       "score2026": 603,
       "anchorYears": [
-        2026
+        2026,
+        2025
       ],
       "predicted2027": 603,
       "relPosPred": 0,
-      "confidence": "low",
-      "strategy": "hold-relative",
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
       "volatile": false
     }
   ]
