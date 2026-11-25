@@ -15,7 +15,9 @@
  *   relPos_pred = relPos_latest + WEIGHT × d
  *   score_pred  = controlLine_target + relPos_pred × (totalScore_target - controlLine_target)
  *
- * 2026 年回测（n=49）：MAE 11.29 分，≤3分 30.6%，≤5分 42.9%，≤10分 81.6%。
+ * 回测（全量校区级历史，间隔归一化动量，W=0.5 / CAP=0.05）：
+ *   2023 年 MAE 7.29，2024 年 MAE 8.88（均为稳定框架，最接近 2027 场景）
+ *   2026 年 MAE 21.07（跨越 850→839 框架调整，难度更高）
  * 详见 docs/PREDICTION_2027.md
  *
  * 纯函数模块：不触碰数据库、不读写文件，便于单测与复用。
@@ -26,8 +28,8 @@
 /** 动量权重：0 = 纯保持，1 = 完全外推。回测最优 0.5 */
 export const MOMENTUM_WEIGHT = 0.5;
 
-/** 相对位置单步变化封顶，抑制异常校带偏 */
-export const MOMENTUM_CAP = 0.1;
+/** 相对位置单步变化封顶，抑制异常校带偏（回测最优 0.05） */
+export const MOMENTUM_CAP = 0.05;
 
 /** |ΔrelPos| × 2 超过该值标记为"波动较大"（仅提示，不改写预测） */
 export const VOLATILE_THRESHOLD = 0.15;
@@ -166,6 +168,83 @@ export function predictSchool(ctx) {
 }
 
 /**
+ * 基于"锚点序列"的预测（推荐使用）
+ *
+ * 与 predictSchool 的区别：不要求历史恰为连续三年，而是接受任意稀疏的
+ * (year, score) 序列，自动取"最近锚点"与"次近锚点"，并按两者年份间隔
+ * 归一化年度动量。适配真实数据（部分学校缺 2024 或 2025）。
+ *
+ * @param {object} params
+ * @param {Object<number, number>} params.series  {year: score}
+ * @param {number} params.targetYear
+ * @param {Function} params.frameOf  (year) => {controlLine,totalScore} | null
+ * @param {{controlLine:number,totalScore:number}} params.frameTarget
+ */
+export function predictFromSeries({ series, targetYear, frameOf, frameTarget }) {
+  if (!series || !frameTarget) return null;
+
+  const years = Object.keys(series)
+    .map(Number)
+    .filter(y => Number.isFinite(y) && series[y] != null && y < targetYear)
+    .sort((a, b) => b - a);
+
+  if (!years.length) return null;
+
+  const yLatest = years[0];
+  const sLatest = series[yLatest];
+  const fLatest = frameOf(yLatest);
+  if (!fLatest) return null;
+
+  const rpLatest = relativePosition(sLatest, fLatest.controlLine, fLatest.totalScore);
+  if (rpLatest == null) return null;
+
+  let rpPred = rpLatest;
+  let basis = 'hold-relative';
+  let yearlyMomentum = null;
+  let anchorYears = [yLatest];
+
+  if (years.length >= 2) {
+    // 取次近锚点
+    const yPrev = years[1];
+    const fPrev = frameOf(yPrev);
+    const rpPrev = fPrev
+      ? relativePosition(series[yPrev], fPrev.controlLine, fPrev.totalScore)
+      : null;
+
+    if (rpPrev != null) {
+      const gap = Math.max(1, yLatest - yPrev);
+      yearlyMomentum = (rpLatest - rpPrev) / gap;
+      const d = clamp(yearlyMomentum / 2, -MOMENTUM_CAP, MOMENTUM_CAP);
+      rpPred = rpLatest + MOMENTUM_WEIGHT * d;
+      basis = years.length >= 2 ? 'momentum-anchor' : 'hold-relative';
+      anchorYears = [yLatest, yPrev];
+    }
+  }
+
+  rpPred = clamp(rpPred, 0, 1);
+
+  const raw = positionToScore(rpPred, frameTarget.controlLine, frameTarget.totalScore);
+  if (raw == null) return null;
+
+  const volatile = yearlyMomentum != null && Math.abs(yearlyMomentum) >= VOLATILE_THRESHOLD;
+
+  return {
+    predicted: Math.round(clamp(raw, frameTarget.controlLine, frameTarget.totalScore)),
+    strategy: basis === 'momentum-anchor' ? 'relative-position-momentum' : 'hold-relative',
+    confidence: basis === 'momentum-anchor' ? (volatile ? 'medium' : 'high') : 'low',
+    volatile,
+    relPosPred: Number(rpPred.toFixed(4)),
+    anchorYears,
+    detail: {
+      relPosLatest: Number(rpLatest.toFixed(4)),
+      relPosPred: Number(rpPred.toFixed(4)),
+      basis,
+      yearlyMomentum: yearlyMomentum == null ? null : Number(yearlyMomentum.toFixed(4))
+    }
+  };
+}
+
+/**
  * 批量预测
  *
  * @param {object} params
@@ -282,6 +361,7 @@ export default {
   relativePosition,
   positionToScore,
   predictSchool,
+  predictFromSeries,
   predictYear,
   backtestYear,
   rescore,

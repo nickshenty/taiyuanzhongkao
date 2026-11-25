@@ -126,7 +126,13 @@ async function getSchoolHistory(req, res) {
       WHERE a.school_code = ?
       ORDER BY a.year DESC
     `;
-    const history = await query(historySql, [code]);
+    const rawHistory = await query(historySql, [code]);
+    // mysql2 将 DECIMAL 返回为字符串，统一转为数值避免前端算术错误
+    const history = rawHistory.map(h => ({
+      ...h,
+      lastLine: h.lastLine == null ? null : Number(h.lastLine),
+      quotaLine: h.quotaLine == null ? null : Number(h.quotaLine)
+    }));
 
     // 获取预测信息
     const predictionSql = `

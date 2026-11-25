@@ -140,7 +140,7 @@ async function getYearSchools(req, res) {
       FROM schools s
       LEFT JOIN admission_lines a ON s.code = a.school_code AND a.year = ?
       LEFT JOIN predictions p ON s.code = p.school_code AND p.year = ?
-      WHERE 1=1
+      WHERE (a.last_line IS NOT NULL OR a.quota_line IS NOT NULL OR p.predicted_score IS NOT NULL)
     `;
     const params = [year, year];
 
@@ -152,7 +152,12 @@ async function getYearSchools(req, res) {
 
     sql += ' ORDER BY s.code';
 
-    const schools = await query(sql, params);
+    const rawSchools = await query(sql, params);
+    const schools = rawSchools.map(x => ({
+      ...x,
+      lastLine: x.lastLine == null ? null : Number(x.lastLine),
+      quotaLine: x.quotaLine == null ? null : Number(x.quotaLine)
+    }));
 
     res.json({
       success: true,

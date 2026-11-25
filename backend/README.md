@@ -1,6 +1,6 @@
-# 太原中考志愿咨询系统 - 后端API
+# 太原中考志愿咨询系统 - 后端 API
 
-Node.js + Express + MySQL 后端服务，提供数据查询和v1.5分数线预测算法。
+Node.js + Express + MySQL 后端服务，提供全量学校/分数线查询、2027 年分数线预测与志愿推荐。
 
 ---
 
@@ -9,102 +9,149 @@ Node.js + Express + MySQL 后端服务，提供数据查询和v1.5分数线预�
 ### 1. 安装依赖
 
 ```bash
-cd backend
-npm install
+cd backend && npm install
 ```
 
-### 2. 配置环境变量
+### 2. 启动 MySQL（Docker）
 
-复制环境变量模板并配置：
+```bash
+docker run -d --name tyzk-mysql \
+  -e MYSQL_ROOT_PASSWORD=tyzk123456 \
+  -e MYSQL_DATABASE=taiyuan_zhongkao \
+  -p 3306:3306 mysql:8.0 \
+  --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+```
+
+### 3. 配置环境变量
 
 ```bash
 cp .env.example .env
 ```
 
-编辑 `.env` 文件，配置数据库连接信息：
-
 ```env
-DB_HOST=localhost
+NODE_ENV=development
+PORT=3000
+DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_USER=root
-DB_PASSWORD=your_password
+DB_PASSWORD=tyzk123456
 DB_NAME=taiyuan_zhongkao
+CORS_ORIGIN=*
 ```
 
-### 3. 初始化数据库
+### 4. 建表
 
 ```bash
-# 创建数据库
-mysql -u root -p
-CREATE DATABASE taiyuan_zhongkao CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-# 执行迁移脚本（待创建）
-node database/migrations/001_create_tables.js
-node database/seeds/import_data.js
+docker exec -i tyzk-mysql mysql -uroot -ptyzk123456 taiyuan_zhongkao \
+  < database/migrations/001_create_tables.sql
+docker exec -i tyzk-mysql mysql -uroot -ptyzk123456 taiyuan_zhongkao \
+  < database/migrations/002_fix_prediction_strategy_enum.sql
 ```
 
-### 4. 启动服务
+### 5. 生成预测并导入数据
 
 ```bash
-# 开发模式（热重载）
-npm run dev
+# 在仓库根目录：补全历史 → 生成 2027 预测
+node scripts/build-history-2027.js
+node scripts/generate-predictions-2027.js
 
-# 生产模式
-npm start
+# 回到 backend：导入数据库
+npm run seed
 ```
 
-服务默认运行在 `http://localhost:3000`
+### 6. 启动服务
+
+```bash
+npm run dev     # 开发（热重载）
+npm start       # 生产
+```
+
+默认监听 `http://localhost:3000`。
 
 ---
 
-## 📡 API端点
+## 📡 API 端点
 
-### 健康检查
-```
-GET /health
-```
+### 基础
 
-### 基础信息
-```
-GET /api
-```
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| GET | `/health` | 健康检查 |
+| GET | `/api` | 服务信息与端点索引 |
+| GET | `/api/algorithm/info` | 算法说明 |
 
-### 年份相关
-```
-GET /api/years                    获取所有年份列表
-GET /api/years/:year              获取指定年份信息
-```
+### 年份
 
-### 学校相关
-```
-GET /api/schools                  获取学校列表（支持搜索、分页）
-GET /api/schools/:code            获取学校详情
-GET /api/schools/:code/history    获取学校历史分数线
-```
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| GET | `/api/years` | 所有年份（含总分、控制线）|
+| GET | `/api/years/:year` | 年份详情 + 统计 |
+| GET | `/api/years/:year/schools` | 该年全部学校及预测（`?type=`）|
+| GET | `/api/years/:year/batches` | 批次配置 |
+| GET | `/api/years/latest/prediction` | 最新预测年份 |
 
-### 分数线预测
-```
-GET /api/predictions/:year        获取指定年份所有预测
-GET /api/predictions/:year/:code  获取单个学校预测
-GET /api/predictions/confidence/high  获取高置信度学校（24所）
-```
+### 学校
 
-### 志愿推荐
-```
-POST /api/recommend
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| GET | `/api/schools` | 列表（`?name=&type=&district=&page=&limit=`）|
+| GET | `/api/schools/list/all` | 全部（按区县分组）|
+| GET | `/api/schools/types` | 学校类型枚举 |
+| GET | `/api/schools/districts` | 区县枚举 |
+| GET | `/api/schools/:code` | 学校详情 |
+| GET | `/api/schools/:code/history` | 历年分数线 + 预测 |
+
+### 初中学校与定向名额
+
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| GET | `/api/junior-schools` | 列表（`?name=&district=&page=&limit=`）|
+| GET | `/api/junior-schools/list/all` | 全部（按区县分组）|
+| GET | `/api/junior-schools/:id/quotas` | 定向名额（`?year=`）|
+| GET | `/api/junior-schools/:id/quotas/history` | 历年定向名额 |
+
+### 预测
+
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| GET | `/api/predictions/:year` | 该年所有预测（分页）|
+| GET | `/api/predictions/:year/high-confidence` | 高置信度预测 |
+| GET | `/api/predictions/:year/statistics` | 预测统计与置信度分布 |
+| GET | `/api/predictions/school/:code?year=` | 单校预测 |
+| POST | `/api/predictions/generate` | 在线生成（`{year, dryRun}`）|
+
+### 志愿推荐（核心）
+
+```http
+POST /api/recommendations
+Content-Type: application/json
+
 {
-  "score": 650,
-  "year": 2024,
-  "hasQuota": true,
-  "juniorSchoolId": "xxx"
+  "studentScore": 700,
+  "juniorSchoolId": "junior_001",
+  "targetYear": 2027
 }
 ```
 
-### 算法说明
-```
-GET /api/algorithm/info           算法介绍
-GET /api/algorithm/backtest       回测数据
-```
+返回冲/稳/保三档推荐：
+
+| 档位 | 判定 | 返回上限 |
+|------|------|----------|
+| 冲一冲 `risky` | 考生分数低于预测线 5–10 分 | 3 所 |
+| 稳一稳 `stable` | 与预测线相差 ±5 分以内 | 2 所 |
+| 保一保 `safe` | 考生分数高于预测线 10 分以上 | 2 所 |
+
+**定向名额修正**：本校有定向名额、且考生分数 ≥ 预测线 − 50 分（且不低于最低控制线）时，
+即使统招无望也可通过定向录取，按"冲"档计入并标记 `quotaUpgraded: true`。
+目标年定向名额未公布时，自动回退到最近有名额数据的年份，并返回 `quotaNote` 提示。
+
+其他推荐接口：
+
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| GET | `/api/recommendations/info` | 推荐规则说明 |
+| GET | `/api/recommendations/score-range?minScore=&maxScore=&year=` | 按分数区间查学校 |
+| GET | `/api/recommendations/school/:code?studentScore=&year=` | 单校匹配度 |
 
 ---
 
@@ -113,107 +160,59 @@ GET /api/algorithm/backtest       回测数据
 ```
 backend/
 ├── src/
-│   ├── app.js              # Express应用入口
-│   ├── server.js           # 服务器启动
-│   ├── routes/             # 路由定义
-│   ├── controllers/        # 控制器（处理请求）
-│   ├── services/           # 业务逻辑层
-│   ├── models/             # 数据模型
-│   ├── algorithms/         # v1.5预测算法
-│   ├── middleware/         # 中间件
-│   └── config/             # 配置文件
-│       └── database.js     # 数据库连接池
+│   ├── app.js                    # Express 应用
+│   ├── server.js                 # 启动入口
+│   ├── algorithms/
+│   │   └── predictionAlgorithmV1.5.js   # 预测算法（纯函数）
+│   ├── services/
+│   │   ├── predictionService.js  # 预测生成与查询
+│   │   └── recommendationService.js     # 志愿推荐
+│   ├── controllers/              # 请求处理
+│   ├── routes/                   # 路由定义
+│   └── config/database.js        # 连接池
 ├── database/
-│   ├── migrations/         # 数据库迁移脚本
-│   └── seeds/              # 初始数据导入
-├── tests/                  # 测试文件
-├── .env.example            # 环境变量模板
-├── package.json
-└── README.md
+│   ├── migrations/               # 001 建表 / 002 修正枚举
+│   └── seeds/import_all.js       # 统一数据导入
+├── tests/                        # 单元测试
+├── smoke-test.mjs                # 路由冒烟测试（自适应有无数据库）
+└── docs/ALGORITHM_V1.5.md        # 算法与 API 详细说明
 ```
-
----
-
-## 🔧 技术栈
-
-- **Node.js** 18+
-- **Express** 4.x - Web框架
-- **MySQL** 8.0 - 数据库
-- **mysql2** - MySQL驱动（Promise支持）
-- **dotenv** - 环境变量管理
-- **cors** - 跨域支持
-- **nodemon** - 开发热重载
-
----
-
-## 📊 数据库设计
-
-### 主要表结构
-
-- `years` - 年份基础信息（控制线、总分）
-- `schools` - 学校信息
-- `admission_lines` - 历史录取分数线
-- `predictions` - 分数线预测（v1.5算法生成）
-- `junior_schools` - 初中学校
-- `quota_allocations` - 定向名额分配
 
 ---
 
 ## 🧪 测试
 
 ```bash
-npm test
+npm test            # 算法 + 推荐分类单元测试（32 项）
+npm run test:smoke  # 路由与接口冒烟（自动探测数据库）
 ```
+
+冒烟测试在**无数据库**环境下同样通过：此时依赖数据的接口预期返回 500
+（证明路由已挂载而非 404）。
 
 ---
 
-## 📝 开发日志
+## 📊 数据库表
 
-### v1.0.0 (2024-11-24)
-- ✅ 项目初始化
-- ✅ Express服务器配置
-- ✅ 数据库连接池配置
-- ⏳ 数据库表结构设计（进行中）
-- ⏳ v1.5算法集成（计划中）
-- ⏳ API接口开发（计划中）
+| 表 | 说明 |
+|----|------|
+| `years` | 年份总分/控制线（含 2027 预测框架行）|
+| `schools` | 学校基础信息（校区级代码）|
+| `admission_lines` | 历年录取线（统招线/定向线）|
+| `predictions` | 预测结果（含策略、置信度）|
+| `junior_schools` | 初中学校 |
+| `quota_allocations` | 定向名额分配 |
+| `batches` | 志愿批次配置 |
+
+> `predictions.strategy` 已由 `ENUM('normal','anomaly')` 改为 `VARCHAR(32)`，
+> 以容纳 `relative-position-momentum` 等实际取值（见迁移 002）。
 
 ---
 
-## 🚀 部署
+## 📖 算法
 
-### 使用PM2部署
-
-```bash
-# 安装PM2
-npm install -g pm2
-
-# 启动服务
-pm2 start src/server.js --name taiyuanzhongkao-api
-
-# 查看日志
-pm2 logs taiyuanzhongkao-api
-
-# 重启服务
-pm2 restart taiyuanzhongkao-api
-```
-
-### Nginx反向代理配置
-
-```nginx
-server {
-    listen 80;
-    server_name api.taiyuanzhongkao.com;
-
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-    }
-}
-```
+见 [docs/ALGORITHM_V1.5.md](docs/ALGORITHM_V1.5.md)，
+数据审计与回测证据见 [docs/PREDICTION_2027.md](../docs/PREDICTION_2027.md)。
 
 ---
 

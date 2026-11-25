@@ -1,4 +1,4 @@
-import { predictYear } from '../algorithms/predictionAlgorithmV1.5.js';
+import { predictFromSeries } from '../algorithms/predictionAlgorithmV1.5.js';
 import { query } from '../config/database.js';
 
 /**
@@ -92,12 +92,11 @@ async function buildYearMetadata(years) {
 /**
  * 为指定年份生成预测并写入 predictions 表
  *
- * 模型：相对位置动量（见 algorithms/predictionAlgorithmV1.5.js）
- * 需最近3年数据：target-1（必需）、target-2、target-3（可选，用于动量）
+ * 与 scripts/generate-predictions-2027.js 共用同一算法函数 predictFromSeries，
+ * 保证"脚本离线生成"与"API 在线生成"结果完全一致。
  *
- * 目标年框架（总分/控制线）：
- *   - 若 years 表已有目标年记录，直接使用（官方公布后重算即为此路径）
- *   - 否则沿用最近年框架，并在返回值中标注 assumedFrame=true
+ * 做法：一次性载入全部历史录取线 → 为每所学校构建稀疏锚点序列 →
+ *       取最近/次近锚点做间隔归一化动量预测。
  *
  * @param {number} targetYear 目标年
  * @param {object} options
@@ -109,49 +108,73 @@ async function generatePredictions(targetYear, options = {}) {
   try {
     console.log(`\n📊 开始为 ${targetYear} 年生成预测...`);
 
-    const years = [targetYear - 1, targetYear - 2, targetYear - 3];
-    const yearData = {};
-
-    // 载入各年框架 + 学校分数线
-    for (const y of years) {
-      const meta = await loadYearMetadata(y);
-      if (!meta) {
-        if (y === targetYear - 1) throw new Error(`缺少 ${y} 年基础数据，无法预测`);
-        continue;
-      }
-      const schools = await loadYearSchools(y);
-      yearData[y] = {
-        controlLine: meta.controlLine,
-        totalScore: meta.totalScore,
-        schools: schools
-          .filter(s => s.lastLine != null)
-          .map(s => ({ code: s.code, name: s.name, lastLine: Number(s.lastLine) }))
+    // 1) 年份框架
+    const frameRows = await query(
+      'SELECT year, control_line as controlLine, total_score as totalScore FROM years'
+    );
+    const frames = {};
+    for (const r of frameRows) {
+      frames[Number(r.year)] = {
+        controlLine: Number(r.controlLine),
+        totalScore: Number(r.totalScore)
       };
     }
+    const frameOf = y => frames[Number(y)] || null;
 
-    // 目标年框架
-    const targetMeta = await loadYearMetadata(targetYear);
-    const latest = yearData[targetYear - 1];
-    const frameTarget = targetMeta
-      ? { controlLine: targetMeta.controlLine, totalScore: targetMeta.totalScore }
-      : { controlLine: latest.controlLine, totalScore: latest.totalScore };
-    const assumedFrame = !targetMeta;
+    // 2) 历史录取线（仅目标年之前）
+    const lines = await query(
+      `SELECT year, school_code as code, last_line as lastLine
+       FROM admission_lines
+       WHERE year < ? AND last_line IS NOT NULL`,
+      [targetYear]
+    );
+    const series = {};
+    for (const l of lines) {
+      const y = Number(l.year);
+      (series[l.code] = series[l.code] || {})[y] = Number(l.lastLine);
+    }
 
+    // 3) 名单：优先最近年（target-1）有数据的学校
+    const prevYear = targetYear - 1;
+    const prevFrame = frameOf(prevYear);
+    if (!prevFrame) throw new Error(`缺少 ${prevYear} 年框架数据，无法预测`);
+
+    const schoolRows = await query(
+      'SELECT code, name FROM schools ORDER BY code'
+    );
+    const roster = schoolRows
+      .filter(r => series[r.code] && series[r.code][prevYear] != null)
+      .map(r => ({ code: r.code, name: r.name }));
+
+    if (!roster.length) throw new Error(`${prevYear} 年无录取数据，无法预测`);
+
+    // 4) 目标年框架
+    const targetFrame = frameOf(targetYear);
+    const frameTarget = targetFrame ?? prevFrame;
+    const assumedFrame = !targetFrame;
     if (assumedFrame) {
       console.log(
-        `⚠️  ${targetYear} 年总分/控制线未公布，沿用 ${targetYear - 1} 年框架（${frameTarget.controlLine}/${frameTarget.totalScore}）`
+        `⚠️  ${targetYear} 年总分/控制线未公布，沿用 ${prevYear} 年框架（${frameTarget.controlLine}/${frameTarget.totalScore}）`
       );
     }
 
-    // 名单取最近年（校区级口径最完整）
-    const roster = latest.schools.map(s => ({ code: s.code, name: s.name }));
-
-    const predictions = predictYear({
-      targetYear,
-      frameTarget,
-      years: yearData,
-      roster
-    });
+    // 5) 逐校预测
+    const predictions = [];
+    for (const unit of roster) {
+      const p = predictFromSeries({
+        series: series[unit.code],
+        targetYear,
+        frameOf,
+        frameTarget
+      });
+      if (!p) continue;
+      predictions.push({
+        schoolCode: unit.code,
+        schoolName: unit.name,
+        ...p
+      });
+    }
+    predictions.sort((a, b) => b.predicted - a.predicted);
 
     console.log(`✅ 生成 ${predictions.length} 条预测`);
 
@@ -167,7 +190,7 @@ async function generatePredictions(targetYear, options = {}) {
       };
     }
 
-    // 写库
+    // 6) 写库
     let savedCount = 0;
     for (const pred of predictions) {
       await query(
@@ -256,7 +279,7 @@ async function getHighConfidencePredictions(year) {
         p.created_at as createdAt
       FROM predictions p
       LEFT JOIN schools s ON p.school_code = s.code
-      WHERE p.year = ? AND p.strategy = 'anomaly-trend'
+      WHERE p.year = ? AND p.confidence = 'high'
       ORDER BY p.predicted_score DESC
     `;
 
@@ -306,34 +329,42 @@ async function getSchoolPrediction(schoolCode, year) {
 async function getPredictionStatistics(year) {
   try {
     const sql = `
-      SELECT 
+      SELECT
         COUNT(*) as totalPredictions,
-        SUM(CASE WHEN strategy = 'anomaly-trend' THEN 1 ELSE 0 END) as highConfidence,
-        COUNT(DISTINCT CASE WHEN error IS NOT NULL THEN school_code END) as validComparisons,
-        ROUND(AVG(ABS(error)), 1) as mae,
-        ROUND(SQRT(AVG(error * error)), 1) as rmse,
-        SUM(CASE WHEN ABS(error) <= 3 THEN 1 ELSE 0 END) as within3
+        SUM(CASE WHEN confidence = 'high' THEN 1 ELSE 0 END) as highConfidence,
+        SUM(CASE WHEN confidence = 'medium' THEN 1 ELSE 0 END) as mediumConfidence,
+        SUM(CASE WHEN confidence = 'low' THEN 1 ELSE 0 END) as lowConfidence,
+        SUM(CASE WHEN strategy = 'relative-position-momentum' THEN 1 ELSE 0 END) as momentumCount,
+        COUNT(CASE WHEN error IS NOT NULL THEN 1 END) as validComparisons,
+        ROUND(AVG(CASE WHEN error IS NOT NULL THEN ABS(error) END), 1) as mae,
+        ROUND(SQRT(AVG(CASE WHEN error IS NOT NULL THEN error * error END)), 1) as rmse,
+        SUM(CASE WHEN error IS NOT NULL AND ABS(error) <= 3 THEN 1 ELSE 0 END) as within3
       FROM predictions
-      WHERE year = ? AND error IS NOT NULL
+      WHERE year = ?
     `;
 
     const results = await query(sql, [year]);
     const stats = results[0];
 
-    if (stats.validComparisons === 0) {
+    if (!Number(stats.validComparisons)) {
       return {
-        year,
-        totalPredictions: stats.totalPredictions,
-        highConfidence: stats.highConfidence,
-        message: '没有实际数据用于对比'
+        year: parseInt(year, 10),
+        totalPredictions: Number(stats.totalPredictions),
+        highConfidence: Number(stats.highConfidence || 0),
+        mediumConfidence: Number(stats.mediumConfidence || 0),
+        lowConfidence: Number(stats.lowConfidence || 0),
+        validComparisons: 0,
+        message: `${year}年尚无实际录取数据，暂无法计算预测误差；已有 ${stats.totalPredictions} 条预测`
       };
     }
 
     return {
-      year,
-      totalPredictions: stats.totalPredictions,
-      highConfidence: stats.highConfidence,
-      validComparisons: stats.validComparisons,
+      year: parseInt(year, 10),
+      totalPredictions: Number(stats.totalPredictions),
+      highConfidence: Number(stats.highConfidence || 0),
+      mediumConfidence: Number(stats.mediumConfidence || 0),
+      lowConfidence: Number(stats.lowConfidence || 0),
+      validComparisons: Number(stats.validComparisons),
       mae: stats.mae,
       rmse: stats.rmse,
       within3: stats.within3,

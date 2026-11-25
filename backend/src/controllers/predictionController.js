@@ -53,7 +53,7 @@ async function getHighConfidence(req, res) {
       success: true,
       year: parseInt(year),
       count: predictions.length,
-      message: '高置信度预测（异常学校）',
+      message: '高置信度预测（历史锚点充分，波动小）',
       data: predictions
     });
   } catch (error) {

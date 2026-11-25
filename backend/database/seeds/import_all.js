@@ -242,6 +242,27 @@ async function main() {
   const predFile = path.join(ROOT, 'data', 'predictions2027.json');
   if (fs.existsSync(predFile)) {
     const pred = JSON.parse(fs.readFileSync(predFile, 'utf8'));
+
+    // 目标年框架未公布时，写入一条"预测框架"年份记录，
+    // 以便推荐接口能取到控制线/总分（明确标注为沿用最近年）
+    if (pred.frame) {
+      await pool.execute(
+        `INSERT INTO years (year, control_line, total_score, data_status)
+         VALUES (?, ?, ?, ?)
+         ON DUPLICATE KEY UPDATE
+           control_line = VALUES(control_line),
+           total_score  = VALUES(total_score),
+           data_status  = VALUES(data_status)`,
+        [
+          pred.targetYear,
+          pred.frame.controlLine,
+          pred.frame.totalScore,
+          '预测框架：总分/控制线沿用2026年，待官方公布后重算'
+        ]
+      );
+      console.log(`✅ years(${pred.targetYear})：已写入预测框架`);
+    }
+
     let n = 0;
     for (const s of pred.schools || []) {
       await pool.execute(
