@@ -1,5 +1,14 @@
 import { query } from '../config/database.js';
 
+/** 安全解析 JSON 字符串 */
+function safeJson(v) {
+  try {
+    return JSON.parse(v);
+  } catch {
+    return null;
+  }
+}
+
 /**
  * 获取学校列表（支持搜索、筛选、分页）
  * GET /api/schools?name=&type=&district=&page=1&limit=20
@@ -112,10 +121,13 @@ async function getSchoolHistory(req, res) {
 
     // 获取历史分数线
     const historySql = `
-      SELECT 
+      SELECT
         a.year,
         a.last_line as lastLine,
         a.quota_line as quotaLine,
+        a.choice_lines as choiceLines,
+        a.special_line as specialLine,
+        a.line_choice as lineChoice,
         a.batch,
         a.plan_count as planCount,
         a.actual_count as actualCount,
@@ -131,7 +143,13 @@ async function getSchoolHistory(req, res) {
     const history = rawHistory.map(h => ({
       ...h,
       lastLine: h.lastLine == null ? null : Number(h.lastLine),
-      quotaLine: h.quotaLine == null ? null : Number(h.quotaLine)
+      quotaLine: h.quotaLine == null ? null : Number(h.quotaLine),
+      specialLine: h.specialLine == null ? null : Number(h.specialLine),
+      // mysql2 可能将 JSON 列返回为字符串，统一解析为对象
+      choiceLines:
+        typeof h.choiceLines === 'string'
+          ? safeJson(h.choiceLines)
+          : (h.choiceLines ?? null)
     }));
 
     // 获取预测信息

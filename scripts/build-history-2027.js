@@ -35,6 +35,22 @@ const YEARS = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
 // ==================== 载入 ====================
 
 function loadYear(year) {
+  // OCR 解析版优先（分志愿线更完整，且含仅出现在当年表中的学校，如 75028）
+  const ocrPath = path.join(YEARS_DIR, `${year}-ocr.json`);
+  if (fs.existsSync(ocrPath)) {
+    const d = JSON.parse(fs.readFileSync(ocrPath, 'utf8'));
+    return {
+      year,
+      totalScore: d.totalScore,
+      controlLine: d.controlLine,
+      schools: (d.schools || []).map(s => ({
+        code: String(s.code),
+        name: s.name,
+        lastLine: s.lastLine ?? null
+      }))
+    };
+  }
+
   if (year === 2025 || year === 2026) {
     const p = path.join(YEARS_DIR, `${year}.js`);
     if (!fs.existsSync(p)) return null;

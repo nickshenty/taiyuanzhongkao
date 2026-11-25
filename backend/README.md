@@ -51,7 +51,8 @@ docker exec -i tyzk-mysql mysql -uroot -ptyzk123456 taiyuan_zhongkao \
 ### 5. 生成预测并导入数据
 
 ```bash
-# 在仓库根目录：补全历史 → 生成 2027 预测
+# 在仓库根目录：解析OCR表 → 补全历史 → 生成 2027 预测
+node scripts/parse-2026-csv.js
 node scripts/build-history-2027.js
 node scripts/generate-predictions-2027.js
 
@@ -171,7 +172,7 @@ backend/
 │   ├── routes/                   # 路由定义
 │   └── config/database.js        # 连接池
 ├── database/
-│   ├── migrations/               # 001 建表 / 002 修正枚举
+│   ├── migrations/               # 001 建表 / 002 修正枚举 / 003 分志愿线
 │   └── seeds/import_all.js       # 统一数据导入
 ├── tests/                        # 单元测试
 ├── smoke-test.mjs                # 路由冒烟测试（自适应有无数据库）
@@ -198,7 +199,7 @@ npm run test:smoke  # 路由与接口冒烟（自动探测数据库）
 |----|------|
 | `years` | 年份总分/控制线（含 2027 预测框架行）|
 | `schools` | 学校基础信息（校区级代码）|
-| `admission_lines` | 历年录取线（统招线/定向线）|
+| `admission_lines` | 历年录取线（统招线、定向线、分志愿线 `choice_lines`、特色班线）|
 | `predictions` | 预测结果（含策略、置信度）|
 | `junior_schools` | 初中学校 |
 | `quota_allocations` | 定向名额分配 |
@@ -206,6 +207,8 @@ npm run test:smoke  # 路由与接口冒烟（自动探测数据库）
 
 > `predictions.strategy` 已由 `ENUM('normal','anomaly')` 改为 `VARCHAR(32)`，
 > 以容纳 `relative-position-momentum` 等实际取值（见迁移 002）。
+> `admission_lines` 通过迁移 003 新增 `choice_lines`(JSON) / `special_line` / `line_choice`，
+> 用于保存第一~第五志愿的分档录取线与特色班线。
 
 ---
 

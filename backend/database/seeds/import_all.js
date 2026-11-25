@@ -75,7 +75,61 @@ function loadStructured(year) {
   };
 }
 
+/**
+ * 加载 OCR 解析版年份数据（data/years/{year}-ocr.json）
+ * 相比 2026.js 额外提供：分志愿录取线、特色班线、以及仅出现在表中的学校
+ */
+function loadOcr(year) {
+  const p = path.join(YEARS_DIR, `${year}-ocr.json`);
+  if (!fs.existsSync(p)) return null;
+  const d = JSON.parse(fs.readFileSync(p, 'utf8'));
+  return {
+    year,
+    totalScore: d.totalScore,
+    controlLine: d.controlLine,
+    schools: (d.schools || []).map(s => ({
+      code: s.code,
+      name: s.name,
+      lastLine: s.lastLine ?? null,
+      quotaLine: s.quotaLine ?? null,
+      type: null,
+      district: null,
+      choiceLines: s.choiceLines ?? null,
+      specialLine: s.specialLine ?? null,
+      lineChoice: s.lineChoice ?? null
+    })),
+    juniorSchools: [],
+    quotaAllocations: {}
+  };
+}
+
 function loadYear(year) {
+  // OCR 解析版优先：分志愿线更完整，且包含仅出现在当年表中的学校
+  const ocr = loadOcr(year);
+  if (ocr) {
+    // 用结构化数据补全 quotaLine（OCR 表不含定向线）
+    const s = loadStructured(year);
+    if (s) {
+      const q = new Map(s.schools.filter(x => x.quotaLine != null).map(x => [x.code, x.quotaLine]));
+      for (const school of ocr.schools) {
+        if (school.quotaLine == null && q.has(school.code)) school.quotaLine = q.get(school.code);
+      }
+      // 保留结构化数据里的初中/定向名额
+      ocr.juniorSchools = s.juniorSchools;
+      ocr.quotaAllocations = s.quotaAllocations;
+      // 补充 type/district
+      const meta = new Map(s.schools.map(x => [x.code, x]));
+      for (const school of ocr.schools) {
+        const m = meta.get(school.code);
+        if (m) {
+          school.type = school.type ?? m.type;
+          school.district = school.district ?? m.district;
+        }
+      }
+    }
+    return ocr;
+  }
+
   if (year === 2025 || year === 2026) {
     const s = loadStructured(year);
     if (s) return s;
@@ -173,12 +227,24 @@ async function main() {
     for (const s of d.schools) {
       if (s.lastLine == null && s.quotaLine == null) continue;
       await pool.execute(
-        `INSERT INTO admission_lines (year, school_code, last_line, quota_line)
-         VALUES (?, ?, ?, ?)
+        `INSERT INTO admission_lines
+           (year, school_code, last_line, quota_line, choice_lines, special_line, line_choice)
+         VALUES (?, ?, ?, ?, ?, ?, ?)
          ON DUPLICATE KEY UPDATE
-           last_line  = VALUES(last_line),
-           quota_line = VALUES(quota_line)`,
-        [d.year, s.code, s.lastLine, s.quotaLine]
+           last_line    = VALUES(last_line),
+           quota_line   = VALUES(quota_line),
+           choice_lines = VALUES(choice_lines),
+           special_line = VALUES(special_line),
+           line_choice  = VALUES(line_choice)`,
+        [
+          d.year,
+          s.code,
+          s.lastLine,
+          s.quotaLine,
+          s.choiceLines ? JSON.stringify(s.choiceLines) : null,
+          s.specialLine ?? null,
+          s.lineChoice ?? null
+        ]
       );
       lineCount++;
     }
