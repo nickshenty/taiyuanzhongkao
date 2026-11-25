@@ -1,0 +1,1743 @@
+{
+  "targetYear": 2027,
+  "algorithm": "v1.5-generalized",
+  "generatedAt": "2026-11-25T07:31:47.231Z",
+  "parameters": {
+    "momentumWeight": 0.5,
+    "momentumCap": 0.05
+  },
+  "frame": {
+    "controlLine": 603,
+    "totalScore": 839,
+    "assumption": "2027年总分与控制线尚未公布，预测按\"沿用2026年框架\"换算；官方公布后可用 rescore(relPosPred, 新控制线, 新总分) 一键重算。",
+    "basedOnYear": 2026
+  },
+  "scope": {
+    "totalEntries": 99,
+    "specialEntries": 9,
+    "ordinaryUnits": 90,
+    "distinctParentSchools": 84
+  },
+  "backtests": {
+    "2024": {
+      "targetYear": 2024,
+      "sampleSize": 58,
+      "mae": 8.69,
+      "rmse": 13.67,
+      "within3Percent": 43.1,
+      "within5Percent": 55.2,
+      "within10Percent": 67.2,
+      "frameChange": "730/525 -> 730/523",
+      "worst": [
+        {
+          "name": "清徐县徐沟中学校",
+          "predicted": 584,
+          "actual": 640,
+          "error": 56
+        },
+        {
+          "name": "太原市外国语凤凰双语中学校",
+          "predicted": 582,
+          "actual": 617,
+          "error": 35
+        },
+        {
+          "name": "太原市成才中学校",
+          "predicted": 537,
+          "actual": 566,
+          "error": 29
+        },
+        {
+          "name": "太原市同心外国语中学校",
+          "predicted": 562,
+          "actual": 591,
+          "error": 29
+        },
+        {
+          "name": "太原市实验中学校",
+          "predicted": 626,
+          "actual": 600,
+          "error": -26
+        }
+      ]
+    },
+    "2025": {
+      "targetYear": 2025,
+      "sampleSize": 77,
+      "mae": 25.99,
+      "rmse": 36.09,
+      "within3Percent": 9.1,
+      "within5Percent": 13,
+      "within10Percent": 29.9,
+      "frameChange": "730/523 -> 850/615",
+      "worst": [
+        {
+          "name": "太原市第五职业中学校（太原市第十三中学校）",
+          "predicted": 766,
+          "actual": 620.1,
+          "error": -145.89999999999998
+        },
+        {
+          "name": "太原市外国语学校（摄乐校区）",
+          "predicted": 700,
+          "actual": 790.1,
+          "error": 90.10000000000002
+        },
+        {
+          "name": "太原市第三十中学校",
+          "predicted": 772,
+          "actual": 685.1,
+          "error": -86.89999999999998
+        },
+        {
+          "name": "阳曲县第一中学校",
+          "predicted": 615,
+          "actual": 699.5,
+          "error": 84.5
+        },
+        {
+          "name": "太原市第二十一中学校",
+          "predicted": 615,
+          "actual": 683,
+          "error": 68
+        }
+      ]
+    },
+    "2026": {
+      "targetYear": 2026,
+      "sampleSize": 98,
+      "mae": 11.74,
+      "rmse": 24.25,
+      "within3Percent": 33.7,
+      "within5Percent": 50,
+      "within10Percent": 72.4,
+      "frameChange": "850/615 -> 839/603",
+      "worst": [
+        {
+          "name": "太原市第十五中学校",
+          "predicted": 750,
+          "actual": 603,
+          "error": -147
+        },
+        {
+          "name": "太原维刚实验学校",
+          "predicted": 684,
+          "actual": 603,
+          "error": -81
+        },
+        {
+          "name": "太原市泰华高级中学校",
+          "predicted": 714,
+          "actual": 634,
+          "error": -80
+        },
+        {
+          "name": "山西英才学校",
+          "predicted": 603,
+          "actual": 674.1,
+          "error": 71.10000000000002
+        },
+        {
+          "name": "太原市成才中学校",
+          "predicted": 679,
+          "actual": 749.1,
+          "error": 70.10000000000002
+        }
+      ]
+    }
+  },
+  "statistics": {
+    "total": 99,
+    "high": 90,
+    "medium": 8,
+    "low": 1,
+    "volatile": 8,
+    "min": 603,
+    "max": 803
+  },
+  "schools": [
+    {
+      "code": "65028",
+      "name": "山西大学附属中学校",
+      "parent": "山西大学附属中学校",
+      "special": false,
+      "scoreLatest": 802,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 803,
+      "relPosPred": 0.8455,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65005",
+      "name": "太原市第五中学校（青年路校区）",
+      "parent": "太原市第五中学校",
+      "special": false,
+      "scoreLatest": 795,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 796,
+      "relPosPred": 0.8191,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "66005",
+      "name": "太原市第五中学校（龙城校区）",
+      "parent": "太原市第五中学校",
+      "special": false,
+      "scoreLatest": 790.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 792,
+      "relPosPred": 0.799,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65010",
+      "name": "山西省实验中学（晋阳街校区）",
+      "parent": "山西省实验中学",
+      "special": false,
+      "scoreLatest": 791.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 792,
+      "relPosPred": 0.8011,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "66001",
+      "name": "太原市外国语学校（摄乐校区）",
+      "parent": "太原市外国语学校",
+      "special": false,
+      "scoreLatest": 787.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 790,
+      "relPosPred": 0.7909,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "66303",
+      "name": "太原市成成中学校（晋源校区）科创实验班",
+      "parent": "太原市成成中学校科创实验班",
+      "special": true,
+      "scoreLatest": 788.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 790,
+      "relPosPred": 0.7937,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65001",
+      "name": "太原市外国语学校（漪汾校区）",
+      "parent": "太原市外国语学校",
+      "special": false,
+      "scoreLatest": 785,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 787,
+      "relPosPred": 0.7789,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65014",
+      "name": "太原师范学院附属中学",
+      "parent": "太原师范学院附属中学",
+      "special": false,
+      "scoreLatest": 784.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 786,
+      "relPosPred": 0.7762,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65312",
+      "name": "太原市第十二中学校（旱西关校区）人工智能实验班",
+      "parent": "太原市第十二中学校人工智能实验班",
+      "special": true,
+      "scoreLatest": 780,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 783,
+      "relPosPred": 0.7609,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "66010",
+      "name": "山西省实验中学（解放路校区）",
+      "parent": "山西省实验中学",
+      "special": false,
+      "scoreLatest": 783.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 782,
+      "relPosPred": 0.7587,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65072",
+      "name": "太原市五育中学校",
+      "parent": "太原市五育中学校",
+      "special": false,
+      "scoreLatest": 779,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 781,
+      "relPosPred": 0.7561,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "66003",
+      "name": "太原市成成中学校（晋源校区）",
+      "parent": "太原市成成中学校",
+      "special": false,
+      "scoreLatest": 777,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 779,
+      "relPosPred": 0.7445,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "66318",
+      "name": "太原市第十八中学校（晋源校区）外语实验班",
+      "parent": "太原市第十八中学校外语实验班",
+      "special": true,
+      "scoreLatest": 774,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 777,
+      "relPosPred": 0.736,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65044",
+      "name": "清徐县徐沟中学校",
+      "parent": "清徐县徐沟中学校",
+      "special": false,
+      "scoreLatest": 774.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 776,
+      "relPosPred": 0.7334,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65080",
+      "name": "太原市令德中学校",
+      "parent": "太原市令德中学校",
+      "special": false,
+      "scoreLatest": 775.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 775,
+      "relPosPred": 0.7274,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65070",
+      "name": "太原市常青藤中学校",
+      "parent": "太原市常青藤中学校",
+      "special": false,
+      "scoreLatest": 774.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 775,
+      "relPosPred": 0.7275,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65003",
+      "name": "太原市成成中学校（迎泽校区）",
+      "parent": "太原市成成中学校",
+      "special": false,
+      "scoreLatest": 771,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 772,
+      "relPosPred": 0.7142,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "66012",
+      "name": "太原市第十二中学校（国樾龙城校区）",
+      "parent": "太原市第十二中学校",
+      "special": false,
+      "scoreLatest": 767.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 770,
+      "relPosPred": 0.7063,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65012",
+      "name": "太原市第十二中学校（旱西关校区）",
+      "parent": "太原市第十二中学校",
+      "special": false,
+      "scoreLatest": 767,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 768,
+      "relPosPred": 0.7,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "66018",
+      "name": "太原市第十八中学校（晋源校区）",
+      "parent": "太原市第十八中学校",
+      "special": false,
+      "scoreLatest": 764,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 767,
+      "relPosPred": 0.6931,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65074",
+      "name": "太原市外国语凤凰双语中学校",
+      "parent": "太原市外国语凤凰双语中学校",
+      "special": false,
+      "scoreLatest": 763.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 765,
+      "relPosPred": 0.6851,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65076",
+      "name": "太原市师范中学校",
+      "parent": "太原市师范中学校",
+      "special": false,
+      "scoreLatest": 764.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 765,
+      "relPosPred": 0.6868,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65037",
+      "name": "太原市第三十七中学校",
+      "parent": "太原市第三十七中学校",
+      "special": false,
+      "scoreLatest": 759.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 762,
+      "relPosPred": 0.6724,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65018",
+      "name": "太原市第十八中学校（坝陵校区）",
+      "parent": "太原市第十八中学校",
+      "special": false,
+      "scoreLatest": 759.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 761,
+      "relPosPred": 0.6699,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65098",
+      "name": "太原新希望双语学校",
+      "parent": "太原新希望双语学校",
+      "special": false,
+      "scoreLatest": 759.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 756,
+      "relPosPred": 0.6481,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65048",
+      "name": "太原市第四十八中学校",
+      "parent": "太原市第四十八中学校",
+      "special": false,
+      "scoreLatest": 753,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 755,
+      "relPosPred": 0.6454,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65071",
+      "name": "太原市成才中学校",
+      "parent": "太原市成才中学校",
+      "special": false,
+      "scoreLatest": 749.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 755,
+      "relPosPred": 0.6441,
+      "confidence": "medium",
+      "strategy": "relative-position-momentum",
+      "volatile": true
+    },
+    {
+      "code": "65089",
+      "name": "太原杏岭实验学校",
+      "parent": "太原杏岭实验学校",
+      "special": false,
+      "scoreLatest": 754.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 755,
+      "relPosPred": 0.646,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65004",
+      "name": "太原市实验中学校",
+      "parent": "太原市实验中学校",
+      "special": false,
+      "scoreLatest": 750,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 752,
+      "relPosPred": 0.6296,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65036",
+      "name": "太原市小店区第一中学校",
+      "parent": "太原市小店区第一中学校",
+      "special": false,
+      "scoreLatest": 750.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 752,
+      "relPosPred": 0.6322,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65073",
+      "name": "太原市师爱中学校",
+      "parent": "太原市师爱中学校",
+      "special": false,
+      "scoreLatest": 749.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 750,
+      "relPosPred": 0.6248,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65086",
+      "name": "太原市金河中学校",
+      "parent": "太原市金河中学校",
+      "special": false,
+      "scoreLatest": 744.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 747,
+      "relPosPred": 0.6117,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65306",
+      "name": "太原市进山中学校（航天实验班）",
+      "parent": "太原市进山中学校",
+      "special": true,
+      "scoreLatest": 742,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 744,
+      "relPosPred": 0.5979,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65026",
+      "name": "太原市育英中学校",
+      "parent": "太原市育英中学校",
+      "special": false,
+      "scoreLatest": 741,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 743,
+      "relPosPred": 0.5925,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65092",
+      "name": "山西现代双语学校南校",
+      "parent": "山西现代双语学校南校",
+      "special": false,
+      "scoreLatest": 742,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 742,
+      "relPosPred": 0.5872,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65095",
+      "name": "太原市致远实验学校",
+      "parent": "太原市致远实验学校",
+      "special": false,
+      "scoreLatest": 735,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 740,
+      "relPosPred": 0.5795,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "75028",
+      "name": "山西大学附属中学晋中学校",
+      "parent": "山西大学附属中学晋中学校",
+      "special": false,
+      "scoreLatest": 737.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 739,
+      "relPosPred": 0.5757,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65043",
+      "name": "清徐县清徐中学校",
+      "parent": "清徐县清徐中学校",
+      "special": false,
+      "scoreLatest": 734.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 737,
+      "relPosPred": 0.5666,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65034",
+      "name": "太原市尖草坪区第一中学校",
+      "parent": "太原市尖草坪区第一中学校",
+      "special": false,
+      "scoreLatest": 734.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 735,
+      "relPosPred": 0.5614,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65077",
+      "name": "太原市梗阳中学校",
+      "parent": "太原市梗阳中学校",
+      "special": false,
+      "scoreLatest": 729.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 734,
+      "relPosPred": 0.5561,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65006",
+      "name": "太原市进山中学校",
+      "parent": "太原市进山中学校",
+      "special": false,
+      "scoreLatest": 730,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 732,
+      "relPosPred": 0.5449,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65081",
+      "name": "太原市文华中学校",
+      "parent": "太原市文华中学校",
+      "special": false,
+      "scoreLatest": 729.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 730,
+      "relPosPred": 0.5401,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65025",
+      "name": "太原市第四实验中学校",
+      "parent": "太原市第四实验中学校",
+      "special": false,
+      "scoreLatest": 724.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 725,
+      "relPosPred": 0.519,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65075",
+      "name": "太原市同心外国语中学校",
+      "parent": "太原市同心外国语中学校",
+      "special": false,
+      "scoreLatest": 724.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 725,
+      "relPosPred": 0.519,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65023",
+      "name": "太原市第三实验中学校",
+      "parent": "太原市第三实验中学校",
+      "special": false,
+      "scoreLatest": 724.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 724,
+      "relPosPred": 0.5137,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65084",
+      "name": "太原北辰双语学校",
+      "parent": "太原北辰双语学校",
+      "special": false,
+      "scoreLatest": 724.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 724,
+      "relPosPred": 0.5137,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65079",
+      "name": "太原市汾潇中学校",
+      "parent": "太原市汾潇中学校",
+      "special": false,
+      "scoreLatest": 719.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 720,
+      "relPosPred": 0.4978,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65038",
+      "name": "太原市晋源区实验中学校",
+      "parent": "太原市晋源区实验中学校",
+      "special": false,
+      "scoreLatest": 714.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 717,
+      "relPosPred": 0.482,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65042",
+      "name": "阳曲县第一中学校",
+      "parent": "阳曲县第一中学校",
+      "special": false,
+      "scoreLatest": 709.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 715,
+      "relPosPred": 0.4742,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65085",
+      "name": "山西通宝育杰学校",
+      "parent": "山西通宝育杰学校",
+      "special": false,
+      "scoreLatest": 709.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 714,
+      "relPosPred": 0.4694,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65027",
+      "name": "太原市第二十七中学校",
+      "parent": "太原市第二十七中学校",
+      "special": false,
+      "scoreLatest": 704.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 708,
+      "relPosPred": 0.445,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65017",
+      "name": "太原市第二实验中学校",
+      "parent": "太原市第二实验中学校",
+      "special": false,
+      "scoreLatest": 699.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 702,
+      "relPosPred": 0.4185,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65039",
+      "name": "古交市第一中学校",
+      "parent": "古交市第一中学校",
+      "special": false,
+      "scoreLatest": 694.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 700,
+      "relPosPred": 0.411,
+      "confidence": "medium",
+      "strategy": "relative-position-momentum",
+      "volatile": true
+    },
+    {
+      "code": "65056",
+      "name": "太原市第五十六中学校",
+      "parent": "太原市第五十六中学校",
+      "special": false,
+      "scoreLatest": 694.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 700,
+      "relPosPred": 0.411,
+      "confidence": "medium",
+      "strategy": "relative-position-momentum",
+      "volatile": true
+    },
+    {
+      "code": "65041",
+      "name": "娄烦县娄烦中学",
+      "parent": "娄烦县娄烦中学",
+      "special": false,
+      "scoreLatest": 687.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 693,
+      "relPosPred": 0.3831,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65030",
+      "name": "太原市第三十中学校",
+      "parent": "太原市第三十中学校",
+      "special": false,
+      "scoreLatest": 685,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 688,
+      "relPosPred": 0.3597,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65055",
+      "name": "太原市第五十五中学校",
+      "parent": "太原市第五十五中学校",
+      "special": false,
+      "scoreLatest": 689.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 688,
+      "relPosPred": 0.3602,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65021",
+      "name": "太原市第二十一中学校",
+      "parent": "太原市第二十一中学校",
+      "special": false,
+      "scoreLatest": 684.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 687,
+      "relPosPred": 0.3572,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65024",
+      "name": "太原市第二十四中学校",
+      "parent": "太原市第二十四中学校",
+      "special": false,
+      "scoreLatest": 679.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 681,
+      "relPosPred": 0.3285,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65093",
+      "name": "太原市恒中学校",
+      "parent": "太原市恒中学校",
+      "special": false,
+      "scoreLatest": 678,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 681,
+      "relPosPred": 0.3292,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65020",
+      "name": "太原市第二十中学校",
+      "parent": "太原市第二十中学校",
+      "special": false,
+      "scoreLatest": 674.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 680,
+      "relPosPred": 0.3263,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65088",
+      "name": "山西英才学校",
+      "parent": "山西英才学校",
+      "special": false,
+      "scoreLatest": 674.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 680,
+      "relPosPred": 0.3263,
+      "confidence": "medium",
+      "strategy": "relative-position-momentum",
+      "volatile": true
+    },
+    {
+      "code": "65097",
+      "name": "太原新力惠中学校",
+      "parent": "太原新力惠中学校",
+      "special": false,
+      "scoreLatest": 676,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 680,
+      "relPosPred": 0.3281,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65016",
+      "name": "太原市第十六中学校",
+      "parent": "太原市第十六中学校",
+      "special": false,
+      "scoreLatest": 669.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 671,
+      "relPosPred": 0.2862,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65060",
+      "name": "太原市第六十中学校",
+      "parent": "太原市第六十中学校",
+      "special": false,
+      "scoreLatest": 664.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 668,
+      "relPosPred": 0.2756,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65019",
+      "name": "太原市第十九中学校",
+      "parent": "太原市第十九中学校",
+      "special": false,
+      "scoreLatest": 664.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 664,
+      "relPosPred": 0.2597,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65033",
+      "name": "太原市综合高级中学校",
+      "parent": "太原市综合高级中学校",
+      "special": false,
+      "scoreLatest": 659.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 663,
+      "relPosPred": 0.2545,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65061",
+      "name": "太原市第六十一中学校",
+      "parent": "太原市第六十一中学校",
+      "special": false,
+      "scoreLatest": 659.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 662,
+      "relPosPred": 0.2487,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65063",
+      "name": "太原市第六十三中学校",
+      "parent": "太原市第六十三中学校",
+      "special": false,
+      "scoreLatest": 659,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 662,
+      "relPosPred": 0.2486,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65029",
+      "name": "太原市第二十九中学校",
+      "parent": "太原市第二十九中学校",
+      "special": false,
+      "scoreLatest": 654.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 654,
+      "relPosPred": 0.2174,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65062",
+      "name": "太原市第六十二中学校",
+      "parent": "太原市第六十二中学校",
+      "special": false,
+      "scoreLatest": 650.5,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 654,
+      "relPosPred": 0.2142,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65090",
+      "name": "太原市金桥双语中学校",
+      "parent": "太原市金桥双语中学校",
+      "special": false,
+      "scoreLatest": 649.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 650,
+      "relPosPred": 0.1974,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65053",
+      "name": "太原市第五十三中学校",
+      "parent": "太原市第五十三中学校",
+      "special": false,
+      "scoreLatest": 644.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 648,
+      "relPosPred": 0.1927,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65052",
+      "name": "太原市第五十二中学校",
+      "parent": "太原市第五十二中学校",
+      "special": false,
+      "scoreLatest": 639.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 642,
+      "relPosPred": 0.1645,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65011",
+      "name": "太原市第十一中学校",
+      "parent": "太原市第十一中学校",
+      "special": false,
+      "scoreLatest": 639.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 641,
+      "relPosPred": 0.1592,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65040",
+      "name": "古交市第二高级中学校",
+      "parent": "古交市第二高级中学校",
+      "special": false,
+      "scoreLatest": 634.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 639,
+      "relPosPred": 0.153,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65064",
+      "name": "太原市第六十四中学校",
+      "parent": "太原市第六十四中学校",
+      "special": false,
+      "scoreLatest": 639.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 639,
+      "relPosPred": 0.1539,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65049",
+      "name": "太原市第四十九中学校",
+      "parent": "太原市第四十九中学校",
+      "special": false,
+      "scoreLatest": 629.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 631,
+      "relPosPred": 0.1169,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65002",
+      "name": "太原市第二中学校",
+      "parent": "太原市第二中学校",
+      "special": false,
+      "scoreLatest": 629.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 628,
+      "relPosPred": 0.1062,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65091",
+      "name": "太原市泰华高级中学校",
+      "parent": "太原市泰华高级中学校",
+      "special": false,
+      "scoreLatest": 634,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 628,
+      "relPosPred": 0.1064,
+      "confidence": "medium",
+      "strategy": "relative-position-momentum",
+      "volatile": true
+    },
+    {
+      "code": "65065",
+      "name": "太原市第六十五中学校",
+      "parent": "太原市第六十五中学校",
+      "special": false,
+      "scoreLatest": 624.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 627,
+      "relPosPred": 0.101,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65066",
+      "name": "太原市第六十六中学校",
+      "parent": "太原市第六十六中学校",
+      "special": false,
+      "scoreLatest": 624.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 624,
+      "relPosPred": 0.0904,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65031",
+      "name": "太原市第五实验中学校",
+      "parent": "太原市第五实验中学校",
+      "special": false,
+      "scoreLatest": 619.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 621,
+      "relPosPred": 0.0746,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65059",
+      "name": "太原市第五十九中学校",
+      "parent": "太原市第五十九中学校",
+      "special": false,
+      "scoreLatest": 619.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 621,
+      "relPosPred": 0.0745,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "88016",
+      "name": "太原市第十六中学校（太原市信息技术学校综合高中试点班）",
+      "parent": "太原市第十六中学校",
+      "special": true,
+      "scoreLatest": 619.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 613,
+      "relPosPred": 0.0432,
+      "confidence": "medium",
+      "strategy": "relative-position-momentum",
+      "volatile": true
+    },
+    {
+      "code": "88033",
+      "name": "太原市综合高级中学校（综合高中试点班）",
+      "parent": "太原市综合高级中学校",
+      "special": true,
+      "scoreLatest": 609.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 611,
+      "relPosPred": 0.0322,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65013",
+      "name": "太原市第五职业中学校（太原市第十三中学校）",
+      "parent": "太原市第五职业中学校",
+      "special": false,
+      "scoreLatest": 609.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 609,
+      "relPosPred": 0.0269,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65035",
+      "name": "太原外语科技实验中学校",
+      "parent": "太原外语科技实验中学校",
+      "special": false,
+      "scoreLatest": 609.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 608,
+      "relPosPred": 0.0222,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65087",
+      "name": "太原市长安综合中学校",
+      "parent": "太原市长安综合中学校",
+      "special": false,
+      "scoreLatest": 604.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 604,
+      "relPosPred": 0.0058,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65015",
+      "name": "太原市第十五中学校",
+      "parent": "太原市第十五中学校",
+      "special": false,
+      "scoreLatest": 603,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 603,
+      "relPosPred": 0,
+      "confidence": "medium",
+      "strategy": "relative-position-momentum",
+      "volatile": true
+    },
+    {
+      "code": "65045",
+      "name": "古交市第三中学校",
+      "parent": "古交市第三中学校",
+      "special": false,
+      "scoreLatest": 603,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 603,
+      "relPosPred": 0,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65067",
+      "name": "太原市第六十七中学校",
+      "parent": "太原市第六十七中学校",
+      "special": false,
+      "scoreLatest": 604.1,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 603,
+      "relPosPred": 0.0004,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65083",
+      "name": "太原大成学校",
+      "parent": "太原大成学校",
+      "special": false,
+      "scoreLatest": 603,
+      "anchorYears": [
+        2026
+      ],
+      "predicted2027": 603,
+      "relPosPred": 0,
+      "confidence": "low",
+      "strategy": "hold-relative",
+      "volatile": false
+    },
+    {
+      "code": "65094",
+      "name": "太原市行知宏实验中学校",
+      "parent": "太原市行知宏实验中学校",
+      "special": false,
+      "scoreLatest": 603,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 603,
+      "relPosPred": 0,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "65096",
+      "name": "太原维刚实验学校",
+      "parent": "太原维刚实验学校",
+      "special": false,
+      "scoreLatest": 603,
+      "anchorYears": [
+        2026,
+        2024
+      ],
+      "predicted2027": 603,
+      "relPosPred": 0,
+      "confidence": "medium",
+      "strategy": "relative-position-momentum",
+      "volatile": true
+    },
+    {
+      "code": "65099",
+      "name": "太原市华阳双语高级中学校",
+      "parent": "太原市华阳双语高级中学校",
+      "special": false,
+      "scoreLatest": 603,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 603,
+      "relPosPred": 0,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "88007",
+      "name": "太原市第七职业中学校（综合高中试点班）",
+      "parent": "太原市第七职业中学校",
+      "special": true,
+      "scoreLatest": 603,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 603,
+      "relPosPred": 0,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "88013",
+      "name": "太原市第五职业中学校（综合高中试点班）",
+      "parent": "太原市第五职业中学校",
+      "special": true,
+      "scoreLatest": 603,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 603,
+      "relPosPred": 0,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    },
+    {
+      "code": "88046",
+      "name": "阳曲县高级职业中学校（综合高中试点班）",
+      "parent": "阳曲县高级职业中学校",
+      "special": true,
+      "scoreLatest": 603,
+      "anchorYears": [
+        2026,
+        2025
+      ],
+      "predicted2027": 603,
+      "relPosPred": 0,
+      "confidence": "high",
+      "strategy": "relative-position-momentum",
+      "volatile": false
+    }
+  ]
+}

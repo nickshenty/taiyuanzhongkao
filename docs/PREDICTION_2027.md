@@ -245,8 +245,8 @@ cp ~/Desktop/2025.csv data/sources/2025-录取分数线.csv
 node scripts/parse-score-csv.js --year=2025
 
 # 3) 重建历史 → 重新预测 → 重新导入
-node scripts/build-history-2027.js
-node scripts/generate-predictions-2027.js
+node scripts/build-history.js
+node scripts/generate-predictions.js
 cd backend && npm run seed
 ```
 
@@ -255,7 +255,9 @@ cd backend && npm run seed
 >
 > 该流程即为年度更新标准动作：新一年数据出来后，
 > 只需 OCR → `parse-score-csv.js --year=YYYY` → 重建历史 → 重新预测 → 导入。
-> 预测目标年会自动顺延（见 `scripts/generate-predictions-2027.js` 的 `TARGET_YEAR`）。
+> **预测目标年已自动推导**：基准年取 `data/history-full.json` 中的 `latestYear`
+> （即数据里最新的年份），目标年 = 基准年 + 1。
+> 新一年数据放进 `data/years/` 后，无需修改任何代码即可顺延。
 
 ---
 
@@ -276,8 +278,8 @@ docker exec -i tyzk-mysql mysql -uroot -ptyzk123456 taiyuan_zhongkao \
   < backend/database/migrations/002_fix_prediction_strategy_enum.sql
 
 # 3) 补全历史 → 生成预测
-node scripts/build-history-2027.js
-node scripts/generate-predictions-2027.js
+node scripts/build-history.js
+node scripts/generate-predictions.js
 
 # 4) 导入数据库
 cd backend && npm install && npm run seed
@@ -297,8 +299,8 @@ cd backend && npm test && npm run test:smoke
 ## 七、相关文件
 
 - OCR 解析：[parse-score-csv.js](scripts/parse-score-csv.js)
-- 历史补全：[build-history-2027.js](scripts/build-history-2027.js) → [history-full.json](data/history-full.json)
-- 预测生成：[generate-predictions-2027.js](scripts/generate-predictions-2027.js) → [predictions2027.json](data/predictions2027.json)
+- 历史补全：[build-history.js](scripts/build-history.js) → [history-full.json](data/history-full.json)
+- 预测生成：[generate-predictions.js](scripts/generate-predictions.js) → [predictions-2027.json](data/predictions-2027.json) / [predictions-latest.json](data/predictions-latest.json)
 - 算法实现：[predictionAlgorithmV1.5.js](backend/src/algorithms/predictionAlgorithmV1.5.js)
 - 推荐服务：[recommendationService.js](backend/src/services/recommendationService.js)
 - 数据库导入：[import_all.js](backend/database/seeds/import_all.js)

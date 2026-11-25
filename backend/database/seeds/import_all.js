@@ -336,9 +336,15 @@ async function main() {
       (skippedQuota ? `（跳过 ${skippedQuota} 条无对应学校）` : '')
   );
 
-  // ---- 5. predictions（2027）----
-  const predFile = path.join(ROOT, 'data', 'predictions2027.json');
-  if (fs.existsSync(predFile)) {
+  // ---- 5. predictions（目标年，自动指向最新）----
+  // 优先 predictions-latest.json（生成器每次都会刷新），
+  // 回退到旧的 predictions2027.json 以兼容历史快照
+  const predCandidates = [
+    path.join(ROOT, 'data', 'predictions-latest.json'),
+    path.join(ROOT, 'data', 'predictions2027.json')
+  ];
+  const predFile = predCandidates.find(f => fs.existsSync(f));
+  if (predFile) {
     const pred = JSON.parse(fs.readFileSync(predFile, 'utf8'));
 
     // 目标年框架未公布时，写入一条"预测框架"年份记录，
@@ -385,7 +391,7 @@ async function main() {
     }
     console.log(`✅ predictions(${pred.targetYear})：${n} 条`);
   } else {
-    console.log('⚠️  未找到 data/predictions2027.json，跳过预测导入');
+    console.log('⚠️  未找到预测文件（data/predictions-latest.json），跳过预测导入');
   }
 
   await pool.end();

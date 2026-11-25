@@ -1,7 +1,7 @@
 {
   "targetYear": 2027,
   "algorithm": "v1.5-generalized",
-  "generatedAt": "2026-11-25T07:21:59.789Z",
+  "generatedAt": "2026-11-25T07:31:47.231Z",
   "parameters": {
     "momentumWeight": 0.5,
     "momentumCap": 0.05
@@ -9,7 +9,8 @@
   "frame": {
     "controlLine": 603,
     "totalScore": 839,
-    "assumption": "2027年总分与控制线尚未公布，预测按\"沿用2026年框架\"换算；官方公布后可用 rescore(relPosPred, 新控制线, 新总分) 一键重算。"
+    "assumption": "2027年总分与控制线尚未公布，预测按\"沿用2026年框架\"换算；官方公布后可用 rescore(relPosPred, 新控制线, 新总分) 一键重算。",
+    "basedOnYear": 2026
   },
   "scope": {
     "totalEntries": 99,
@@ -18,48 +19,6 @@
     "distinctParentSchools": 84
   },
   "backtests": {
-    "2023": {
-      "targetYear": 2023,
-      "sampleSize": 58,
-      "mae": 7.34,
-      "rmse": 9.84,
-      "within3Percent": 31,
-      "within5Percent": 43.1,
-      "within10Percent": 74.1,
-      "frameChange": "660/460 -> 730/525",
-      "worst": [
-        {
-          "name": "太原市第三十七中学校",
-          "predicted": 609,
-          "actual": 643,
-          "error": 34
-        },
-        {
-          "name": "清徐县徐沟中学校",
-          "predicted": 561,
-          "actual": 581,
-          "error": 20
-        },
-        {
-          "name": "太原市外国语学校（摄乐校区）",
-          "predicted": 572,
-          "actual": 591,
-          "error": 19
-        },
-        {
-          "name": "清徐县清徐中学校",
-          "predicted": 572,
-          "actual": 591,
-          "error": 19
-        },
-        {
-          "name": "太原市师爱中学校",
-          "predicted": 609,
-          "actual": 626,
-          "error": 17
-        }
-      ]
-    },
     "2024": {
       "targetYear": 2024,
       "sampleSize": 58,
@@ -99,6 +58,48 @@
           "predicted": 626,
           "actual": 600,
           "error": -26
+        }
+      ]
+    },
+    "2025": {
+      "targetYear": 2025,
+      "sampleSize": 77,
+      "mae": 25.99,
+      "rmse": 36.09,
+      "within3Percent": 9.1,
+      "within5Percent": 13,
+      "within10Percent": 29.9,
+      "frameChange": "730/523 -> 850/615",
+      "worst": [
+        {
+          "name": "太原市第五职业中学校（太原市第十三中学校）",
+          "predicted": 766,
+          "actual": 620.1,
+          "error": -145.89999999999998
+        },
+        {
+          "name": "太原市外国语学校（摄乐校区）",
+          "predicted": 700,
+          "actual": 790.1,
+          "error": 90.10000000000002
+        },
+        {
+          "name": "太原市第三十中学校",
+          "predicted": 772,
+          "actual": 685.1,
+          "error": -86.89999999999998
+        },
+        {
+          "name": "阳曲县第一中学校",
+          "predicted": 615,
+          "actual": 699.5,
+          "error": 84.5
+        },
+        {
+          "name": "太原市第二十一中学校",
+          "predicted": 615,
+          "actual": 683,
+          "error": 68
         }
       ]
     },
@@ -160,7 +161,7 @@
       "name": "山西大学附属中学校",
       "parent": "山西大学附属中学校",
       "special": false,
-      "score2026": 802,
+      "scoreLatest": 802,
       "anchorYears": [
         2026,
         2025
@@ -176,7 +177,7 @@
       "name": "太原市第五中学校（青年路校区）",
       "parent": "太原市第五中学校",
       "special": false,
-      "score2026": 795,
+      "scoreLatest": 795,
       "anchorYears": [
         2026,
         2025
@@ -192,7 +193,7 @@
       "name": "太原市第五中学校（龙城校区）",
       "parent": "太原市第五中学校",
       "special": false,
-      "score2026": 790.5,
+      "scoreLatest": 790.5,
       "anchorYears": [
         2026,
         2025
@@ -208,7 +209,7 @@
       "name": "山西省实验中学（晋阳街校区）",
       "parent": "山西省实验中学",
       "special": false,
-      "score2026": 791.5,
+      "scoreLatest": 791.5,
       "anchorYears": [
         2026,
         2025
@@ -224,7 +225,7 @@
       "name": "太原市外国语学校（摄乐校区）",
       "parent": "太原市外国语学校",
       "special": false,
-      "score2026": 787.5,
+      "scoreLatest": 787.5,
       "anchorYears": [
         2026,
         2025
@@ -240,7 +241,7 @@
       "name": "太原市成成中学校（晋源校区）科创实验班",
       "parent": "太原市成成中学校科创实验班",
       "special": true,
-      "score2026": 788.5,
+      "scoreLatest": 788.5,
       "anchorYears": [
         2026,
         2025
@@ -256,7 +257,7 @@
       "name": "太原市外国语学校（漪汾校区）",
       "parent": "太原市外国语学校",
       "special": false,
-      "score2026": 785,
+      "scoreLatest": 785,
       "anchorYears": [
         2026,
         2025
@@ -272,7 +273,7 @@
       "name": "太原师范学院附属中学",
       "parent": "太原师范学院附属中学",
       "special": false,
-      "score2026": 784.5,
+      "scoreLatest": 784.5,
       "anchorYears": [
         2026,
         2025
@@ -288,7 +289,7 @@
       "name": "太原市第十二中学校（旱西关校区）人工智能实验班",
       "parent": "太原市第十二中学校人工智能实验班",
       "special": true,
-      "score2026": 780,
+      "scoreLatest": 780,
       "anchorYears": [
         2026,
         2025
@@ -304,7 +305,7 @@
       "name": "山西省实验中学（解放路校区）",
       "parent": "山西省实验中学",
       "special": false,
-      "score2026": 783.5,
+      "scoreLatest": 783.5,
       "anchorYears": [
         2026,
         2025
@@ -320,7 +321,7 @@
       "name": "太原市五育中学校",
       "parent": "太原市五育中学校",
       "special": false,
-      "score2026": 779,
+      "scoreLatest": 779,
       "anchorYears": [
         2026,
         2025
@@ -336,7 +337,7 @@
       "name": "太原市成成中学校（晋源校区）",
       "parent": "太原市成成中学校",
       "special": false,
-      "score2026": 777,
+      "scoreLatest": 777,
       "anchorYears": [
         2026,
         2025
@@ -352,7 +353,7 @@
       "name": "太原市第十八中学校（晋源校区）外语实验班",
       "parent": "太原市第十八中学校外语实验班",
       "special": true,
-      "score2026": 774,
+      "scoreLatest": 774,
       "anchorYears": [
         2026,
         2025
@@ -368,7 +369,7 @@
       "name": "清徐县徐沟中学校",
       "parent": "清徐县徐沟中学校",
       "special": false,
-      "score2026": 774.1,
+      "scoreLatest": 774.1,
       "anchorYears": [
         2026,
         2025
@@ -384,7 +385,7 @@
       "name": "太原市令德中学校",
       "parent": "太原市令德中学校",
       "special": false,
-      "score2026": 775.5,
+      "scoreLatest": 775.5,
       "anchorYears": [
         2026,
         2025
@@ -400,7 +401,7 @@
       "name": "太原市常青藤中学校",
       "parent": "太原市常青藤中学校",
       "special": false,
-      "score2026": 774.1,
+      "scoreLatest": 774.1,
       "anchorYears": [
         2026,
         2025
@@ -416,7 +417,7 @@
       "name": "太原市成成中学校（迎泽校区）",
       "parent": "太原市成成中学校",
       "special": false,
-      "score2026": 771,
+      "scoreLatest": 771,
       "anchorYears": [
         2026,
         2025
@@ -432,7 +433,7 @@
       "name": "太原市第十二中学校（国樾龙城校区）",
       "parent": "太原市第十二中学校",
       "special": false,
-      "score2026": 767.5,
+      "scoreLatest": 767.5,
       "anchorYears": [
         2026,
         2025
@@ -448,7 +449,7 @@
       "name": "太原市第十二中学校（旱西关校区）",
       "parent": "太原市第十二中学校",
       "special": false,
-      "score2026": 767,
+      "scoreLatest": 767,
       "anchorYears": [
         2026,
         2025
@@ -464,7 +465,7 @@
       "name": "太原市第十八中学校（晋源校区）",
       "parent": "太原市第十八中学校",
       "special": false,
-      "score2026": 764,
+      "scoreLatest": 764,
       "anchorYears": [
         2026,
         2025
@@ -480,7 +481,7 @@
       "name": "太原市外国语凤凰双语中学校",
       "parent": "太原市外国语凤凰双语中学校",
       "special": false,
-      "score2026": 763.5,
+      "scoreLatest": 763.5,
       "anchorYears": [
         2026,
         2025
@@ -496,7 +497,7 @@
       "name": "太原市师范中学校",
       "parent": "太原市师范中学校",
       "special": false,
-      "score2026": 764.5,
+      "scoreLatest": 764.5,
       "anchorYears": [
         2026,
         2025
@@ -512,7 +513,7 @@
       "name": "太原市第三十七中学校",
       "parent": "太原市第三十七中学校",
       "special": false,
-      "score2026": 759.1,
+      "scoreLatest": 759.1,
       "anchorYears": [
         2026,
         2025
@@ -528,7 +529,7 @@
       "name": "太原市第十八中学校（坝陵校区）",
       "parent": "太原市第十八中学校",
       "special": false,
-      "score2026": 759.1,
+      "scoreLatest": 759.1,
       "anchorYears": [
         2026,
         2025
@@ -544,7 +545,7 @@
       "name": "太原新希望双语学校",
       "parent": "太原新希望双语学校",
       "special": false,
-      "score2026": 759.1,
+      "scoreLatest": 759.1,
       "anchorYears": [
         2026,
         2025
@@ -560,7 +561,7 @@
       "name": "太原市第四十八中学校",
       "parent": "太原市第四十八中学校",
       "special": false,
-      "score2026": 753,
+      "scoreLatest": 753,
       "anchorYears": [
         2026,
         2025
@@ -576,7 +577,7 @@
       "name": "太原市成才中学校",
       "parent": "太原市成才中学校",
       "special": false,
-      "score2026": 749.1,
+      "scoreLatest": 749.1,
       "anchorYears": [
         2026,
         2025
@@ -592,7 +593,7 @@
       "name": "太原杏岭实验学校",
       "parent": "太原杏岭实验学校",
       "special": false,
-      "score2026": 754.1,
+      "scoreLatest": 754.1,
       "anchorYears": [
         2026,
         2025
@@ -608,7 +609,7 @@
       "name": "太原市实验中学校",
       "parent": "太原市实验中学校",
       "special": false,
-      "score2026": 750,
+      "scoreLatest": 750,
       "anchorYears": [
         2026,
         2025
@@ -624,7 +625,7 @@
       "name": "太原市小店区第一中学校",
       "parent": "太原市小店区第一中学校",
       "special": false,
-      "score2026": 750.5,
+      "scoreLatest": 750.5,
       "anchorYears": [
         2026,
         2025
@@ -640,7 +641,7 @@
       "name": "太原市师爱中学校",
       "parent": "太原市师爱中学校",
       "special": false,
-      "score2026": 749.1,
+      "scoreLatest": 749.1,
       "anchorYears": [
         2026,
         2025
@@ -656,7 +657,7 @@
       "name": "太原市金河中学校",
       "parent": "太原市金河中学校",
       "special": false,
-      "score2026": 744.1,
+      "scoreLatest": 744.1,
       "anchorYears": [
         2026,
         2025
@@ -672,7 +673,7 @@
       "name": "太原市进山中学校（航天实验班）",
       "parent": "太原市进山中学校",
       "special": true,
-      "score2026": 742,
+      "scoreLatest": 742,
       "anchorYears": [
         2026,
         2025
@@ -688,7 +689,7 @@
       "name": "太原市育英中学校",
       "parent": "太原市育英中学校",
       "special": false,
-      "score2026": 741,
+      "scoreLatest": 741,
       "anchorYears": [
         2026,
         2025
@@ -704,7 +705,7 @@
       "name": "山西现代双语学校南校",
       "parent": "山西现代双语学校南校",
       "special": false,
-      "score2026": 742,
+      "scoreLatest": 742,
       "anchorYears": [
         2026,
         2025
@@ -720,7 +721,7 @@
       "name": "太原市致远实验学校",
       "parent": "太原市致远实验学校",
       "special": false,
-      "score2026": 735,
+      "scoreLatest": 735,
       "anchorYears": [
         2026,
         2025
@@ -736,7 +737,7 @@
       "name": "山西大学附属中学晋中学校",
       "parent": "山西大学附属中学晋中学校",
       "special": false,
-      "score2026": 737.5,
+      "scoreLatest": 737.5,
       "anchorYears": [
         2026,
         2025
@@ -752,7 +753,7 @@
       "name": "清徐县清徐中学校",
       "parent": "清徐县清徐中学校",
       "special": false,
-      "score2026": 734.1,
+      "scoreLatest": 734.1,
       "anchorYears": [
         2026,
         2025
@@ -768,7 +769,7 @@
       "name": "太原市尖草坪区第一中学校",
       "parent": "太原市尖草坪区第一中学校",
       "special": false,
-      "score2026": 734.1,
+      "scoreLatest": 734.1,
       "anchorYears": [
         2026,
         2025
@@ -784,7 +785,7 @@
       "name": "太原市梗阳中学校",
       "parent": "太原市梗阳中学校",
       "special": false,
-      "score2026": 729.1,
+      "scoreLatest": 729.1,
       "anchorYears": [
         2026,
         2025
@@ -800,7 +801,7 @@
       "name": "太原市进山中学校",
       "parent": "太原市进山中学校",
       "special": false,
-      "score2026": 730,
+      "scoreLatest": 730,
       "anchorYears": [
         2026,
         2025
@@ -816,7 +817,7 @@
       "name": "太原市文华中学校",
       "parent": "太原市文华中学校",
       "special": false,
-      "score2026": 729.1,
+      "scoreLatest": 729.1,
       "anchorYears": [
         2026,
         2025
@@ -832,7 +833,7 @@
       "name": "太原市第四实验中学校",
       "parent": "太原市第四实验中学校",
       "special": false,
-      "score2026": 724.1,
+      "scoreLatest": 724.1,
       "anchorYears": [
         2026,
         2025
@@ -848,7 +849,7 @@
       "name": "太原市同心外国语中学校",
       "parent": "太原市同心外国语中学校",
       "special": false,
-      "score2026": 724.1,
+      "scoreLatest": 724.1,
       "anchorYears": [
         2026,
         2025
@@ -864,7 +865,7 @@
       "name": "太原市第三实验中学校",
       "parent": "太原市第三实验中学校",
       "special": false,
-      "score2026": 724.1,
+      "scoreLatest": 724.1,
       "anchorYears": [
         2026,
         2025
@@ -880,7 +881,7 @@
       "name": "太原北辰双语学校",
       "parent": "太原北辰双语学校",
       "special": false,
-      "score2026": 724.1,
+      "scoreLatest": 724.1,
       "anchorYears": [
         2026,
         2025
@@ -896,7 +897,7 @@
       "name": "太原市汾潇中学校",
       "parent": "太原市汾潇中学校",
       "special": false,
-      "score2026": 719.1,
+      "scoreLatest": 719.1,
       "anchorYears": [
         2026,
         2025
@@ -912,7 +913,7 @@
       "name": "太原市晋源区实验中学校",
       "parent": "太原市晋源区实验中学校",
       "special": false,
-      "score2026": 714.1,
+      "scoreLatest": 714.1,
       "anchorYears": [
         2026,
         2025
@@ -928,7 +929,7 @@
       "name": "阳曲县第一中学校",
       "parent": "阳曲县第一中学校",
       "special": false,
-      "score2026": 709.5,
+      "scoreLatest": 709.5,
       "anchorYears": [
         2026,
         2025
@@ -944,7 +945,7 @@
       "name": "山西通宝育杰学校",
       "parent": "山西通宝育杰学校",
       "special": false,
-      "score2026": 709.1,
+      "scoreLatest": 709.1,
       "anchorYears": [
         2026,
         2025
@@ -960,7 +961,7 @@
       "name": "太原市第二十七中学校",
       "parent": "太原市第二十七中学校",
       "special": false,
-      "score2026": 704.1,
+      "scoreLatest": 704.1,
       "anchorYears": [
         2026,
         2025
@@ -976,7 +977,7 @@
       "name": "太原市第二实验中学校",
       "parent": "太原市第二实验中学校",
       "special": false,
-      "score2026": 699.1,
+      "scoreLatest": 699.1,
       "anchorYears": [
         2026,
         2025
@@ -992,7 +993,7 @@
       "name": "古交市第一中学校",
       "parent": "古交市第一中学校",
       "special": false,
-      "score2026": 694.1,
+      "scoreLatest": 694.1,
       "anchorYears": [
         2026,
         2025
@@ -1008,7 +1009,7 @@
       "name": "太原市第五十六中学校",
       "parent": "太原市第五十六中学校",
       "special": false,
-      "score2026": 694.1,
+      "scoreLatest": 694.1,
       "anchorYears": [
         2026,
         2025
@@ -1024,7 +1025,7 @@
       "name": "娄烦县娄烦中学",
       "parent": "娄烦县娄烦中学",
       "special": false,
-      "score2026": 687.5,
+      "scoreLatest": 687.5,
       "anchorYears": [
         2026,
         2025
@@ -1040,7 +1041,7 @@
       "name": "太原市第三十中学校",
       "parent": "太原市第三十中学校",
       "special": false,
-      "score2026": 685,
+      "scoreLatest": 685,
       "anchorYears": [
         2026,
         2025
@@ -1056,7 +1057,7 @@
       "name": "太原市第五十五中学校",
       "parent": "太原市第五十五中学校",
       "special": false,
-      "score2026": 689.1,
+      "scoreLatest": 689.1,
       "anchorYears": [
         2026,
         2025
@@ -1072,7 +1073,7 @@
       "name": "太原市第二十一中学校",
       "parent": "太原市第二十一中学校",
       "special": false,
-      "score2026": 684.1,
+      "scoreLatest": 684.1,
       "anchorYears": [
         2026,
         2025
@@ -1088,7 +1089,7 @@
       "name": "太原市第二十四中学校",
       "parent": "太原市第二十四中学校",
       "special": false,
-      "score2026": 679.1,
+      "scoreLatest": 679.1,
       "anchorYears": [
         2026,
         2025
@@ -1104,7 +1105,7 @@
       "name": "太原市恒中学校",
       "parent": "太原市恒中学校",
       "special": false,
-      "score2026": 678,
+      "scoreLatest": 678,
       "anchorYears": [
         2026,
         2025
@@ -1120,7 +1121,7 @@
       "name": "太原市第二十中学校",
       "parent": "太原市第二十中学校",
       "special": false,
-      "score2026": 674.1,
+      "scoreLatest": 674.1,
       "anchorYears": [
         2026,
         2025
@@ -1136,7 +1137,7 @@
       "name": "山西英才学校",
       "parent": "山西英才学校",
       "special": false,
-      "score2026": 674.1,
+      "scoreLatest": 674.1,
       "anchorYears": [
         2026,
         2025
@@ -1152,7 +1153,7 @@
       "name": "太原新力惠中学校",
       "parent": "太原新力惠中学校",
       "special": false,
-      "score2026": 676,
+      "scoreLatest": 676,
       "anchorYears": [
         2026,
         2025
@@ -1168,7 +1169,7 @@
       "name": "太原市第十六中学校",
       "parent": "太原市第十六中学校",
       "special": false,
-      "score2026": 669.1,
+      "scoreLatest": 669.1,
       "anchorYears": [
         2026,
         2025
@@ -1184,7 +1185,7 @@
       "name": "太原市第六十中学校",
       "parent": "太原市第六十中学校",
       "special": false,
-      "score2026": 664.1,
+      "scoreLatest": 664.1,
       "anchorYears": [
         2026,
         2025
@@ -1200,7 +1201,7 @@
       "name": "太原市第十九中学校",
       "parent": "太原市第十九中学校",
       "special": false,
-      "score2026": 664.1,
+      "scoreLatest": 664.1,
       "anchorYears": [
         2026,
         2025
@@ -1216,7 +1217,7 @@
       "name": "太原市综合高级中学校",
       "parent": "太原市综合高级中学校",
       "special": false,
-      "score2026": 659.1,
+      "scoreLatest": 659.1,
       "anchorYears": [
         2026,
         2025
@@ -1232,7 +1233,7 @@
       "name": "太原市第六十一中学校",
       "parent": "太原市第六十一中学校",
       "special": false,
-      "score2026": 659.1,
+      "scoreLatest": 659.1,
       "anchorYears": [
         2026,
         2025
@@ -1248,7 +1249,7 @@
       "name": "太原市第六十三中学校",
       "parent": "太原市第六十三中学校",
       "special": false,
-      "score2026": 659,
+      "scoreLatest": 659,
       "anchorYears": [
         2026,
         2025
@@ -1264,7 +1265,7 @@
       "name": "太原市第二十九中学校",
       "parent": "太原市第二十九中学校",
       "special": false,
-      "score2026": 654.1,
+      "scoreLatest": 654.1,
       "anchorYears": [
         2026,
         2025
@@ -1280,7 +1281,7 @@
       "name": "太原市第六十二中学校",
       "parent": "太原市第六十二中学校",
       "special": false,
-      "score2026": 650.5,
+      "scoreLatest": 650.5,
       "anchorYears": [
         2026,
         2025
@@ -1296,7 +1297,7 @@
       "name": "太原市金桥双语中学校",
       "parent": "太原市金桥双语中学校",
       "special": false,
-      "score2026": 649.1,
+      "scoreLatest": 649.1,
       "anchorYears": [
         2026,
         2025
@@ -1312,7 +1313,7 @@
       "name": "太原市第五十三中学校",
       "parent": "太原市第五十三中学校",
       "special": false,
-      "score2026": 644.1,
+      "scoreLatest": 644.1,
       "anchorYears": [
         2026,
         2025
@@ -1328,7 +1329,7 @@
       "name": "太原市第五十二中学校",
       "parent": "太原市第五十二中学校",
       "special": false,
-      "score2026": 639.1,
+      "scoreLatest": 639.1,
       "anchorYears": [
         2026,
         2025
@@ -1344,7 +1345,7 @@
       "name": "太原市第十一中学校",
       "parent": "太原市第十一中学校",
       "special": false,
-      "score2026": 639.1,
+      "scoreLatest": 639.1,
       "anchorYears": [
         2026,
         2025
@@ -1360,7 +1361,7 @@
       "name": "古交市第二高级中学校",
       "parent": "古交市第二高级中学校",
       "special": false,
-      "score2026": 634.1,
+      "scoreLatest": 634.1,
       "anchorYears": [
         2026,
         2025
@@ -1376,7 +1377,7 @@
       "name": "太原市第六十四中学校",
       "parent": "太原市第六十四中学校",
       "special": false,
-      "score2026": 639.1,
+      "scoreLatest": 639.1,
       "anchorYears": [
         2026,
         2025
@@ -1392,7 +1393,7 @@
       "name": "太原市第四十九中学校",
       "parent": "太原市第四十九中学校",
       "special": false,
-      "score2026": 629.1,
+      "scoreLatest": 629.1,
       "anchorYears": [
         2026,
         2025
@@ -1408,7 +1409,7 @@
       "name": "太原市第二中学校",
       "parent": "太原市第二中学校",
       "special": false,
-      "score2026": 629.1,
+      "scoreLatest": 629.1,
       "anchorYears": [
         2026,
         2025
@@ -1424,7 +1425,7 @@
       "name": "太原市泰华高级中学校",
       "parent": "太原市泰华高级中学校",
       "special": false,
-      "score2026": 634,
+      "scoreLatest": 634,
       "anchorYears": [
         2026,
         2025
@@ -1440,7 +1441,7 @@
       "name": "太原市第六十五中学校",
       "parent": "太原市第六十五中学校",
       "special": false,
-      "score2026": 624.1,
+      "scoreLatest": 624.1,
       "anchorYears": [
         2026,
         2025
@@ -1456,7 +1457,7 @@
       "name": "太原市第六十六中学校",
       "parent": "太原市第六十六中学校",
       "special": false,
-      "score2026": 624.1,
+      "scoreLatest": 624.1,
       "anchorYears": [
         2026,
         2025
@@ -1472,7 +1473,7 @@
       "name": "太原市第五实验中学校",
       "parent": "太原市第五实验中学校",
       "special": false,
-      "score2026": 619.1,
+      "scoreLatest": 619.1,
       "anchorYears": [
         2026,
         2025
@@ -1488,7 +1489,7 @@
       "name": "太原市第五十九中学校",
       "parent": "太原市第五十九中学校",
       "special": false,
-      "score2026": 619.1,
+      "scoreLatest": 619.1,
       "anchorYears": [
         2026,
         2025
@@ -1504,7 +1505,7 @@
       "name": "太原市第十六中学校（太原市信息技术学校综合高中试点班）",
       "parent": "太原市第十六中学校",
       "special": true,
-      "score2026": 619.1,
+      "scoreLatest": 619.1,
       "anchorYears": [
         2026,
         2025
@@ -1520,7 +1521,7 @@
       "name": "太原市综合高级中学校（综合高中试点班）",
       "parent": "太原市综合高级中学校",
       "special": true,
-      "score2026": 609.1,
+      "scoreLatest": 609.1,
       "anchorYears": [
         2026,
         2025
@@ -1536,7 +1537,7 @@
       "name": "太原市第五职业中学校（太原市第十三中学校）",
       "parent": "太原市第五职业中学校",
       "special": false,
-      "score2026": 609.1,
+      "scoreLatest": 609.1,
       "anchorYears": [
         2026,
         2025
@@ -1552,7 +1553,7 @@
       "name": "太原外语科技实验中学校",
       "parent": "太原外语科技实验中学校",
       "special": false,
-      "score2026": 609.1,
+      "scoreLatest": 609.1,
       "anchorYears": [
         2026,
         2025
@@ -1568,7 +1569,7 @@
       "name": "太原市长安综合中学校",
       "parent": "太原市长安综合中学校",
       "special": false,
-      "score2026": 604.1,
+      "scoreLatest": 604.1,
       "anchorYears": [
         2026,
         2025
@@ -1584,7 +1585,7 @@
       "name": "太原市第十五中学校",
       "parent": "太原市第十五中学校",
       "special": false,
-      "score2026": 603,
+      "scoreLatest": 603,
       "anchorYears": [
         2026,
         2025
@@ -1600,7 +1601,7 @@
       "name": "古交市第三中学校",
       "parent": "古交市第三中学校",
       "special": false,
-      "score2026": 603,
+      "scoreLatest": 603,
       "anchorYears": [
         2026,
         2025
@@ -1616,7 +1617,7 @@
       "name": "太原市第六十七中学校",
       "parent": "太原市第六十七中学校",
       "special": false,
-      "score2026": 604.1,
+      "scoreLatest": 604.1,
       "anchorYears": [
         2026,
         2025
@@ -1632,7 +1633,7 @@
       "name": "太原大成学校",
       "parent": "太原大成学校",
       "special": false,
-      "score2026": 603,
+      "scoreLatest": 603,
       "anchorYears": [
         2026
       ],
@@ -1647,7 +1648,7 @@
       "name": "太原市行知宏实验中学校",
       "parent": "太原市行知宏实验中学校",
       "special": false,
-      "score2026": 603,
+      "scoreLatest": 603,
       "anchorYears": [
         2026,
         2025
@@ -1663,7 +1664,7 @@
       "name": "太原维刚实验学校",
       "parent": "太原维刚实验学校",
       "special": false,
-      "score2026": 603,
+      "scoreLatest": 603,
       "anchorYears": [
         2026,
         2024
@@ -1679,7 +1680,7 @@
       "name": "太原市华阳双语高级中学校",
       "parent": "太原市华阳双语高级中学校",
       "special": false,
-      "score2026": 603,
+      "scoreLatest": 603,
       "anchorYears": [
         2026,
         2025
@@ -1695,7 +1696,7 @@
       "name": "太原市第七职业中学校（综合高中试点班）",
       "parent": "太原市第七职业中学校",
       "special": true,
-      "score2026": 603,
+      "scoreLatest": 603,
       "anchorYears": [
         2026,
         2025
@@ -1711,7 +1712,7 @@
       "name": "太原市第五职业中学校（综合高中试点班）",
       "parent": "太原市第五职业中学校",
       "special": true,
-      "score2026": 603,
+      "scoreLatest": 603,
       "anchorYears": [
         2026,
         2025
@@ -1727,7 +1728,7 @@
       "name": "阳曲县高级职业中学校（综合高中试点班）",
       "parent": "阳曲县高级职业中学校",
       "special": true,
-      "score2026": 603,
+      "scoreLatest": 603,
       "anchorYears": [
         2026,
         2025

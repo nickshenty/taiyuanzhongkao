@@ -3,14 +3,14 @@
  *
  * 目标
  * ----
- * 明确"全太原市高中"口径，并为一所学校/校区补齐 2017-2026 各年录取线，
+ * 明确"全太原市高中"口径，并为每个学校/校区补齐历年录取线，
  * 供预测算法使用。旧数据有两个结构性问题：
  *   1. 2017-2024 是"学校级"（约60所），2025/2026 是"校区级"（约89单元），口径不一致；
  *   2. 2025 年仅覆盖 49 个 2026 校区单元，导致大量学校无历史锚点。
  *
  * 处理办法
  * --------
- * 以 2026 年校区级名单（89 个招生单元 + 9 个特色班/试点班）为基准名单，
+ * 以**数据中最新的年份**为准（自动识别），取其校区级名单为基准名单，
  * 对每个单元逐年取分，优先级：
  *   exact      —— 该年存在同代码记录（2025/2026 校区级数据）
  *   name       —— 该年存在同名记录
@@ -20,7 +20,9 @@
  *
  * 输出：data/history-full.json
  *
- * 用法：node scripts/build-history-2027.js
+ * 年份与目标年均自动识别，无需修改代码即可用于新一年数据。
+ *
+ * 用法：node scripts/build-history.js
  */
 
 const fs = require('fs');
@@ -30,7 +32,19 @@ const ROOT = path.resolve(__dirname, '..');
 const YEARS_DIR = path.join(ROOT, 'data', 'years');
 const OUT = path.join(ROOT, 'data', 'history-full.json');
 
-const YEARS = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
+/**
+ * 扫描 data/years/ 下所有可用年份。
+ * 支持三种命名：{year}.json（旧式）、{year}.js（结构化）、{year}-ocr.json（OCR 解析版）
+ */
+function discoverYears() {
+  if (!fs.existsSync(YEARS_DIR)) return [];
+  const years = new Set();
+  for (const f of fs.readdirSync(YEARS_DIR)) {
+    const m = f.match(/^(\d{4})(-ocr)?\.(json|js)$/);
+    if (m) years.add(Number(m[1]));
+  }
+  return [...years].sort((a, b) => a - b);
+}
 
 // ==================== 载入 ====================
 
@@ -51,14 +65,13 @@ function loadYear(year) {
     };
   }
 
-  if (year === 2025 || year === 2026) {
-    const p = path.join(YEARS_DIR, `${year}.js`);
-    if (!fs.existsSync(p)) return null;
-    const d = require(p); // eslint-disable-line
+  const jsPath = path.join(YEARS_DIR, `${year}.js`);
+  if (fs.existsSync(jsPath)) {
+    const d = require(jsPath); // eslint-disable-line
     return {
-      year,
+      year: Number(d.yearLabel ?? year),
       totalScore: d.totalScore,
-      controlLine: d.minControlLine,
+      controlLine: d.minControlLine ?? d.controlLine,
       schools: (d.schools || []).map(s => ({
         code: s.code,
         name: s.name,
@@ -126,6 +139,9 @@ function aliasKeys(name) {
 // ==================== 构建 ====================
 
 function main() {
+  const YEARS = discoverYears();
+  if (!YEARS.length) throw new Error(`data/years/ 下未发现任何年份数据`);
+
   const data = {};
   for (const y of YEARS) {
     const d = loadYear(y);
@@ -138,8 +154,11 @@ function main() {
       .join(' ')
   );
 
-  const y2026 = data[2026];
-  if (!y2026) throw new Error('缺少 2026 年数据');
+  const loadedYears = Object.keys(data).map(Number).sort((a, b) => a - b);
+  const latestYear = loadedYears[loadedYears.length - 1];
+  const latest = data[latestYear];
+  if (!latest) throw new Error(`缺少 ${latestYear} 年数据`);
+  console.log(`基准年（最新）：${latestYear}，共 ${latest.schools.length} 条`);
 
   // 每年索引：code → school，name(norm) → school
   const idx = {};
@@ -159,8 +178,8 @@ function main() {
     }
   }
 
-  // 基准名单：2026 全部条目
-  const roster = y2026.schools.map(s => ({
+  // 基准名单：最新年份全部条目
+  const roster = latest.schools.map(s => ({
     code: String(s.code),
     name: s.name,
     parent: parentName(s.name),
@@ -252,6 +271,8 @@ function main() {
 
   const payload = {
     generatedAt: new Date().toISOString(),
+    latestYear,
+    availableYears: loadedYears,
     scope: {
       totalEntries: roster.length,
       specialEntries: roster.filter(u => u.special).length,
@@ -284,22 +305,19 @@ function main() {
     );
   }
 
-  const withRecent = perUnit.filter(u => {
-    const y26 = records.find(r => r.code === u.code && r.year === 2026 && r.score != null);
-    const y25 = records.find(r => r.code === u.code && r.year === 2025 && r.score != null);
-    const y24 = records.find(r => r.code === u.code && r.year === 2024 && r.score != null);
-    return y26 && y25 && y24;
-  });
+  const hasAt = (code, y) =>
+    records.some(r => r.code === code && r.year === y && r.score != null);
+
+  const withRecent = perUnit.filter(
+    u => hasAt(u.code, latestYear) && hasAt(u.code, latestYear - 1) && hasAt(u.code, latestYear - 2)
+  );
   console.log(
-    `\n可用于两年动量（2026+2025+2024 齐备）的单元：${withRecent.length} / ${roster.length}`
+    `\n可用于双锚点动量（${latestYear}+${latestYear - 1}+${latestYear - 2} 齐备）的单元：${withRecent.length} / ${roster.length}`
   );
 
-  const missingRecent = perUnit.filter(u => {
-    const y25 = records.find(r => r.code === u.code && r.year === 2025 && r.score != null);
-    return !y25;
-  });
+  const missingRecent = perUnit.filter(u => !hasAt(u.code, latestYear - 1));
   if (missingRecent.length) {
-    console.log(`缺 2025 的单元 ${missingRecent.length} 个：`);
+    console.log(`缺 ${latestYear - 1} 年数据的单元 ${missingRecent.length} 个：`);
     missingRecent.slice(0, 40).forEach(u => console.log('  ', u.code, u.name));
   }
 

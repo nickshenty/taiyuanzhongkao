@@ -1,7 +1,10 @@
 /**
- * 2027年太原中考分数线预测生成器（全量校区级）
+ * 太原中考分数线预测生成器（全量校区级，年份自动识别）
  *
- * 前置：先运行 node scripts/build-history-2027.js 生成 data/history-full.json
+ * 基准年 = data/history-full.json 中的 latestYear（即数据里最新的年份）
+ * 目标年 = 基准年 + 1（可用 --target=YYYY 覆盖）
+ *
+ * 前置：先运行 node scripts/build-history.js 生成 data/history-full.json
  *
  * 数据源
  * ------
@@ -22,8 +25,14 @@
  *
  * 用法
  * ----
- *   node scripts/generate-predictions-2027.js
- *   node scripts/generate-predictions-2027.js --no-backtest
+ *   node scripts/generate-predictions.js                  # 自动：最新年 + 1
+ *   node scripts/generate-predictions.js --target=2028    # 手动指定目标年
+ *   node scripts/generate-predictions.js --no-backtest
+ *
+ * 输出
+ * ----
+ *   data/predictions-{目标年}.json   逐年存档
+ *   data/predictions-latest.json     最新指针（导入器读取此文件）
  */
 
 const fs = require('fs');
@@ -31,15 +40,18 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const HISTORY = path.join(ROOT, 'data', 'history-full.json');
-const OUT = path.join(ROOT, 'data', 'predictions2027.json');
-const TARGET_YEAR = 2027;
-const BACKTEST_YEARS = [2023, 2024, 2026];
+const DATA_DIR = path.join(ROOT, 'data');
+
+function argOf(name, def) {
+  const hit = process.argv.find(a => a.startsWith(`--${name}=`));
+  return hit ? hit.slice(name.length + 3) : def;
+}
 
 async function main() {
   const noBacktest = process.argv.includes('--no-backtest');
 
   if (!fs.existsSync(HISTORY)) {
-    throw new Error(`缺少 ${HISTORY}，请先运行 node scripts/build-history-2027.js`);
+    throw new Error(`缺少 ${HISTORY}，请先运行 node scripts/build-history.js`);
   }
 
   // 动态导入后端算法模块（保证与 API 侧同一套逻辑）
@@ -51,6 +63,26 @@ async function main() {
   const history = JSON.parse(fs.readFileSync(HISTORY, 'utf8'));
   const frames = history.frames;
   const frameOf = y => frames[String(y)] || null;
+
+  // 年份自动推导：基准年取数据中最新年份，目标年 = 基准年 + 1
+  const availableYears = Object.keys(frames)
+    .map(Number)
+    .sort((a, b) => a - b);
+  const LATEST_YEAR = history.latestYear ?? availableYears[availableYears.length - 1];
+  const TARGET_YEAR = Number(argOf('target', LATEST_YEAR + 1));
+  if (!Number.isFinite(TARGET_YEAR) || TARGET_YEAR <= LATEST_YEAR) {
+    throw new Error(`非法的目标年 ${TARGET_YEAR}（必须大于基准年 ${LATEST_YEAR}）`);
+  }
+
+  // 回测年份：取基准年及之前共 3 个有数据的年份
+  const BACKTEST_YEARS = availableYears
+    .filter(y => y <= LATEST_YEAR)
+    .slice(-3);
+
+  const OUT = path.join(DATA_DIR, `predictions-${TARGET_YEAR}.json`);
+  const OUT_LATEST = path.join(DATA_DIR, 'predictions-latest.json');
+
+  console.log(`基准年 ${LATEST_YEAR} → 目标年 ${TARGET_YEAR}`);
 
   // 每单元锚点序列
   const series = {};
@@ -115,16 +147,16 @@ async function main() {
     }
   }
 
-  // ==================== 生成 2027 ====================
-  const f2026 = frameOf(2026);
-  if (!f2026) throw new Error('缺少 2026 年框架');
-  const frame2027 = {
-    controlLine: f2026.controlLine,
-    totalScore: f2026.totalScore,
+  // ==================== 生成目标年预测 ====================
+  const latestFrame = frameOf(LATEST_YEAR);
+  if (!latestFrame) throw new Error(`缺少 ${LATEST_YEAR} 年框架`);
+  const frameTarget = {
+    controlLine: latestFrame.controlLine,
+    totalScore: latestFrame.totalScore,
     assumed: true
   };
 
-  console.log('\n=== 生成 2027 年预测 ===');
+  console.log(`\n=== 生成 ${TARGET_YEAR} 年预测 ===`);
   const results = [];
   for (const unit of history.roster) {
     const sy = series[unit.code];
@@ -133,7 +165,7 @@ async function main() {
       series: sy,
       targetYear: TARGET_YEAR,
       frameOf,
-      frameTarget: frame2027
+      frameTarget
     });
     if (!p) continue;
     results.push({
@@ -141,7 +173,7 @@ async function main() {
       name: unit.name,
       parent: unit.parent,
       special: unit.special,
-      score2026: sy[2026] ?? null,
+      scoreLatest: sy[LATEST_YEAR] ?? null,
       anchorYears: p.anchorYears,
       predicted2027: p.predicted,
       relPosPred: p.relPosPred,
@@ -172,10 +204,11 @@ async function main() {
     generatedAt: new Date().toISOString(),
     parameters: { momentumWeight: MOMENTUM_WEIGHT, momentumCap: MOMENTUM_CAP },
     frame: {
-      controlLine: frame2027.controlLine,
-      totalScore: frame2027.totalScore,
+      controlLine: frameTarget.controlLine,
+      totalScore: frameTarget.totalScore,
       assumption:
-        '2027年总分与控制线尚未公布，预测按"沿用2026年框架"换算；官方公布后可用 rescore(relPosPred, 新控制线, 新总分) 一键重算。'
+        `${TARGET_YEAR}年总分与控制线尚未公布，预测按"沿用${LATEST_YEAR}年框架"换算；官方公布后可用 rescore(relPosPred, 新控制线, 新总分) 一键重算。`,
+      basedOnYear: LATEST_YEAR
     },
     scope: history.scope,
     backtests,
@@ -183,19 +216,22 @@ async function main() {
     schools: results
   };
 
-  fs.writeFileSync(OUT, JSON.stringify(payload, null, 2), 'utf8');
+  const json = JSON.stringify(payload, null, 2);
+  fs.writeFileSync(OUT, json, 'utf8');
+  fs.writeFileSync(OUT_LATEST, json, 'utf8');
   console.log(`\n✅ 已写入 ${OUT}`);
+  console.log(`✅ 已更新 ${OUT_LATEST}（供导入器指向最新预测）`);
 
   console.log('\n前15名：');
   results.slice(0, 15).forEach(r =>
     console.log(
-      `  ${String(r.predicted2027).padStart(4)}  ${r.name}  (2026:${r.score2026 ?? '-'} ${r.confidence})`
+      `  ${String(r.predicted2027).padStart(4)}  ${r.name}  (${LATEST_YEAR}:${r.scoreLatest ?? '-'} ${r.confidence})`
     )
   );
   console.log('\n后10名：');
   results.slice(-10).forEach(r =>
     console.log(
-      `  ${String(r.predicted2027).padStart(4)}  ${r.name}  (2026:${r.score2026 ?? '-'} ${r.confidence})`
+      `  ${String(r.predicted2027).padStart(4)}  ${r.name}  (${LATEST_YEAR}:${r.scoreLatest ?? '-'} ${r.confidence})`
     )
   );
 
@@ -209,4 +245,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { main, TARGET_YEAR, BACKTEST_YEARS };
+module.exports = { main };

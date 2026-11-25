@@ -55,10 +55,10 @@ docker exec -i tyzk-mysql mysql -uroot -ptyzk123456 taiyuan_zhongkao \
 ### 5. 生成预测并导入数据
 
 ```bash
-# 在仓库根目录：解析OCR表 → 补全历史 → 生成 2027 预测
-node scripts/parse-score-csv.js
-node scripts/build-history-2027.js
-node scripts/generate-predictions-2027.js
+# 在仓库根目录：解析OCR表 → 补全历史 → 生成预测（年份自动推导）
+node scripts/parse-score-csv.js              # 默认 2026；次年用 --year=2027
+node scripts/build-history.js                # 基准年 = data/years 中最新年份
+node scripts/generate-predictions.js         # 目标年 = 基准年 + 1
 
 # 回到 backend：导入数据库
 npm run seed
@@ -217,6 +217,31 @@ npm run test:smoke  # 路由与接口冒烟（自动探测数据库）
 > 部分学校跨年份更换招生代码（如娄烦县娄烦中学 2024=68001 → 2026=65041），
 > 迁移 004 增加 `schools.is_current` 标记。学校列表类接口默认只返回当前在用代码，
 > 需要查看历史代码时传 `?includeLegacy=true`。
+
+---
+
+## 🔄 年度更新（无需改代码）
+
+预测目标年由数据自动推导，**新一年数据放入 `data/years/` 即可顺延**：
+
+| 步骤 | 命令 | 说明 |
+|------|------|------|
+| 1 | `cp 新表.csv data/sources/YYYY-录取分数线.csv` | 留存 OCR 源文件 |
+| 2 | `node scripts/parse-score-csv.js --year=YYYY` | 解析为 `data/years/YYYY-ocr.json` |
+| 3 | `node scripts/build-history.js` | 自动取最新年份为基准年 |
+| 4 | `node scripts/generate-predictions.js` | 自动预测"基准年+1" |
+| 5 | `npm run seed` | 导入数据库（读取 `predictions-latest.json`）|
+
+年份推导规则：
+
+- **基准年** = `data/years/` 下可识别的最大年份（支持 `{年}.json` / `{年}.js` / `{年}-ocr.json`）
+- **目标年** = 基准年 + 1（可用 `node scripts/generate-predictions.js --target=2028` 覆盖）
+
+输出文件：
+
+- `data/history-full.json` — 全量校区级历史（含 `latestYear`、逐年覆盖率）
+- `data/predictions-{目标年}.json` — 逐年存档
+- `data/predictions-latest.json` — 最新指针，导入器读取此文件
 
 ---
 
