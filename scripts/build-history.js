@@ -116,6 +116,25 @@ function normName(name) {
     .replace(/高级中学校$/, '中学');
 }
 
+/**
+ * 判断两个校名是否指向同一所学校（用于校验"同代码"匹配的可信度）
+ *
+ * 背景：2017-2023 的旧数据文件存在代码错配（如把 65013 标成"外国语学校(摄乐校区)"、
+ * 把 65030 标成"师院附中"）。若只按代码匹配，会把错误分数当成该校区历史值。
+ * 因此按代码命中后仍需校验校名，不一致则回退到名称/母校匹配。
+ */
+function nameCompatible(a, b) {
+  if (!a || !b) return false;
+  const na = normName(a);
+  const nb = normName(b);
+  if (na === nb) return true;
+  // 校区名与母校名：一方包含另一方即视为同一学校体系
+  if (na.includes(nb) || nb.includes(na)) return true;
+  // 去掉"第"字差异等常见写法
+  const strip = x => x.replace(/第/g, '');
+  return strip(na) === strip(nb) || strip(na).includes(strip(nb)) || strip(nb).includes(strip(na));
+}
+
 /** 特色班/试点班（非独立学校） */
 function isSpecial(name) {
   return /实验班|试点班|小语种班/.test(String(name));
@@ -189,6 +208,7 @@ function main() {
 
   // 逐年取分
   const records = [];
+  const codeConflicts = [];
   for (const unit of roster) {
     for (const y of Object.keys(data)) {
       const year = Number(y);
@@ -197,12 +217,20 @@ function main() {
       let source = null;
       let matchedName = null;
 
-      // 1) 同代码
+      // 1) 同代码（必须校名一致，防止旧数据的代码错配污染）
       const byCode = I.byCode.get(unit.code);
-      if (byCode && byCode.lastLine != null) {
+      if (byCode && byCode.lastLine != null && nameCompatible(unit.name, byCode.name)) {
         score = Number(byCode.lastLine);
         source = 'exact';
         matchedName = byCode.name;
+      } else if (byCode && byCode.lastLine != null) {
+        // 代码命中但校名不符：记录冲突，继续走名称匹配
+        codeConflicts.push({
+          year,
+          code: unit.code,
+          unitName: unit.name,
+          byCodeName: byCode.name
+        });
       }
 
       // 2) 同名（归一化）
@@ -283,6 +311,7 @@ function main() {
       Object.entries(data).map(([y, d]) => [y, { totalScore: d.totalScore, controlLine: d.controlLine }])
     ),
     coverage: cover,
+    codeConflicts,
     roster,
     records
   };
@@ -319,6 +348,18 @@ function main() {
   if (missingRecent.length) {
     console.log(`缺 ${latestYear - 1} 年数据的单元 ${missingRecent.length} 个：`);
     missingRecent.slice(0, 40).forEach(u => console.log('  ', u.code, u.name));
+  }
+
+  if (codeConflicts.length) {
+    const years = [...new Set(codeConflicts.map(c => c.year))].sort();
+    console.log(
+      `\n⚠️  检测到 ${codeConflicts.length} 处"同代码但校名不符"的历史数据错配（已改用名称匹配）：`
+    );
+    console.log(`   涉及年份：${years.join(', ')}`);
+    codeConflicts.slice(0, 6).forEach(c =>
+      console.log(`   ${c.year} 代码${c.code}：基准名"${c.unitName}" vs 旧数据"${c.byCodeName}"`)
+    );
+    if (codeConflicts.length > 6) console.log(`   ... 其余 ${codeConflicts.length - 6} 处见 history-full.json`);
   }
 
   console.log(`\n✅ 已写入 ${OUT}`);

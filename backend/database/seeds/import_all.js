@@ -253,7 +253,79 @@ async function main() {
   console.log(`✅ schools：${schoolMap.size} 条（当前在用 ${curRow.n} 条，基准年 ${maxYear}）`);
 
   // ---- 3. admission_lines ----
+  // 优先从 data/history-full.json 导入：该文件已做"代码-校名一致性校验"，
+  // 修正了 2017-2023 旧数据中的代码错配（如把 65013 标成外国语摄乐）。
+  // 直接在原始年份文件上导入会把错误分数写进 API 返回值，
+  // 造成"预测用干净数据、查询用脏数据"的不一致。
+  const historyFile = path.join(ROOT, 'data', 'history-full.json');
   let lineCount = 0;
+
+  if (fs.existsSync(historyFile)) {
+    const history = JSON.parse(fs.readFileSync(historyFile, 'utf8'));
+
+    // 幂等性：先清除本次涉及年份的旧记录。
+    // 否则历史导入中"被清洗掉的错误行"会残留在库里，
+    // 造成 API 仍返回旧的错误分数（如 2023 年 65013 的错配值）。
+    const yearsInScope = [...new Set((history.records || []).map(r => r.year))];
+    if (yearsInScope.length) {
+      const placeholders = yearsInScope.map(() => '?').join(',');
+      const [delRes] = await pool.query(
+        `DELETE FROM admission_lines WHERE year IN (${placeholders})`,
+        yearsInScope
+      );
+      if (delRes.affectedRows) {
+        console.log(`🧹 清理旧录取线记录 ${delRes.affectedRows} 条（年份：${yearsInScope.join(',')}）`);
+      }
+    }
+
+    // 按 (year, code) 合并 OCR 年的分志愿线与特色班线
+    const extras = new Map();
+    for (const d of loaded) {
+      if (!d.schools) continue;
+      for (const s of d.schools) {
+        if (s.choiceLines || s.specialLine != null || s.lineChoice) {
+          extras.set(`${d.year}:${s.code}`, s);
+        }
+      }
+    }
+
+    // 定向线来自各年原始文件（history 中不含定向线）
+    const quotaMap = new Map();
+    for (const d of loaded) {
+      for (const s of d.schools) {
+        if (s.quotaLine != null) quotaMap.set(`${d.year}:${s.code}`, s.quotaLine);
+      }
+    }
+
+    for (const r of history.records || []) {
+      if (r.score == null) continue;
+      if (!/^\d{5}$/.test(String(r.code))) continue;
+      const key = `${r.year}:${r.code}`;
+      const ex = extras.get(key);
+      await pool.execute(
+        `INSERT INTO admission_lines
+           (year, school_code, last_line, quota_line, choice_lines, special_line, line_choice)
+         VALUES (?, ?, ?, ?, ?, ?, ?)
+         ON DUPLICATE KEY UPDATE
+           last_line    = VALUES(last_line),
+           quota_line   = VALUES(quota_line),
+           choice_lines = VALUES(choice_lines),
+           special_line = VALUES(special_line),
+           line_choice  = VALUES(line_choice)`,
+        [
+          r.year,
+          r.code,
+          r.score,
+          quotaMap.get(key) ?? null,
+          ex?.choiceLines ? JSON.stringify(ex.choiceLines) : null,
+          ex?.specialLine ?? null,
+          ex?.lineChoice ?? null
+        ]
+      );
+      lineCount++;
+    }
+    console.log(`✅ admission_lines：${lineCount} 条（来自 history-full.json，已清洗代码错配）`);
+  } else {
   for (const d of loaded) {
     for (const s of d.schools) {
       if (!/^\d{5}$/.test(String(s.code))) continue; // 已在 schools 阶段报告
@@ -282,6 +354,7 @@ async function main() {
     }
   }
   console.log(`✅ admission_lines：${lineCount} 条`);
+  }
 
   // ---- 4. junior_schools + quota_allocations（2025/2026 结构化数据）----
   let juniorCount = 0;
@@ -365,6 +438,12 @@ async function main() {
         ]
       );
       console.log(`✅ years(${pred.targetYear})：已写入预测框架`);
+    }
+
+    // 幂等性：先清理该目标年的旧预测（学校名单可能变化）
+    const [delPred] = await pool.query('DELETE FROM predictions WHERE year = ?', [pred.targetYear]);
+    if (delPred.affectedRows) {
+      console.log(`🧹 清理 ${pred.targetYear} 年旧预测 ${delPred.affectedRows} 条`);
     }
 
     let n = 0;

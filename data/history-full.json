@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T07:31:47.200Z",
+  "generatedAt": "2026-11-25T07:51:51.903Z",
   "latestYear": 2026,
   "availableYears": [
     2017,
@@ -85,38 +85,38 @@
     },
     "2020": {
       "total": 99,
-      "exact": 36,
-      "name": 20,
+      "exact": 25,
+      "name": 27,
       "parent": 0,
-      "missing": 43
+      "missing": 47
     },
     "2021": {
       "total": 99,
-      "exact": 35,
-      "name": 23,
+      "exact": 32,
+      "name": 24,
       "parent": 0,
-      "missing": 41
+      "missing": 43
     },
     "2022": {
       "total": 99,
-      "exact": 35,
-      "name": 23,
+      "exact": 32,
+      "name": 24,
       "parent": 0,
-      "missing": 41
+      "missing": 43
     },
     "2023": {
       "total": 99,
-      "exact": 35,
-      "name": 23,
+      "exact": 32,
+      "name": 24,
       "parent": 0,
-      "missing": 41
+      "missing": 43
     },
     "2024": {
       "total": 99,
-      "exact": 35,
-      "name": 23,
+      "exact": 86,
+      "name": 5,
       "parent": 0,
-      "missing": 41
+      "missing": 8
     },
     "2025": {
       "total": 99,
@@ -133,6 +133,176 @@
       "missing": 0
     }
   },
+  "codeConflicts": [
+    {
+      "year": 2020,
+      "code": "66001",
+      "unitName": "太原市外国语学校（摄乐校区）",
+      "byCodeName": "清徐县清徐中学校"
+    },
+    {
+      "year": 2021,
+      "code": "66001",
+      "unitName": "太原市外国语学校（摄乐校区）",
+      "byCodeName": "清徐县清徐中学校"
+    },
+    {
+      "year": 2022,
+      "code": "66001",
+      "unitName": "太原市外国语学校（摄乐校区）",
+      "byCodeName": "清徐县清徐中学校"
+    },
+    {
+      "year": 2023,
+      "code": "66001",
+      "unitName": "太原市外国语学校（摄乐校区）",
+      "byCodeName": "清徐县清徐中学校"
+    },
+    {
+      "year": 2020,
+      "code": "65002",
+      "unitName": "太原市第二中学校",
+      "byCodeName": "太原市外国语学校（摄乐校区）"
+    },
+    {
+      "year": 2020,
+      "code": "65004",
+      "unitName": "太原市实验中学校",
+      "byCodeName": "太原市成成中学校（晋源校区）"
+    },
+    {
+      "year": 2020,
+      "code": "65006",
+      "unitName": "太原市进山中学校",
+      "byCodeName": "太原市第五中学校（龙城校区）"
+    },
+    {
+      "year": 2020,
+      "code": "65013",
+      "unitName": "太原市第五职业中学校（太原市第十三中学校）",
+      "byCodeName": "太原市第十三中学校"
+    },
+    {
+      "year": 2021,
+      "code": "65013",
+      "unitName": "太原市第五职业中学校（太原市第十三中学校）",
+      "byCodeName": "太原市外国语学校（摄乐校区）"
+    },
+    {
+      "year": 2022,
+      "code": "65013",
+      "unitName": "太原市第五职业中学校（太原市第十三中学校）",
+      "byCodeName": "太原市外国语学校（摄乐校区）"
+    },
+    {
+      "year": 2023,
+      "code": "65013",
+      "unitName": "太原市第五职业中学校（太原市第十三中学校）",
+      "byCodeName": "太原市外国语学校（摄乐校区）"
+    },
+    {
+      "year": 2024,
+      "code": "65013",
+      "unitName": "太原市第五职业中学校（太原市第十三中学校）",
+      "byCodeName": "太原市第十三中学校"
+    },
+    {
+      "year": 2020,
+      "code": "65019",
+      "unitName": "太原市第十九中学校",
+      "byCodeName": "太原市第十八中学校（晋源校区）"
+    },
+    {
+      "year": 2020,
+      "code": "65020",
+      "unitName": "太原市第二十中学校",
+      "byCodeName": "太原市第十九中学校"
+    },
+    {
+      "year": 2020,
+      "code": "65021",
+      "unitName": "太原市第二十一中学校",
+      "byCodeName": "太原市第二十中学校"
+    },
+    {
+      "year": 2020,
+      "code": "65030",
+      "unitName": "太原市第三十中学校",
+      "byCodeName": "太原师范学院附属中学"
+    },
+    {
+      "year": 2021,
+      "code": "65030",
+      "unitName": "太原市第三十中学校",
+      "byCodeName": "太原师范学院附属中学"
+    },
+    {
+      "year": 2022,
+      "code": "65030",
+      "unitName": "太原市第三十中学校",
+      "byCodeName": "太原师范学院附属中学"
+    },
+    {
+      "year": 2023,
+      "code": "65030",
+      "unitName": "太原市第三十中学校",
+      "byCodeName": "太原师范学院附属中学"
+    },
+    {
+      "year": 2024,
+      "code": "65033",
+      "unitName": "太原市综合高级中学校",
+      "byCodeName": "太原市综合高中学校"
+    },
+    {
+      "year": 2024,
+      "code": "65035",
+      "unitName": "太原外语科技实验中学校",
+      "byCodeName": "太原外国语科技中学校"
+    },
+    {
+      "year": 2020,
+      "code": "65036",
+      "unitName": "太原市小店区第一中学校",
+      "byCodeName": "太原市进山中学校"
+    },
+    {
+      "year": 2020,
+      "code": "65042",
+      "unitName": "阳曲县第一中学校",
+      "byCodeName": "太原市实验中学校"
+    },
+    {
+      "year": 2024,
+      "code": "65071",
+      "unitName": "太原市成才中学校",
+      "byCodeName": "太原市成成中学校"
+    },
+    {
+      "year": 2024,
+      "code": "65072",
+      "unitName": "太原市五育中学校",
+      "byCodeName": "太原市育才中学校"
+    },
+    {
+      "year": 2024,
+      "code": "65076",
+      "unitName": "太原市师范中学校",
+      "byCodeName": "太原市师苑中学校"
+    },
+    {
+      "year": 2024,
+      "code": "65077",
+      "unitName": "太原市梗阳中学校",
+      "byCodeName": "太原市槐荫中学校"
+    },
+    {
+      "year": 2024,
+      "code": "75028",
+      "unitName": "山西大学附属中学晋中学校",
+      "byCodeName": "山西大学附属晋中学校"
+    }
+  ],
   "roster": [
     {
       "code": "65001",
@@ -965,9 +1135,9 @@
       "parent": "太原市外国语学校",
       "special": false,
       "year": 2020,
-      "score": 496,
-      "source": "exact",
-      "matchedName": "清徐县清徐中学校"
+      "score": 576,
+      "source": "name",
+      "matchedName": "太原市外国语学校（漪汾校区）"
     },
     {
       "code": "66001",
@@ -975,9 +1145,9 @@
       "parent": "太原市外国语学校",
       "special": false,
       "year": 2021,
-      "score": 541,
-      "source": "exact",
-      "matchedName": "清徐县清徐中学校"
+      "score": 639,
+      "source": "name",
+      "matchedName": "太原市外国语学校（摄乐校区）"
     },
     {
       "code": "66001",
@@ -985,9 +1155,9 @@
       "parent": "太原市外国语学校",
       "special": false,
       "year": 2022,
-      "score": 506,
-      "source": "exact",
-      "matchedName": "清徐县清徐中学校"
+      "score": 599,
+      "source": "name",
+      "matchedName": "太原市外国语学校（漪汾校区）"
     },
     {
       "code": "66001",
@@ -995,9 +1165,9 @@
       "parent": "太原市外国语学校",
       "special": false,
       "year": 2023,
-      "score": 591,
-      "source": "exact",
-      "matchedName": "清徐县清徐中学校"
+      "score": 667,
+      "source": "name",
+      "matchedName": "太原市外国语学校（漪汾校区）"
     },
     {
       "code": "66001",
@@ -1005,9 +1175,9 @@
       "parent": "太原市外国语学校",
       "special": false,
       "year": 2024,
-      "score": 596,
+      "score": 657,
       "source": "exact",
-      "matchedName": "清徐县清徐中学校"
+      "matchedName": "太原市外国语学校（摄乐校区）"
     },
     {
       "code": "66001",
@@ -1065,9 +1235,9 @@
       "parent": "太原市第二中学校",
       "special": false,
       "year": 2020,
-      "score": 571,
-      "source": "exact",
-      "matchedName": "太原市外国语学校（摄乐校区）"
+      "score": null,
+      "source": null,
+      "matchedName": null
     },
     {
       "code": "65002",
@@ -1306,7 +1476,7 @@
       "special": false,
       "year": 2024,
       "score": 653,
-      "source": "name",
+      "source": "exact",
       "matchedName": "太原市成成中学校（晋源校区）"
     },
     {
@@ -1405,9 +1575,9 @@
       "parent": "太原市成成中学校科创实验班",
       "special": true,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 665,
+      "source": "exact",
+      "matchedName": "太原市成成中学校（晋源校区）科创实验班"
     },
     {
       "code": "66303",
@@ -1465,9 +1635,9 @@
       "parent": "太原市实验中学校",
       "special": false,
       "year": 2020,
-      "score": 565,
-      "source": "exact",
-      "matchedName": "太原市成成中学校（晋源校区）"
+      "score": 536,
+      "source": "name",
+      "matchedName": "太原市实验中学校"
     },
     {
       "code": "65004",
@@ -1705,9 +1875,9 @@
       "parent": "太原市第五中学校",
       "special": false,
       "year": 2024,
-      "score": 675,
-      "source": "name",
-      "matchedName": "太原市第五中学校（青年路校区）"
+      "score": 672,
+      "source": "exact",
+      "matchedName": "太原市第五中学校（龙城校区）"
     },
     {
       "code": "66005",
@@ -1765,9 +1935,9 @@
       "parent": "太原市进山中学校",
       "special": false,
       "year": 2020,
-      "score": 595,
-      "source": "exact",
-      "matchedName": "太原市第五中学校（龙城校区）"
+      "score": 506,
+      "source": "name",
+      "matchedName": "太原市进山中学校"
     },
     {
       "code": "65006",
@@ -1905,9 +2075,9 @@
       "parent": "太原市进山中学校",
       "special": true,
       "year": 2024,
-      "score": 611,
-      "source": "name",
-      "matchedName": "太原市进山中学校"
+      "score": 621,
+      "source": "exact",
+      "matchedName": "太原市进山中学校（航天实验班）"
     },
     {
       "code": "65306",
@@ -2007,7 +2177,7 @@
       "year": 2024,
       "score": 672,
       "source": "exact",
-      "matchedName": "山西省实验中学（晋阳街校区）"
+      "matchedName": "山西省实验中学"
     },
     {
       "code": "65010",
@@ -2107,7 +2277,7 @@
       "year": 2024,
       "score": 672,
       "source": "name",
-      "matchedName": "山西省实验中学（晋阳街校区）"
+      "matchedName": "山西省实验中学"
     },
     {
       "code": "66010",
@@ -2205,7 +2375,7 @@
       "parent": "太原市第十一中学校",
       "special": false,
       "year": 2024,
-      "score": 523,
+      "score": 546,
       "source": "exact",
       "matchedName": "太原市第十一中学校"
     },
@@ -2305,9 +2475,9 @@
       "parent": "太原市第十二中学校",
       "special": false,
       "year": 2024,
-      "score": 654,
+      "score": 634,
       "source": "exact",
-      "matchedName": "太原市第十二中学校（早西关校区）"
+      "matchedName": "太原市第十二中学校（旱西关校区）"
     },
     {
       "code": "65012",
@@ -2405,9 +2575,9 @@
       "parent": "太原市第十二中学校人工智能实验班",
       "special": true,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 654,
+      "source": "exact",
+      "matchedName": "太原市第十二中学校（旱西关校区）人工智能实验班"
     },
     {
       "code": "65312",
@@ -2505,9 +2675,9 @@
       "parent": "太原市第十二中学校",
       "special": false,
       "year": 2024,
-      "score": 654,
-      "source": "name",
-      "matchedName": "太原市第十二中学校（早西关校区）"
+      "score": 637,
+      "source": "exact",
+      "matchedName": "太原市第十二中学校（国槐龙城校区）"
     },
     {
       "code": "66012",
@@ -2565,9 +2735,9 @@
       "parent": "太原市第五职业中学校",
       "special": false,
       "year": 2020,
-      "score": 530,
-      "source": "exact",
-      "matchedName": "太原市第十三中学校"
+      "score": null,
+      "source": null,
+      "matchedName": null
     },
     {
       "code": "65013",
@@ -2575,9 +2745,9 @@
       "parent": "太原市第五职业中学校",
       "special": false,
       "year": 2021,
-      "score": 639,
-      "source": "exact",
-      "matchedName": "太原市外国语学校（摄乐校区）"
+      "score": null,
+      "source": null,
+      "matchedName": null
     },
     {
       "code": "65013",
@@ -2585,9 +2755,9 @@
       "parent": "太原市第五职业中学校",
       "special": false,
       "year": 2022,
-      "score": 596,
-      "source": "exact",
-      "matchedName": "太原市外国语学校（摄乐校区）"
+      "score": null,
+      "source": null,
+      "matchedName": null
     },
     {
       "code": "65013",
@@ -2595,9 +2765,9 @@
       "parent": "太原市第五职业中学校",
       "special": false,
       "year": 2023,
-      "score": 661,
-      "source": "exact",
-      "matchedName": "太原市外国语学校（摄乐校区）"
+      "score": null,
+      "source": null,
+      "matchedName": null
     },
     {
       "code": "65013",
@@ -2605,9 +2775,9 @@
       "parent": "太原市第五职业中学校",
       "special": false,
       "year": 2024,
-      "score": 657,
-      "source": "exact",
-      "matchedName": "太原市外国语学校（摄乐校区）"
+      "score": 523,
+      "source": "name",
+      "matchedName": "太原市第五职业中学校（综合高中试点班）"
     },
     {
       "code": "65013",
@@ -2706,7 +2876,7 @@
       "special": false,
       "year": 2024,
       "score": 661,
-      "source": "name",
+      "source": "exact",
       "matchedName": "太原师范学院附属中学"
     },
     {
@@ -3205,9 +3375,9 @@
       "parent": "太原市第十八中学校",
       "special": false,
       "year": 2024,
-      "score": 633,
-      "source": "name",
-      "matchedName": "太原市第十八中学校（坝陵校区）"
+      "score": 621,
+      "source": "exact",
+      "matchedName": "太原市第十八中学校（晋源校区）"
     },
     {
       "code": "66018",
@@ -3305,9 +3475,9 @@
       "parent": "太原市第十八中学校外语实验班",
       "special": true,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 648,
+      "source": "exact",
+      "matchedName": "太原市第十八中学校（晋源校区）外语实验班"
     },
     {
       "code": "66318",
@@ -3365,9 +3535,9 @@
       "parent": "太原市第十九中学校",
       "special": false,
       "year": 2020,
-      "score": 481,
-      "source": "exact",
-      "matchedName": "太原市第十八中学校（晋源校区）"
+      "score": 403,
+      "source": "name",
+      "matchedName": "太原市第十九中学校"
     },
     {
       "code": "65019",
@@ -3405,7 +3575,7 @@
       "parent": "太原市第十九中学校",
       "special": false,
       "year": 2024,
-      "score": 556,
+      "score": 571,
       "source": "exact",
       "matchedName": "太原市第十九中学校"
     },
@@ -3465,9 +3635,9 @@
       "parent": "太原市第二十中学校",
       "special": false,
       "year": 2020,
-      "score": 403,
-      "source": "exact",
-      "matchedName": "太原市第十九中学校"
+      "score": 401,
+      "source": "name",
+      "matchedName": "太原市第二十中学校"
     },
     {
       "code": "65020",
@@ -3505,7 +3675,7 @@
       "parent": "太原市第二十中学校",
       "special": false,
       "year": 2024,
-      "score": 523,
+      "score": 566,
       "source": "exact",
       "matchedName": "太原市第二十中学校"
     },
@@ -3565,9 +3735,9 @@
       "parent": "太原市第二十一中学校",
       "special": false,
       "year": 2020,
-      "score": 401,
-      "source": "exact",
-      "matchedName": "太原市第二十中学校"
+      "score": null,
+      "source": null,
+      "matchedName": null
     },
     {
       "code": "65021",
@@ -3605,7 +3775,7 @@
       "parent": "太原市第二十一中学校",
       "special": false,
       "year": 2024,
-      "score": 523,
+      "score": 576,
       "source": "exact",
       "matchedName": "太原市第二十一中学校"
     },
@@ -3705,9 +3875,9 @@
       "parent": "太原市第三实验中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 606,
+      "source": "exact",
+      "matchedName": "太原市第三实验中学校"
     },
     {
       "code": "65023",
@@ -3805,9 +3975,9 @@
       "parent": "太原市第二十四中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 573,
+      "source": "exact",
+      "matchedName": "太原市第二十四中学校"
     },
     {
       "code": "65024",
@@ -3905,7 +4075,7 @@
       "parent": "太原市第四实验中学校",
       "special": false,
       "year": 2024,
-      "score": 615,
+      "score": 612,
       "source": "exact",
       "matchedName": "太原市第四实验中学校"
     },
@@ -4005,9 +4175,9 @@
       "parent": "太原市育英中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 615,
+      "source": "exact",
+      "matchedName": "太原市育英中学校"
     },
     {
       "code": "65026",
@@ -4105,9 +4275,9 @@
       "parent": "太原市第二十七中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 576,
+      "source": "exact",
+      "matchedName": "太原市第二十七中学校"
     },
     {
       "code": "65027",
@@ -4305,9 +4475,9 @@
       "parent": "太原市第二十九中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 556,
+      "source": "exact",
+      "matchedName": "太原市第二十九中学校"
     },
     {
       "code": "65029",
@@ -4365,9 +4535,9 @@
       "parent": "太原市第三十中学校",
       "special": false,
       "year": 2020,
-      "score": 580,
-      "source": "exact",
-      "matchedName": "太原师范学院附属中学"
+      "score": null,
+      "source": null,
+      "matchedName": null
     },
     {
       "code": "65030",
@@ -4375,9 +4545,9 @@
       "parent": "太原市第三十中学校",
       "special": false,
       "year": 2021,
-      "score": 637,
-      "source": "exact",
-      "matchedName": "太原师范学院附属中学"
+      "score": null,
+      "source": null,
+      "matchedName": null
     },
     {
       "code": "65030",
@@ -4385,9 +4555,9 @@
       "parent": "太原市第三十中学校",
       "special": false,
       "year": 2022,
-      "score": 591,
-      "source": "exact",
-      "matchedName": "太原师范学院附属中学"
+      "score": null,
+      "source": null,
+      "matchedName": null
     },
     {
       "code": "65030",
@@ -4395,9 +4565,9 @@
       "parent": "太原市第三十中学校",
       "special": false,
       "year": 2023,
-      "score": 661,
-      "source": "exact",
-      "matchedName": "太原师范学院附属中学"
+      "score": null,
+      "source": null,
+      "matchedName": null
     },
     {
       "code": "65030",
@@ -4405,9 +4575,9 @@
       "parent": "太原市第三十中学校",
       "special": false,
       "year": 2024,
-      "score": 661,
+      "score": 571,
       "source": "exact",
-      "matchedName": "太原师范学院附属中学"
+      "matchedName": "太原市第三十中学校"
     },
     {
       "code": "65030",
@@ -4505,9 +4675,9 @@
       "parent": "太原市第五实验中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 526,
+      "source": "exact",
+      "matchedName": "太原市第五实验中学校"
     },
     {
       "code": "65031",
@@ -4605,9 +4775,9 @@
       "parent": "太原市综合高级中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 526,
+      "source": "name",
+      "matchedName": "太原市综合高级中学校（综合高中试点班）"
     },
     {
       "code": "65033",
@@ -4705,8 +4875,8 @@
       "parent": "太原市尖草坪区第一中学校",
       "special": false,
       "year": 2024,
-      "score": 631,
-      "source": "name",
+      "score": 616,
+      "source": "exact",
       "matchedName": "太原市尖草坪区第一中学校"
     },
     {
@@ -4865,9 +5035,9 @@
       "parent": "太原市小店区第一中学校",
       "special": false,
       "year": 2020,
-      "score": 506,
-      "source": "exact",
-      "matchedName": "太原市进山中学校"
+      "score": 523,
+      "source": "name",
+      "matchedName": "太原市小店区第一中学校"
     },
     {
       "code": "65036",
@@ -5105,9 +5275,9 @@
       "parent": "太原市晋源区实验中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 592,
+      "source": "exact",
+      "matchedName": "太原市晋源区实验中学校"
     },
     {
       "code": "65038",
@@ -5205,9 +5375,9 @@
       "parent": "古交市第一中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 591,
+      "source": "exact",
+      "matchedName": "古交市第一中学校"
     },
     {
       "code": "65039",
@@ -5305,9 +5475,9 @@
       "parent": "古交市第二高级中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 542,
+      "source": "exact",
+      "matchedName": "古交市第二高级中学校"
     },
     {
       "code": "65040",
@@ -5405,9 +5575,9 @@
       "parent": "娄烦县娄烦中学",
       "special": false,
       "year": 2024,
-      "score": 523,
-      "source": "name",
-      "matchedName": "娄烦县娄烦中学校"
+      "score": 561,
+      "source": "exact",
+      "matchedName": "娄烦县娄烦中学"
     },
     {
       "code": "65041",
@@ -5465,9 +5635,9 @@
       "parent": "阳曲县第一中学校",
       "special": false,
       "year": 2020,
-      "score": 536,
-      "source": "exact",
-      "matchedName": "太原市实验中学校"
+      "score": 460,
+      "source": "name",
+      "matchedName": "阳曲县第一中学校"
     },
     {
       "code": "65042",
@@ -5505,8 +5675,8 @@
       "parent": "阳曲县第一中学校",
       "special": false,
       "year": 2024,
-      "score": 523,
-      "source": "name",
+      "score": 584,
+      "source": "exact",
       "matchedName": "阳曲县第一中学校"
     },
     {
@@ -5605,8 +5775,8 @@
       "parent": "清徐县清徐中学校",
       "special": false,
       "year": 2024,
-      "score": 596,
-      "source": "name",
+      "score": 609,
+      "source": "exact",
       "matchedName": "清徐县清徐中学校"
     },
     {
@@ -5706,7 +5876,7 @@
       "special": false,
       "year": 2024,
       "score": 640,
-      "source": "name",
+      "source": "exact",
       "matchedName": "清徐县徐沟中学校"
     },
     {
@@ -5805,9 +5975,9 @@
       "parent": "古交市第三中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 523,
+      "source": "exact",
+      "matchedName": "古交市第三中学校"
     },
     {
       "code": "65045",
@@ -6305,7 +6475,7 @@
       "parent": "太原市第五十五中学校",
       "special": false,
       "year": 2024,
-      "score": 541,
+      "score": 581,
       "source": "exact",
       "matchedName": "太原市第五十五中学校"
     },
@@ -6405,7 +6575,7 @@
       "parent": "太原市第五十六中学校",
       "special": false,
       "year": 2024,
-      "score": 523,
+      "score": 566,
       "source": "exact",
       "matchedName": "太原市第五十六中学校"
     },
@@ -6505,7 +6675,7 @@
       "parent": "太原市第五十九中学校",
       "special": false,
       "year": 2024,
-      "score": 541,
+      "score": 531,
       "source": "exact",
       "matchedName": "太原市第五十九中学校"
     },
@@ -6705,7 +6875,7 @@
       "parent": "太原市第六十一中学校",
       "special": false,
       "year": 2024,
-      "score": 523,
+      "score": 556,
       "source": "exact",
       "matchedName": "太原市第六十一中学校"
     },
@@ -6805,9 +6975,9 @@
       "parent": "太原市第六十二中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 551,
+      "source": "exact",
+      "matchedName": "太原市第六十二中学校"
     },
     {
       "code": "65062",
@@ -6905,7 +7075,7 @@
       "parent": "太原市第六十三中学校",
       "special": false,
       "year": 2024,
-      "score": 546,
+      "score": 561,
       "source": "exact",
       "matchedName": "太原市第六十三中学校"
     },
@@ -7005,7 +7175,7 @@
       "parent": "太原市第六十四中学校",
       "special": false,
       "year": 2024,
-      "score": 541,
+      "score": 546,
       "source": "exact",
       "matchedName": "太原市第六十四中学校"
     },
@@ -7105,9 +7275,9 @@
       "parent": "太原市第六十五中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 531,
+      "source": "exact",
+      "matchedName": "太原市第六十五中学校"
     },
     {
       "code": "65065",
@@ -7205,7 +7375,7 @@
       "parent": "太原市第六十六中学校",
       "special": false,
       "year": 2024,
-      "score": 546,
+      "score": 536,
       "source": "exact",
       "matchedName": "太原市第六十六中学校"
     },
@@ -7405,9 +7575,9 @@
       "parent": "太原市成才中学校",
       "special": false,
       "year": 2024,
-      "score": 566,
-      "source": "name",
-      "matchedName": "太原市成才中学校"
+      "score": null,
+      "source": null,
+      "matchedName": null
     },
     {
       "code": "65071",
@@ -7505,9 +7675,9 @@
       "parent": "太原市五育中学校",
       "special": false,
       "year": 2024,
-      "score": 646,
-      "source": "name",
-      "matchedName": "太原市五育中学校"
+      "score": null,
+      "source": null,
+      "matchedName": null
     },
     {
       "code": "65072",
@@ -7606,7 +7776,7 @@
       "special": false,
       "year": 2024,
       "score": 626,
-      "source": "name",
+      "source": "exact",
       "matchedName": "太原市师爱中学校"
     },
     {
@@ -7706,7 +7876,7 @@
       "special": false,
       "year": 2024,
       "score": 617,
-      "source": "name",
+      "source": "exact",
       "matchedName": "太原市外国语凤凰双语中学校"
     },
     {
@@ -7806,7 +7976,7 @@
       "special": false,
       "year": 2024,
       "score": 591,
-      "source": "name",
+      "source": "exact",
       "matchedName": "太原市同心外国语中学校"
     },
     {
@@ -8105,9 +8275,9 @@
       "parent": "太原市汾潇中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 601,
+      "source": "exact",
+      "matchedName": "太原市汾潇中学校"
     },
     {
       "code": "65079",
@@ -8205,9 +8375,9 @@
       "parent": "太原市令德中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 656,
+      "source": "exact",
+      "matchedName": "太原市令德中学校"
     },
     {
       "code": "65080",
@@ -8305,9 +8475,9 @@
       "parent": "太原市文华中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 620,
+      "source": "exact",
+      "matchedName": "太原市文华中学校"
     },
     {
       "code": "65081",
@@ -8405,9 +8575,9 @@
       "parent": "太原市金河中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 619,
+      "source": "exact",
+      "matchedName": "太原市金河中学校"
     },
     {
       "code": "65086",
@@ -8505,9 +8675,9 @@
       "parent": "太原市常青藤中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 655,
+      "source": "exact",
+      "matchedName": "太原市常青藤中学校"
     },
     {
       "code": "65070",
@@ -8705,9 +8875,9 @@
       "parent": "太原北辰双语学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 623,
+      "source": "exact",
+      "matchedName": "太原北辰双语学校"
     },
     {
       "code": "65084",
@@ -8805,8 +8975,8 @@
       "parent": "山西通宝育杰学校",
       "special": false,
       "year": 2024,
-      "score": 631,
-      "source": "name",
+      "score": 601,
+      "source": "exact",
       "matchedName": "山西通宝育杰学校"
     },
     {
@@ -8905,9 +9075,9 @@
       "parent": "太原市长安综合中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 523,
+      "source": "exact",
+      "matchedName": "太原市长安综合中学校"
     },
     {
       "code": "65087",
@@ -9005,9 +9175,9 @@
       "parent": "山西英才学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 523,
+      "source": "exact",
+      "matchedName": "山西英才学校"
     },
     {
       "code": "65088",
@@ -9105,9 +9275,9 @@
       "parent": "太原杏岭实验学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 631,
+      "source": "exact",
+      "matchedName": "太原杏岭实验学校"
     },
     {
       "code": "65089",
@@ -9205,9 +9375,9 @@
       "parent": "太原市金桥双语中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 572,
+      "source": "exact",
+      "matchedName": "太原市金桥双语中学校"
     },
     {
       "code": "65090",
@@ -9305,9 +9475,9 @@
       "parent": "太原市泰华高级中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 601,
+      "source": "exact",
+      "matchedName": "太原市泰华高级中学校"
     },
     {
       "code": "65091",
@@ -9406,8 +9576,8 @@
       "special": false,
       "year": 2024,
       "score": 637,
-      "source": "name",
-      "matchedName": "山西现代双语学校（南校）"
+      "source": "exact",
+      "matchedName": "山西现代双语学校南校"
     },
     {
       "code": "65092",
@@ -9505,9 +9675,9 @@
       "parent": "太原市恒中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 527,
+      "source": "exact",
+      "matchedName": "太原市恒中学校"
     },
     {
       "code": "65093",
@@ -9605,9 +9775,9 @@
       "parent": "太原市行知宏实验中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 523,
+      "source": "exact",
+      "matchedName": "太原市行知宏实验中学校"
     },
     {
       "code": "65094",
@@ -9705,9 +9875,9 @@
       "parent": "太原市致远实验学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 615,
+      "source": "exact",
+      "matchedName": "太原市致远实验学校"
     },
     {
       "code": "65095",
@@ -9805,9 +9975,9 @@
       "parent": "太原维刚实验学校",
       "special": false,
       "year": 2024,
-      "score": 591,
-      "source": "name",
-      "matchedName": "太原维刚实验学校"
+      "score": null,
+      "source": null,
+      "matchedName": null
     },
     {
       "code": "65096",
@@ -9905,8 +10075,8 @@
       "parent": "太原新力惠中学校",
       "special": false,
       "year": 2024,
-      "score": 576,
-      "source": "name",
+      "score": 561,
+      "source": "exact",
       "matchedName": "太原新力惠中学校"
     },
     {
@@ -10005,9 +10175,9 @@
       "parent": "太原新希望双语学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 660,
+      "source": "exact",
+      "matchedName": "太原新希望双语学校"
     },
     {
       "code": "65098",
@@ -10105,9 +10275,9 @@
       "parent": "太原市华阳双语高级中学校",
       "special": false,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 523,
+      "source": "exact",
+      "matchedName": "太原市华阳双语高级中学校"
     },
     {
       "code": "65099",
@@ -10205,9 +10375,9 @@
       "parent": "太原市第七职业中学校",
       "special": true,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 523,
+      "source": "exact",
+      "matchedName": "太原市第七职业中学校（综合高中试点班）"
     },
     {
       "code": "88007",
@@ -10305,9 +10475,9 @@
       "parent": "太原市第五职业中学校",
       "special": true,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 523,
+      "source": "exact",
+      "matchedName": "太原市第五职业中学校（综合高中试点班）"
     },
     {
       "code": "88013",
@@ -10505,9 +10675,9 @@
       "parent": "太原市综合高级中学校",
       "special": true,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 526,
+      "source": "exact",
+      "matchedName": "太原市综合高级中学校（综合高中试点班）"
     },
     {
       "code": "88033",
@@ -10605,9 +10775,9 @@
       "parent": "阳曲县高级职业中学校",
       "special": true,
       "year": 2024,
-      "score": null,
-      "source": null,
-      "matchedName": null
+      "score": 523,
+      "source": "exact",
+      "matchedName": "阳曲县高级职业中学校（综合高中试点班）"
     },
     {
       "code": "88046",

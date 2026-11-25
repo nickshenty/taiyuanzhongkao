@@ -40,7 +40,7 @@ if (!Number.isFinite(YEAR) || YEAR < 2000 || YEAR > 2100) {
 const DEFAULT_CSV = path.join(ROOT, 'data', 'sources', `${YEAR}-录取分数线.csv`);
 const CSV = argOf('input', DEFAULT_CSV);
 const OUT = path.join(ROOT, 'data', 'years', `${YEAR}-ocr.json`);
-const YEAR_JS = path.join(ROOT, 'data', 'years', `${YEAR}.js`);
+
 
 // ==================== CSV 解析（支持引号与逗号转义） ====================
 
@@ -115,24 +115,31 @@ function main() {
   ];
 
   // 定向线来自 2026.js（OCR 表不含定向线）
+  // 定向线与年份框架：优先从当年已有数据文件读取（.js 或 .json）
   let quotaByCode = new Map();
-  // 默认框架按年份内置，可用 --total / --control 覆盖
-  const knownFrames = { 2025: { totalScore: 850, controlLine: 615 }, 2026: { totalScore: 839, controlLine: 603 } };
-  let frame = knownFrames[YEAR] ?? { totalScore: null, controlLine: null };
-  const argTotal = Number(argOf('total', NaN));
-  const argControl = Number(argOf('control', NaN));
-  if (Number.isFinite(argTotal)) frame.totalScore = argTotal;
-  if (Number.isFinite(argControl)) frame.controlLine = argControl;
-  if (fs.existsSync(YEAR_JS)) {
-    const d = require(YEAR_JS); // eslint-disable-line
-    frame = { totalScore: d.totalScore, controlLine: d.minControlLine };
+  let frame = { totalScore: null, controlLine: null };
+
+  const jsPath = path.join(ROOT, 'data', 'years', `${YEAR}.js`);
+  const jsonPath = path.join(ROOT, 'data', 'years', `${YEAR}.json`);
+
+  if (fs.existsSync(jsPath)) {
+    const d = require(jsPath); // eslint-disable-line
+    frame = { totalScore: d.totalScore, controlLine: d.minControlLine ?? d.controlLine };
     quotaByCode = new Map(
       (d.schools || [])
         .filter(s => s.quotaLine != null)
         .map(s => [String(s.code), { quotaLine: Number(s.quotaLine), year: s.quotaLineYear ?? null }])
     );
+  } else if (fs.existsSync(jsonPath)) {
+    const d = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+    frame = { totalScore: d.totalScore, controlLine: d.controlLine };
   }
 
+  // 命令行可显式覆盖框架
+  const argTotal = Number(argOf('total', NaN));
+  const argControl = Number(argOf('control', NaN));
+  if (Number.isFinite(argTotal)) frame.totalScore = argTotal;
+  if (Number.isFinite(argControl)) frame.controlLine = argControl;
   const schools = [];
   const warnings = [];
 
@@ -195,10 +202,14 @@ function main() {
     });
   }
 
-  // 与 2026.js 交叉校验
+  // 与当年既有数据文件交叉校验（.js 或 .json）
   let crossCheck = null;
-  if (fs.existsSync(YEAR_JS)) {
-    const d = require(YEAR_JS);
+  {
+    let d = null;
+    if (fs.existsSync(jsPath)) d = require(jsPath); // eslint-disable-line
+    else if (fs.existsSync(jsonPath)) d = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+
+    if (d) {
     const oldMap = new Map(d.schools.map(s => [String(s.code), s.lastLine]));
     let same = 0;
     const mismatch = [];
@@ -224,6 +235,7 @@ function main() {
       onlyInCsv: onlyOcr,
       onlyInOld: onlyOld
     };
+    }
   }
 
   const payload = {

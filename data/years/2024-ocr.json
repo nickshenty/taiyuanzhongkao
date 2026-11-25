@@ -1,0 +1,1721 @@
+{
+  "year": 2024,
+  "totalScore": 730,
+  "controlLine": 523,
+  "source": "data/sources/2024-录取分数线.csv（教育局公布表 OCR）",
+  "generatedAt": "2026-11-25T07:51:04.804Z",
+  "counts": {
+    "total": 96,
+    "withFirstChoice": 91,
+    "withNonFirstChoice": 5,
+    "withChoiceLines": 91,
+    "withSpecialLine": 5
+  },
+  "crossCheck": {
+    "compared": 35,
+    "identical": 19,
+    "mismatch": [
+      {
+        "code": "66001",
+        "name": "太原市外国语学校（摄乐校区）",
+        "ocr": 657,
+        "old": 596
+      },
+      {
+        "code": "65011",
+        "name": "太原市第十一中学校",
+        "ocr": 546,
+        "old": 523
+      },
+      {
+        "code": "65012",
+        "name": "太原市第十二中学校（旱西关校区）",
+        "ocr": 634,
+        "old": 654
+      },
+      {
+        "code": "65013",
+        "name": "太原市第十三中学校",
+        "ocr": 523,
+        "old": 657
+      },
+      {
+        "code": "65019",
+        "name": "太原市第十九中学校",
+        "ocr": 571,
+        "old": 556
+      },
+      {
+        "code": "65020",
+        "name": "太原市第二十中学校",
+        "ocr": 566,
+        "old": 523
+      },
+      {
+        "code": "65021",
+        "name": "太原市第二十一中学校",
+        "ocr": 576,
+        "old": 523
+      },
+      {
+        "code": "65025",
+        "name": "太原市第四实验中学校",
+        "ocr": 612,
+        "old": 615
+      },
+      {
+        "code": "65030",
+        "name": "太原市第三十中学校",
+        "ocr": 571,
+        "old": 661
+      },
+      {
+        "code": "65055",
+        "name": "太原市第五十五中学校",
+        "ocr": 581,
+        "old": 541
+      },
+      {
+        "code": "65056",
+        "name": "太原市第五十六中学校",
+        "ocr": 566,
+        "old": 523
+      },
+      {
+        "code": "65059",
+        "name": "太原市第五十九中学校",
+        "ocr": 531,
+        "old": 541
+      },
+      {
+        "code": "65061",
+        "name": "太原市第六十一中学校",
+        "ocr": 556,
+        "old": 523
+      },
+      {
+        "code": "65063",
+        "name": "太原市第六十三中学校",
+        "ocr": 561,
+        "old": 546
+      },
+      {
+        "code": "65064",
+        "name": "太原市第六十四中学校",
+        "ocr": 546,
+        "old": 541
+      },
+      {
+        "code": "65066",
+        "name": "太原市第六十六中学校",
+        "ocr": 536,
+        "old": 546
+      }
+    ],
+    "onlyInCsv": [
+      "66301",
+      "66003",
+      "66303",
+      "66005",
+      "65306",
+      "65312",
+      "66012",
+      "65014",
+      "66018",
+      "66318",
+      "65023",
+      "65024",
+      "65026",
+      "65027",
+      "65029",
+      "65031",
+      "65033",
+      "65034",
+      "65035",
+      "66036",
+      "65038",
+      "65039",
+      "65040",
+      "65041",
+      "65042",
+      "65043",
+      "65044",
+      "65045",
+      "65062",
+      "65065",
+      "65071",
+      "65072",
+      "65073",
+      "65074",
+      "65075",
+      "65076",
+      "65077",
+      "65079",
+      "65080",
+      "65081",
+      "65086",
+      "65070",
+      "65084",
+      "65085",
+      "65087",
+      "65088",
+      "65089",
+      "65090",
+      "65091",
+      "65092",
+      "65093",
+      "65094",
+      "65095",
+      "65097",
+      "65098",
+      "65099",
+      "88007",
+      "88013",
+      "88033",
+      "88046",
+      "75028"
+    ],
+    "onlyInOld": [
+      "65009",
+      "65008",
+      "65054",
+      "65046",
+      "65022",
+      "65050",
+      "55022",
+      "55080",
+      "55076",
+      "55072",
+      "55073",
+      "55074",
+      "55075",
+      "55077",
+      "55079",
+      "55071",
+      "55029",
+      "55030",
+      "55031",
+      "55032",
+      "55033",
+      "55034",
+      "66002",
+      "67001",
+      "68001"
+    ]
+  },
+  "warnings": [
+    "66301 太原市外国语学校（摄乐校区）外语实验班：无第一志愿线，取special志愿线 663 作为统招线",
+    "66303 太原市成成中学校（晋源校区）科创实验班：无第一志愿线，取special志愿线 665 作为统招线",
+    "65306 太原市进山中学校（航天实验班）：无第一志愿线，取special志愿线 621 作为统招线",
+    "65312 太原市第十二中学校（旱西关校区）人工智能实验班：无第一志愿线，取special志愿线 654 作为统招线",
+    "66318 太原市第十八中学校（晋源校区）外语实验班：无第一志愿线，取special志愿线 648 作为统招线"
+  ],
+  "schools": [
+    {
+      "code": "65001",
+      "name": "太原市外国语学校（漪汾校区）",
+      "lastLine": 653,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 653,
+        "second": 656,
+        "third": 656,
+        "fourth": 656,
+        "fifth": 656
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "66001",
+      "name": "太原市外国语学校（摄乐校区）",
+      "lastLine": 657,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 657,
+        "second": 661,
+        "third": 661,
+        "fourth": 661,
+        "fifth": 661
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "66301",
+      "name": "太原市外国语学校（摄乐校区）外语实验班",
+      "lastLine": 663,
+      "lineChoice": "special",
+      "choiceLines": {},
+      "specialLine": 663,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65002",
+      "name": "太原市第二中学校",
+      "lastLine": 546,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 546,
+        "second": 546,
+        "third": 546,
+        "fourth": 551,
+        "fifth": 551
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65003",
+      "name": "太原市成成中学校（迎泽校区）",
+      "lastLine": 636,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 636,
+        "second": 636,
+        "third": 637,
+        "fourth": 641,
+        "fifth": 641
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "66003",
+      "name": "太原市成成中学校（晋源校区）",
+      "lastLine": 653,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 653,
+        "second": 656,
+        "third": 656,
+        "fourth": 656,
+        "fifth": 656
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "66303",
+      "name": "太原市成成中学校（晋源校区）科创实验班",
+      "lastLine": 665,
+      "lineChoice": "special",
+      "choiceLines": {},
+      "specialLine": 665,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65004",
+      "name": "太原市实验中学校",
+      "lastLine": 600,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 600,
+        "second": 601,
+        "third": 601,
+        "fourth": 601,
+        "fifth": 601
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65005",
+      "name": "太原市第五中学校（青年路校区）",
+      "lastLine": 675,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 675,
+        "second": 676,
+        "third": 676,
+        "fourth": 676,
+        "fifth": 676
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "66005",
+      "name": "太原市第五中学校（龙城校区）",
+      "lastLine": 672,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 672,
+        "second": 676,
+        "third": 676,
+        "fourth": 676,
+        "fifth": 676
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65006",
+      "name": "太原市进山中学校",
+      "lastLine": 611,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 611,
+        "second": 612,
+        "third": 616,
+        "fourth": 616,
+        "fifth": 616
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65306",
+      "name": "太原市进山中学校（航天实验班）",
+      "lastLine": 621,
+      "lineChoice": "special",
+      "choiceLines": {},
+      "specialLine": 621,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65010",
+      "name": "山西省实验中学",
+      "lastLine": 672,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 672,
+        "second": 676,
+        "third": 676,
+        "fourth": 676,
+        "fifth": 676
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65011",
+      "name": "太原市第十一中学校",
+      "lastLine": 546,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 546,
+        "second": 546,
+        "third": 546,
+        "fourth": 551,
+        "fifth": 551
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65012",
+      "name": "太原市第十二中学校（旱西关校区）",
+      "lastLine": 634,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 634,
+        "second": 636,
+        "third": 636,
+        "fourth": 636,
+        "fifth": 636
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65312",
+      "name": "太原市第十二中学校（旱西关校区）人工智能实验班",
+      "lastLine": 654,
+      "lineChoice": "special",
+      "choiceLines": {},
+      "specialLine": 654,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "66012",
+      "name": "太原市第十二中学校（国槐龙城校区）",
+      "lastLine": 637,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 637,
+        "second": 641,
+        "third": 641,
+        "fourth": 641,
+        "fifth": 641
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65013",
+      "name": "太原市第十三中学校",
+      "lastLine": 523,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 523,
+        "second": 523,
+        "third": 523,
+        "fourth": 523,
+        "fifth": 523
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65014",
+      "name": "太原师范学院附属中学",
+      "lastLine": 661,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 661,
+        "second": 666,
+        "third": 666,
+        "fourth": 666,
+        "fifth": 666
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65015",
+      "name": "太原市第十五中学校",
+      "lastLine": 617,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 617,
+        "second": 621,
+        "third": 621,
+        "fourth": 621,
+        "fifth": 621
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65016",
+      "name": "太原市第十六中学校",
+      "lastLine": 566,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 566,
+        "second": 566,
+        "third": 568,
+        "fourth": 571,
+        "fifth": 571
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65017",
+      "name": "太原市第二实验中学校",
+      "lastLine": 581,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 581,
+        "second": 581,
+        "third": 583,
+        "fourth": 586,
+        "fifth": 586
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65018",
+      "name": "太原市第十八中学校（坝陵校区）",
+      "lastLine": 633,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 633,
+        "second": 636,
+        "third": 636,
+        "fourth": 636,
+        "fifth": 636
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "66018",
+      "name": "太原市第十八中学校（晋源校区）",
+      "lastLine": 621,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 621,
+        "second": 625,
+        "third": 626,
+        "fourth": 626,
+        "fifth": 626
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "66318",
+      "name": "太原市第十八中学校（晋源校区）外语实验班",
+      "lastLine": 648,
+      "lineChoice": "special",
+      "choiceLines": {},
+      "specialLine": 648,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65019",
+      "name": "太原市第十九中学校",
+      "lastLine": 571,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 571,
+        "second": 572,
+        "third": 576,
+        "fourth": 576,
+        "fifth": 576
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65020",
+      "name": "太原市第二十中学校",
+      "lastLine": 566,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 566,
+        "second": 567,
+        "third": 571,
+        "fourth": 571,
+        "fifth": 571
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65021",
+      "name": "太原市第二十一中学校",
+      "lastLine": 576,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 576,
+        "second": 578,
+        "third": 581,
+        "fourth": 581,
+        "fifth": 581
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65023",
+      "name": "太原市第三实验中学校",
+      "lastLine": 606,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 606,
+        "second": 607,
+        "third": 611,
+        "fourth": 611,
+        "fifth": 611
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65024",
+      "name": "太原市第二十四中学校",
+      "lastLine": 573,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 573,
+        "second": 576,
+        "third": 576,
+        "fourth": 576,
+        "fifth": 576
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65025",
+      "name": "太原市第四实验中学校",
+      "lastLine": 612,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 612,
+        "second": 616,
+        "third": 616,
+        "fourth": 616,
+        "fifth": 616
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65026",
+      "name": "太原市育英中学校",
+      "lastLine": 615,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 615,
+        "second": 616,
+        "third": 616,
+        "fourth": 616,
+        "fifth": 616
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65027",
+      "name": "太原市第二十七中学校",
+      "lastLine": 576,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 576,
+        "second": 580,
+        "third": 581,
+        "fourth": 581,
+        "fifth": 581
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65028",
+      "name": "山西大学附属中学校",
+      "lastLine": 685,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 685,
+        "second": 686,
+        "third": 686,
+        "fourth": 686,
+        "fifth": 686
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65029",
+      "name": "太原市第二十九中学校",
+      "lastLine": 556,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 556,
+        "second": 560,
+        "third": 561,
+        "fourth": 561,
+        "fifth": 561
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65030",
+      "name": "太原市第三十中学校",
+      "lastLine": 571,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 571,
+        "second": 571,
+        "third": 571,
+        "fourth": 571,
+        "fifth": 576
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65031",
+      "name": "太原市第五实验中学校",
+      "lastLine": 526,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 526,
+        "second": 526,
+        "third": 526,
+        "fourth": 526,
+        "fifth": 528
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65033",
+      "name": "太原市综合高中学校",
+      "lastLine": 534,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 534,
+        "second": 536,
+        "third": 536,
+        "fourth": 536,
+        "fifth": 536
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65034",
+      "name": "太原市尖草坪区第一中学校",
+      "lastLine": 616,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 616,
+        "second": 616,
+        "third": 616,
+        "fourth": 621,
+        "fifth": 621
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65035",
+      "name": "太原外国语科技中学校",
+      "lastLine": 526,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 526,
+        "second": 530,
+        "third": 531,
+        "fourth": 531,
+        "fifth": 531
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "66036",
+      "name": "太原市小店区第一中学校",
+      "lastLine": 635,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 635,
+        "second": 636,
+        "third": 636,
+        "fourth": 636,
+        "fifth": 636
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65037",
+      "name": "太原市第三十七中学校",
+      "lastLine": 641,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 641,
+        "second": 645,
+        "third": 646,
+        "fourth": 646,
+        "fifth": 646
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65038",
+      "name": "太原市晋源区实验中学校",
+      "lastLine": 592,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 592,
+        "second": 596,
+        "third": 596,
+        "fourth": 596,
+        "fifth": 596
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65039",
+      "name": "古交市第一中学校",
+      "lastLine": 591,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 591,
+        "second": 591,
+        "third": 591,
+        "fourth": 596,
+        "fifth": 596
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65040",
+      "name": "古交市第二高级中学校",
+      "lastLine": 542,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 542,
+        "second": 546,
+        "third": 546,
+        "fourth": 546,
+        "fifth": 546
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65041",
+      "name": "娄烦县娄烦中学",
+      "lastLine": 561,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 561,
+        "second": 564,
+        "third": 566,
+        "fourth": 566,
+        "fifth": 566
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65042",
+      "name": "阳曲县第一中学校",
+      "lastLine": 584,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 584,
+        "second": 586,
+        "third": 586,
+        "fourth": 586,
+        "fifth": 586
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65043",
+      "name": "清徐县清徐中学校",
+      "lastLine": 609,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 609,
+        "second": 611,
+        "third": 611,
+        "fourth": 611,
+        "fifth": 611
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65044",
+      "name": "清徐县徐沟中学校",
+      "lastLine": 640,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 640,
+        "second": 641,
+        "third": 641,
+        "fourth": 641,
+        "fifth": 641
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65045",
+      "name": "古交市第三中学校",
+      "lastLine": 523,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 523,
+        "second": 523,
+        "third": 523,
+        "fourth": 523,
+        "fifth": 523
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65048",
+      "name": "太原市第四十八中学校",
+      "lastLine": 641,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 641,
+        "second": 643,
+        "third": 646,
+        "fourth": 646,
+        "fifth": 646
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65049",
+      "name": "太原市第四十九中学校",
+      "lastLine": 536,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 536,
+        "second": 536,
+        "third": 536,
+        "fourth": 539,
+        "fifth": 541
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65052",
+      "name": "太原市第五十二中学校",
+      "lastLine": 541,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 541,
+        "second": 541,
+        "third": 543,
+        "fourth": 546,
+        "fifth": 546
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65053",
+      "name": "太原市第五十三中学校",
+      "lastLine": 536,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 536,
+        "second": 536,
+        "third": 536,
+        "fourth": 536,
+        "fifth": 541
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65055",
+      "name": "太原市第五十五中学校",
+      "lastLine": 581,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 581,
+        "second": 581,
+        "third": 582,
+        "fourth": 586,
+        "fifth": 586
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65056",
+      "name": "太原市第五十六中学校",
+      "lastLine": 566,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 566,
+        "second": 568,
+        "third": 571,
+        "fourth": 571,
+        "fifth": 571
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65059",
+      "name": "太原市第五十九中学校",
+      "lastLine": 531,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 531,
+        "second": 531,
+        "third": 534,
+        "fourth": 536,
+        "fifth": 536
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65060",
+      "name": "太原市第六十中学校",
+      "lastLine": 546,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 546,
+        "second": 549,
+        "third": 551,
+        "fourth": 551,
+        "fifth": 551
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65061",
+      "name": "太原市第六十一中学校",
+      "lastLine": 556,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 556,
+        "second": 560,
+        "third": 561,
+        "fourth": 561,
+        "fifth": 561
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65062",
+      "name": "太原市第六十二中学校",
+      "lastLine": 551,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 551,
+        "second": 554,
+        "third": 556,
+        "fourth": 556,
+        "fifth": 556
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65063",
+      "name": "太原市第六十三中学校",
+      "lastLine": 561,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 561,
+        "second": 561,
+        "third": 561,
+        "fourth": 561,
+        "fifth": 566
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65064",
+      "name": "太原市第六十四中学校",
+      "lastLine": 546,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 546,
+        "second": 546,
+        "third": 546,
+        "fourth": 546,
+        "fifth": 551
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65065",
+      "name": "太原市第六十五中学校",
+      "lastLine": 531,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 531,
+        "second": 531,
+        "third": 531,
+        "fourth": 531,
+        "fifth": 536
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65066",
+      "name": "太原市第六十六中学校",
+      "lastLine": 536,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 536,
+        "second": 536,
+        "third": 536,
+        "fourth": 540,
+        "fifth": 541
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65067",
+      "name": "太原市第六十七中学校",
+      "lastLine": 523,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 523,
+        "second": 523,
+        "third": 523,
+        "fourth": 523,
+        "fifth": 523
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65071",
+      "name": "太原市成成中学校",
+      "lastLine": 566,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 566,
+        "second": 566,
+        "third": 566,
+        "fourth": 566,
+        "fifth": 571
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65072",
+      "name": "太原市育才中学校",
+      "lastLine": 646,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 646,
+        "second": 649,
+        "third": 651,
+        "fourth": 651,
+        "fifth": 651
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65073",
+      "name": "太原市师爱中学校",
+      "lastLine": 626,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 626,
+        "second": 630,
+        "third": 631,
+        "fourth": 631,
+        "fifth": 631
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65074",
+      "name": "太原市外国语凤凰双语中学校",
+      "lastLine": 617,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 617,
+        "second": 621,
+        "third": 621,
+        "fourth": 621,
+        "fifth": 621
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65075",
+      "name": "太原市同心外国语中学校",
+      "lastLine": 591,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 591,
+        "second": 591,
+        "third": 591,
+        "fourth": 591,
+        "fifth": 592
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65076",
+      "name": "太原市师苑中学校",
+      "lastLine": 641,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 641,
+        "second": 641,
+        "third": 643,
+        "fourth": 646,
+        "fifth": 646
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65077",
+      "name": "太原市槐荫中学校",
+      "lastLine": 596,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 596,
+        "second": 596,
+        "third": 601,
+        "fourth": 601,
+        "fifth": 601
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65079",
+      "name": "太原市汾潇中学校",
+      "lastLine": 601,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 601,
+        "second": 601,
+        "third": 601,
+        "fourth": 605,
+        "fifth": 606
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65080",
+      "name": "太原市令德中学校",
+      "lastLine": 656,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 656,
+        "second": 659,
+        "third": 661,
+        "fourth": 661,
+        "fifth": 661
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65081",
+      "name": "太原市文华中学校",
+      "lastLine": 620,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 620,
+        "second": 621,
+        "third": 621,
+        "fourth": 621,
+        "fifth": 621
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65086",
+      "name": "太原市金河中学校",
+      "lastLine": 619,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 619,
+        "second": 621,
+        "third": 621,
+        "fourth": 621,
+        "fifth": 621
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65070",
+      "name": "太原市常青藤中学校",
+      "lastLine": 655,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 655,
+        "second": 656,
+        "third": 656,
+        "fourth": 656,
+        "fifth": 656
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65084",
+      "name": "太原北辰双语学校",
+      "lastLine": 623,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 623,
+        "second": 626,
+        "third": 626,
+        "fourth": 626,
+        "fifth": 626
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65085",
+      "name": "山西通宝育杰学校",
+      "lastLine": 601,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 601,
+        "second": 604,
+        "third": 606,
+        "fourth": 606,
+        "fifth": 606
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65087",
+      "name": "太原市长安综合中学校",
+      "lastLine": 523,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 523,
+        "second": 524,
+        "third": 526,
+        "fourth": 526,
+        "fifth": 526
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65088",
+      "name": "山西英才学校",
+      "lastLine": 523,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 523,
+        "second": 523,
+        "third": 523,
+        "fourth": 523,
+        "fifth": 523
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65089",
+      "name": "太原杏岭实验学校",
+      "lastLine": 631,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 631,
+        "second": 631,
+        "third": 636,
+        "fourth": 636,
+        "fifth": 636
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65090",
+      "name": "太原市金桥双语中学校",
+      "lastLine": 572,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 572,
+        "second": 576,
+        "third": 576,
+        "fourth": 576,
+        "fifth": 576
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65091",
+      "name": "太原市泰华高级中学校",
+      "lastLine": 601,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 601,
+        "second": 606,
+        "third": 606,
+        "fourth": 606,
+        "fifth": 606
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65092",
+      "name": "山西现代双语学校南校",
+      "lastLine": 637,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 637,
+        "second": 641,
+        "third": 641,
+        "fourth": 641,
+        "fifth": 641
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65093",
+      "name": "太原市恒中学校",
+      "lastLine": 527,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 527,
+        "second": 531,
+        "third": 531,
+        "fourth": 531,
+        "fifth": 531
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65094",
+      "name": "太原市行知宏实验中学校",
+      "lastLine": 523,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 523,
+        "second": 523,
+        "third": 523,
+        "fourth": 523,
+        "fifth": 523
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65095",
+      "name": "太原市致远实验学校",
+      "lastLine": 615,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 615,
+        "second": 616,
+        "third": 616,
+        "fourth": 616,
+        "fifth": 616
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65097",
+      "name": "太原新力惠中学校",
+      "lastLine": 561,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 561,
+        "second": 561,
+        "third": 565,
+        "fourth": 566,
+        "fifth": 566
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65098",
+      "name": "太原新希望双语学校",
+      "lastLine": 660,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 660,
+        "second": 661,
+        "third": 661,
+        "fourth": 661,
+        "fifth": 661
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "65099",
+      "name": "太原市华阳双语高级中学校",
+      "lastLine": 523,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 523,
+        "second": 523,
+        "third": 523,
+        "fourth": 523,
+        "fifth": 523
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "88007",
+      "name": "太原市第七职业中学校（综合高中试点班）",
+      "lastLine": 523,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 523,
+        "second": 523,
+        "third": 523,
+        "fourth": 523,
+        "fifth": 523
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "88013",
+      "name": "太原市第五职业中学校（综合高中试点班）",
+      "lastLine": 523,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 523,
+        "second": 523,
+        "third": 523,
+        "fourth": 523,
+        "fifth": 523
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "88033",
+      "name": "太原市综合高级中学校（综合高中试点班）",
+      "lastLine": 526,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 526,
+        "second": 526,
+        "third": 526,
+        "fourth": 526,
+        "fifth": 526
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "88046",
+      "name": "阳曲县高级职业中学校（综合高中试点班）",
+      "lastLine": 523,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 523,
+        "second": 523,
+        "third": 523,
+        "fourth": 523,
+        "fifth": 523
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    },
+    {
+      "code": "75028",
+      "name": "山西大学附属晋中学校",
+      "lastLine": 615,
+      "lineChoice": "first",
+      "choiceLines": {
+        "first": 615,
+        "second": 615,
+        "third": 615,
+        "fourth": 615,
+        "fifth": 615
+      },
+      "specialLine": null,
+      "quotaLine": null,
+      "quotaLineYear": null
+    }
+  ]
+}

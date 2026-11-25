@@ -1,7 +1,7 @@
 {
   "targetYear": 2027,
   "algorithm": "v1.5-generalized",
-  "generatedAt": "2026-11-25T07:31:47.231Z",
+  "generatedAt": "2026-11-25T07:51:55.268Z",
   "parameters": {
     "momentumWeight": 0.5,
     "momentumCap": 0.05
@@ -21,14 +21,20 @@
   "backtests": {
     "2024": {
       "targetYear": 2024,
-      "sampleSize": 58,
-      "mae": 8.69,
-      "rmse": 13.67,
-      "within3Percent": 43.1,
-      "within5Percent": 55.2,
-      "within10Percent": 67.2,
+      "sampleSize": 75,
+      "mae": 15.04,
+      "rmse": 21.1,
+      "within3Percent": 25.3,
+      "within5Percent": 37.3,
+      "within10Percent": 48,
       "frameChange": "730/525 -> 730/523",
       "worst": [
+        {
+          "name": "阳曲县第一中学校",
+          "predicted": 523,
+          "actual": 584,
+          "error": 61
+        },
         {
           "name": "清徐县徐沟中学校",
           "predicted": 584,
@@ -36,81 +42,75 @@
           "error": 56
         },
         {
-          "name": "太原市外国语凤凰双语中学校",
-          "predicted": 582,
-          "actual": 617,
-          "error": 35
+          "name": "太原市第二十一中学校",
+          "predicted": 523,
+          "actual": 576,
+          "error": 53
         },
         {
-          "name": "太原市成才中学校",
-          "predicted": 537,
+          "name": "太原市第五十五中学校",
+          "predicted": 528,
+          "actual": 581,
+          "error": 53
+        },
+        {
+          "name": "太原市第二十中学校",
+          "predicted": 523,
           "actual": 566,
-          "error": 29
-        },
-        {
-          "name": "太原市同心外国语中学校",
-          "predicted": 562,
-          "actual": 591,
-          "error": 29
-        },
-        {
-          "name": "太原市实验中学校",
-          "predicted": 626,
-          "actual": 600,
-          "error": -26
+          "error": 43
         }
       ]
     },
     "2025": {
       "targetYear": 2025,
-      "sampleSize": 77,
-      "mae": 25.99,
-      "rmse": 36.09,
-      "within3Percent": 9.1,
-      "within5Percent": 13,
-      "within10Percent": 29.9,
+      "sampleSize": 93,
+      "mae": 15.5,
+      "rmse": 20.58,
+      "within3Percent": 19.4,
+      "within5Percent": 25.8,
+      "within10Percent": 38.7,
       "frameChange": "730/523 -> 850/615",
       "worst": [
         {
-          "name": "太原市第五职业中学校（太原市第十三中学校）",
-          "predicted": 766,
-          "actual": 620.1,
-          "error": -145.89999999999998
+          "name": "太原市恒中学校",
+          "predicted": 620,
+          "actual": 679,
+          "error": 59
         },
         {
-          "name": "太原市外国语学校（摄乐校区）",
-          "predicted": 700,
-          "actual": 790.1,
-          "error": 90.10000000000002
+          "name": "太原市实验中学校",
+          "predicted": 697,
+          "actual": 755.1,
+          "error": 58.10000000000002
         },
         {
-          "name": "太原市第三十中学校",
-          "predicted": 772,
+          "name": "太原市成才中学校",
+          "predicted": 631,
           "actual": 685.1,
-          "error": -86.89999999999998
+          "error": 54.10000000000002
         },
         {
-          "name": "阳曲县第一中学校",
-          "predicted": 615,
-          "actual": 699.5,
-          "error": 84.5
+          "name": "太原市第十八中学校（晋源校区）",
+          "predicted": 720,
+          "actual": 765.1,
+          "error": 45.10000000000002
         },
         {
-          "name": "太原市第二十一中学校",
-          "predicted": 615,
-          "actual": 683,
-          "error": 68
+          "name": "太原市外国语凤凰双语中学校",
+          "predicted": 728,
+          "actual": 770.1,
+          "error": 42.10000000000002
         }
       ]
     },
     "2026": {
       "targetYear": 2026,
       "sampleSize": 98,
-      "mae": 11.74,
-      "rmse": 24.25,
-      "within3Percent": 33.7,
-      "within5Percent": 50,
-      "within10Percent": 72.4,
+      "mae": 11.16,
+      "rmse": 24,
+      "within3Percent": 38.8,
+      "within5Percent": 53.1,
+      "within10Percent": 74.5,
       "frameChange": "850/615 -> 839/603",
       "worst": [
         {
@@ -120,16 +120,10 @@
           "error": -147
         },
         {
-          "name": "太原维刚实验学校",
-          "predicted": 684,
-          "actual": 603,
-          "error": -81
-        },
-        {
           "name": "太原市泰华高级中学校",
-          "predicted": 714,
+          "predicted": 719,
           "actual": 634,
-          "error": -80
+          "error": -85
         },
         {
           "name": "山西英才学校",
@@ -142,16 +136,22 @@
           "predicted": 679,
           "actual": 749.1,
           "error": 70.10000000000002
+        },
+        {
+          "name": "太原维刚实验学校",
+          "predicted": 670,
+          "actual": 603,
+          "error": -67
         }
       ]
     }
   },
   "statistics": {
     "total": 99,
-    "high": 90,
-    "medium": 8,
+    "high": 91,
+    "medium": 7,
     "low": 1,
-    "volatile": 8,
+    "volatile": 7,
     "min": 603,
     "max": 803
   },
@@ -1667,13 +1667,13 @@
       "scoreLatest": 603,
       "anchorYears": [
         2026,
-        2024
+        2023
       ],
       "predicted2027": 603,
       "relPosPred": 0,
-      "confidence": "medium",
+      "confidence": "high",
       "strategy": "relative-position-momentum",
-      "volatile": true
+      "volatile": false
     },
     {
       "code": "65099",
