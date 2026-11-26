@@ -473,6 +473,42 @@ async function main() {
     console.log('⚠️  未找到预测文件（data/predictions-latest.json），跳过预测导入');
   }
 
+  // ---- 6. enrollment_plans（招生计划，可选）----
+  const planDir = path.join(ROOT, 'data', 'enrollment');
+  if (fs.existsSync(planDir)) {
+    const files = fs.readdirSync(planDir).filter(f => /^\d{4}\.json$/.test(f));
+    let planRows = 0;
+    const planYears = [];
+    for (const f of files) {
+      const year = Number(f.slice(0, 4));
+      const d = JSON.parse(fs.readFileSync(path.join(planDir, f), 'utf8'));
+      const [[yr]] = await pool.query('SELECT 1 AS ok FROM years WHERE year = ?', [year]);
+      if (!yr) {
+        console.log(`⚠️  跳过 ${year} 年招生计划：years 表无该年`);
+        continue;
+      }
+      await pool.query('DELETE FROM enrollment_plans WHERE year = ?', [year]);
+      for (const s of d.schools || []) {
+        if (!/^\d{5}$/.test(String(s.code))) continue;
+        const [[sc]] = await pool.query('SELECT 1 AS ok FROM schools WHERE code = ?', [s.code]);
+        if (!sc) continue;
+        await pool.execute(
+          `INSERT INTO enrollment_plans (year, school_code, plan_count, mark)
+           VALUES (?, ?, ?, ?)
+           ON DUPLICATE KEY UPDATE
+             plan_count = VALUES(plan_count),
+             mark       = VALUES(mark)`,
+          [year, s.code, s.plan ?? null, s.mark || null]
+        );
+        planRows++;
+      }
+      planYears.push(year);
+    }
+    if (planYears.length) {
+      console.log(`✅ enrollment_plans：${planRows} 条（年份 ${planYears.join(',')}）`);
+    }
+  }
+
   await pool.end();
   console.log('\n🎉 导入完成');
 }

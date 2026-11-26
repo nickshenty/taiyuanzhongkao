@@ -1,0 +1,2795 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--网站标签-->
+<!--网站名称、网站域名、政府网站标识码、描述、关键字 -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="SiteName" content="太原市教育局网站" />
+<meta name="SiteDomain" content="jyj.taiyuan.gov.cn" />
+<meta name="SiteIDCode" content="CA061130000413013300002" />
+<meta name="description" content="太原市教育局">
+<meta name="keywords" content=""><!--栏目标签-->
+<!--栏目名称、栏目描述、栏目关键字、栏目类别 -->
+<meta name="ColumnName" content="中考资讯" />
+<meta name="ColumnDescription" content="中考资讯" />
+<meta name="ColumnKeyWords" content="中考资讯" />
+<meta name="ColumnType" content="中考资讯" />
+<title>中考资讯-太原市教育局网站</title>
+<link rel="stylesheet" type="text/css" href="/r/cms/site28/default/tysjyj/static/css/channelpage_ty.css" />
+<link rel="stylesheet" type="text/css" href="/r/cms/site28/default/tysjyj/static/css/info.css" />
+<script src="/r/cms/site28/default/tysjyj/static/js/jquery-1.7.1.min.js"></script>
+<script src="/r/cms/site28/default/tysjyj/static/js/common.js"></script>
+<script type="text/javascript" src="/r/cms/site67/default/js/jquery.my-message.1.1.js"></script>
+<script type="text/javascript" src="/r/cms/site67/default/js/app.js"></script>
+<script type="text/javascript" src="/r/cms/site67/default/js/jquery.sPage.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+/*accessible-read start*/
+	var close = localStorage.getItem("close");
+	var protocol = window.location.protocol
+	if(close=='true'){
+		show()
+	}
+
+	function show(){
+		let xml = window.XMLHttpRequest?new XMLHttpRequest():new ActiveXObject('Microsoft.XMLHttp');
+		xml.open('GET','https://api.jeecms.com/MODULE-ACCESSIBLE-READING/front/readings/checkAvailability?callingCode=4cU3e84wRBad3qyPeq4wU7if3aTD-m3bAkdd33zAtc39AQ1e3oEQBb3qQnxv4rPjd74rP8ym4lTz-j4mUz-b4nEPRv4oS7ek3qyPeq39y49e34A4t93qzkdg4aQjdh4pP7mk4cQl2932ETmS4zU49v39CRW=3fSEyu4XU4ar39TQio4WSBOC3qBjev4eQTig4VT7am3qT7mk4vQPd73eA7mu3fzQ593cy4lc3qzQB93YMh62');
+		xml.send();
+		xml.onreadystatechange=function(){
+			if($('#ABTInterface').length!=0){
+				return
+			}
+			if (xml.readyState==4 && xml.status==200){
+				let res = JSON.parse(xml.responseText);
+				if (res.code == 200) {
+					localStorage.setItem("close", true);
+					let script = document.createElement('script');
+					// script.src = res.data.abtJsUrl;
+					let host = window.location.protocol+"//"+window.location.host;
+					script.src = host+"/r/cms/site28/default/reading/abt.js";
+					//重写为本地js
+					res.data.abtJsUrl=host+"/r/cms/site28/default/reading/abt.js";
+					res.data.gbkJsUrl=host+"/r/cms/site28/default/reading/gbk.js";
+					res.data.helpHtmlUrl=host+"/r/cms/site28/default/reading/help.html";
+					res.data.pinyinJsUrl=host+"/r/cms/site28/default/reading/pinyin.js";
+					res.data.skinCssUrl=host+"/r/cms/site28/default/reading/skin.css";
+					document.body.appendChild(script);
+					console.log(window.location.host)
+					console.log(res.data)
+					script.onload = function(){ABTshow(res.data);}
+				} else if (res.code == 500){
+					alert(res.message);
+				}
+			}
+		}
+	}
+
+</script>
+<script type="text/javascript" language="javascript">
+function collect(){
+//加入收藏
+      var ctrl = (navigator.userAgent.toLowerCase()).indexOf('mac') != -1 ? 'Command/Cmd': 'CTRL';
+      try{
+        if (document.all) { //IE类浏览器
+            try {
+                window.external.toString(); //360浏览器不支持window.external，无法收藏
+                window.alert("国内开发的360浏览器等不支持主动加入收藏。\n您可以尝试通过浏览器菜单栏 或快捷键 ctrl+D 试试。");
+            }
+            catch (e){   
+                try{
+window.external.addFavorite(window.location, document.title);
+                }
+                catch (e){
+window.external.addToFavoritesBar(window.location, document.title);  //IE8
+                }
+            }
+        }
+        else if (window.sidebar) { //firfox等浏览器
+            window.sidebar.addPanel(document.title, window.location, "");
+        }
+        else {
+            alert('您可以尝试通过快捷键' + ctrl + ' + D 加入到收藏夹~');
+        }
+    }
+    catch (e){
+       alert('您可以尝试通过快捷键' + ctrl + ' + D 加入到收藏夹~');
+    }
+}
+ 
+    //设为首页
+ 
+    function setHome(){
+ url= window.location.href;
+        if (document.all) {
+ 
+            document.body.style.behavior='url(#default#homepage)';
+ 
+               document.body.setHomePage(url);
+ 
+        }else{ 
+            alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!");
+        }
+    }
+</script>
+<!--
+<script type="text/javascript">
+$(function(){
+  $('#sub').click(function(){
+    window.location.href='http://221.204.12.144:8090/fzlm/js/index.shtml?query='+$("#keyword").val();
+  });
+});
+</script>!-->
+<div class="head_top">
+	<div class="head_top_con">
+    	<ul class="fr clearfix">
+        <li><a href="javascript:void(0);" onclick="collect();">加入收藏</a></li>
+        <li><a href="javascript:void(0);" onclick="setHome();">设为首页</a></li>
+        <li><a href="javascript:void(0);" onclick="show();">无障碍通道</a></li>
+        </ul>
+    </div>       
+</div>  
+<div class="navbox">
+	<div class="navbox_con">
+        <ul class="nav_ul fl" style="margin-left:-18px;">
+        <li><a href="http://jyj.taiyuan.gov.cn/index.html">首&nbsp;&nbsp;页</a></li>
+        <li><a href="/dwgk.html" target="_blank">单位概况</a></li>
+        <li><a href="/zcfg.html" target="_blank">政策法规</a></li>
+        <li><a href="/zfxxgkzn.html" target="_blank">政务信息公开</a></li>
+        <li><a href="http://ty.sxzwfw.gov.cn/icity/icity/departmental_matters?deptid=1401010303" target="_blank">政务服务</a></li>
+        <li><a href="/mbjy.html" target="_blank">民办教育</a></li>
+        <li><a href="/zyjy.html" target="_blank">职业教育</a></li>        
+        <li><a href="/zkzs.html" target="_blank">中考招生</a></li>
+        </ul>
+        <ul class="ser_ul fr clearfix" style="margin-right: -50px;">
+        <li class="srk"><input type="text" name="" id="keyword" placeholder="请输入关键字" /></li>
+        <li class="btn"><input type="button" name=""  onclick="window.open('/search.htm?q='+$('#keyword').val())" /></li>
+        </ul>
+    </div>
+</div>
+<div class="banner clearfix">
+	<h1 class="logo fl"><a href="http://jyj.taiyuan.gov.cn/index.html" class="fix_bg">太原市教育局</a></h1>
+</div><style type="text/css">
+.dataDiv {
+	width: 80%;
+	height: auto;
+	margin: 10px auto 0;
+    color: #0206a3;
+    font-size:16px;
+}
+.dataDiv h1 {
+	font-size:24px;
+    text-align:center;
+}
+.dataDiv table tbody,.dataDiv p,.dataDiv span{
+	color:#e74e29;
+}
+.dataDiv table{
+	width:90%;
+	border:1px solid #dddfe5;
+    margin:20px auto;
+	text-align: left;
+}
+.dataDiv table tr td {
+	padding: 13px 10px;
+	border-bottom:1px solid #dddfe5;
+	/*border-right:1px solid #015293;*/
+	font-size: 15px;
+	color:#015293;
+}
+.right{float:right;}
+.dataDiv tr td:first-child{ text-align:right; width:15%; background:#f4f4f4}
+.dataDiv tr td:last-child{ text-align:left; text-indent:24px;}
+.dataDiv tr:last-child td{ border-bottom:none}
+</style>
+  <div class="container">
+    <div class="bigboxTy01">
+      <div class="clearfix">
+        <div class="w820 fr" style="width: 1028px;">
+          <h2 class="positionTy"><a href="/">首页</a> >  <a href="/zkzs.html">中考招生</a>  >  <a href="/zkzx.html">中考资讯</a> </h2>
+          <div class="mainCont">
+            <h1 style="color:#000">
+             2019年普通高中学校招生计划
+            </h1>
+            <p class="explain"> 
+             <span style="float:right;">时间：<em>2019-06-21</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+             <!--浏览次数： <span id="views">622</span>-->
+              <script src="/r/cms/site28/default/js/front.js" type="text/javascript" charset="utf-8"></script>
+              <script type="text/javascript">$(function() { Cms.viewCount("", "1042522"); });</script>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             来源：<span>市教育局 </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             字号：[ <span class="Big">大</span> <span class="Middle">中</span> <span class="Small">小</span> ]
+            </p>
+
+            <div id="Zoom">
+                    <p><span style="font-size: 14pt;"><span style="font-family: 华文中宋;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">一、普通高中（公办）学校招生计划</span></span></span></span><span style="font-size: 10.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">（填入普通高中学校志愿栏）</span></span></span></span></p>
+
+<table border="1" cellspacing="0">
+	<tbody>
+		<tr>
+			<td width="69">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校</span></span></span></span></strong></p>
+
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">编码</span></span></span></span></strong></p>
+			</td>
+			<td width="184">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校名称</span></span></span></span></strong></p>
+			</td>
+			<td width="70">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">招生计划</span></span></span></span></strong><strong><span style="font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（人）</span></span></span></span></strong></p>
+			</td>
+			<td width="155">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校地址</span></span></span></span></strong></p>
+			</td>
+			<td width="85">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学费标准</span></span></span></span></strong></p>
+
+			<p align="center"><strong><span style="letter-spacing: -0.4pt; font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（元/生.学期）</span></span></span></span></strong></p>
+			</td>
+			<td width="70">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿情况</span></span></span></span></strong><strong><span style="font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（人）</span></span></span></span></strong></p>
+			</td>
+			<td width="99">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">招生电话</span></span></span></span></strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65001</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市外国语学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">万柏林区永乐南街</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">800</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">120</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5631401</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">15383435268</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65002</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第二中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区太榆路荣军北街4号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">283436</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2834352</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65003</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市成成中学校</span></span></span></p>
+
+			<p><span style="font-size: 8pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（铁匠巷校区）</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">迎泽区后铁匠巷5号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">800</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4048480</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65004</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市实验中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">迎泽区并州东街2号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">700</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">150</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4295388</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4295680</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65005</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第五中学校</span></span></span></p>
+
+			<p><span style="font-size: 8pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（青年路校区）</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">迎泽区青年路49号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">800</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">580</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4091553</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65006</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市进山中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">500</span></span></span></p>
+			</td>
+			<td rowspan="2" width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">迎泽区杏花岭街2号东</span></span></span></span></p>
+			</td>
+			<td rowspan="2" width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">700</span></span></span></p>
+			</td>
+			<td rowspan="2" width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">9</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td rowspan="2" width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4179572</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5007</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市进山中学校</span></span></span></p>
+
+			<p><span style="font-size: 8pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（航天实验班）</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★6500</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">8</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市成成中学校</span></span></span></p>
+
+			<p><span style="font-size: 8pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（晋源新校区）</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">晋源区成成南街</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">8</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">048480</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★6500</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">9</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第五中学校</span></span></span></p>
+
+			<p><span style="font-size: 8pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（龙城新校区）</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区龙城南街</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">8</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">091553</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65010</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">山西省实验中学</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区晋阳街201号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">800</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7897030</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65011</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第十一中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">尖草坪区迎新街1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3053652</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65012</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第十二中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">杏花岭区旱西关街南二条</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">11</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">700</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">100</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5651214</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65014</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原师范学院附属中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">杏花岭区富安北路</span></span></span><span style="font-size: 8pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（富力城小区）</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">227</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6286</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2727341</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65015</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第十五中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">迎泽区水西关街3号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">200</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4067649</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">☆65016</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第十六中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">晋源区和平南路320号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6088445</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">15713515810</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">☆65017</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第二实验中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">万柏林区西矿街75号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">男</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">50</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">女</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">70</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6362789</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65018</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第十八中学校</span></span></span></p>
+
+			<p><span style="font-size: 8pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（第二外国语学校）</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">杏花岭区坝陵北街2号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">700</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3367626</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65019</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第十九中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">杏花岭区金刚里柳溪街15号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">不可</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3233047</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65020</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第二十中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">300</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">万柏林区西矿街158号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2418503</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">126328</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">☆65021</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第二十一中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区寇庄北街26号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">180</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2148440</span></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size: 14pt;"><span style="font-family: 华文中宋;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">一、普通高中（公办）学校招生计划</span></span></span></span><span style="font-size: 10.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">（填入普通高中学校志愿栏）</span></span></span></span></p>
+
+<table border="1" cellspacing="0">
+	<tbody>
+		<tr>
+			<td width="69">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校</span></span></span></span></strong></p>
+
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">编码</span></span></span></span></strong></p>
+			</td>
+			<td width="184">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校名称</span></span></span></span></strong></p>
+			</td>
+			<td width="70">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">招生计划</span></span></span></span></strong><strong><span style="font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（人）</span></span></span></span></strong></p>
+			</td>
+			<td width="155">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校地址</span></span></span></span></strong></p>
+			</td>
+			<td width="85">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学费标准</span></span></span></span></strong></p>
+
+			<p align="center"><strong><span style="letter-spacing: -0.4pt; font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（元/生.学期）</span></span></span></span></strong></p>
+			</td>
+			<td width="70">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿情况</span></span></span></span></strong><strong><span style="font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（人）</span></span></span></span></strong></p>
+			</td>
+			<td width="99">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">招生电话</span></span></span></span></strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">☆65023</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第三实验中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">80</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区坞城南路许坦桥西698号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">700</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7963323</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65024</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第二十四中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.4pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">杏花岭区北河湾路</span></span></span></span><span style="letter-spacing: -0.4pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">21</span></span></span></span><span style="letter-spacing: -0.4pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">150</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3077979</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">13603510179</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65025</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第四实验中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">杏花岭区钢中路7号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3622396</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65026</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市育英中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">杏花岭区城坊东街8号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">800</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">不可</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3080191</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">099326</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">☆65027</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第二十七中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区并州南路99号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">不可</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7062741</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65028</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">山西大学附属中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">780</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区坞城西街9号</span></span></span><span style="font-size: 8pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（省府街）</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">800</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">200</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5682112</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65029</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第二十九中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.4pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">万柏林区千峰北路19号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">不可</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6062515</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">☆65030</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第三十中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.4pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">迎泽区水西关南街10号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">不可</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4042389</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">☆65031</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第五实验中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.4pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">万柏林区河涝湾街18号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2371008</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65033</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市综合高级中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区许坦东街1号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5281189</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">15364811189</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★6503</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市尖草坪区第一中学校</span></span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">尖草坪区希望西街8号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6030647</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6034071</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65035</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原外语科技实验中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区长治路西巷3号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">150</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7249820</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">243317</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65036</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市小店区第一中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区昌盛西街20号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7173081</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">507628</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5037</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第三十七中学校</span></span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">迎泽区郝庄镇王家峰北街与经园路交叉口</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">793411</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65038</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市晋源区实验中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">晋源区纬三路中段</span></span></span><span style="font-size: 8pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（五府营村北）</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6944261</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65039</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">古交市第一中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">古交市学府路5号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5198101</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65040</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">古交市第二高级中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">古交市腾飞路31号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5161119</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5161309</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65041</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">娄烦县娄烦中学</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">娄烦县城南区</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">400</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5322271</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65042</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">阳曲县第一中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.5pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">阳曲县黄寨镇宋庄村1号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5592163</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65043</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">清徐县清徐中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">清徐县育英路30号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">400</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">16603459522</span></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size: 14pt;"><span style="font-family: 华文中宋;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">一、普通高中（公办）学校招生计划</span></span></span></span><span style="font-size: 10.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">（填入普通高中学校志愿栏）</span></span></span></span></p>
+
+<table border="1" cellspacing="0">
+	<tbody>
+		<tr>
+			<td width="69">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校</span></span></span></span></strong></p>
+
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">编码</span></span></span></span></strong></p>
+			</td>
+			<td width="184">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校名称</span></span></span></span></strong></p>
+			</td>
+			<td width="70">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">招生计划</span></span></span></span></strong><strong><span style="font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（人）</span></span></span></span></strong></p>
+			</td>
+			<td width="155">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校地址</span></span></span></span></strong></p>
+			</td>
+			<td width="85">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学费标准</span></span></span></span></strong></p>
+
+			<p align="center"><strong><span style="letter-spacing: -0.4pt; font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（元/生.学期）</span></span></span></span></strong></p>
+			</td>
+			<td width="70">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿情况</span></span></span></span></strong><strong><span style="font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（人）</span></span></span></span></strong></p>
+			</td>
+			<td width="99">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">招生电话</span></span></span></span></strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65044</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">清徐县徐沟中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">清徐县徐沟镇西大街</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">400</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5712028</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5712038</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5045</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">古交市第三中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">古交市桃园街道办郝家庄路</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">987596</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">13934654082</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65048</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第四十八中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区长治南路199号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7632923</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65049</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第四十九中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">万柏林区众纺路26号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5665667</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65052</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第五十二中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">迎泽区双塔二马路3号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5263570</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65053</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第五十三中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">250</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">同上</span></span></span><span style="font-size: 8pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（因新校建设，在52中办学）</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">不可</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4421073</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">☆65055</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第五十五中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.3pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">尖草坪区大同路142号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">50</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3080939</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65056</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第五十六中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.4pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">万柏林区小井峪街40号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">100</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2852260</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">852029</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65059</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第五十九中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">尖草坪区恒山路40号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3443638</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">443110</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65060</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第六十中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">杏花岭区涧河路63号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3370222</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65061</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第六十一中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">万柏林区兴华西街1号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">男</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">30</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">女</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">30</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6267623</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">☆65062</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第六十二中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">万柏林区义井东街北二条1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">8</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">15392615829</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65063</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第六十三中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">晋源区义井街南三巷6号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">13603535371</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">13753172338</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65064</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第六十四中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">晋源区旧晋祠路三段379号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6323187</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65065</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第六十五中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">万柏林区南寒河南街6号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">147353002</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">04</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">14735300214</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65066</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第六十六中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">尖草坪区迎新街2号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">100</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3853021</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">158693</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65067</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市第六十七中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">尖草坪区西留路18号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2812810</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);"><a name="_Hlk517185219" style="padding: 0px; color: rgb(51, 51, 51); text-decoration: none;">◆</a>65</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">100</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太谷县第二中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">晋中市太谷县北关道29号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">700</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">03546258200</span></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size: 14pt;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">一、普通高中（民办）学校招生计划</span></span></span><span style="font-size: 10.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">（填入普通高中学校志愿栏）</span></span></span></span></p>
+
+<table border="1" cellspacing="0">
+	<tbody>
+		<tr>
+			<td width="69">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校</span></span></span></span></strong></p>
+
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">编码</span></span></span></span></strong></p>
+			</td>
+			<td width="184">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校名称</span></span></span></span></strong></p>
+			</td>
+			<td width="70">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">招生计划</span></span></span></span></strong><strong><span style="font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（人）</span></span></span></span></strong></p>
+			</td>
+			<td width="155">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校地址</span></span></span></span></strong></p>
+			</td>
+			<td width="85">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学费标准</span></span></span></span></strong></p>
+
+			<p align="center"><strong><span style="letter-spacing: -0.4pt; font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（元/生.学年）</span></span></span></span></strong></p>
+			</td>
+			<td width="70">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿情况</span></span></span></span></strong><strong><span style="font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（人）</span></span></span></span></strong></p>
+			</td>
+			<td width="99">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">招生电话</span></span></span></span></strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65070</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市知达常青藤中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">32</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区龙堡街18号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">9,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">70</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5225097</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：民办学校，除按照收费标准收取学费和其他代收费外；住校生需收取住宿费、伙食费等，详细收费咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65071</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市成才中学</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">24</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">迎泽区新城街15号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">不可</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">180207</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4167627</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：民办学校，按照收费标准收取学费和其他代收费。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65072</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市五育中学</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">16</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">迎泽区青年路</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">58</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4091152</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">091207</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：民办学校，除按照收费标准收取学费和其他代收费外；住校生需收取住宿费、伙食费等，详细收费和住宿范围请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65073</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市师爱中学</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">24</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">杏花岭区府西街25号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">50</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5651214</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5602746</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：民办学校，除按照收费标准收取学费和其他代收费外；住校生需收取住宿费、伙食费等，详细收费和住宿范围请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65074</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原外国语凤凰双语学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">280</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">万柏林区漪汾苑槐荫院17号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">120</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5631401</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">15383435318</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：民办学校，除按照收费标准收取学费和其他代收费外；住校生需收取住宿费、伙食费等，详细收费和住宿范围请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65075</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市同心外国语学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">20</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">杏花岭区解放北路258号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">10</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">100</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3131674</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3133151</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：民办学校，除按照收费标准收取学费和其他代收费外；住校生需收取住宿费、伙食费等，详细收费和住宿范围请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65076</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市师苑中学</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">24</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">迎泽区侯家巷9号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">男</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">40</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">女</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2276157</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2276286</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：民办学校，除按照收费标准收取学费和其他代收费外；住校生需收取住宿费、伙食费等，详细收费和住宿范围请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65077</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市梗阳中学</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">32</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">清徐县育英路22号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">11,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">16603459533</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：民办学校，除按照收费标准收取学费和其他代收费外；住校生需收取住宿费、伙食费等，详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65079</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市汾潇中学</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">32</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区先锋街88号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">10</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">352396</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：民办学校，除按照收费标准收取学费和其他代收费外；住校生需收取住宿费、伙食费等，详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5080</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市令德中学</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">240</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">杏花岭区解放路85号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7897030</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：民办学校。除按照收费标准收取学费和其他代收费外；住校生需收取住宿费、伙食费等，详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size: 14pt;"><span style="font-family: 华文中宋;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">一、普通高中（民办）学校招生计划</span></span></span></span><span style="font-size: 10.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">（填入普通高中学校志愿栏）</span></span></span></span></p>
+
+<table border="1" cellspacing="0">
+	<tbody>
+		<tr>
+			<td width="69">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校</span></span></span></span></strong></p>
+
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">编码</span></span></span></span></strong></p>
+			</td>
+			<td width="184">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校名称</span></span></span></span></strong></p>
+			</td>
+			<td width="70">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">招生计划</span></span></span></span></strong><strong><span style="font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（人）</span></span></span></span></strong></p>
+			</td>
+			<td width="155">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校地址</span></span></span></span></strong></p>
+			</td>
+			<td width="85">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学费标准</span></span></span></span></strong></p>
+
+			<p align="center"><strong><span style="letter-spacing: -0.4pt; font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（元/生.学年）</span></span></span></span></strong></p>
+			</td>
+			<td width="70">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿情况</span></span></span></span></strong><strong><span style="font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（人）</span></span></span></span></strong></p>
+			</td>
+			<td width="99">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">招生电话</span></span></span></span></strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65081</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市文华中学</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">16</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区长治南路199号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">10</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">不可</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7632923</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：民办学校，按照收费标准收取学费和其他代收费外；详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65084</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原北辰双语学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">16</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">晋源区晋祠路三段3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">89</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">,0</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2522458</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2522459</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：全封闭民办学校，除收取学费外；还需收取住宿费、伙食费和其他代收费等，全额不超过</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">45,0</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00元/生.学年。详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">★65085</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">山西通宝育杰学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">240</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区许坦西街48号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4,000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7585550</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2509765</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：民办学校，除收取学费外；住校生还需收取住宿费、伙食费和其他代收费等，全额不超过3</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7,0</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00元/生.学年。详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65086</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市金河中学</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">48</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">清徐县徐沟镇西大街</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">16</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">满足</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5712028</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5712038</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：民办学校，除按照收费标准收取学费和其他代收费外；住校生需收取住宿费、伙食费等，详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65087</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市长安综合中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">80</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">万柏林区九院沙河南岸西段1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">16,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7811596</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">346663</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：全封闭民办学校，除按照收费标准收取学费和其他代收费外；住校生需收取住宿费、伙食费等，全额不超过</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">32,0</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00元/生.学年。详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65088</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">山西英才学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">16</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">尖草坪区绿果路28号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">100</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6100766</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6100866</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：全封闭民办学校，除按照学费标准收取学费外，还需收取住宿费、伙食费和其他代收费等，全额不超过3</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">8,</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000元/生.学年，详细收费咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65089</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原杏岭实验学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">32</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">杏花岭区凯旋街10号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">20</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5652588</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">652515</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：全封闭民办学校，除按照学费标准收取学费外，还需收取住宿费、伙食费和其他代收费等，全额不超过</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">36,</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000元/生.学年，详细收费咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5090</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市金桥双语中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">160</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">小店区许坦东街4</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">21,0</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">272</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">9195</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">15383468127</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：全封闭民办学校，除按照学费标准收取学费外，还需收取住宿费、伙食费和其他代收费等，全额不超过</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">32,</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000元/生.学年，详细收费咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65092</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">山西现代双语学校南校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">600</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">晋中市榆次区汇通北路409号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4,000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0354328</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">69</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">88</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3543286998</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：全封闭民办学校，除按照学费标准收取学费外，还需收取住宿费、伙食费和其他代收费等，全额不超过</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">45,0</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00元/生.学年。详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65093</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原树人中学</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">100</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">万柏林区红沟靶场路57号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">15,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6213739</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：全封闭民办学校，除按照学费标准收取学费外，还需收取住宿费、伙食费和其他代收费等，全额不超过</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">28,0</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00元/生.学年。详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size: 14pt;"><span style="font-family: 华文中宋;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">一、普通高中（民办）学校招生计划</span></span></span></span><span style="font-size: 10.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">（填入普通高中学校志愿栏）</span></span></span></span></p>
+
+<table border="1" cellspacing="0">
+	<tbody>
+		<tr>
+			<td width="69">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校</span></span></span></span></strong></p>
+
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">编码</span></span></span></span></strong></p>
+			</td>
+			<td width="184">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校名称</span></span></span></span></strong></p>
+			</td>
+			<td width="70">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">招生计划</span></span></span></span></strong><strong><span style="font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（人）</span></span></span></span></strong></p>
+			</td>
+			<td width="155">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学校地址</span></span></span></span></strong></p>
+			</td>
+			<td width="85">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">学费标准</span></span></span></span></strong></p>
+
+			<p align="center"><strong><span style="letter-spacing: -0.4pt; font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（元/生.学年）</span></span></span></span></strong></p>
+			</td>
+			<td width="70">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿情况</span></span></span></span></strong><strong><span style="font-weight: bold;"><span style="font-size: 6.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（人）</span></span></span></span></strong></p>
+			</td>
+			<td width="99">
+			<p align="center"><strong><span style="font-weight: bold;"><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">招生电话</span></span></span></span></strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65094</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市行知宏实验中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">145</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">晋源区晋祠镇王郭村3</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">8</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">号</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">22</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">221</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">630</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2215728</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：全封闭民办学校，除按照学费标准收取学费外，还需收取住宿费、伙食费和其他代收费等，全额不超过3</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2,0</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00元/生.学年。详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65095</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市致远实验中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">16</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">阳曲县青龙镇南街1号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">22,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">7721399</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：全封闭民办学校，除按照学费标准收取学费外，还需收取住宿费、伙食费和其他代收费等，全额不超过3</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">8,000</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">元/生.学年。详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65096</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原维刚实验学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">16</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">尖草坪区文兴路1</span></span></span></span><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">60</span></span></span></span><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">号</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">32,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5635006</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2283508</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：全封闭民办学校，除按照学费标准收取学费外，还需收取住宿费、伙食费和其他代收费等，全额不超过3</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2,0</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00元/生.学年。详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65097</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原新力惠中学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">16</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">经济技术开发区唐明路1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">号</span></span></span><span style="font-size: 8pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（小店区）</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2362358</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2362667</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：全封闭民办学校，除按照学费标准收取学费外，还需收取住宿费、伙食费和其他代收费等，全额不超过3</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">8,0</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00元/生.学年。详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">65098</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原新希望双语学校</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">320</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">民营经济开发区工业新区</span></span></span><span style="font-size: 8pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">（阳曲县）</span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">26</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5562222</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5562226</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：全封闭民办学校，除按照学费标准收取学费外，还需收取住宿费、伙食费和其他代收费等，全额不超过4</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5,0</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00元/生.学年。详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">5099</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="letter-spacing: -0.1pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">太原市华阳双语高级中学校</span></span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">60</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">清徐县徐沟镇西楚王村</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">23</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">,</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4166278</span></span></span></p>
+
+			<p><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3935001527</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：全封闭民办学校，除按照学费标准收取学费外，还需收取住宿费</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">、伙食费和其它代收费用等，全额不超过38,000元/生.学年。详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" width="69">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">◆65102</span></span></span></p>
+			</td>
+			<td width="184">
+			<p><span style="letter-spacing: -0.1pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">晋中市华盛外国语学校</span></span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2</span></span></span><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></p>
+			</td>
+			<td width="155">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">晋中市榆次区鸣谦大街中段首创国际学园路北</span></span></span></span></p>
+			</td>
+			<td width="85">
+			<p align="center"><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1</span></span></span></span><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">6</span></span></span></span><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">,</span></span></span></span><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">000</span></span></span></span></p>
+			</td>
+			<td width="70">
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">全部</span></span></span></p>
+
+			<p align="center"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">住宿</span></span></span></p>
+			</td>
+			<td width="99">
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></span><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3542512117</span></span></span></span></p>
+
+			<p><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">0</span></span></span></span><span style="letter-spacing: -0.2pt;"><span style="font-size: 8.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3542513363</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="6" width="666">
+			<p><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">备注：全封闭民办学校，除按照学费标准收取学费外，还需收取住宿费（</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">500</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">元/生.学年）、伙食费和其他代收费等，全额不超过</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">36,0</span></span></span><span style="font-size: 7.5pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00元/生.学年。详细收费请咨询学校招生部门。</span></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p><strong><span style="font-weight: bold;"><span style="font-size: 12pt;"><span style="font-family: 等线;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 等线;">特别提示：</span></span></span></span></span></strong><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">1.以上普通高中学校的招生计划中，包含体育、艺术类特长生计划，小语种班计划，统招生计划、定向生计划、航天实验班计划，计划详细分解见后面各类招生计划；山大附中的招生计划中包含80名西藏班计划和20名藏族插班生计划。</span></span></span></p>
+
+<p><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">2.学校编码前面带&ldquo;★&rdquo;符号的学校为省级示范高中学校，学校编码前面带&ldquo;☆&rdquo;符号的学校为市级示范高中学校，学校编码前面带&ldquo;◆&rdquo;符号的学校为外市（晋中市）在太原招生的普通高中学校。</span></span></span></p>
+
+<p><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">3</span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">.</span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">住宿情况中标有</span>&ldquo;数字&rdquo;的为可以安排住宿的人数；<span style="font-family: 宋体;">标有</span>&ldquo;不可住宿&rdquo;的为全部走读，学校无住宿条件；<span style="font-family: 宋体;">标有</span>&ldquo;满足住宿&rdquo;的为可全部安排住宿，也可以走读；标有&ldquo;全部住宿&rdquo;的为不可走读全部住校（全封闭）。</span></span></span></p>
+
+<p><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">4.考生6月25日8</span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">:</span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00&mdash;30日18</span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">:</span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">00，登陆</span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">&ldquo;</span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">太原</span></span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">市</span></span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">教育</span></span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">局</span></span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">网站</span></span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);">&rdquo;</span></span></span><span style="font-size: 9pt;"><span style="font-family: 宋体;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 宋体;">（网址：</span>http://jyj.taiyuan.gov.cn）填报。</span></span></span></p>
+
+                    <!-- pdf start -->
+                    <script src="/r/cms/site28/default/js/jquery.media.js"></script>
+                    <script src="/r/cms/site28/default/js/jquery.metadata.js"></script>
+                    <script type="text/javascript">  
+                    $(function() {  
+            	        $('a.media').media({width:920, height:1200});  
+            		$('a.mediase').media({width:920, height:1200});  
+                    });  
+                    </script> 
+                    <!-- pdf     end -->
+            </div>
+            <div class="others clearfix operation">
+              <a class="printpage" onclick="print();" href="javascript:void(0);">打印本页</a>
+              <a class="gotop" href="javascript:scroll(0,0)">返回顶部</a>
+            </div>
+            <script type="text/javascript">
+              $(".Big").click(function () {
+                $("#Zoom").css({ "font-size": "1.4em", "line-height": "35px" });
+                $("#Zoom p").css({ "font-size": "1.4em", "line-height": "35px" });
+                $("#Zoom span").css({ "font-size": "1.2em", "line-height": "35px" });
+                $("#Zoom font").css({ "font-size": "1.2em", "line-height": "35px" });
+              });
+              $(".Middle").click(function () {
+                $("#Zoom").css({ "font-size": "1.2em", "line-height": "28px" });
+                $("#Zoom p").css({ "font-size": "1.2em", "line-height": "28px" });
+                $("#Zoom span").css({ "font-size": "1.2em", "line-height": "28px" });
+                $("#Zoom font").css({ "font-size": "1.2em", "line-height": "28px" });
+              });
+              $(".Small").click(function () {
+                $("#Zoom").css({ "font-size": "1em", "line-height": "22px" });
+                $("#Zoom p").css({ "font-size": "1em", "line-height": "22px" });
+                $("#Zoom span").css({ "font-size": "1.2em", "line-height": "22px" });
+                $("#Zoom font").css({ "font-size": "1.2em", "line-height": "22px" });
+              });
+              $(".Print, .print").click(function () {
+                window.print();
+              });
+              $(".Close, .close").click(function () {
+                window.close();
+              });
+              $(".Favorite").click(function () {
+                try {
+                  window.external.AddFavorite(location.href, document.title);
+                }
+                catch (e) {
+                  try {
+                    window.sidebar.addPanel(document.title, location.href, "");
+                  }
+                  catch (e) {
+                    alert("对不起，您的浏览器不支持收藏功能！")
+                  }
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div id="foot" class="white">
+  <p>太原市教育局&nbsp;&nbsp;版权所有&emsp;&emsp;<a href="/c/site28/wzdt.jhtml">
+      网站地图</p>
+  <p>地址：山西省太原市杏花岭区新建路69号&nbsp;&nbsp;邮编：030082&nbsp;&nbsp;电话：0351-4227535</p>
+  <p><a href="https://beian.miit.gov.cn">晋ICP备05003854号</a>&emsp;&emsp;网站总访问量：<em id="pvTotal"></em>
+    <script src="/r/cms/site28/default/js/front.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+        $(function () {
+          Cms.siteFlow(""); 
+        });
+</script>
+  </p>
+  <p><span class="fix_bg"><img src="/r/cms/site28/default/tysjyj/static/images/jinghui.png" /></span><a target="_blank"
+      href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=14010002001529"
+      style="padding-left:10px;">&nbsp;&nbsp;晋公网安备 14010002001529号</a>&emsp;&emsp;网站标识码：1401000001</p>
+  <p><a href="http://bszs.conac.cn/sitename?method=show&id=31839CD491E2763FE053012819ACEBCA" class="fix_bg"><img
+        src="/r/cms/site28/default/tysjyj/static/images/red.png" /></a>
+    <span>
+      <script id="_jiucuo_" sitecode='1401000001' src="/r/cms/site28/default/tysjyj/static/js/jiucuo.js"></script>
+    </span>
+  </p>
+</div></body>
+</html>
