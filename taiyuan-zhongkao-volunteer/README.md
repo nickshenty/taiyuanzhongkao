@@ -50,6 +50,17 @@ VITE_API_BASE=https://api.example.com npm run build
 
 ---
 
+## 界面预览
+
+| 页面 | 截图 |
+|------|------|
+| 首页推荐 | ![首页推荐](../docs/screenshots/home-recommendation.png) |
+| 学校详情 | ![学校详情](../docs/screenshots/school-detail.png) |
+| 数据对比 | ![数据对比](../docs/screenshots/data-compare.png) |
+| 关于 | ![关于](../docs/screenshots/about.png) |
+
+---
+
 ## 目录结构
 
 ```
