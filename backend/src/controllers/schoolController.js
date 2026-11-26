@@ -116,7 +116,7 @@ async function getSchoolHistory(req, res) {
     const { code } = req.params;
 
     // 获取学校信息
-    const schoolSql = 'SELECT code, name FROM schools WHERE code = ?';
+    const schoolSql = 'SELECT code, name, type, district FROM schools WHERE code = ?';
     const schools = await query(schoolSql, [code]);
 
     if (schools.length === 0) {

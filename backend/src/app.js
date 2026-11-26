@@ -7,6 +7,7 @@ import schoolRoutes from './routes/schoolRoutes.js';
 import juniorSchoolRoutes from './routes/juniorSchoolRoutes.js';
 import yearRoutes from './routes/yearRoutes.js';
 import recommendationRoutes from './routes/recommendationRoutes.js';
+import { ALGORITHM_INFO } from './config/algorithmInfo.js';
 
 // 加载环境变量
 dotenv.config();
@@ -68,25 +69,9 @@ app.use('/api/years', yearRoutes);
 // 志愿推荐相关路由
 app.use('/api/recommendations', recommendationRoutes);
 
-// 算法信息路由（备用入口）
+// 算法信息（唯一事实来源：config/algorithmInfo.js）
 app.get('/api/algorithm/info', (req, res) => {
-  res.json({
-    success: true,
-    algorithm: 'v1.5',
-    name: '太原中考分数线预测算法v1.5',
-    description: '基于异常检测和相对位置保持的分数线预测算法',
-    improvements: [
-      '识别异常波动学校（2023→2024年度变化≥30分）',
-      '异常学校使用趋势外推策略（基于2021→2023年度变化）',
-      '正常学校使用相对位置保持策略'
-    ],
-    anomalySchools: 6,
-    strategies: {
-      anomaly_trend: '异常学校趋势外推法',
-      anomaly_holdover: '异常学校直接保留法',
-      normal_relative_position: '正常学校相对位置法'
-    }
-  });
+  res.json({ success: true, ...ALGORITHM_INFO });
 });
 
 // 404处理

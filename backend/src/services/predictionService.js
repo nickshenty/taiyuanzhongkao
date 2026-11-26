@@ -236,11 +236,13 @@ async function generatePredictions(targetYear, options = {}) {
 async function getPredictions(year) {
   try {
     const sql = `
-      SELECT 
+      SELECT
         p.id,
         p.year,
         p.school_code as schoolCode,
         s.name as schoolName,
+        s.type,
+        s.district,
         p.predicted_score as predictedScore,
         p.strategy,
         p.confidence,
@@ -272,6 +274,8 @@ async function getHighConfidencePredictions(year) {
         p.year,
         p.school_code as schoolCode,
         s.name as schoolName,
+        s.type,
+        s.district,
         p.predicted_score as predictedScore,
         p.strategy,
         p.confidence,
