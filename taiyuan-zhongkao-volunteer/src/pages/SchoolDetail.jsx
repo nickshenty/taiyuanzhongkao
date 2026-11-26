@@ -78,7 +78,10 @@ export default function SchoolDetail() {
             <Stat label={`${latest.year} 年录取线`} value={formatScore(latest.lastLine)} />
             <Stat label="定向生线" value={formatScore(latest.quotaLine)} />
             <Stat label="当年控制线" value={formatScore(latest.controlLine)} />
-            <Stat label="当年总分" value={formatScore(latest.totalScore)} />
+            <Stat
+              label="招生计划"
+              value={latest.planCount != null ? `${latest.planCount} 人` : '—'}
+            />
           </div>
         )}
       </header>
@@ -96,6 +99,7 @@ export default function SchoolDetail() {
               <tr className="border-b border-slate-200 text-left text-xs text-slate-500">
                 <th className="py-2 pr-3 font-medium">年份</th>
                 <th className="py-2 pr-3 font-medium">录取线</th>
+                <th className="py-2 pr-3 font-medium">招生计划</th>
                 <th className="py-2 pr-3 font-medium">定向线</th>
                 <th className="py-2 pr-3 font-medium">控制线</th>
                 <th className="py-2 pr-3 font-medium">总分</th>
@@ -113,6 +117,9 @@ export default function SchoolDetail() {
                     <td className="py-2 pr-3 text-slate-700">{h.year}</td>
                     <td className="py-2 pr-3 font-medium text-slate-900">
                       {formatScore(h.lastLine)}
+                    </td>
+                    <td className="py-2 pr-3 text-slate-600">
+                      {h.planCount != null ? `${h.planCount} 人` : '—'}
                     </td>
                     <td className="py-2 pr-3 text-slate-600">{formatScore(h.quotaLine)}</td>
                     <td className="py-2 pr-3 text-slate-500">{formatScore(h.controlLine)}</td>

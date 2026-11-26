@@ -145,6 +145,20 @@ async function getSchoolHistory(req, res) {
       WHERE a.school_code = ?
       ORDER BY a.year DESC
     `;
+    // 招生计划（独立表 enrollment_plans）
+    let planByYear = {};
+    try {
+      const planRows = await query(
+        'SELECT year, plan_count as planCount FROM enrollment_plans WHERE school_code = ?',
+        [code]
+      );
+      planByYear = Object.fromEntries(
+        planRows.map(r => [Number(r.year), Number(r.planCount)])
+      );
+    } catch {
+      /* 表不存在时忽略 */
+    }
+
     const rawHistory = await query(historySql, [code]);
     // mysql2 将 DECIMAL 返回为字符串，统一转为数值避免前端算术错误
     const history = rawHistory.map(h => ({
@@ -156,7 +170,9 @@ async function getSchoolHistory(req, res) {
       choiceLines:
         typeof h.choiceLines === 'string'
           ? safeJson(h.choiceLines)
-          : (h.choiceLines ?? null)
+          : (h.choiceLines ?? null),
+      // 招生计划数来自独立表；无数据时为 null
+      planCount: planByYear[Number(h.year)] ?? null
     }));
 
     // 获取预测信息

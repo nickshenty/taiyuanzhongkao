@@ -162,11 +162,19 @@ async function main() {
   // ---- 结论 ----
   console.log('\n=== 结论 ===');
   const significant = Math.abs(tStat) > 2;
-  const helps = mean(
+  const adjMae = mean(
     samples.map(s => Math.abs(s.actual - (s.predicted + kSlope * 0.5 * s.planChange)))
-  ) < baseMae;
+  );
+  const gain = baseMae - adjMae;
+  // 需要"有意义的改善"才算有效：MAE 至少下降 0.05 分（否则只是浮点噪声）
+  const MEANINGFUL_GAIN = 0.05;
+  const helps = gain >= MEANINGFUL_GAIN;
+
   console.log(`相关性显著：${significant ? '是' : '否'}（|t|=${Math.abs(tStat).toFixed(2)}）`);
-  console.log(`修正后 MAE 下降：${helps ? '是' : '否'}`);
+  console.log(
+    `修正后 MAE 变化：${gain >= 0 ? '-' : '+'}${Math.abs(gain).toFixed(3)} 分` +
+      `（阈值 ${MEANINGFUL_GAIN} 分，${helps ? '达到' : '未达到'}有效改善）`
+  );
   console.log(
     !significant || !helps
       ? '→ 建议：暂时不纳入模型（证据不足）'
