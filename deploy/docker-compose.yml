@@ -1,0 +1,78 @@
+# 太原中考志愿咨询系统 - Docker Compose 部署
+#
+# 适用：希望"一条命令起服务"的场景（MySQL + API）。
+# Nginx 与 HTTPS 仍在宿主机配置（见 deploy/nginx.conf），
+# 因为证书申请与管理用 certbot 在宿主机操作更直接。
+#
+# 用法：
+#   cd deploy
+#   cp .env.example .env    # 修改密码等
+#   docker compose up -d
+#   # 首次导入数据（在仓库根目录执行）：
+#   docker compose run --rm -v "$PWD/../data:/data:ro" api node -e "console.log('见文档：数据导入需在宿主机执行 npm run seed')"
+#
+# 说明：数据导入脚本 import_all.js 依赖仓库 data/ 目录与项目相对路径，
+# 直接在宿主机用 Node 连接本 compose 暴露的 3306 端口导入最为简单。
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: tyzk-mysql-prod
+    restart: unless-stopped
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-time-zone=+08:00
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?请在 .env 中设置 MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-taiyuan_zhongkao}
+      MYSQL_USER: ${MYSQL_USER:-taiyuan}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?请在 .env 中设置 MYSQL_PASSWORD}
+      TZ: Asia/Shanghai
+    volumes:
+      - mysql-data:/var/lib/mysql
+      # 首次启动时自动建表（按文件名顺序执行迁移脚本）
+      - ../backend/database/migrations:/docker-entrypoint-initdb.d:ro
+    ports:
+      # 仅绑定回环：宿主机用它执行数据导入，公网不暴露数据库
+      - '127.0.0.1:3306:3306'
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', '127.0.0.1', '-uroot', '-p${MYSQL_ROOT_PASSWORD}']
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+  api:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: tyzk-api
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 3002
+      HOST: 0.0.0.0
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: ${MYSQL_USER:-taiyuan}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_NAME: ${MYSQL_DATABASE:-taiyuan_zhongkao}
+      TRUST_PROXY: 1
+      CORS_ORIGIN: ${CORS_ORIGIN:-}
+      RATE_MAX: ${RATE_MAX:-300}
+      REC_RATE_MAX: ${REC_RATE_MAX:-60}
+    ports:
+      # 仅绑定回环，由宿主机 Nginx 反代到 127.0.0.1:3002
+      - '127.0.0.1:3002:3002'
+    logging:
+      driver: json-file
+      options:
+        max-size: '10m'
+        max-file: '3'
+
+volumes:
+  mysql-data:

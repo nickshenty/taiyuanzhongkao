@@ -10,20 +10,48 @@ import recommendationRoutes from './routes/recommendationRoutes.js';
 import { ALGORITHM_INFO } from './config/algorithmInfo.js';
 import { API_GROUPS, toFlatIndex } from './config/apiEndpoints.js';
 import { renderApiDocs } from './docs/apiDocsHtml.js';
+import { securityHeaders, rateLimit } from './middleware/security.js';
 
 // 加载环境变量
 dotenv.config();
 
 const app = express();
 
-// 中间件配置
-app.use(cors({
-  origin: process.env.CORS_ORIGIN || '*',
-  credentials: true
-}));
+// 位于 Nginx 等反向代理之后时，需信任代理才能取到真实客户端 IP（限流按 IP 计数）
+app.set('trust proxy', Number(process.env.TRUST_PROXY ?? 1));
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// 安全响应头
+app.use(securityHeaders);
+
+// 中间件配置
+// 生产环境务必把 CORS_ORIGIN 设为实际域名（支持逗号分隔多个）；
+// 开发环境默认放开，便于本机联调。
+const corsOrigin = process.env.CORS_ORIGIN
+  ? process.env.CORS_ORIGIN.split(',').map(o => o.trim())
+  : process.env.NODE_ENV === 'production'
+    ? false // 生产环境未配置时不启用跨域（前后端同源部署即可正常工作）
+    : '*';
+
+app.use(
+  cors({
+    origin: corsOrigin,
+    credentials: true
+  })
+);
+
+// 请求体大小限制，防止超大 payload 占满内存
+app.use(bodyParser.json({ limit: process.env.BODY_LIMIT || '256kb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: process.env.BODY_LIMIT || '256kb' }));
+
+// 全局限流
+app.use(
+  '/api',
+  rateLimit({
+    windowMs: Number(process.env.RATE_WINDOW_MS ?? 60_000),
+    max: Number(process.env.RATE_MAX ?? 300),
+    name: 'global'
+  })
+);
 
 // 请求日志中间件
 app.use((req, res, next) => {
@@ -80,8 +108,16 @@ app.use('/api/junior-schools', juniorSchoolRoutes);
 // 年份相关路由
 app.use('/api/years', yearRoutes);
 
-// 志愿推荐相关路由
-app.use('/api/recommendations', recommendationRoutes);
+// 志愿推荐相关路由（计算较重，单独更严格限流）
+app.use(
+  '/api/recommendations',
+  rateLimit({
+    windowMs: Number(process.env.REC_RATE_WINDOW_MS ?? 60_000),
+    max: Number(process.env.REC_RATE_MAX ?? 60),
+    name: 'recommendations'
+  }),
+  recommendationRoutes
+);
 
 // 算法信息（唯一事实来源：config/algorithmInfo.js）
 app.get('/api/algorithm/info', (req, res) => {

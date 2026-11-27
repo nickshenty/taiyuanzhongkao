@@ -1,53 +1,144 @@
-# 太原中考志愿咨询小程序
+# 太原中考志愿咨询系统
 
-这是一个原生微信小程序项目，用于根据考生中考分数展示太原普通高中志愿填报建议。
+根据考生中考分数与就读初中，预测各高中录取线并给出 **冲 / 稳 / 保** 三档志愿参考。
 
-## 功能
+> 预测为统计估计，**非官方数据**，实际录取以太原市教育局发布为准。
 
-- 输入中考分数并校验总分范围
-- 按年份切换并调用对应年度录取数据
-- 选择是否具备定向生资格
-- 按批次展示提前类/特色类、统招生、定向生、民办/其他普通高中
-- 按参考线差值输出“冲、稳、保”梯度
-- 学校详情页展示分差、推荐层级和报考提示
-- 招生规则、最低控制线、学校名单和参考分数线集中配置
+---
 
-## 使用
+## 组成
 
-1. 打开微信开发者工具。
-2. 选择“导入项目”。
-3. 项目目录选择当前文件夹：`/Users/shenzheng/Documents/TaiyuanZhongkao`。
-4. AppID 可先使用测试号或导入时选择游客模式。
+| 模块 | 目录 | 说明 |
+|------|------|------|
+| **Web 前端** | `taiyuan-zhongkao-volunteer/` | React + Vite + Tailwind，手机/桌面自适应 |
+| **后端 API** | `backend/` | Express + MySQL，28 个端点 + HTML 接口文档页 |
+| **数据流水线** | `scripts/` | 官方表 OCR 解析 → 历史补全 → 预测生成 |
+| **数据** | `data/` | 历年录取线、预测结果、招生计划、定向名额 |
+| 微信小程序（历史版） | `pages/`、`utils/` | 早期原生小程序版本，数据静态打包 |
 
-## 数据维护
+---
 
-年度数据独立存放在 [data/years](/Users/shenzheng/Documents/TaiyuanZhongkao/data/years)，由 [data/index.js](/Users/shenzheng/Documents/TaiyuanZhongkao/data/index.js) 统一注册和按年份调用：
+## 快速开始（本地开发）
 
-- `2025.js`：2025 年完整存量数据
-- `2026.js`：2026 年标准化应用数据
-- `2026-source.js`：2026 年原始录入记录
-- `getAdmissionData(year)`：按年份取得对应数据
+```bash
+# 1) 数据库（Docker）
+docker run -d --name tyzk-mysql \
+  -e MYSQL_ROOT_PASSWORD=tyzk123456 \
+  -e MYSQL_DATABASE=taiyuan_zhongkao \
+  -p 3306:3306 mysql:8.0 \
+  --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 
-新增年份时，创建对应年度文件并在 `data/index.js` 注册。每个年度文件应维护：
+# 2) 后端
+cd backend
+npm ci
+cp .env.example .env          # 填写数据库密码
+for f in database/migrations/*.sql; do
+  docker exec -i tyzk-mysql mysql -uroot -ptyzk123456 taiyuan_zhongkao < "$f"
+done
+npm run seed                  # 导入数据
+PORT=3002 npm start           # 浏览器打开 http://127.0.0.1:3002/ 看接口文档
 
-- `yearLabel`：招生年份
-- `totalScore`：当年中考总分
-- `minControlLine`：太原市普通高中最低录取控制线
-- `batches`：当年志愿批次和志愿栏设置
-- `rules`：当年官方填报和录取规则
-- `schools`：学校代码、学校名称、招生类型、招生计划、参考分数线、招生范围、收费和住宿信息
+# 3) 前端（另开终端）
+cd taiyuan-zhongkao-volunteer
+npm ci
+npm run dev                   # http://localhost:5173
+```
 
-当前已分别归档 2025、2026 年数据。2026 年定向指标到校分配表尚待补充，程序不会跨年度调用 2025 年到校名额。
+手机访问：终端会打印 `Network: http://<你的局域网IP>:5173`，手机连同一 Wi-Fi 后打开该地址。
 
-## 推荐逻辑
+---
 
-推荐逻辑位于 [utils/recommend.js](/Users/shenzheng/Documents/TaiyuanZhongkao/utils/recommend.js)。
+## 数据与算法
 
-默认分层：
+**数据规模**
 
-- 与参考线差值低于 `-8`：风险过高
-- `-8` 到 `8`：冲
-- `9` 到 `28`：稳
-- 高于 `28`：保
+| 内容 | 数量 | 覆盖 |
+|------|------|------|
+| 录取分数线 | 852 条 | 2017–2026（2019 起为校区级）|
+| 2027 年预测 | 99 条 | 90 个普通高中招生单元 + 9 个特色班 |
+| 定向名额 | 2,165 条 | 2025 年（145 所初中 × 对应高中）|
+| 招生计划 | 703 条 | 2019–2026 |
 
-这个阈值可以按当年一分一段表、招生计划变化和学校热度继续调优。
+**算法**：相对位置动量法——把录取线换算成"在当年控制线与总分之间的相对位置"，
+消除各年中考总分差异（730 / 660 / 850 / 839）后做趋势外推。
+
+```
+relPos_pred = relPos_最近锚点 + 0.5 × clamp(yearly / 2, ±0.05)
+```
+
+回测（仅用目标年之前的锚点，无数据泄漏）：稳定框架年份 MAE 7.5–8.7 分，
+与 2027 同构的 2026 年回测 **MAE 10.44 分、误差≤10 分占 75.5%**。
+
+详见 [docs/PREDICTION_2027.md](docs/PREDICTION_2027.md)。
+
+---
+
+## 部署上线
+
+完整的公网部署步骤见 **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)**，
+包含备案说明、Nginx + PM2 配置、Docker Compose 方案、备份与年度更新流程。
+
+配套文件：
+
+- `deploy/nginx.conf` — 站点配置（静态托管 + `/api` 反代 + HTTPS）
+- `deploy/ecosystem.config.cjs` — PM2 进程配置
+- `deploy/docker-compose.yml` — MySQL + API 容器编排
+- `backend/Dockerfile` — 后端镜像
+- `backend/.env.production.example` — 生产环境变量模板
+
+---
+
+## 年度更新（每年中考录取结束后）
+
+```bash
+# 1) 把新的分数线 / 招生计划 CSV 放进 data/sources/
+# 2) 解析、重建历史、生成预测（年份自动推导，无需改代码）
+node scripts/parse-score-csv.js --year=2027
+node scripts/parse-enrollment-csv.js --year=2027
+node scripts/build-history.js
+node scripts/generate-predictions.js
+
+# 3) 导入数据库
+cd backend && npm run seed
+```
+
+前端数据全部来自接口，无需重新构建。
+
+---
+
+## 文档索引
+
+| 文档 | 内容 |
+|------|------|
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | 部署上线、运维、备份、常见问题 |
+| [docs/PREDICTION_2027.md](docs/PREDICTION_2027.md) | 数据审计、算法修正、回测证据 |
+| [docs/ENROLLMENT_PLAN.md](docs/ENROLLMENT_PLAN.md) | 招生计划采集与特征有效性验证（结论：不纳入模型）|
+| [backend/docs/ALGORITHM_V1.5.md](backend/docs/ALGORITHM_V1.5.md) | 算法与接口详解 |
+| [backend/README.md](backend/README.md) | 后端启动、接口清单、测试 |
+| [taiyuan-zhongkao-volunteer/README.md](taiyuan-zhongkao-volunteer/README.md) | 前端启动、目录结构、移动端适配说明 |
+
+---
+
+## 测试
+
+```bash
+cd backend
+npm test              # 算法 + 推荐分类单元测试（32 项）
+npm run test:smoke    # 接口冒烟测试（自适应有无数据库）
+```
+
+---
+
+## 微信小程序（历史版本）
+
+`pages/` 与 `utils/` 为早期原生小程序实现，数据静态打包在 `data/years/`，
+通过 `data/index.js` 按年注册。
+
+用微信开发者工具导入本仓库根目录即可运行。该版本不再更新，
+新功能均在 Web 端开发。
+
+---
+
+## 许可
+
+MIT
