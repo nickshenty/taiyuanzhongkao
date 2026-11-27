@@ -20,8 +20,28 @@ PORT=3002 npm start  # 注意：本机 3000 可能被 open-webui 占用
 ```bash
 cd taiyuan-zhongkao-volunteer
 npm install
-npm run dev          # http://localhost:5173
+npm run dev          # 本机 http://localhost:5173
 ```
+
+### 用手机访问
+
+`vite.config.js` 已设置 `server.host: true`，开发服务器监听所有网卡。
+启动后终端会打印 Network 地址：
+
+```
+➜  Local:   http://localhost:5173/
+➜  Network: http://192.168.0.200:5173/     ← 手机用这个
+```
+
+**手机与电脑需连同一个 Wi-Fi**，然后在手机浏览器打开 Network 那一行地址。
+
+手机上的 `localhost` 指的是手机自身，所以不能用 `localhost:5173`。
+如果打不开，依次检查：
+
+1. 手机和电脑是否在同一网段（对比手机 Wi-Fi 详情里的 IP，应同为 `192.168.x.x`）
+2. 电脑防火墙是否拦截（macOS：系统设置 → 网络 → 防火墙）
+3. 公司/访客 Wi-Fi 常开启「AP 隔离」，会禁止设备互访
+4. 后端端口无需对外开放——前端通过 Vite 代理在服务端转发 `/api`
 
 开发服务器已配置代理：`/api` → `http://127.0.0.1:3002`（见 `vite.config.js`）。
 如后端端口不同，改 `VITE_API_TARGET`：

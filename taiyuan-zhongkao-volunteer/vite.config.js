@@ -4,6 +4,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
+    // 监听所有网卡，便于用手机/平板通过局域网 IP 访问开发服务器
+    host: true,
     port: 5173,
     proxy: {
       // 开发期把 /api 代理到本地后端，避免跨域
