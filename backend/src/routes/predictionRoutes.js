@@ -4,9 +4,7 @@ import {
   getHighConfidence,
   getSchoolPredictionController,
   getPredictionStats,
-  generatePredictionsController,
-  getAlgorithmInfo,
-  getBacktestResults
+  generatePredictionsController
 } from '../controllers/predictionController.js';
 
 const router = express.Router();
@@ -43,19 +41,5 @@ router.get('/school/:code', getSchoolPredictionController);
  * Body: { year: 2025, referenceYear: 2023 }
  */
 router.post('/generate', generatePredictionsController);
-
-// ==================== 算法信息路由 ====================
-
-/**
- * 获取算法说明
- * GET /api/algorithm/info
- */
-router.get('/algorithm/info', getAlgorithmInfo);
-
-/**
- * 获取算法回测结果
- * GET /api/algorithm/backtest?year=2024
- */
-router.get('/algorithm/backtest', getBacktestResults);
 
 export default router;
