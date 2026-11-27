@@ -115,15 +115,17 @@ export default function DataCompare() {
           <p className="py-12 text-center text-sm text-slate-400">加载中…</p>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[640px] text-sm">
+            <table className="w-full text-sm sm:min-w-[640px]">
               <thead className="bg-slate-50">
                 <tr className="text-left text-xs text-slate-500">
-                  <th className="px-3 py-2.5 font-medium">对比</th>
-                  <th className="px-3 py-2.5 font-medium">学校</th>
-                  <th className="px-3 py-2.5 font-medium">类型</th>
-                  <th className="px-3 py-2.5 text-right font-medium">预测线</th>
-                  <th className="px-3 py-2.5 font-medium">置信度</th>
-                  <th className="px-3 py-2.5 font-medium">策略</th>
+                  <th className="whitespace-nowrap px-2 py-2.5 font-medium sm:px-3">选</th>
+                  <th className="px-2 py-2.5 font-medium sm:px-3">学校</th>
+                  <th className="hidden px-3 py-2.5 font-medium sm:table-cell">类型</th>
+                  <th className="whitespace-nowrap px-2 py-2.5 text-right font-medium sm:px-3">
+                    预测线
+                  </th>
+                  <th className="whitespace-nowrap px-2 py-2.5 font-medium sm:px-3">置信度</th>
+                  <th className="hidden px-3 py-2.5 font-medium md:table-cell">策略</th>
                 </tr>
               </thead>
               <tbody>
@@ -132,40 +134,47 @@ export default function DataCompare() {
                   const checked = selected.includes(s.schoolCode)
                   return (
                     <tr key={s.schoolCode} className="border-t border-slate-100 hover:bg-slate-50">
-                      <td className="px-3 py-2">
+                      <td className="px-2 py-2 sm:px-3">
                         <input
                           type="checkbox"
                           checked={checked}
                           onChange={() => toggle(s.schoolCode)}
                           disabled={!checked && selected.length >= 3}
-                          className="h-4 w-4 rounded border-slate-300"
+                          className="h-5 w-5 rounded border-slate-300 sm:h-4 sm:w-4"
                         />
                       </td>
-                      <td className="px-3 py-2">
+                      <td className="px-2 py-2 sm:px-3">
                         <Link
                           to={`/school/${s.schoolCode}`}
                           className="font-medium text-slate-800 hover:text-blue-600"
                         >
                           {s.schoolName}
                         </Link>
-                        <span className="ml-2 text-xs text-slate-400">{s.schoolCode}</span>
+                        <span className="ml-2 hidden text-xs text-slate-400 sm:inline">
+                          {s.schoolCode}
+                        </span>
                       </td>
-                      <td className="px-3 py-2">
+                      <td className="hidden px-3 py-2 sm:table-cell">
                         <span
                           className={`rounded px-1.5 py-0.5 text-[11px] ${typeBadge(s.type)}`}
                         >
                           {s.type || '—'}
                         </span>
                       </td>
-                      <td className="px-3 py-2 text-right font-semibold text-slate-900">
+                      <td className="whitespace-nowrap px-2 py-2 text-right font-semibold text-slate-900 sm:px-3">
                         {formatScore(s.predictedScore)}
                       </td>
-                      <td className="px-3 py-2">
-                        <span className={`rounded px-1.5 py-0.5 text-[11px] ring-1 ${c.cls}`}>
-                          {c.label}
+                      <td className="px-2 py-2 sm:px-3">
+                        <span
+                          className={`inline-block whitespace-nowrap rounded px-1.5 py-0.5 text-[11px] ring-1 ${c.cls}`}
+                        >
+                          <span className="sm:hidden">{c.short || c.label}</span>
+                          <span className="hidden sm:inline">{c.label}</span>
                         </span>
                       </td>
-                      <td className="px-3 py-2 text-xs text-slate-500">{strategyLabel(s.strategy)}</td>
+                      <td className="hidden px-3 py-2 text-xs text-slate-500 md:table-cell">
+                        {strategyLabel(s.strategy)}
+                      </td>
                     </tr>
                   )
                 })}

@@ -122,11 +122,15 @@ export default function Home() {
             const s = STRATEGIES[key]
             return (
               <div key={key}>
-                <div className="mb-3 flex items-center gap-2">
-                  <span className={`h-2.5 w-2.5 rounded-full ${s.dot}`} />
-                  <h3 className="font-semibold text-slate-900">{s.label}</h3>
-                  <span className="text-xs text-slate-500">{s.desc}</span>
-                  <span className="ml-auto rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-600">
+                <div className="mb-3 flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${s.dot}`} />
+                  <h3 className="shrink-0 whitespace-nowrap font-semibold text-slate-900">
+                    {s.label}
+                  </h3>
+                  <span className="min-w-0 flex-1 text-xs leading-snug text-slate-500">
+                    {s.desc}
+                  </span>
+                  <span className="shrink-0 whitespace-nowrap rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-600">
                     {list.length} 所
                   </span>
                 </div>

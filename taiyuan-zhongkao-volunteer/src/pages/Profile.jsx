@@ -37,7 +37,7 @@ export default function Profile() {
           采用<b>相对位置动量法</b>：把录取线换算为"在当年控制线与总分之间的相对位置"，
           消除各年中考总分差异（730 / 660 / 850 / 839）后再做趋势外推。
         </p>
-        <pre className="mt-3 overflow-x-auto rounded-lg bg-slate-900 p-4 text-xs leading-relaxed text-slate-100">
+        <pre className="mt-3 overflow-x-auto whitespace-pre-wrap break-words rounded-lg bg-slate-900 p-4 text-xs leading-relaxed text-slate-100">
 {`relPos(Y)   = (录取线 − 控制线) / (总分 − 控制线)
 yearly      = (relPos_最近 − relPos_次近) / 年份间隔
 relPos_pred = relPos_最近 + 0.5 × clamp(yearly / 2, ±0.05)
@@ -63,26 +63,26 @@ relPos_pred = relPos_最近 + 0.5 × clamp(yearly / 2, ±0.05)
           <h2 className="font-semibold text-slate-900">历年回测（无数据泄漏）</h2>
           <p className="mt-1 text-xs text-slate-500">{algo.backtest.note}</p>
           <div className="mt-3 overflow-x-auto">
-            <table className="w-full min-w-[520px] text-sm">
+            <table className="w-full text-sm sm:min-w-[520px]">
               <thead>
                 <tr className="border-b border-slate-200 text-left text-xs text-slate-500">
-                  <th className="py-2 pr-3 font-medium">目标年</th>
-                  <th className="py-2 pr-3 font-medium">样本</th>
+                  <th className="whitespace-nowrap py-2 pr-3 font-medium">目标年</th>
+                  <th className="hidden py-2 pr-3 font-medium sm:table-cell">样本</th>
                   <th className="py-2 pr-3 font-medium">MAE</th>
-                  <th className="py-2 pr-3 font-medium">≤3分</th>
-                  <th className="py-2 pr-3 font-medium">≤10分</th>
-                  <th className="py-2 font-medium">总分变化</th>
+                  <th className="hidden py-2 pr-3 font-medium sm:table-cell">≤3分</th>
+                  <th className="whitespace-nowrap py-2 pr-3 font-medium">≤10分</th>
+                  <th className="hidden py-2 font-medium sm:table-cell">总分变化</th>
                 </tr>
               </thead>
               <tbody>
                 {algo.backtest.years.map((b) => (
                   <tr key={b.year} className="border-b border-slate-100 last:border-0">
-                    <td className="py-2 pr-3 text-slate-800">{b.year}</td>
-                    <td className="py-2 pr-3 text-slate-500">{b.sample}</td>
+                    <td className="whitespace-nowrap py-2 pr-3 text-slate-800">{b.year}</td>
+                    <td className="hidden py-2 pr-3 text-slate-500 sm:table-cell">{b.sample}</td>
                     <td className="py-2 pr-3 font-medium text-slate-900">{b.mae}</td>
-                    <td className="py-2 pr-3 text-slate-600">{b.within3}%</td>
-                    <td className="py-2 pr-3 text-slate-600">{b.within10}%</td>
-                    <td className="py-2 text-xs text-slate-500">{b.frame}</td>
+                    <td className="hidden py-2 pr-3 text-slate-600 sm:table-cell">{b.within3}%</td>
+                    <td className="whitespace-nowrap py-2 pr-3 text-slate-600">{b.within10}%</td>
+                    <td className="hidden py-2 text-xs text-slate-500 sm:table-cell">{b.frame}</td>
                   </tr>
                 ))}
               </tbody>
@@ -120,13 +120,13 @@ relPos_pred = relPos_最近 + 0.5 × clamp(yearly / 2, ±0.05)
         <h2 className="font-semibold text-slate-900">数据年份</h2>
         {years?.length ? (
           <div className="mt-3 overflow-x-auto">
-            <table className="w-full min-w-[420px] text-sm">
+            <table className="w-full text-sm sm:min-w-[420px]">
               <thead>
                 <tr className="border-b border-slate-200 text-left text-xs text-slate-500">
                   <th className="py-2 pr-3 font-medium">年份</th>
                   <th className="py-2 pr-3 font-medium">中考总分</th>
-                  <th className="py-2 pr-3 font-medium">最低控制线</th>
-                  <th className="py-2 font-medium">状态</th>
+                  <th className="py-2 pr-3 font-medium">控制线</th>
+                  <th className="hidden py-2 font-medium sm:table-cell">状态</th>
                 </tr>
               </thead>
               <tbody>
@@ -135,7 +135,9 @@ relPos_pred = relPos_最近 + 0.5 × clamp(yearly / 2, ±0.05)
                     <td className="py-2 pr-3 text-slate-800">{y.year}</td>
                     <td className="py-2 pr-3 text-slate-600">{y.totalScore}</td>
                     <td className="py-2 pr-3 text-slate-600">{y.controlLine}</td>
-                    <td className="py-2 text-xs text-slate-500">{y.dataStatus || '—'}</td>
+                    <td className="hidden py-2 text-xs text-slate-500 sm:table-cell">
+                      {y.dataStatus || '—'}
+                    </td>
                   </tr>
                 ))}
               </tbody>

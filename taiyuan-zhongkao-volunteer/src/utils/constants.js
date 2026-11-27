@@ -44,9 +44,9 @@ export const STRATEGY_ORDER = ['risky', 'stable', 'safe']
 
 /** 置信度 */
 export const CONFIDENCE = {
-  high: { label: '高置信度', cls: 'bg-emerald-50 text-emerald-700 ring-emerald-200' },
-  medium: { label: '中置信度', cls: 'bg-amber-50 text-amber-700 ring-amber-200' },
-  low: { label: '低置信度', cls: 'bg-slate-100 text-slate-600 ring-slate-200' },
+  high: { label: '高置信度', short: '高', cls: 'bg-emerald-50 text-emerald-700 ring-emerald-200' },
+  medium: { label: '中置信度', short: '中', cls: 'bg-amber-50 text-amber-700 ring-amber-200' },
+  low: { label: '低置信度', short: '低', cls: 'bg-slate-100 text-slate-600 ring-slate-200' },
 }
 
 /** 学校类型标签配色 */

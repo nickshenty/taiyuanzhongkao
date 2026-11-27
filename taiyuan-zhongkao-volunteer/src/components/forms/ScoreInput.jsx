@@ -21,6 +21,19 @@ export default function ScoreInput({
   const [error, setError] = useState('')
   const boxRef = useRef(null)
 
+  // 初始值可能在挂载后才就绪（如 URL 参数进入时初中列表仍在加载），
+  // 此时同步回填，避免输入框空着但结果已按该初中计算。
+  useEffect(() => {
+    if (initialJunior) {
+      setJunior(initialJunior)
+      setKeyword(initialJunior.name)
+    }
+  }, [initialJunior])
+
+  useEffect(() => {
+    if (initialScore !== '' && initialScore != null) setScore(String(initialScore))
+  }, [initialScore])
+
   // 点击外部收起下拉
   useEffect(() => {
     const onDoc = (e) => {
@@ -79,7 +92,8 @@ export default function ScoreInput({
             placeholder="输入校名搜索，如「太原市第二中学校」"
             className="w-full rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
           />
-          {junior && (
+          {/* 输入框已显示校名时不再重复提示；仅在用户手输未选中时提醒 */}
+          {junior && keyword !== junior.name && (
             <p className="mt-1 truncate text-xs text-emerald-600">已选择：{junior.name}</p>
           )}
           {open && filtered.length > 0 && (

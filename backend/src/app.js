@@ -8,6 +8,8 @@ import juniorSchoolRoutes from './routes/juniorSchoolRoutes.js';
 import yearRoutes from './routes/yearRoutes.js';
 import recommendationRoutes from './routes/recommendationRoutes.js';
 import { ALGORITHM_INFO } from './config/algorithmInfo.js';
+import { API_GROUPS, toFlatIndex } from './config/apiEndpoints.js';
+import { renderApiDocs } from './docs/apiDocsHtml.js';
 
 // 加载环境变量
 dotenv.config();
@@ -38,68 +40,31 @@ app.get('/health', (req, res) => {
   });
 });
 
-// 端点索引（根路径与 /api 共用一份，避免文档与实现脱节）
-const ENDPOINTS = {
-  基础: {
-    'GET /health': '健康检查',
-    'GET /api': '本端点索引'
-  },
-  年份: {
-    'GET /api/years': '所有年份（含总分、控制线）',
-    'GET /api/years/:year': '年份详情 + 统计',
-    'GET /api/years/:year/schools': '该年全部学校及预测',
-    'GET /api/years/:year/batches': '批次配置',
-    'GET /api/years/latest/prediction': '最新预测年份'
-  },
-  学校: {
-    'GET /api/schools': '学校列表（?name=&type=&district=&page=&limit=）',
-    'GET /api/schools/list/all': '全部学校（按区县分组）',
-    'GET /api/schools/types': '学校类型枚举',
-    'GET /api/schools/districts': '区县枚举',
-    'GET /api/schools/:code': '学校详情',
-    'GET /api/schools/:code/history': '历年分数线 + 预测 + 招生计划'
-  },
-  初中与定向名额: {
-    'GET /api/junior-schools': '初中学校列表',
-    'GET /api/junior-schools/list/all': '全部初中（按区县分组）',
-    'GET /api/junior-schools/:id/quotas': '定向名额（?year=）',
-    'GET /api/junior-schools/:id/quotas/history': '历年定向名额'
-  },
-  预测: {
-    'GET /api/predictions/:year': '该年所有预测（分页）',
-    'GET /api/predictions/:year/high-confidence': '高置信度预测',
-    'GET /api/predictions/:year/statistics': '预测统计与置信度分布',
-    'GET /api/predictions/school/:code?year=': '单校预测',
-    'POST /api/predictions/generate': '在线生成预测（{year, dryRun}）'
-  },
-  志愿推荐: {
-    'POST /api/recommendations': '冲/稳/保推荐（{studentScore, juniorSchoolId, targetYear}）',
-    'GET /api/recommendations/info': '推荐规则说明',
-    'GET /api/recommendations/score-range': '按分数区间查学校',
-    'GET /api/recommendations/school/:code': '单校匹配度'
-  },
-  算法: {
-    'GET /api/algorithm/info': '算法说明与回测数据',
-    'GET /api/algorithm/backtest?year=': '指定年份回测结果'
-  }
-};
-
+// 端点索引：定义见 config/apiEndpoints.js（HTML 文档与 JSON 共用同一份）
 function apiIndex() {
   return {
     service: '太原中考志愿咨询系统 API',
     version: '1.0.0',
     algorithm: ALGORITHM_INFO.version,
     status: 'running',
-    note: '本服务仅提供 JSON 接口；前端页面请访问 http://localhost:5173',
-    endpoints: ENDPOINTS
+    docs: 'GET / 为 HTML 文档页；本路径返回 JSON 索引',
+    frontend: 'http://localhost:5173',
+    endpoints: toFlatIndex()
   };
 }
 
-// 根路径：避免直接访问后端地址时看到 Not Found
-app.get('/', (req, res) => res.json(apiIndex()));
+// 根路径：HTML 接口文档页（避免直接访问后端看到 Not Found）
+app.get('/', (req, res) => {
+  res.type('html').send(renderApiDocs());
+});
 
 // API基础端点
-app.get('/api', (req, res) => res.json(apiIndex()));
+app.get('/api', (req, res) =>
+  res.json({
+    ...apiIndex(),
+    groups: API_GROUPS.map(g => ({ title: g.title, count: g.items.length }))
+  })
+);
 
 // ==================== 路由挂载 ====================
 

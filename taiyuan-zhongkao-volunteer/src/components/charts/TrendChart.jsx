@@ -93,6 +93,7 @@ export default function TrendChart({ history = [], predictions = [] }) {
                 dot={{ r: 3 }}
                 activeDot={{ r: 5 }}
                 name="录取线"
+                isAnimationActive={false}
               />
             </LineChart>
           </ResponsiveContainer>
@@ -125,6 +126,7 @@ export default function TrendChart({ history = [], predictions = [] }) {
                 strokeWidth={2}
                 dot={{ r: 3 }}
                 name="得分率"
+                isAnimationActive={false}
               />
             </LineChart>
           </ResponsiveContainer>

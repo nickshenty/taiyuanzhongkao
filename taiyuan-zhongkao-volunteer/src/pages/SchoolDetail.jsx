@@ -94,15 +94,15 @@ export default function SchoolDetail() {
       <section className="rounded-xl border border-slate-200 bg-white p-5">
         <h2 className="mb-3 font-semibold text-slate-900">历年明细</h2>
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[520px] text-sm">
+          <table className="w-full text-sm sm:min-w-[520px]">
             <thead>
               <tr className="border-b border-slate-200 text-left text-xs text-slate-500">
                 <th className="py-2 pr-3 font-medium">年份</th>
                 <th className="py-2 pr-3 font-medium">录取线</th>
                 <th className="py-2 pr-3 font-medium">招生计划</th>
                 <th className="py-2 pr-3 font-medium">定向线</th>
-                <th className="py-2 pr-3 font-medium">控制线</th>
-                <th className="py-2 pr-3 font-medium">总分</th>
+                <th className="hidden py-2 pr-3 font-medium sm:table-cell">控制线</th>
+                <th className="hidden py-2 pr-3 font-medium sm:table-cell">总分</th>
                 <th className="py-2 font-medium">得分率</th>
               </tr>
             </thead>
@@ -122,8 +122,12 @@ export default function SchoolDetail() {
                       {h.planCount != null ? `${h.planCount} 人` : '—'}
                     </td>
                     <td className="py-2 pr-3 text-slate-600">{formatScore(h.quotaLine)}</td>
-                    <td className="py-2 pr-3 text-slate-500">{formatScore(h.controlLine)}</td>
-                    <td className="py-2 pr-3 text-slate-500">{formatScore(h.totalScore)}</td>
+                    <td className="hidden py-2 pr-3 text-slate-500 sm:table-cell">
+                      {formatScore(h.controlLine)}
+                    </td>
+                    <td className="hidden py-2 pr-3 text-slate-500 sm:table-cell">
+                      {formatScore(h.totalScore)}
+                    </td>
                     <td className="py-2 text-slate-500">{rate ? `${rate}%` : '—'}</td>
                   </tr>
                 )

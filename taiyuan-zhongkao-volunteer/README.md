@@ -52,12 +52,25 @@ VITE_API_BASE=https://api.example.com npm run build
 
 ## 界面预览
 
+**桌面端**
+
 | 页面 | 截图 |
 |------|------|
 | 首页推荐 | ![首页推荐](../docs/screenshots/home-recommendation.png) |
 | 学校详情 | ![学校详情](../docs/screenshots/school-detail.png) |
 | 数据对比 | ![数据对比](../docs/screenshots/data-compare.png) |
 | 关于 | ![关于](../docs/screenshots/about.png) |
+
+**移动端（390px）**
+
+| 页面 | 截图 |
+|------|------|
+| 首页推荐 | ![移动端首页](../docs/screenshots/mobile-home.png) |
+| 学校详情 | ![移动端详情](../docs/screenshots/mobile-detail.png) |
+| 数据对比 | ![移动端对比](../docs/screenshots/mobile-compare.png) |
+
+接口文档页见后端：启动后访问 `http://127.0.0.1:3002/`
+（[桌面截图](../docs/screenshots/api-docs.png) / [手机截图](../docs/screenshots/api-docs-mobile.png)）
 
 ---
 
@@ -131,6 +144,24 @@ src/
 - **错误兜底**：后端未启动时首页会提示检查服务，而非白屏。
 
 ---
+
+## 移动端适配
+
+已在 320 / 375 / 390 / 414px 四种宽度下验证，**所有页面横向溢出为 0**。
+
+主要策略：
+
+| 场景 | 做法 |
+|------|------|
+| 宽表格（对比页 6 列） | 窄屏隐藏次要列（类型 / 策略），保留 选·学校·预测线·置信度；置信度徽章用「高/中/低」短标签 |
+| 学校详情明细表（7 列） | 窄屏隐藏 控制线 / 总分，保留 年份·录取线·招生计划·定向线·得分率 |
+| 关于页回测表（6 列） | 窄屏隐藏 样本 / ≤3分 / 总分变化，保留 目标年·MAE·≤10分 |
+| 长公式代码块 | `whitespace-pre-wrap` 自动换行，避免横向滚动 |
+| 分组标题（冲/稳/保） | 标题与数量 `whitespace-nowrap`，描述独占一行，避免竖排断字 |
+| 图表 | 关闭 Recharts 动画，避免低端机首帧空白 |
+
+> 验证方式：使用 puppeteer-core 做真实移动设备模拟（含 touch、deviceScaleFactor），
+> 逐页测量 `documentElement.scrollWidth` 与超宽元素。
 
 ## 已知限制
 
