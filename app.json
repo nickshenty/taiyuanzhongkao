@@ -5,9 +5,11 @@
   ],
   "window": {
     "navigationBarTitleText": "太原中考志愿咨询",
-    "navigationBarBackgroundColor": "#0F766E",
+    "navigationBarBackgroundColor": "#1D4ED8",
     "navigationBarTextStyle": "white",
-    "backgroundColor": "#F6F7F9"
+    "backgroundColor": "#F6F7F9",
+    "enablePullDownRefresh": false
   },
-  "style": "v2"
+  "style": "v2",
+  "permission": {}
 }

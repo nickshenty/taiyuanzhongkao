@@ -1,87 +1,125 @@
-const { availableYears, defaultYear, getAdmissionData } = require("../../data")
-const { recommend } = require("../../utils/recommend")
-
-const initialData = getAdmissionData(defaultYear)
+const config = require('../../utils/config')
+const api = require('../../utils/api')
+const { buildGroups } = require('../../utils/ui')
 
 Page({
   data: {
-    data: initialData,
-    availableYears,
-    selectedYearIndex: availableYears.indexOf(defaultYear),
-    juniorSchoolNames: initialData.juniorSchools.map((item) => item.name),
-    selectedJuniorSchoolIndex: null,
-    selectedJuniorSchoolName: "",
-    selectedJuniorSchoolId: "",
-    score: "",
-    hasQuota: false,
-    error: "",
-    result: null
+    targetYear: config.TARGET_YEAR,
+    disclaimer: config.DISCLAIMER,
+
+    score: '',
+    junior: null,
+    loading: false,
+    error: '',
+
+    // 选校弹层
+    juniorOpen: false,
+    keyword: '',
+    juniorList: [],
+    filteredJuniors: [],
+
+    // 推荐结果
+    result: null,
+    groups: [],
+    quotaNote: ''
   },
 
-  onScoreInput(event) {
-    this.setData({ score: event.detail.value, error: "" })
+  onLoad() {
+    this.loadJuniorSchools()
   },
 
-  onYearChange(event) {
-    const selectedYearIndex = Number(event.detail.value)
-    const selectedYear = availableYears[selectedYearIndex]
-    const data = getAdmissionData(selectedYear)
+  /** 拉取初中学校列表（145 所，用于选校） */
+  loadJuniorSchools() {
+    api
+      .getJuniorSchools()
+      .then((list) => {
+        this.setData({ juniorList: list, filteredJuniors: list })
+      })
+      .catch((err) => {
+        this.setData({
+          error: `无法加载初中学校列表：${err.message}`
+        })
+      })
+  },
+
+  onScoreInput(e) {
+    this.setData({ score: e.detail.value, error: '' })
+  },
+
+  // ---------- 选校弹层 ----------
+  openJuniorPicker() {
+    this.setData({ juniorOpen: true, keyword: '', filteredJuniors: this.data.juniorList })
+  },
+
+  closeJuniorPicker() {
+    this.setData({ juniorOpen: false })
+  },
+
+  onJuniorSearch(e) {
+    const kw = (e.detail.value || '').trim()
+    const list = this.data.juniorList
     this.setData({
-      data,
-      selectedYearIndex,
-      juniorSchoolNames: data.juniorSchools.map((item) => item.name),
-      selectedJuniorSchoolIndex: null,
-      selectedJuniorSchoolName: "",
-      selectedJuniorSchoolId: "",
-      error: "",
-      result: null
+      keyword: kw,
+      filteredJuniors: kw ? list.filter((s) => s.name.indexOf(kw) >= 0) : list
     })
   },
 
-  onQuotaChange(event) {
-    const hasQuota = event.detail.value
-    this.setData({
-      hasQuota,
-      error: "",
-      selectedJuniorSchoolIndex: hasQuota ? this.data.selectedJuniorSchoolIndex : null,
-      selectedJuniorSchoolName: hasQuota ? this.data.selectedJuniorSchoolName : "",
-      selectedJuniorSchoolId: hasQuota ? this.data.selectedJuniorSchoolId : ""
-    })
+  pickJunior(e) {
+    const id = e.currentTarget.dataset.id
+    const junior = this.data.juniorList.find((s) => s.id === id) || null
+    this.setData({ junior, juniorOpen: false, error: '' })
   },
 
-  onJuniorSchoolChange(event) {
-    const index = Number(event.detail.value)
-    const school = this.data.data.juniorSchools[index]
-    this.setData({
-      selectedJuniorSchoolIndex: index,
-      selectedJuniorSchoolName: school.name,
-      selectedJuniorSchoolId: school.id,
-      error: ""
-    })
-  },
+  noop() {},
 
-  onRecommend() {
-    const result = recommend({
-      score: this.data.score,
-      hasQuota: this.data.hasQuota,
-      juniorSchoolId: this.data.selectedJuniorSchoolId,
-      data: this.data.data
-    })
-
-    if (!result.ok) {
-      this.setData({ error: result.message, result: null })
-      return
+  // ---------- 提交 ----------
+  onSubmit() {
+    const score = Number(this.data.score)
+    if (!this.data.score || isNaN(score)) {
+      return this.setData({ error: '请输入中考分数' })
+    }
+    if (score < 0 || score > 900) {
+      return this.setData({ error: '分数应在 0–900 之间' })
+    }
+    if (!this.data.junior) {
+      return this.setData({ error: '请选择就读的初中学校（用于定向名额判断）' })
     }
 
-    this.setData({ error: "", result })
+    this.setData({ loading: true, error: '' })
+
+    api
+      .getRecommendations({
+        studentScore: score,
+        juniorSchoolId: this.data.junior.id,
+        targetYear: config.TARGET_YEAR
+      })
+      .then((data) => {
+        this.setData({
+          result: data,
+          groups: buildGroups(data),
+          quotaNote: data.quotaNote || '',
+          loading: false
+        })
+      })
+      .catch((err) => {
+        this.setData({ loading: false, error: err.message })
+      })
   },
 
-  openSchool(event) {
-    const id = event.currentTarget.dataset.id
-    const batch = event.currentTarget.dataset.batch || ""
-    wx.navigateTo({
-      url: `/pages/school/school?id=${id}&score=${this.data.score}&batch=${batch}`
-        + `&juniorSchoolId=${this.data.selectedJuniorSchoolId}&year=${this.data.data.yearLabel}`
-    })
+  // ---------- 跳转 ----------
+  toSchool(e) {
+    const code = e.currentTarget.dataset.code
+    wx.navigateTo({ url: `/pages/school/school?code=${code}` })
+  },
+
+  onShareAppMessage() {
+    const { result, score, junior } = this.data
+    const title = result
+      ? `${score} 分（${junior.name}）的 2027 志愿推荐`
+      : `${config.APP_NAME} · 输入分数看冲稳保`
+    return {
+      title,
+      path: '/pages/index/index'
+    }
   }
 })

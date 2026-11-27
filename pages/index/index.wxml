@@ -1,90 +1,147 @@
 <view class="page">
+  <!-- 顶部说明 -->
   <view class="hero">
-    <view>
-      <view class="eyebrow">{{data.city}} · {{data.yearLabel}}</view>
-      <view class="title">中考志愿报名咨询</view>
-      <view class="subtitle">输入分数后，按批次展示冲、稳、保建议和填报风险。</view>
+    <view class="hero-title">太原中考志愿推荐</view>
+    <view class="hero-sub">
+      输入中考分数与就读初中，按 冲 / 稳 / 保 三档给出 {{targetYear}} 年志愿参考
     </view>
   </view>
 
-  <view class="notice">{{data.dataStatus}}</view>
+  <!-- 输入区 -->
+  <view class="card">
+    <view class="field">
+      <view class="label">中考分数</view>
+      <input
+        class="input"
+        type="digit"
+        value="{{score}}"
+        placeholder="例如 700"
+        placeholder-class="ph"
+        bindinput="onScoreInput"
+      />
+    </view>
 
-  <view class="panel">
-    <view class="field-label">数据年份</view>
-    <picker mode="selector" range="{{availableYears}}" value="{{selectedYearIndex}}" bindchange="onYearChange">
-      <view class="picker-value">{{data.yearLabel}} 年</view>
-    </picker>
-
-    <view class="field-label">中考分数</view>
-    <input class="score-input" type="digit" value="{{score}}" maxlength="5" placeholder="例如 735.1" bindinput="onScoreInput" />
-
-    <view class="switch-row">
-      <view>
-        <view class="field-label">是否具备定向生资格</view>
-        <view class="field-help">定向资格以毕业学校和当年审核结果为准</view>
+    <view class="field">
+      <view class="label">
+        就读初中学校
+        <text class="hint">（影响定向名额）</text>
       </view>
-      <switch color="#0F766E" checked="{{hasQuota}}" bindchange="onQuotaChange" />
+      <view class="input picker" bindtap="openJuniorPicker">
+        <text class="{{junior ? 'val' : 'ph'}}">
+          {{junior ? junior.name : '点击选择学校'}}
+        </text>
+        <text class="arrow">›</text>
+      </view>
     </view>
 
-    <view wx:if="{{hasQuota && data.quotaAllocationReady}}" class="picker-block">
-      <view class="field-label">初中就读学校</view>
-      <picker mode="selector" range="{{juniorSchoolNames}}" value="{{selectedJuniorSchoolIndex}}" bindchange="onJuniorSchoolChange">
-        <view class="picker-value {{selectedJuniorSchoolName ? '' : 'placeholder'}}">
-          {{selectedJuniorSchoolName ? selectedJuniorSchoolName : '请选择初中学校'}}
-        </view>
-      </picker>
-      <view class="field-help" wx:if="{{data.quotaAllocationReady}}">用于匹配该初中分配到各高中的定向名额</view>
-    </view>
+    <button class="btn-primary" loading="{{loading}}" bindtap="onSubmit">
+      生成志愿推荐方案
+    </button>
 
-    <view wx:if="{{hasQuota && !data.quotaAllocationReady}}" class="field-help quota-notice">
-      {{data.yearLabel}}年指标到校表待补充，当前按定向二次分配线提供参考，无需选择初中学校。
-    </view>
-
-    <button class="primary-btn" bindtap="onRecommend">生成推荐</button>
+    <view class="err" wx:if="{{error}}">{{error}}</view>
   </view>
 
-  <view wx:if="{{error}}" class="error">{{error}}</view>
-
-  <view wx:if="{{result.ok}}" class="result">
-    <view class="summary {{result.belowControlLine ? 'summary-warn' : ''}}">
-      <view class="summary-score">{{result.scoreDisplay}} 分</view>
-      <view class="summary-text">{{result.summary}}</view>
-      <view wx:if="{{result.juniorSchoolName}}" class="line">定向匹配初中：{{result.juniorSchoolName}}</view>
-      <view class="line">{{data.yearLabel}}年普通高中最低录取控制线：{{data.minControlLine}} 分</view>
+  <!-- 结果摘要 -->
+  <block wx:if="{{result}}">
+    <view class="card summary">
+      <view class="summary-row">
+        <text class="summary-label">考生分数</text>
+        <text class="summary-value">{{result.studentScore}}</text>
+        <text class="summary-sep">|</text>
+        <text class="summary-label">就读</text>
+        <text class="summary-school">{{result.juniorSchool.name}}</text>
+      </view>
+      <view class="summary-row">
+        <text class="summary-label">目标年份</text>
+        <text class="summary-value">{{result.targetYear}}</text>
+        <text class="summary-sep">|</text>
+        <text class="summary-label">共推荐</text>
+        <text class="summary-value">{{result.totalRecommendations}}</text>
+        <text class="summary-label">所</text>
+      </view>
+      <view class="notice" wx:if="{{quotaNote}}">{{quotaNote}}</view>
     </view>
 
-    <view class="section-title">按太原志愿规则分栏展示</view>
-    <block wx:for="{{result.ladder}}" wx:key="key">
-      <view class="batch">
-        <view class="batch-head">
-          <view class="batch-title">{{item.title}}</view>
-          <view class="batch-count">{{item.items.length}} 所</view>
-        </view>
+    <view class="empty" wx:if="{{groups.length === 0}}">
+      暂无可推荐学校。分数可能低于所有学校预测线，或与预测线分差超出推荐区间
+      （冲：低 5–10 分，稳：±5 分，保：高 10 分以上）。
+    </view>
 
-        <view wx:if="{{item.items.length == 0}}" class="empty">暂无适合展示的学校，请调整分数或补充当年数据。</view>
+    <!-- 冲 / 稳 / 保 -->
+    <view class="group" wx:for="{{groups}}" wx:key="key">
+      <view class="group-head">
+        <view class="dot" style="background:{{item.color}}"></view>
+        <text class="group-title">{{item.label}}</text>
+        <text class="group-desc">{{item.desc}}</text>
+        <text class="group-count">{{item.list.length}} 所</text>
+      </view>
 
-        <block wx:for="{{item.items}}" wx:for-item="school" wx:key="id">
-          <view class="school" bindtap="openSchool" data-id="{{school.id}}" data-batch="{{school.batch}}">
-            <view class="school-main">
-              <view class="school-name">{{school.name}}</view>
-              <view class="school-meta">代码 {{school.code}} · {{school.type}} · {{school.district}}</view>
-              <view class="school-meta">{{school.planNote}}</view>
-              <view class="school-note">{{school.note}}</view>
-            </view>
-            <view class="risk {{school.tone}}">
-              <view class="risk-label">{{school.riskLabel}}</view>
-              <view class="gap">{{school.gapDisplay}}</view>
-            </view>
+      <view
+        class="rec"
+        wx:for="{{item.list}}"
+        wx:for-item="s"
+        wx:key="schoolCode"
+        data-code="{{s.schoolCode}}"
+        bindtap="toSchool"
+      >
+        <view class="rec-main">
+          <view class="rec-name">{{s.schoolName}}</view>
+          <view class="rec-tags">
+            <text class="tag" wx:if="{{s.type}}">{{s.type}}</text>
+            <text class="tag tag-gray" wx:if="{{s.district}}">{{s.district}}</text>
+            <text
+              class="tag"
+              style="color:{{s.conf.color}};background:{{s.conf.bg}}"
+            >{{s.conf.label}}</text>
+            <text class="tag tag-quota" wx:if="{{s.quotaUpgraded}}">定向可冲</text>
+            <text class="tag tag-gray" wx:elif="{{s.hasDirectedQuota}}">有定向名额</text>
           </view>
-        </block>
-      </view>
-    </block>
+        </view>
 
-    <view class="section-title">填报规则提醒</view>
-    <view class="rules">
-      <block wx:for="{{data.rules}}" wx:key="*this">
-        <view class="rule">{{index + 1}}. {{item}}</view>
-      </block>
+        <view class="rec-right">
+          <view class="rec-score" style="color:{{item.color}}">{{s.predictedScore}}</view>
+          <view class="rec-score-label">{{targetYear}} 预测线</view>
+          <view class="rec-diff {{s.scoreDiff >= 0 ? 'pos' : 'neg'}}">
+            {{s.diffText}} 分
+          </view>
+        </view>
+      </view>
     </view>
+
+    <!-- 建议 -->
+    <view class="tips" wx:if="{{result.tips.length}}">
+      <view class="tips-title">填报建议</view>
+      <view class="tips-item" wx:for="{{result.tips}}" wx:key="*this">· {{item}}</view>
+    </view>
+  </block>
+
+  <view class="footer">{{disclaimer}}</view>
+
+  <!-- 选校弹层 -->
+  <view class="mask" wx:if="{{juniorOpen}}" bindtap="closeJuniorPicker"></view>
+  <view class="sheet" wx:if="{{juniorOpen}}" catchtap="noop">
+    <view class="sheet-head">
+      <text class="sheet-title">选择就读初中</text>
+      <text class="sheet-close" bindtap="closeJuniorPicker">关闭</text>
+    </view>
+    <input
+      class="sheet-search"
+      placeholder="输入校名搜索，如 太原市第二中学校"
+      placeholder-class="ph"
+      value="{{keyword}}"
+      bindinput="onJuniorSearch"
+    />
+    <scroll-view class="sheet-list" scroll-y>
+      <view
+        class="sheet-item"
+        wx:for="{{filteredJuniors}}"
+        wx:key="id"
+        data-id="{{item.id}}"
+        bindtap="pickJunior"
+      >
+        {{item.name}}
+      </view>
+      <view class="sheet-empty" wx:if="{{filteredJuniors.length === 0}}">没有匹配的学校</view>
+    </scroll-view>
   </view>
 </view>

@@ -1,11 +1,11 @@
 {
-  "description": "太原中考志愿咨询小程序",
+  "description": "太原中考志愿咨询小程序（数据来自后端 API）",
   "packOptions": {
     "ignore": [],
     "include": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": true,
     "postcss": true,

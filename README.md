@@ -14,7 +14,7 @@
 | **后端 API** | `backend/` | Express + MySQL，28 个端点 + HTML 接口文档页 |
 | **数据流水线** | `scripts/` | 官方表 OCR 解析 → 历史补全 → 预测生成 |
 | **数据** | `data/` | 历年录取线、预测结果、招生计划、定向名额 |
-| 微信小程序（历史版） | `pages/`、`utils/` | 早期原生小程序版本，数据静态打包 |
+| 微信小程序 | `pages/`、`utils/` | 原生小程序，调用后端 API（见 [docs/MINIPROGRAM.md](docs/MINIPROGRAM.md)）|
 
 ---
 
@@ -112,6 +112,7 @@ cd backend && npm run seed
 |------|------|
 | [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | 部署上线、运维、备份、常见问题 |
 | [docs/PREDICTION_2027.md](docs/PREDICTION_2027.md) | 数据审计、算法修正、回测证据 |
+| [docs/MINIPROGRAM.md](docs/MINIPROGRAM.md) | 微信小程序部署：备案、域名配置、审核发布 |
 | [docs/ENROLLMENT_PLAN.md](docs/ENROLLMENT_PLAN.md) | 招生计划采集与特征有效性验证（结论：不纳入模型）|
 | [backend/docs/ALGORITHM_V1.5.md](backend/docs/ALGORITHM_V1.5.md) | 算法与接口详解 |
 | [backend/README.md](backend/README.md) | 后端启动、接口清单、测试 |
@@ -129,13 +130,25 @@ npm run test:smoke    # 接口冒烟测试（自适应有无数据库）
 
 ---
 
-## 微信小程序（历史版本）
+## 微信小程序
 
-`pages/` 与 `utils/` 为早期原生小程序实现，数据静态打包在 `data/years/`，
-通过 `data/index.js` 按年注册。
+小程序端已改造为**调用后端 API**（不再使用本地静态数据），包含首页推荐与学校详情两个页面。
 
-用微信开发者工具导入本仓库根目录即可运行。该版本不再更新，
-新功能均在 Web 端开发。
+```
+├── app.js / app.json / app.wxss     # 小程序全局配置
+├── utils/config.js                  # ★ 接口地址（上线前改 PROD_BASE）
+├── utils/api.js                     # wx.request 封装
+├── utils/ui.js                      # 冲稳保档位与结果整形
+└── pages/index/ , pages/school/     # 两个页面
+```
+
+**上线前置条件**：企业/个体户主体 + 已备案域名 + HTTPS
+（微信强制要求，且个人主体不支持 web-view）。
+
+完整的备案、后台配置、审核发布步骤见 **[docs/MINIPROGRAM.md](docs/MINIPROGRAM.md)**。
+
+本地调试：用微信开发者工具导入本仓库根目录，勾选「不校验合法域名」即可连
+`http://localhost:3002` 运行。
 
 ---
 

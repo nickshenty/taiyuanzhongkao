@@ -1,45 +1,87 @@
-<view class="page" wx:if="{{school}}">
-  <view class="header">
-    <view class="name">{{school.name}}</view>
-    <view class="meta">{{school.type}} · {{school.district}}</view>
-    <view class="tags">
-      <block wx:for="{{school.tags}}" wx:key="*this">
-        <text class="tag">{{item}}</text>
-      </block>
-    </view>
+<view class="page">
+  <view class="loading" wx:if="{{loading}}">加载中…</view>
+
+  <view class="err-box" wx:elif="{{error}}">
+    <text>{{error}}</text>
+    <view class="err-hint">请确认后端服务已启动，且已在开发者工具中勾选"不校验合法域名"</view>
   </view>
 
-  <view class="panel">
-    <view class="row">
-      <text class="label">学校代码</text>
-      <text class="value">{{school.code}}</text>
-    </view>
-    <view class="row">
-      <text class="label">参考分数线</text>
-      <text class="value">{{school.lastLineDisplay}} 分</text>
-    </view>
-    <view class="row">
-      <text class="label">招生计划</text>
-      <text class="value">{{school.planDisplay}}</text>
-    </view>
-    <view class="row">
-      <text class="label">当前分差</text>
-      <text class="value">{{school.gapDisplay}} 分</text>
-    </view>
-    <view class="row">
-      <text class="label">推荐层级</text>
-      <text class="value">{{school.riskLabel}}</text>
-    </view>
-  </view>
+  <block wx:elif="{{school}}">
+    <!-- 学校头部 -->
+    <view class="card head">
+      <view class="head-left">
+        <view class="head-name">{{school.name}}</view>
+        <view class="head-tags">
+          <text class="tag tag-gray">代码 {{school.code}}</text>
+          <text class="tag" wx:if="{{school.type}}">{{school.type}}</text>
+          <text class="tag tag-gray" wx:if="{{school.district}}">{{school.district}}</text>
+        </view>
+      </view>
 
-  <view class="panel">
-    <view class="section-title">报考提示</view>
-    <view class="body">{{school.note}}</view>
-    <view class="body muted">{{school.advice}}</view>
-  </view>
+      <view class="head-right" wx:if="{{forecast}}">
+        <view class="forecast-score">{{forecast.predictedScore}}</view>
+        <view class="forecast-label">{{targetYear}} 预测线</view>
+      </view>
+    </view>
 
-  <view class="panel">
-    <view class="section-title">正式上线前需要核对</view>
-    <view class="body">当年学校代码、招生计划、住宿条件、收费标准、是否跨区招生、定向名额、特长或特色项目条件。</view>
-  </view>
+    <!-- 关键指标 -->
+    <view class="card stats" wx:if="{{latest}}">
+      <view class="stat">
+        <view class="stat-label">{{latest.year}} 录取线</view>
+        <view class="stat-value">{{latest.lastLine}}</view>
+      </view>
+      <view class="stat">
+        <view class="stat-label">定向生线</view>
+        <view class="stat-value">{{latest.quotaLine || '—'}}</view>
+      </view>
+      <view class="stat">
+        <view class="stat-label">控制线</view>
+        <view class="stat-value">{{latest.controlLine}}</view>
+      </view>
+      <view class="stat">
+        <view class="stat-label">招生计划</view>
+        <view class="stat-value">{{latest.planCount || '—'}}</view>
+      </view>
+    </view>
+
+    <!-- 历年趋势 -->
+    <view class="card">
+      <view class="section-title">历年录取线</view>
+      <view class="section-sub">条形长度为得分率（占当年总分比例），已消除各年总分差异</view>
+
+      <view class="row" wx:for="{{rows}}" wx:key="year">
+        <view class="row-year">{{item.year}}</view>
+        <view class="row-bar-wrap">
+          <view class="row-bar" style="width:{{item.width}}%"></view>
+        </view>
+        <view class="row-line">{{item.line}}</view>
+        <view class="row-rate">{{item.rate}}</view>
+      </view>
+
+      <view class="legend">
+        <text>列依次为：年份 · 得分率条 · 录取线 · 得分率</text>
+      </view>
+    </view>
+
+    <!-- 明细表 -->
+    <view class="card">
+      <view class="section-title">历年明细</view>
+      <view class="tbl">
+        <view class="tbl-head">
+          <text class="c-year">年份</text>
+          <text class="c-num">录取线</text>
+          <text class="c-num">招生计划</text>
+          <text class="c-num">定向线</text>
+        </view>
+        <view class="tbl-row" wx:for="{{rows}}" wx:key="year">
+          <text class="c-year">{{item.year}}</text>
+          <text class="c-num strong">{{item.line}}</text>
+          <text class="c-num">{{item.plan}}</text>
+          <text class="c-num">{{item.quota}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="footer">{{disclaimer}}</view>
+  </block>
 </view>
